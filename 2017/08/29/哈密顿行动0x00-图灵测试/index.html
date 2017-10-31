@@ -1,0 +1,720 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="哈密顿行动 - 一个虚拟的、在线的计算机安全技术体验游戏，通过该游戏，可以测试您的“黑客技能”。  图灵测试 图灵测试，是由历史上著名的计算机学家，也是计算机之父，第一台原型计算机——图灵机的创造者阿兰·图灵所提出的，图灵测试的目的，是为了验证计算机能否拥有像人类一样的思考能力。这项测试由一个测试者（A），和一个被测试者组成(B)。测试者A是人类，被测试者B，可能是人类，也可能是计算机。A通过">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="哈密顿行动0x00--图灵测试">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/哈密顿行动0x00-图灵测试/index.html">
+<meta property="og:site_name" content="像素书">
+<meta property="og:description" content="哈密顿行动 - 一个虚拟的、在线的计算机安全技术体验游戏，通过该游戏，可以测试您的“黑客技能”。  图灵测试 图灵测试，是由历史上著名的计算机学家，也是计算机之父，第一台原型计算机——图灵机的创造者阿兰·图灵所提出的，图灵测试的目的，是为了验证计算机能否拥有像人类一样的思考能力。这项测试由一个测试者（A），和一个被测试者组成(B)。测试者A是人类，被测试者B，可能是人类，也可能是计算机。A通过">
+<meta property="og:updated_time" content="2017-08-29T05:39:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="哈密顿行动0x00--图灵测试">
+<meta name="twitter:description" content="哈密顿行动 - 一个虚拟的、在线的计算机安全技术体验游戏，通过该游戏，可以测试您的“黑客技能”。  图灵测试 图灵测试，是由历史上著名的计算机学家，也是计算机之父，第一台原型计算机——图灵机的创造者阿兰·图灵所提出的，图灵测试的目的，是为了验证计算机能否拥有像人类一样的思考能力。这项测试由一个测试者（A），和一个被测试者组成(B)。测试者A是人类，被测试者B，可能是人类，也可能是计算机。A通过">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/哈密顿行动0x00-图灵测试/"/>
+
+
+
+
+
+  <title>哈密顿行动0x00--图灵测试 | 像素书</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">叙事诗</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/哈密顿行动0x00-图灵测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">哈密顿行动0x00--图灵测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T14:39:34+09:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p> <a href="http://game6.iok.la" target="_blank" rel="external">哈密顿行动</a> - 一个虚拟的、在线的计算机安全技术体验游戏，通过该游戏，可以测试您的“黑客技能”。</p>
+</blockquote>
+<h3 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h3><blockquote>
+<p>图灵测试，是由历史上著名的计算机学家，也是计算机之父，第一台原型计算机——图灵机的创造者阿兰·图灵所提出的，图灵测试的目的，是为了验证计算机能否拥有像人类一样的思考能力。这项测试由一个测试者（A），和一个被测试者组成(B)。测试者A是人类，被测试者B，可能是人类，也可能是计算机。A通过向B提一定数量的问题，B进行回答，然后A由B反馈的信息，判断B是人类还是计算机。在这项测试中，事先并不告诉A，B是人类还是计算机。B如果作为一台机器，如果有超过30%的A，认为B是人类，那么证明计算机是有智能的。 </p>
+</blockquote>
+<p>开始游戏前需要一个账号，而通过了这个叫做但不是的“图灵测试”之后才能注册。</p>
+<h3 id="关卡描述"><a href="#关卡描述" class="headerlink" title="关卡描述"></a>关卡描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">A：98503264587102541690 - 68034165897022102600  </div><div class="line">B：90534205890120542090  </div><div class="line">A：59703214569802513647 - 13983025584603517840   </div><div class="line">B：59980225089803007807  </div><div class="line">A：56055201367950321158 - 56630489702544691502  </div><div class="line">B：？？？</div></pre></td></tr></table></figure>
+<h3 id="关卡解答"><a href="#关卡解答" class="headerlink" title="关卡解答"></a>关卡解答</h3><p>其实就是一个找规律的题目，先分析下第一组数据的输入和输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  98503264587102541690</div><div class="line">- 68034165897022102600</div><div class="line"> -----------------------  </div><div class="line">  90534205890120542090</div></pre></td></tr></table></figure></p>
+<p>观察后很容易可以发现这里的“-”运算，相当于一种位运算。减数和被减数逐位比较，如果两个数相等，则进行“-”运算后结果为0，如果两数不想等，则运算结果为两数中的最大值。<br>这个运算量不大，笔算就可以完成，不过还是准备用python写一下练练手。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line"></div><div class="line"><span class="comment"># define operation of '-'</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minus</span><span class="params">(num1, num2)</span>:</span></div><div class="line">    l1 = [i <span class="keyword">for</span> i <span class="keyword">in</span> str(num1)]</div><div class="line">    l2 = [i <span class="keyword">for</span> i <span class="keyword">in</span> str(num2)]</div><div class="line">    l3 = list(map(<span class="keyword">lambda</span> a, b: <span class="string">'0'</span> <span class="keyword">if</span> a == b <span class="keyword">else</span> max(a, b), l1, l2))</div><div class="line">    <span class="keyword">print</span> (reduce(<span class="keyword">lambda</span> a, b: a + b, l3))</div><div class="line">    </div><div class="line">minus(<span class="number">56055201367950321158</span>, <span class="number">56630489702544691502</span>)</div></pre></td></tr></table></figure></p>
+<p>主要是为了熟悉map和reduce的用法，记个小坑，py3中的reduce在functools包里，需要先导入才能使用。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/14/计算机网络学习笔记（零）-概述/" rel="next" title="计算机网络学习笔记（零）-概述">
+                <i class="fa fa-chevron-left"></i> 计算机网络学习笔记（零）-概述
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/29/哈密顿行动0x01-获取密码/" rel="prev" title="哈密顿行动0x01-获取密码">
+                哈密顿行动0x01-获取密码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="许山山" />
+          <p class="site-author-name" itemprop="name">许山山</p>
+           
+              <p class="site-description motion-element" itemprop="description">繁华尘世，时光如沙，轻歌曼舞有时尽。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图灵测试"><span class="nav-number">1.</span> <span class="nav-text">图灵测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡描述"><span class="nav-number">2.</span> <span class="nav-text">关卡描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡解答"><span class="nav-number">3.</span> <span class="nav-text">关卡解答</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许山山</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
