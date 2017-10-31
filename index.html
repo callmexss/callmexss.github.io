@@ -324,7 +324,109 @@
       
         
           
-            
+            <h2 id="1031"><a href="#1031" class="headerlink" title="1031"></a>1031</h2><h3 id="c-中迭代器的种类"><a href="#c-中迭代器的种类" class="headerlink" title="c++中迭代器的种类"></a>c++中迭代器的种类</h3><p><code>input iterator</code> ：只能从头至尾遍历一次，因为在遍历过程中，指针的指向可能会变化，只用于读取容器中的数据，通常用于只需要遍历一次的、只读算法。</p>
+<p><code>output iterator</code>： 同样也只能从头至尾遍历一次，可以在不读取数据的情况下直接写入数据，通常用于只遍历一次的只写算法。</p>
+<p><code>forward iterator</code>： 遍历过程中不改变指针指向，可以用于多次的顺序遍历，支持读写数据。</p>
+<p><code>bidirectional iterator</code>： 拥有<strong>forward iterator</strong>迭代器的全部功能，支持双向遍历。</p>
+<p><code>random access iterator</code>：拥有<strong>bidirectional iterator</strong>迭代器的全部功能，支持随机访问，适用于排序、二分查找等需要随机存取的算法。</p>
+<h3 id="python-使用-pickle-序列化对象"><a href="#python-使用-pickle-序列化对象" class="headerlink" title="python 使用 pickle 序列化对象"></a>python 使用 pickle 序列化对象</h3><p>之前一直想使用 <code>pickle</code> 存取python对象，今天写了个脚本恰好需要使用，就借着这个机会简单记录一下其使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pickle</div><div class="line"></div><div class="line"><span class="comment"># 创建一个字典</span></div><div class="line">words = &#123;<span class="string">"hello"</span>:<span class="number">5</span>, <span class="string">"world"</span>:<span class="number">5</span>, <span class="string">"python"</span>:<span class="number">6</span>, <span class="string">"c++"</span>:<span class="number">3</span>&#125;</div><div class="line"><span class="comment"># 使用pickle序列化words并存储</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">"wd.pickle"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</div><div class="line">  <span class="comment"># 第一个参数是需要序列化的对象，第二个参数是序列化对象存储的文件</span></div><div class="line">  pickle.dump(words, f)</div><div class="line">  <span class="comment"># 脚本执行后会在其所在文件夹建立wd.pickle文件，使用cat 命令查看：</span></div><div class="line">  <span class="comment"># output:</span></div><div class="line">  <span class="string">'''</span></div><div class="line">  (dp0</div><div class="line">  S'python'</div><div class="line">  p1</div><div class="line">  I6</div><div class="line">  sS'world'</div><div class="line">  p2</div><div class="line">  I5</div><div class="line">  sS'hello'</div><div class="line">  p3</div><div class="line">  I5</div><div class="line">  sS'c++'</div><div class="line">  p4</div><div class="line">  I3</div><div class="line">  s.r</div><div class="line">  '''</div><div class="line">  <span class="comment"># 还可以使用第三个参数选择加密算法（可选）</span></div><div class="line">  <span class="comment"># 例如：</span></div><div class="line">  <span class="comment"># pickle.dump(words, f, 1)</span></div><div class="line">  <span class="comment"># cat wd.pickle</span></div><div class="line">  <span class="comment"># &#125;q(UaqKUbqKu.</span></div><div class="line"><span class="comment"># 使用pickle读取文件并将其内容转化为python对象</span></div><div class="line"><span class="keyword">with</span> open(<span class="string">'wd.pickle'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">  data = pickle.load(f)</div><div class="line"><span class="keyword">print</span> data</div><div class="line"><span class="comment"># output:</span></div><div class="line"><span class="comment"># &#123;'world': 5, 'c++': 3, 'hello': 5, 'python': 6&#125;</span></div></pre></td></tr></table></figure>
+<h3 id="迭代器继承"><a href="#迭代器继承" class="headerlink" title="迭代器继承"></a>迭代器继承</h3><p>根据上面介绍的5中迭代器，可以看出来它们之间是有继承关系的。各个迭代器功能如下表所示(i for iterator, n is an integer)：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">iterator capacity</th>
+<th style="text-align:center">input iterator</th>
+<th style="text-align:center">output iterator</th>
+<th style="text-align:center">forward iterator</th>
+<th style="text-align:center">bidirectional iterator</th>
+<th style="text-align:center">random access iterator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Dereferencing read</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">Dereferencing write</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">Fixed and repeatable order</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i++    ++i</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i–    –i</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i[n]</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i + n</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i - n</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i += n</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td style="text-align:center">i -= n</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">Yes</td>
+</tr>
+</tbody>
+</table>
+
           
         
       
