@@ -256,6 +256,128 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/06/term-1-10th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/06/term-1-10th-week/" itemprop="url">term 1: 10th week</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T11:41:28+08:00">
+                2017-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1106"><a href="#1106" class="headerlink" title="1106"></a>1106</h2><h3 id="函数对象（函子）"><a href="#函数对象（函子）" class="headerlink" title="函数对象（函子）"></a>函数对象（函子）</h3><blockquote>
+<p> A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is overloaded—that is, classes for which the peculiar-looking function operator()() is defined. For example, you could define a class like this: </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linear</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        <span class="keyword">float</span> slope; <span class="comment">// 斜率</span></div><div class="line">        <span class="keyword">float</span> y0; <span class="comment">// 函数值</span></div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        Linear(<span class="keyword">float</span> _sp = <span class="number">1</span>, <span class="keyword">float</span> _y = <span class="number">0</span>)</div><div class="line">            : slope(_sp), y0(_y) &#123;&#125;</div><div class="line">        <span class="function"><span class="keyword">double</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x * slope + y0; &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    Linear f1;</div><div class="line">    <span class="function">Linear <span class="title">f2</span><span class="params">(<span class="number">2.5</span>, <span class="number">10.0</span>)</span></span>;</div><div class="line">    <span class="keyword">double</span> y1 = f1(<span class="number">12.4</span>);</div><div class="line">    <span class="keyword">double</span> y2 = f2(<span class="number">0.4</span>);</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"y1: "</span> &lt;&lt; y1 &lt;&lt; <span class="string">" y2: "</span> &lt;&lt; y2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***********************************************</span></div><div class="line"> *</div><div class="line"> *      Filename: functor.cpp</div><div class="line"> *</div><div class="line"> *        Author: xss - callmexss@126.com</div><div class="line"> *   Description: functor technique</div><div class="line"> *        Create: 2017-11-06 14:32:18</div><div class="line"> * Last Modified: 2017-11-06 14:47:37</div><div class="line"> *</div><div class="line"> ***********************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;   // <span class="title">functor</span> <span class="title">class</span> <span class="title">defines</span> <span class="title">operator</span>()()</span></div><div class="line"><span class="title">class</span> <span class="title">TooBig</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">private</span>:</div><div class="line">        T cutoff;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">        TooBig(<span class="keyword">const</span> T &amp; t) : cutoff(t) &#123;&#125;</div><div class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> T &amp; v)</span> </span>&#123; <span class="keyword">return</span> v &gt; cutoff; &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; &amp; li)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::ostream_iterator&lt;<span class="keyword">int</span>,<span class="keyword">char</span>&gt; out(<span class="built_in">std</span>::<span class="built_in">cout</span>, <span class="string">" "</span>);</div><div class="line">    copy(li.begin(), li.end(), out);</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">list</span>;</div><div class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</div><div class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line"></div><div class="line">    TooBig&lt;<span class="keyword">int</span>&gt; f100(<span class="number">100</span>);</div><div class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; yadayada;</div><div class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; etcetera;</div><div class="line">    <span class="keyword">int</span> vals[<span class="number">10</span>] = &#123;<span class="number">50</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">180</span>, <span class="number">60</span>, <span class="number">210</span>, <span class="number">415</span>, <span class="number">88</span>, <span class="number">188</span>, <span class="number">201</span>&#125;;</div><div class="line"></div><div class="line">    yadayada.insert(yadayada.begin(), vals, vals+<span class="number">10</span>);</div><div class="line">    etcetera.insert(etcetera.begin(), vals, vals+<span class="number">10</span>);</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Original lists:\n"</span>;</div><div class="line">    show(yadayada);</div><div class="line">    show(etcetera);</div><div class="line"></div><div class="line">    <span class="comment">// use a named function object</span></div><div class="line">    yadayada.remove_if(f100);</div><div class="line">    <span class="comment">// construct a function object</span></div><div class="line">    etcetera.remove_if(TooBig&lt;<span class="keyword">int</span>&gt;(<span class="number">200</span>));</div><div class="line"></div><div class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Trimmed lists:\n"</span>;</div><div class="line">    show(yadayada);</div><div class="line">    show(etcetera);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Original lists:</div><div class="line">50 100 90 180 60 210 415 88 188 201</div><div class="line">50 100 90 180 60 210 415 88 188 201</div><div class="line">Trimmed lists:</div><div class="line">50 100 90 60 88</div><div class="line">50 100 90 180 60 88 188</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Just as the STL defines concepts for containers and iterators, it defines functor concepts:<br>• A generator is a functor that can be called with no arguments.<br>• A unary function is a functor that can be called with one argument.<br>• A binary function is a functor that can be called with two arguments. </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// [sqrt(n) for n in gr8]</span></div><div class="line">transform(gr8.begin(), gr8.end(), out, <span class="built_in">sqrt</span>);</div><div class="line"><span class="comment">// map(lambda x, y: (x+y)/2, gr8, m8)</span></div><div class="line">transform(gr8.begin(), gr8.end(), m8.begin(), out, mean);</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/31/term-1-9th-week/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -287,7 +409,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T19:55:33+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-31T19:55:33+08:00">
                 2017-10-31
               </time>
             
@@ -632,7 +754,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T19:22:36+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T19:22:36+08:00">
                 2017-10-27
               </time>
             
@@ -707,7 +829,7 @@
 <p>正确答案: C   我的答案: A (错误)</p>
 <p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=15408#summary" target="_blank" rel="external">解析</a>：</p>
 <blockquote>
-<p>new/delete都是要分两步操作的：new分配内存，并且调用对象的构造函数初始化一个对象；delete调用相应的析构函数，然后释放内存<br>malloc/free只是分配内存/回收内存， 所以A、B对；<br>malloc需要头文件”stdlib.h”或者”malloc.h” C错；<br>new/delete都是内建的操作符，而malloc是一个函数，其函数原型是：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">void</span> *<span class="title">malloc</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> num_bytes)</span></span>;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>new/delete都是要分两步操作的：new分配内存，并且调用对象的构造函数初始化一个对象；delete调用相应的析构函数，然后释放内存<br>malloc/free只是分配内存/回收内存， 所以A、B对；<br>malloc需要头文件”stdlib.h”或者”malloc.h” C错；<br>new/delete都是内建的操作符，而malloc是一个函数，其函数原型是：<br><code>void *malloc(unsigned int num_bytes);</code></p>
 </blockquote>
 <hr>
 <p>以下选项中不属于C语言标识符的是？</p>
@@ -914,7 +1036,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T21:22:34+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T21:22:34+08:00">
                 2017-10-17
               </time>
             
@@ -1045,7 +1167,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T15:39:15+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T15:39:15+08:00">
                 2017-10-13
               </time>
             
@@ -1157,7 +1279,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T23:35:54+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T23:35:54+08:00">
                 2017-08-29
               </time>
             
@@ -1299,7 +1421,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T14:39:34+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T14:39:34+08:00">
                 2017-08-29
               </time>
             
@@ -1421,7 +1543,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T18:12:42+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T18:12:42+08:00">
                 2017-07-14
               </time>
             
@@ -1588,7 +1710,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T17:01:34+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T17:01:34+08:00">
                 2017-07-11
               </time>
             
@@ -1701,7 +1823,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T15:00:00+09:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T15:00:00+08:00">
                 2017-07-11
               </time>
             
@@ -1826,7 +1948,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1839,7 +1961,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
