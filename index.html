@@ -331,6 +331,18 @@
 <p><img src="text.png" alt=""><br>​<br><img src="conf.png" alt=""></p>
 </li>
 </ol>
+<h2 id="1115"><a href="#1115" class="headerlink" title="1115"></a>1115</h2><h3 id="LPCTSTR"><a href="#LPCTSTR" class="headerlink" title="LPCTSTR"></a>LPCTSTR</h3><blockquote>
+<p>LPCTSTR用来表示你的字符是否使用UNICODE, 如果你的程序定义了UNICODE或者其他相关的宏，那么这个字符或者字符串将被作为UNICODE字符串，否则就是标准的ANSI字符串。</p>
+<p><strong>类型理解</strong></p>
+<p>LPCTSTR类型：<br>L表示long指针 这是为了兼容Windows 3.1等16位操作系统遗留下来的，在win32中以及其他的32位操作系统中， long指针和near指针及far修饰符都是为了兼容的作用。没有实际意义。<br>P表示这是一个指针<br>C表示是一个常量<br>T表示在Win32环境中， 有一个_T宏<br>STR表示这个变量是一个字符串</p>
+</blockquote>
+<h3 id="宏定义中的"><a href="#宏定义中的" class="headerlink" title="宏定义中的#"></a>宏定义中的<code>#</code></h3><p>在github上看到一段<a href="https://github.com/ryanofsky/cfree/blob/f3cdb4d9d179f3e803d5928ce64838f4fe34f850/test.cpp" target="_blank" rel="external">代码</a>，使用了一个宏定义，感觉蛮有意思，研究一下它干了些什么。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>::<span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> EXPR(x)  cout &lt;&lt; #x &lt;&lt; <span class="meta-string">" = "</span> &lt;&lt; (x) &lt;&lt; endl</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">char</span> *[])</span></span></div><div class="line">&#123;</div><div class="line">  EXPR(<span class="number">2342</span> &gt;&gt; <span class="number">2</span> &amp;&amp; <span class="number">2</span>);</div><div class="line">  EXPR((<span class="number">2342</span> &gt;&gt; <span class="number">2</span>) &amp;&amp; <span class="number">2</span>);</div><div class="line">  EXPR(<span class="number">2342</span> &gt;&gt; (<span class="number">2</span> &amp;&amp; <span class="number">2</span>));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2342 &gt;&gt; 2 &amp;&amp; 2 = 1</div><div class="line">(2342 &gt;&gt; 2) &amp;&amp; 2 = 1</div><div class="line">2342 &gt;&gt; (2 &amp;&amp; 2) = 1171</div></pre></td></tr></table></figure>
+<p>根据输出结果可以看出来：</p>
+<p><code>#x</code>是将x表示的内容转换成字符串，<code>(x)</code>是x执行后的结果。</p>
+<p><strong>Todo: </strong>宏定义中的<code>#, ##, @#, /</code>符号改天专门整理一下。</p>
 
           
         
