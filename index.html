@@ -256,6 +256,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/27/term-1-13th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/27/term-1-13th-week/" itemprop="url">term 1: 13th week</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T21:52:05+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1127"><a href="#1127" class="headerlink" title="1127"></a>1127</h2><h3 id="Linux-下的输入输出和错误流"><a href="#Linux-下的输入输出和错误流" class="headerlink" title="Linux 下的输入输出和错误流"></a>Linux 下的输入输出和错误流</h3><p>stdin     标准输入流，默认键盘<br>stdout  标准输出流，默认屏幕<br>stderr   标准错误流，错误输出</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="comment">// printf("input a: ");</span></div><div class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stdout</span>, <span class="string">"input a: "</span>);</div><div class="line">  <span class="comment">// scanf("%d", &amp;a);</span></div><div class="line">  <span class="built_in">fscanf</span>(<span class="built_in">stdin</span>, <span class="string">"%d"</span>, &amp;a);</div><div class="line">  <span class="keyword">if</span> (a &lt;= <span class="number">0</span>)</div><div class="line">  &#123;</div><div class="line">    <span class="comment">// stderr</span></div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"a must larger than 0\n"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// a return value is necessary</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>linux下可以使用<code>&gt;, &gt;&gt;, &lt;, &lt;&lt;</code>进行流的重定向，<code>&lt;, &gt;</code>会覆盖文件，<code>&lt;&lt;, &gt;&gt;</code>追加写入文件。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filaname: main.c</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> a, b;</div><div class="line"></div><div class="line">  <span class="built_in">printf</span>(<span class="string">"input a: "</span>);</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"input b: "</span>);</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b);</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (<span class="number">0</span> == b) <span class="comment">// can avoid the fault caused by misusing '=' and '=='</span></div><div class="line">  &#123;</div><div class="line">    <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"b can't equal to 0."</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d / %d = %d"</span>, a, b, a / b);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用流重定向输出：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">gcc main.c</div><div class="line">./a.out 1&gt; t.txt 2&gt; f.txt</div><div class="line">2</div><div class="line">0</div><div class="line">cat t.txt</div><div class="line"><span class="comment"># input a: input b: </span></div><div class="line">cat f.txt</div><div class="line"><span class="comment"># b can't equal to 0.</span></div><div class="line"><span class="built_in">echo</span> $?</div><div class="line"><span class="comment"># 1</span></div></pre></td></tr></table></figure>
+<p>管道功能示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ls</div><div class="line"><span class="comment"># a.out  flow.txt  f.txt  input.txt  main.c  t.txt</span></div><div class="line">ls | grep txt</div><div class="line"><span class="comment"># flow.txt</span></div><div class="line"><span class="comment"># f.txt</span></div><div class="line"><span class="comment"># input.txt</span></div><div class="line"><span class="comment"># t.txt</span></div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filename: avg.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> sum;</div><div class="line">  <span class="keyword">float</span> n;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d,%f"</span>, &amp;sum, &amp;n);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%f"</span>, sum / n);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// filename: input.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> flag = <span class="number">1</span>;</div><div class="line">  <span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">  <span class="keyword">while</span>(flag)</div><div class="line">  &#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;flag);</div><div class="line">    <span class="keyword">if</span> (!flag)</div><div class="line">    &#123;</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    sum += flag;</div><div class="line">    n++;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d,%d"</span>,sum,n);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*运行</span></div><div class="line">./input.out | ./avg.out</div><div class="line">100</div><div class="line">200</div><div class="line">300</div><div class="line">0</div><div class="line">200.000000</div><div class="line">*/</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/term-1-12th-week/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -532,7 +652,7 @@
 <p>Of course, before you use the rubber chicken, you need to ask yourself whether you actually need 5 people in one room and would it not just be easier with one person in the room on their own doing all the work. Actually, this is just extending the analogy, but you get the idea.</p>
 </blockquote>
 <p>翻译之就是：</p>
-<p>​        当我在工作中有一个很想讨论的话题的时候，这种时候我就会用到我一直放在桌上的橡皮鸡了。只有持有橡皮鸡的人才被允许讨论。如果你没有才由它，你就不能说话。你只能表明你需要这只鸡，在你得到这只鸡以前，你只能保持沉默。一旦你的讨论结束了，你需要把这只鸡还给管理者，然后他再将这只鸡发给下一个想要说话的人。这就保证了人们的讨论不会打扰到彼此（同一时间只有一个人在说话），同时他们也拥有独立的空间进行讨论。<br>​        把鸡替换成互斥锁，把人替换成线程然后你就得到了互斥的概念。<br>​        当然，在你准备使用橡皮鸡的时候，你需要问一下你自己你是否真的需要五个人，一个人能不能来完成这整个工作。事实上，这只是扩展了这个比喻，但是你应该已经搞懂这个概念了。</p>
+<p>当我在工作中有一个很想讨论的话题的时候，这种时候我就会用到我一直放在桌上的橡皮鸡了。只有持有橡皮鸡的人才被允许讨论。如果你没有才由它，你就不能说话。你只能表明你需要这只鸡，在你得到这只鸡以前，你只能保持沉默。一旦你的讨论结束了，你需要把这只鸡还给管理者，然后他再将这只鸡发给下一个想要说话的人。这就保证了人们的讨论不会打扰到彼此（同一时间只有一个人在说话），同时他们也拥有独立的空间进行讨论。<br>把鸡替换成互斥锁，把人替换成线程然后你就得到了互斥的概念。<br>​当然，在你准备使用橡皮鸡的时候，你需要问一下你自己你是否真的需要五个人，一个人能不能来完成这整个工作。事实上，这只是扩展了这个比喻，但是你应该已经搞懂这个概念了。</p>
 <p>然后实现的简单<a href="https://stackoverflow.com/questions/4989451/mutex-example-tutorial" target="_blank" rel="external">代码</a>：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A thread is : Each person</span></div><div class="line"><span class="comment">// The mutex is : The door handle</span></div><div class="line"><span class="comment">// The lock is : The person's hand</span></div><div class="line"><span class="comment">// The resource is : The phone</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></div><div class="line"></div><div class="line"><span class="built_in">std</span>::mutex m;<span class="comment">//you can use std::lock_guard if you want to be exception safe</span></div><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">makeACallFromPhoneBooth</span><span class="params">()</span> </span></div><div class="line">&#123;</div><div class="line">    m.lock();<span class="comment">//man gets a hold of the phone booth door and locks it. The other men wait outside</span></div><div class="line">      <span class="comment">//man happily talks to his wife from now....</span></div><div class="line">      <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" Hello Wife"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">      i++;<span class="comment">//no other thread can access variable i until m.unlock() is called</span></div><div class="line">      <span class="comment">//...until now, with no interruption from other men</span></div><div class="line">    m.unlock();<span class="comment">//man lets go of the door handle and unlocks the door</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//This is the main crowd of people uninterested in making a phone call</span></div><div class="line"></div><div class="line">    <span class="comment">//man1 leaves the crowd to go to the phone booth</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man1</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line">    <span class="comment">//Although man2 appears to start second, there's a good chance he might</span></div><div class="line">    <span class="comment">//reach the phone booth before man1</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man2</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line">    <span class="comment">//And hey, man3 also joined the race to the booth</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man3</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line"></div><div class="line">    man1.join();<span class="comment">//man1 finished his phone call and joins the crowd</span></div><div class="line">    man2.join();<span class="comment">//man2 finished his phone call and joins the crowd</span></div><div class="line">    man3.join();<span class="comment">//man3 finished his phone call and joins the crowd</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="高质量C-C编程指南附录试题笔记"><a href="#高质量C-C编程指南附录试题笔记" class="headerlink" title="高质量C++/C编程指南附录试题笔记"></a>高质量C++/C编程指南附录试题笔记</h3><p><strong>一、请填写BOOL , float, 指针变量 与“零值”比较的 if 语句。</strong></p>
@@ -2031,173 +2151,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/计算机网络学习笔记（零）-概述/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="许山山">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="像素书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/14/计算机网络学习笔记（零）-概述/" itemprop="url">计算机网络学习笔记（零）-概述</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T18:12:42+08:00">
-                2017-07-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="从0和1说起"><a href="#从0和1说起" class="headerlink" title="从0和1说起"></a>从0和1说起</h3><p>人与人之间可以通过某种媒介进行交流，例如语言、文字、表情等等。那么计算机之间是如何通信的呢？答案是使用计算机自己的语言——0和1。二进制可以说是计算机科学的基础，其内容也十分丰富，关于二进制的内容以后再详细写文章总结，此处暂不细表。</p>
-<p>Q: 为什么计算机之间的通信使用二进制？</p>
-<p>最主要的原因：二进制只有两种状态。这就意味着它可以很容易的通过物理方式实现，例如开关的打开和关闭，电平的高和低，科幻小说《三体》中人列计算机系统还通过举红白旗来实现二进制。</p>
-<p>Q：什么是Internet？<br><a href="https://www.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-wires-cables-and-wifi" target="_blank" rel="external">官方</a>（一个很简短有趣的关于网络的科普教程）一点的说法：</p>
-<blockquote>
-<p>A tangible physical system made to move information.<br>一个有形的用于传输信息的系统实体。</p>
-</blockquote>
-<p>通俗说来，Internet更像是一个邮局服务系统，只是其运输的不是包裹和信件，而是二进制的数据。这些数据是由“位(bit)”构成的。“位”，也就是我们常说的“比特”，它可以使用任意一组反义词来描述，例如开关，是否，真假，在计算机科学中，用0和1来表示这两种相反的状态。八个<strong>比特(bit)</strong>组成一个<strong>字节(byte)</strong>，即$1 Byte = 8 Bits$。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">位(bit)</th>
-<th style="text-align:center">字节(byte)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">可以理解成“占位”的意思，一个bit就是一个位置，这个位置的值可以是{0, 1}中的一个</td>
-<td style="text-align:center">一个字节由八个位组成，直观来看00000100就是一个字节，字节可用于数据存储，也可以经过特定的编码代表特定含义</td>
-</tr>
-</tbody>
-</table>
-<p>还有一个相关的概念“字(word)”，同一时间处理二进制数的位数叫字长，由于不同的cpu具有不同的处理能力，所以字长的值要视实际情况而定。</p>
-<h3 id="网络协议的分层"><a href="#网络协议的分层" class="headerlink" title="网络协议的分层"></a>网络协议的分层</h3><p>两种分层模型</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">osi</th>
-<th style="text-align:center">物数</th>
-<th style="text-align:center">网</th>
-<th style="text-align:center">传</th>
-<th style="text-align:center">会表应</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">tcp/ip</td>
-<td style="text-align:center">链路层</td>
-<td style="text-align:center">网络层</td>
-<td style="text-align:center">传输层</td>
-<td style="text-align:center">应用层</td>
-</tr>
-<tr>
-<td style="text-align:center">PDU</td>
-<td style="text-align:center">位(bit) 帧(frame)</td>
-<td style="text-align:center">包(packet)</td>
-<td style="text-align:center">段(segment)</td>
-</tr>
-</tbody>
-</table>
-<p>分层的好处</p>
-<p>​    接口、服务</p>
-<p>*nix 系统中/etc/services文件中包含了常用的端口号</p>
-<p>可以使用命令：grep 协议名 /etc/services 查看</p>
-<p>例如：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt; grep http /etc/services </div><div class="line">http            80/tcp          www             <span class="comment"># WorldWideWeb HTTP</span></div><div class="line">http            80/udp                          <span class="comment"># HyperText Transfer Protocol</span></div><div class="line">https           443/tcp                         <span class="comment"># http protocol over TLS/SSL</span></div><div class="line">https           443/udp</div><div class="line">http-alt        8080/tcp        webcache        <span class="comment"># WWW caching service</span></div><div class="line">http-alt        8080/udp</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2247,7 +2200,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

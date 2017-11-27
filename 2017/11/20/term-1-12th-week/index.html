@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="c++,hexo,linux," />
+  <meta name="keywords" content="c++,linux,hexo," />
 
 
 
@@ -94,7 +94,7 @@
 
 
 <meta name="description" content="1120hexo 图片加载不正常一个来自简书的解决方法 。 该方法使用的是hexo-asset-img插件，图片的插入方法不再使用markdown的语法，而是： 1&amp;#123;% asset_img example.png plus title %&amp;#125; 1121c++ 基本概念 一个 C++ 程序由含有声明的文本文件序列（通常为头文件与源文件）组成。它们被翻译成一个可执行文件，操作系统通过">
-<meta name="keywords" content="c++,hexo,linux">
+<meta name="keywords" content="c++,linux,hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="term 1: 12th week">
 <meta property="og:url" content="http://yoursite.com/2017/11/20/term-1-12th-week/index.html">
@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/11/20/term-1-12th-week/c_c++_general.png">
 <meta property="og:image" content="http://yoursite.com/2017/11/20/term-1-12th-week/linker_input.png">
 <meta property="og:image" content="http://yoursite.com/2017/11/20/term-1-12th-week/test_res.png">
-<meta property="og:updated_time" content="2017-11-26T14:17:49.728Z">
+<meta property="og:updated_time" content="2017-11-26T14:21:24.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="term 1: 12th week">
 <meta name="twitter:description" content="1120hexo 图片加载不正常一个来自简书的解决方法 。 该方法使用的是hexo-asset-img插件，图片的插入方法不再使用markdown的语法，而是： 1&amp;#123;% asset_img example.png plus title %&amp;#125; 1121c++ 基本概念 一个 C++ 程序由含有声明的文本文件序列（通常为头文件与源文件）组成。它们被翻译成一个可执行文件，操作系统通过">
@@ -536,7 +536,7 @@
 <p>Of course, before you use the rubber chicken, you need to ask yourself whether you actually need 5 people in one room and would it not just be easier with one person in the room on their own doing all the work. Actually, this is just extending the analogy, but you get the idea.</p>
 </blockquote>
 <p>翻译之就是：</p>
-<p>​        当我在工作中有一个很想讨论的话题的时候，这种时候我就会用到我一直放在桌上的橡皮鸡了。只有持有橡皮鸡的人才被允许讨论。如果你没有才由它，你就不能说话。你只能表明你需要这只鸡，在你得到这只鸡以前，你只能保持沉默。一旦你的讨论结束了，你需要把这只鸡还给管理者，然后他再将这只鸡发给下一个想要说话的人。这就保证了人们的讨论不会打扰到彼此（同一时间只有一个人在说话），同时他们也拥有独立的空间进行讨论。<br>​        把鸡替换成互斥锁，把人替换成线程然后你就得到了互斥的概念。<br>​        当然，在你准备使用橡皮鸡的时候，你需要问一下你自己你是否真的需要五个人，一个人能不能来完成这整个工作。事实上，这只是扩展了这个比喻，但是你应该已经搞懂这个概念了。</p>
+<p>当我在工作中有一个很想讨论的话题的时候，这种时候我就会用到我一直放在桌上的橡皮鸡了。只有持有橡皮鸡的人才被允许讨论。如果你没有才由它，你就不能说话。你只能表明你需要这只鸡，在你得到这只鸡以前，你只能保持沉默。一旦你的讨论结束了，你需要把这只鸡还给管理者，然后他再将这只鸡发给下一个想要说话的人。这就保证了人们的讨论不会打扰到彼此（同一时间只有一个人在说话），同时他们也拥有独立的空间进行讨论。<br>把鸡替换成互斥锁，把人替换成线程然后你就得到了互斥的概念。<br>​当然，在你准备使用橡皮鸡的时候，你需要问一下你自己你是否真的需要五个人，一个人能不能来完成这整个工作。事实上，这只是扩展了这个比喻，但是你应该已经搞懂这个概念了。</p>
 <p>然后实现的简单<a href="https://stackoverflow.com/questions/4989451/mutex-example-tutorial" target="_blank" rel="external">代码</a>：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// A thread is : Each person</span></div><div class="line"><span class="comment">// The mutex is : The door handle</span></div><div class="line"><span class="comment">// The lock is : The person's hand</span></div><div class="line"><span class="comment">// The resource is : The phone</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></div><div class="line"></div><div class="line"><span class="built_in">std</span>::mutex m;<span class="comment">//you can use std::lock_guard if you want to be exception safe</span></div><div class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">makeACallFromPhoneBooth</span><span class="params">()</span> </span></div><div class="line">&#123;</div><div class="line">    m.lock();<span class="comment">//man gets a hold of the phone booth door and locks it. The other men wait outside</span></div><div class="line">      <span class="comment">//man happily talks to his wife from now....</span></div><div class="line">      <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" Hello Wife"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">      i++;<span class="comment">//no other thread can access variable i until m.unlock() is called</span></div><div class="line">      <span class="comment">//...until now, with no interruption from other men</span></div><div class="line">    m.unlock();<span class="comment">//man lets go of the door handle and unlocks the door</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//This is the main crowd of people uninterested in making a phone call</span></div><div class="line"></div><div class="line">    <span class="comment">//man1 leaves the crowd to go to the phone booth</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man1</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line">    <span class="comment">//Although man2 appears to start second, there's a good chance he might</span></div><div class="line">    <span class="comment">//reach the phone booth before man1</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man2</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line">    <span class="comment">//And hey, man3 also joined the race to the booth</span></div><div class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man3</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</div><div class="line"></div><div class="line">    man1.join();<span class="comment">//man1 finished his phone call and joins the crowd</span></div><div class="line">    man2.join();<span class="comment">//man2 finished his phone call and joins the crowd</span></div><div class="line">    man3.join();<span class="comment">//man3 finished his phone call and joins the crowd</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="高质量C-C编程指南附录试题笔记"><a href="#高质量C-C编程指南附录试题笔记" class="headerlink" title="高质量C++/C编程指南附录试题笔记"></a>高质量C++/C编程指南附录试题笔记</h3><p><strong>一、请填写BOOL , float, 指针变量 与“零值”比较的 if 语句。</strong></p>
@@ -578,9 +578,9 @@
           
             <a href="/tags/c/" rel="tag"># c++</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
             <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -602,6 +602,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/term-1-13th-week/" rel="prev" title="term 1: 13th week">
+                term 1: 13th week <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -673,7 +677,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
