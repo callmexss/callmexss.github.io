@@ -100,7 +100,8 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/27/term-1-13th-week/index.html">
 <meta property="og:site_name" content="像素书">
 <meta property="og:description" content="1127Linux 下的输入输出和错误流stdin     标准输入流，默认键盘stdout  标准输出流，默认屏幕stderr   标准错误流，错误输出 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;  // printf(&quot;input a: &quot;);  fprintf(stdout, &quot;input a: &quot;);  /">
-<meta property="og:updated_time" content="2017-11-27T15:09:07.003Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-03T13:42:19.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="term 1: 13th week">
 <meta name="twitter:description" content="1127Linux 下的输入输出和错误流stdin     标准输入流，默认键盘stdout  标准输出流，默认屏幕stderr   标准错误流，错误输出 12345678910111213141516#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;  // printf(&quot;input a: &quot;);  fprintf(stdout, &quot;input a: &quot;);  /">
@@ -329,6 +330,50 @@
 <p>管道功能示例：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">ls</div><div class="line"><span class="comment"># a.out  flow.txt  f.txt  input.txt  main.c  t.txt</span></div><div class="line">ls | grep txt</div><div class="line"><span class="comment"># flow.txt</span></div><div class="line"><span class="comment"># f.txt</span></div><div class="line"><span class="comment"># input.txt</span></div><div class="line"><span class="comment"># t.txt</span></div></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// filename: avg.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> sum;</div><div class="line">  <span class="keyword">float</span> n;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d,%f"</span>, &amp;sum, &amp;n);</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%f"</span>, sum / n);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// filename: input.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> flag = <span class="number">1</span>;</div><div class="line">  <span class="keyword">int</span> n = <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">  <span class="keyword">while</span>(flag)</div><div class="line">  &#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;flag);</div><div class="line">    <span class="keyword">if</span> (!flag)</div><div class="line">    &#123;</div><div class="line">      <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    sum += flag;</div><div class="line">    n++;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">printf</span>(<span class="string">"%d,%d"</span>,sum,n);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*运行</span></div><div class="line">./input.out | ./avg.out</div><div class="line">100</div><div class="line">200</div><div class="line">300</div><div class="line">0</div><div class="line">200.000000</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="1129"><a href="#1129" class="headerlink" title="1129"></a>1129</h2><h3 id="python-在Ubuntu下后台运行"><a href="#python-在Ubuntu下后台运行" class="headerlink" title="python 在Ubuntu下后台运行"></a>python 在Ubuntu下后台运行</h3><blockquote>
+<p>使用 screen 很方便，有以下几个常用选项：</p>
+<ul>
+<li>用<code>screen -dmS *session name*</code>来建立一个处于断开模式下的会话（并指定其会话名）。</li>
+<li>用<code>screen -list</code>来列出所有会话。</li>
+<li>用<code>screen -r *session name*</code>来重新连接指定会话。</li>
+<li>用快捷键<code>CTRL-a d</code>来暂时断开当前会话。</li>
+</ul>
+</blockquote>
+<p>引用自 <a href="https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html" target="_blank" rel="noopener">Linux 技巧：让进程在后台可靠运行的几种方法</a></p>
+<h3 id="Java虚拟机堆内存配置"><a href="#Java虚拟机堆内存配置" class="headerlink" title="Java虚拟机堆内存配置"></a>Java虚拟机堆内存配置</h3><p>使用Gradle编译Freenet时出现了如下错误：</p>
+<p><a href="https://stackoverflow.com/questions/26143740/getting-gradle-error-could-not-reserve-enough-space-for-object-heap-constantly" target="_blank" rel="noopener">getting-gradle-error-could-not-reserve-enough-space-for-object-heap-constantly</a></p>
+<p>感谢Stack Overflow…解决方法是在环境变量中进行如下设置：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; _JAVA_OPTIONS=-Xmx512M</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<ol>
+<li>Right click on start-button and open “System”</li>
+<li>Go to Advanced system settings on the left side</li>
+<li>Click the button “Environment Variables …”</li>
+<li>In System Variables, click “New…”</li>
+<li>New Variable Name: _JAVA_OPTIONS</li>
+<li>New Variable Value: -Xmx512M</li>
+<li>Click OK</li>
+<li>Restart Visual Studio, so the variable is picked up</li>
+</ol>
+</blockquote>
+<h2 id="1130"><a href="#1130" class="headerlink" title="1130"></a>1130</h2><h3 id="JAVA泛型小记"><a href="#JAVA泛型小记" class="headerlink" title="JAVA泛型小记"></a>JAVA泛型小记</h3><blockquote>
+<p><code>?, T，E，K，V</code>这些全都属于java泛型的通配符，这些通配符其实<strong>其实没什么区别</strong>，只不过是一个约定好的代码，也就是说：</p>
+<p>使用大写字母A,B,C,D……X,Y,Z定义的，就都是泛型，把T换成A也一样，这里T只是名字上的意义而已</p>
+<p><strong>?</strong> 表示不确定的java类型</p>
+<p><strong>T (type)</strong> 表示具体的一个java类型</p>
+<p><strong>K V (key value)</strong>分别代表java键值中的Key Value</p>
+<p><strong>E</strong> 代表Element</p>
+<p>作者：程序鱼<br>链接：<a href="http://www.jianshu.com/p/95f349258afb" target="_blank" rel="noopener">http://www.jianshu.com/p/95f349258afb</a><br>來源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="1202"><a href="#1202" class="headerlink" title="1202"></a>1202</h2><h3 id="win7系统下使用vs-2017编译boost-1-65-1"><a href="#win7系统下使用vs-2017编译boost-1-65-1" class="headerlink" title="win7系统下使用vs 2017编译boost 1.65.1"></a>win7系统下使用vs 2017编译boost 1.65.1</h3><p>1.启动vs 2017命令行工具。</p>
+<p>2.切换目录到boost根目录下（有bootstrap.bat的那个目录）。</p>
+<p>3.执行<code>bootstrap.bat</code> 。</p>
+<p>4.执行.\b2 。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">C:\<span class="built_in">local</span>\boost165_1&gt;bootstrap.bat</div><div class="line"></div><div class="line">Building Boost.Build engine</div><div class="line"></div><div class="line">Bootstrapping is <span class="keyword">done</span>. To build, run:</div><div class="line"></div><div class="line">    .\b2</div><div class="line"></div><div class="line">To adjust configuration, edit <span class="string">'project-config.jam'</span>.</div><div class="line"></div><div class="line">Further information:</div><div class="line"></div><div class="line">    - Command line <span class="built_in">help</span>:</div><div class="line">    .\b2 --<span class="built_in">help</span></div><div class="line">    </div><div class="line">    - Getting started guide:</div><div class="line">    http://boost.org/more/getting_started/windows.html</div><div class="line">    </div><div class="line">    - Boost.Build documentation:</div><div class="line">    http://www.boost.org/build/doc/html/index.html</div><div class="line"></div><div class="line">C:\<span class="built_in">local</span>\boost165_1&gt;.\b2</div><div class="line"></div><div class="line">...... // compile progress</div><div class="line"></div><div class="line">The Boost C++ Libraries were successfully built!</div><div class="line"></div><div class="line">The following directory should be added to compiler include paths:</div><div class="line"></div><div class="line">    C:\<span class="built_in">local</span>\boost_1_65_1</div><div class="line"></div><div class="line">The following directory should be added to linker library paths:</div><div class="line"></div><div class="line">    C:\<span class="built_in">local</span>\boost_1_65_1\stage\lib</div></pre></td></tr></table></figure>
+<h2 id="1203"><a href="#1203" class="headerlink" title="1203"></a>1203</h2><h3 id="c-下实现并使用split方法"><a href="#c-下实现并使用split方法" class="headerlink" title="c++ 下实现并使用split方法"></a>c++ 下实现并使用split方法</h3><p>参见<a href="http://www.cnblogs.com/dfcao/p/cpp-FAQ-split.html" target="_blank" rel="noopener">C++常见问题: 字符串分割函数 split</a>。</p>
 
       
     </div>
@@ -380,6 +425,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/07/term-1-14th-week/" rel="prev" title="term 1: 14th week">
+                term 1: 14th week <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -451,7 +500,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -464,7 +513,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -499,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1127"><span class="nav-number">1.</span> <span class="nav-text">1127</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-下的输入输出和错误流"><span class="nav-number">1.1.</span> <span class="nav-text">Linux 下的输入输出和错误流</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1127"><span class="nav-number">1.</span> <span class="nav-text"><a href="#1127" class="headerlink" title="1127"></a>1127</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-下的输入输出和错误流"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#Linux-&#x4E0B;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x548C;&#x9519;&#x8BEF;&#x6D41;" class="headerlink" title="Linux &#x4E0B;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x548C;&#x9519;&#x8BEF;&#x6D41;"></a>Linux &#x4E0B;&#x7684;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x548C;&#x9519;&#x8BEF;&#x6D41;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1129"><span class="nav-number">2.</span> <span class="nav-text"><a href="#1129" class="headerlink" title="1129"></a>1129</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-在Ubuntu下后台运行"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#python-&#x5728;Ubuntu&#x4E0B;&#x540E;&#x53F0;&#x8FD0;&#x884C;" class="headerlink" title="python &#x5728;Ubuntu&#x4E0B;&#x540E;&#x53F0;&#x8FD0;&#x884C;"></a>python &#x5728;Ubuntu&#x4E0B;&#x540E;&#x53F0;&#x8FD0;&#x884C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java虚拟机堆内存配置"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x5185;&#x5B58;&#x914D;&#x7F6E;" class="headerlink" title="Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x5185;&#x5B58;&#x914D;&#x7F6E;"></a>Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x5185;&#x5B58;&#x914D;&#x7F6E;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1130"><span class="nav-number">3.</span> <span class="nav-text"><a href="#1130" class="headerlink" title="1130"></a>1130</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA泛型小记"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#JAVA&#x6CDB;&#x578B;&#x5C0F;&#x8BB0;" class="headerlink" title="JAVA&#x6CDB;&#x578B;&#x5C0F;&#x8BB0;"></a>JAVA&#x6CDB;&#x578B;&#x5C0F;&#x8BB0;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1202"><span class="nav-number">4.</span> <span class="nav-text"><a href="#1202" class="headerlink" title="1202"></a>1202</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#win7系统下使用vs-2017编译boost-1-65-1"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#win7&#x7CFB;&#x7EDF;&#x4E0B;&#x4F7F;&#x7528;vs-2017&#x7F16;&#x8BD1;boost-1-65-1" class="headerlink" title="win7&#x7CFB;&#x7EDF;&#x4E0B;&#x4F7F;&#x7528;vs 2017&#x7F16;&#x8BD1;boost 1.65.1"></a>win7&#x7CFB;&#x7EDF;&#x4E0B;&#x4F7F;&#x7528;vs 2017&#x7F16;&#x8BD1;boost 1.65.1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1203"><span class="nav-number">5.</span> <span class="nav-text"><a href="#1203" class="headerlink" title="1203"></a>1203</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-下实现并使用split方法"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#c-&#x4E0B;&#x5B9E;&#x73B0;&#x5E76;&#x4F7F;&#x7528;split&#x65B9;&#x6CD5;" class="headerlink" title="c++ &#x4E0B;&#x5B9E;&#x73B0;&#x5E76;&#x4F7F;&#x7528;split&#x65B9;&#x6CD5;"></a>c++ &#x4E0B;&#x5B9E;&#x73B0;&#x5E76;&#x4F7F;&#x7528;split&#x65B9;&#x6CD5;</span></a></li></ol></li></ol></div>
             
 
           </div>

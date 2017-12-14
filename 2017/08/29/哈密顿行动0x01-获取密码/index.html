@@ -100,6 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/29/哈密顿行动0x01-获取密码/index.html">
 <meta property="og:site_name" content="像素书">
 <meta property="og:description" content="关卡描述进入第一关，是需要得到一个密码。  关卡解答一般这种游戏第一关都比较套路了，想知道的都在源码里。所以打开源码看一下： 12345678910111213141516171819202122232425262728293031&amp;lt;SCRIPT language=JavaScript&amp;gt;&amp;lt;!--// 由给定的数组生成一个新的数组，其实就是在最前面添了没用的一位function m">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/hmdxd01-1.png">
 <meta property="og:updated_time" content="2017-10-18T02:08:29.799Z">
 <meta name="twitter:card" content="summary">
@@ -342,7 +343,7 @@
 <blockquote>
 <p>eval(unescape(“function%20RsRsRsRs%28teaabb%29%20%7Bvar%20tttmmm%3D%22%22%3Bl%3Dteaabb.length%3Bwww%3Dhhhhffff%3DMath.round%28l/2%29%3Bif%28l%3C2<em>www%29hhhhffff%3Dhhhhffff-1%3Bfor%28i%3D0%3Bi%3Chhhhffff%3Bi++%29tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28i%29+%20teaabb.charAt%28i+hhhhffff%29%3Bif%28l%3C2</em>www%29%20tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28l-1%29%3Bdocument.write%28tttmmm%29%3B%7DRsRsRsRs%28wlkji%29%3B”));</p>
 </blockquote>
-<p>通过<a href="http://www.bejson.com/enc/eval_package/" target="_blank" rel="external">在线解密</a>解密后得到eval执行的字符串内容为</p>
+<p>通过<a href="http://www.bejson.com/enc/eval_package/" target="_blank" rel="noopener">在线解密</a>解密后得到eval执行的字符串内容为</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">RsRsRsRs</span>(<span class="params">teaabb</span>) </span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">var</span> tttmmm=<span class="string">""</span>;</div><div class="line">    l=teaabb.length;</div><div class="line">    www=hhhhffff=<span class="built_in">Math</span>.round(l/<span class="number">2</span>);</div><div class="line">    <span class="keyword">if</span>(l&lt;<span class="number">2</span>*www)</div><div class="line">        hhhhffff=hhhhffff<span class="number">-1</span>;</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;hhhhffff;i++)</div><div class="line">        tttmmm = tttmmm + teaabb.charAt(i)+ teaabb.charAt(i+hhhhffff);</div><div class="line">    <span class="keyword">if</span>(l&lt;<span class="number">2</span>*www)</div><div class="line">        tttmmm = tttmmm + teaabb.charAt(l<span class="number">-1</span>);</div><div class="line">    <span class="built_in">document</span>.write(tttmmm);</div><div class="line">&#125;</div><div class="line"></div><div class="line">RsRsRsRs(wlkji);</div></pre></td></tr></table></figure>
 <p>只需要将wlkji带入该函数即可得到和上面手工拼接相同的代码，这段解密代码也非常容易改写成python的形式。</p>
 <h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><h4 id="JavaScript-eval-函数"><a href="#JavaScript-eval-函数" class="headerlink" title="JavaScript eval() 函数"></a>JavaScript eval() 函数</h4><p>eval() 函数计算 JavaScript 字符串，并把它作为脚本代码来执行。</p>
@@ -481,7 +482,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -494,7 +495,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -529,7 +530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡描述"><span class="nav-number">1.</span> <span class="nav-text">关卡描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡解答"><span class="nav-number">2.</span> <span class="nav-text">关卡解答</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-number">3.</span> <span class="nav-text">备注</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-eval-函数"><span class="nav-number">3.1.</span> <span class="nav-text">JavaScript eval() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-charAt-方法"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript charAt() 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-round-方法"><span class="nav-number">3.3.</span> <span class="nav-text">JavaScript round() 方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡描述"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x5173;&#x5361;&#x63CF;&#x8FF0;" class="headerlink" title="&#x5173;&#x5361;&#x63CF;&#x8FF0;"></a>&#x5173;&#x5361;&#x63CF;&#x8FF0;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关卡解答"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5173;&#x5361;&#x89E3;&#x7B54;" class="headerlink" title="&#x5173;&#x5361;&#x89E3;&#x7B54;"></a>&#x5173;&#x5361;&#x89E3;&#x7B54;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#备注"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x5907;&#x6CE8;" class="headerlink" title="&#x5907;&#x6CE8;"></a>&#x5907;&#x6CE8;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-eval-函数"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#JavaScript-eval-&#x51FD;&#x6570;" class="headerlink" title="JavaScript eval() &#x51FD;&#x6570;"></a>JavaScript eval() &#x51FD;&#x6570;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-charAt-方法"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#JavaScript-charAt-&#x65B9;&#x6CD5;" class="headerlink" title="JavaScript charAt() &#x65B9;&#x6CD5;"></a>JavaScript charAt() &#x65B9;&#x6CD5;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-round-方法"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#JavaScript-round-&#x65B9;&#x6CD5;" class="headerlink" title="JavaScript round() &#x65B9;&#x6CD5;"></a>JavaScript round() &#x65B9;&#x6CD5;</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,0 +1,739 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vs,package control," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="vcpkg介绍先把官方仓库的连接撂在这里 。 一个来自官方仓库的概述 Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success. For short des">
+<meta name="keywords" content="vs,package control">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vckpg 使用小记">
+<meta property="og:url" content="http://yoursite.com/2017/12/14/vckpg-使用小记/index.html">
+<meta property="og:site_name" content="像素书">
+<meta property="og:description" content="vcpkg介绍先把官方仓库的连接撂在这里 。 一个来自官方仓库的概述 Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success. For short des">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-14T08:58:53.917Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vckpg 使用小记">
+<meta name="twitter:description" content="vcpkg介绍先把官方仓库的连接撂在这里 。 一个来自官方仓库的概述 Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success. For short des">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/14/vckpg-使用小记/"/>
+
+
+
+
+
+  <title>vckpg 使用小记 | 像素书</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">叙事诗</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/vckpg-使用小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vckpg 使用小记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T16:06:57+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="vcpkg介绍"><a href="#vcpkg介绍" class="headerlink" title="vcpkg介绍"></a>vcpkg介绍</h2><p>先把官方仓库的连接撂在<a href="https://github.com/Microsoft/vcpkg" target="_blank" rel="noopener">这里</a> 。</p>
+<h3 id="一个来自官方仓库的概述"><a href="#一个来自官方仓库的概述" class="headerlink" title="一个来自官方仓库的概述"></a>一个来自官方仓库的概述</h3><blockquote>
+<p>Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success.</p>
+<p>For short description of available commands, run <code>vcpkg help</code>.</p>
+</blockquote>
+<p>总而言之，vcpkg可以看做Windows下C和C++的包管理工具，使用它可以方便的安装和使用<strong>常用</strong>的C、C++库。</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>系统要求：</p>
+<ul>
+<li>Windows 10, 8.1, or 7</li>
+<li>Visual Studio 2017 or Visual Studio 2015 Update 3</li>
+<li>Git</li>
+<li><em>Optional: CMake 3.10.0</em>  // 可选</li>
+</ul>
+<p>clone项目到本地，执行以下操作：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/Microsoft/vcpkg.git</div><div class="line"><span class="built_in">cd</span> vcpkg</div><div class="line"><span class="comment"># run bootstrap-vcpkg.bat</span></div><div class="line">.\bootstrap-vcpkg.bat</div><div class="line"><span class="comment"># Then, to hook up user-wide integration, run (note: requires admin on first use)</span></div><div class="line">.\vcpkg integrate install</div><div class="line"><span class="comment"># 直接 vcpkg.exe integrate install 也可以，上面应该是在power shell中使用的命令</span></div><div class="line"><span class="comment"># 这个命令就是使该工具的作用范围为全局用户范围</span></div><div class="line"><span class="comment"># Install any packages with</span></div><div class="line">.\vcpkg install package1 package2 ...</div></pre></td></tr></table></figure>
+<p>然后打开 Visual Studio 2017 或者 2015，直接使用<code>#include</code>导入头文件，愉快的使用吧~</p>
+<h3 id="配置Tab自动补全"><a href="#配置Tab自动补全" class="headerlink" title="配置Tab自动补全"></a>配置Tab自动补全</h3><p>vcpkg支持自动补全，包括<strong>命令、包名、选项</strong>等 ，通过输入以下命令在power shell中开启自动补全功能：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\vcpkg integrate powershell</div></pre></td></tr></table></figure>
+<p>重启power shell即可。</p>
+<h3 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h3><p>查看托管在<em>ReadTheDocs</em>的<a href="https://vcpkg.readthedocs.io/" target="_blank" rel="noopener">文档</a> 。</p>
+<h2 id="vcpkg安装gtest"><a href="#vcpkg安装gtest" class="headerlink" title="vcpkg安装gtest"></a>vcpkg安装gtest</h2><p>先使用<code>search</code>命令搜索一下gtest是否包含在支持安装的列表中：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">C:\vcpkg&gt;vcpkg.exe search gtest</div><div class="line">gtest                1.8-1            GoogleTest and GoogleMock testing framewor</div><div class="line">ks.</div><div class="line"></div><div class="line">If your library is not listed, please open an issue at and/or consider making a</div><div class="line">pull request:</div><div class="line">    https://github.com/Microsoft/vcpkg/issues</div></pre></td></tr></table></figure>
+<p>使用<code>install</code>命令进行安装:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">C:\vcpkg&gt;vcpkg.exe install gtest</div><div class="line">The following packages will be built and installed:</div><div class="line">    gtest:x86-windows</div><div class="line">Starting package 1/1: gtest:x86-windows</div><div class="line">Building package gtest:x86-windows...</div><div class="line">-- CURRENT_INSTALLED_DIR=C:/vcpkg/installed/x86-windows</div><div class="line">-- DOWNLOADS=C:/vcpkg/downloads</div><div class="line">-- CURRENT_PACKAGES_DIR=C:/vcpkg/packages/gtest_x86-windows</div><div class="line">-- CURRENT_BUILDTREES_DIR=C:/vcpkg/buildtrees/gtest</div><div class="line">-- CURRENT_PORT_DIR=C:/vcpkg/ports/gtest/.</div><div class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</div><div class="line">...</div><div class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</div><div class="line">... OK</div><div class="line">-- Testing integrity of downloaded file...</div><div class="line">-- Testing integrity of downloaded file... OK</div><div class="line">-- Extracting <span class="built_in">source</span> C:/vcpkg/downloads/google-googletest-release-1.8.0.tar.gz</div><div class="line">-- Extracting <span class="keyword">done</span></div><div class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</div><div class="line">appveyor-fail.patch</div><div class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</div><div class="line">appveyor-fail.patch <span class="keyword">done</span></div><div class="line">-- Configuring x86-windows-rel</div><div class="line">-- Configuring x86-windows-rel <span class="keyword">done</span></div><div class="line">-- Configuring x86-windows-dbg</div><div class="line">-- Configuring x86-windows-dbg <span class="keyword">done</span></div><div class="line">-- Build x86-windows-rel</div><div class="line">-- Build x86-windows-rel <span class="keyword">done</span></div><div class="line">-- Build x86-windows-dbg</div><div class="line">-- Build x86-windows-dbg <span class="keyword">done</span></div><div class="line">-- Installing: C:/vcpkg/packages/gtest_x86-windows/share/gtest/copyright</div><div class="line">-- Performing post-build validation</div><div class="line">-- Performing post-build validation <span class="keyword">done</span></div><div class="line">Building package gtest:x86-windows... <span class="keyword">done</span></div><div class="line">Installing package gtest:x86-windows...</div><div class="line">Installing package gtest:x86-windows... <span class="keyword">done</span></div><div class="line">Elapsed time <span class="keyword">for</span> package gtest:x86-windows: 3.147 min</div><div class="line"></div><div class="line">Total elapsed time: 3.147 min</div><div class="line"></div><div class="line">The package gtest is compatible with built-in CMake targets:</div><div class="line"></div><div class="line">    enable_testing()</div><div class="line">    find_package(GTest REQUIRED)</div><div class="line">    target_link_libraries(main PRIVATE GTest::GTest GTest::Main)</div><div class="line">    add_test(AllTestsInMain main)</div></pre></td></tr></table></figure>
+<p>使用<code>list</code>命令查看x86 windows桌面版下gtest是否安装成功：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">C:\vcpkg&gt;vcpkg.exe list</div><div class="line">gtest[core]:x86-windows        1.8-1            GoogleTest and GoogleMock testin</div><div class="line">g frameworks.</div></pre></td></tr></table></figure>
+<p>还可以通过在包名后面指定架构安装特定的包，例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># x86-uwp:  Universal Windows Platform</span></div><div class="line"><span class="comment"># x64-windows:  x64 Desktop</span></div><div class="line">C:\vcpkg&gt;vcpkg.exe install sqlite3:x86-uwp zlib:x64-windows </div><div class="line"></div><div class="line"><span class="comment"># 查看所有支持的目标</span></div><div class="line">C:\vcpkg&gt;vcpkg.exe <span class="built_in">help</span> triplet </div><div class="line">Available architecture triplets:</div><div class="line">  arm-uwp</div><div class="line">  arm64-uwp</div><div class="line">  x64-uwp</div><div class="line">  x64-windows-static</div><div class="line">  x64-windows</div><div class="line">  x86-uwp</div><div class="line">  x86-windows-static</div><div class="line">  x86-windows</div></pre></td></tr></table></figure>
+<p>最后，使用<code>integrate</code>命令使得gtest可以被用于所有当前用户的项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">C:\vcpkg&gt;vcpkg.exe integrate install</div><div class="line">Applied user-wide integration <span class="keyword">for</span> this vcpkg root.</div><div class="line"></div><div class="line">All MSBuild C++ projects can now <span class="comment">#include any installed libraries.</span></div><div class="line">Linking will be handled automatically.</div><div class="line">Installing new libraries will make them instantly available.</div><div class="line"></div><div class="line">CMake projects should use: <span class="string">"-DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems</span></div><div class="line">/vcpkg.cmake"</div><div class="line"><span class="comment"># 使用 vcpkg.exe integrate remove 移除整合</span></div></pre></td></tr></table></figure>
+<p> 至此，一次<code>vcpkg</code>的使用就结束了，比起之前自己编译配置路径确实方便了不少，关键还几乎不会出错，是很赞了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vs/" rel="tag"># vs</a>
+          
+            <a href="/tags/package-control/" rel="tag"># package control</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/term-1-14th-week/" rel="next" title="term 1: 14th week">
+                <i class="fa fa-chevron-left"></i> term 1: 14th week
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="许山山" />
+          <p class="site-author-name" itemprop="name">许山山</p>
+           
+              <p class="site-description motion-element" itemprop="description">繁华尘世，时光如沙，轻歌曼舞有时尽。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vcpkg介绍"><span class="nav-number">1.</span> <span class="nav-text"><a href="#vcpkg&#x4ECB;&#x7ECD;" class="headerlink" title="vcpkg&#x4ECB;&#x7ECD;"></a>vcpkg&#x4ECB;&#x7ECD;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个来自官方仓库的概述"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x4E00;&#x4E2A;&#x6765;&#x81EA;&#x5B98;&#x65B9;&#x4ED3;&#x5E93;&#x7684;&#x6982;&#x8FF0;" class="headerlink" title="&#x4E00;&#x4E2A;&#x6765;&#x81EA;&#x5B98;&#x65B9;&#x4ED3;&#x5E93;&#x7684;&#x6982;&#x8FF0;"></a>&#x4E00;&#x4E2A;&#x6765;&#x81EA;&#x5B98;&#x65B9;&#x4ED3;&#x5E93;&#x7684;&#x6982;&#x8FF0;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速开始"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x5FEB;&#x901F;&#x5F00;&#x59CB;" class="headerlink" title="&#x5FEB;&#x901F;&#x5F00;&#x59CB;"></a>&#x5FEB;&#x901F;&#x5F00;&#x59CB;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Tab自动补全"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Tab&#x81EA;&#x52A8;&#x8865;&#x5168;" class="headerlink" title="&#x914D;&#x7F6E;Tab&#x81EA;&#x52A8;&#x8865;&#x5168;"></a>&#x914D;&#x7F6E;Tab&#x81EA;&#x52A8;&#x8865;&#x5168;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多信息"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#&#x66F4;&#x591A;&#x4FE1;&#x606F;" class="headerlink" title="&#x66F4;&#x591A;&#x4FE1;&#x606F;"></a>&#x66F4;&#x591A;&#x4FE1;&#x606F;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vcpkg安装gtest"><span class="nav-number">2.</span> <span class="nav-text"><a href="#vcpkg&#x5B89;&#x88C5;gtest" class="headerlink" title="vcpkg&#x5B89;&#x88C5;gtest"></a>vcpkg&#x5B89;&#x88C5;gtest</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许山山</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
