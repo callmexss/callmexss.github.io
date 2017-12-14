@@ -339,7 +339,7 @@
 <li><em>Optional: CMake 3.10.0</em>  // 可选</li>
 </ul>
 <p>clone项目到本地，执行以下操作：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/Microsoft/vcpkg.git</div><div class="line"><span class="built_in">cd</span> vcpkg</div><div class="line"><span class="comment"># run bootstrap-vcpkg.bat</span></div><div class="line">.\bootstrap-vcpkg.bat</div><div class="line"><span class="comment"># Then, to hook up user-wide integration, run (note: requires admin on first use)</span></div><div class="line">.\vcpkg integrate install</div><div class="line"><span class="comment"># 直接 vcpkg.exe integrate install 也可以，上面应该是在power shell中使用的命令</span></div><div class="line"><span class="comment"># 这个命令就是使该工具的作用范围为全局用户范围</span></div><div class="line"><span class="comment"># Install any packages with</span></div><div class="line">.\vcpkg install package1 package2 ...</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/Microsoft/vcpkg.git</div><div class="line"><span class="built_in">cd</span> vcpkg</div><div class="line"><span class="comment"># run bootstrap-vcpkg.bat</span></div><div class="line">.\bootstrap-vcpkg.bat</div><div class="line"><span class="comment"># Then, to hook up user-wide integration, run (note: requires admin on first use)</span></div><div class="line">.\vcpkg integrate install</div><div class="line"><span class="comment"># 直接 vcpkg.exe integrate install 也可以，上面应该是在power shell中使用的命令</span></div><div class="line"><span class="comment"># 这个命令就是使该工具的作用范围为全局用户范围</span></div><div class="line"><span class="comment"># Install any packages with</span></div><div class="line">.\vcpkg install package1 package2 ...</div><div class="line">.\vcpkg integrate install</div></pre></td></tr></table></figure>
 <p>然后打开 Visual Studio 2017 或者 2015，直接使用<code>#include</code>导入头文件，愉快的使用吧~</p>
 <h3 id="配置Tab自动补全"><a href="#配置Tab自动补全" class="headerlink" title="配置Tab自动补全"></a>配置Tab自动补全</h3><p>vcpkg支持自动补全，包括<strong>命令、包名、选项</strong>等 ，通过输入以下命令在power shell中开启自动补全功能：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.\vcpkg integrate powershell</div></pre></td></tr></table></figure>
@@ -2277,7 +2277,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
