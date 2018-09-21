@@ -15,18 +15,7 @@ install:
 
 script:
 - hexo generate
-- hexo deploy
 
 after_success:
-- cd ./public
-- git init
-- git config --global user.name "callmexss"
-- git config --global user.email "callmexss@126.com"
-# - sed -i'' "/^ *repo/s~github\.com~${travis_ci}@github.com~" _config.yml
-- git add .
-- git commit -m 'Updete'
-- git push --force --quiet "https://${travis_ci}@${GH_REF}" master:master
-
-env:
-  global:
-    - GH_REF: github.com/callmexss/callmexss.github.io.git
+- sed -i'' "/^ *repo/s~github\.com~${travis_ci}@github.com~" _config.yml
+- hexo deploy
