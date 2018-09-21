@@ -70,6 +70,6 @@ theme: next
 deploy:
   type: git
   # repo: git@github.com:callmexss/callmexss.github.io
-  repo: "/^ *repo/s~github\.com~${travis_ci}@github.com~"
+  repo: /^ *repo/s~github\.com~${travis_ci}@github.com~
   branch: master
 
