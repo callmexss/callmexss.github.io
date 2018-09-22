@@ -24,7 +24,7 @@ after_script:
 
 branches:
   only:
-    - hexo
+    - blog
 env:
  global:
    - GH_REF: github.com/callmexss/callmexss.github.io.git
