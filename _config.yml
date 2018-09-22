@@ -69,7 +69,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: git@github.com:callmexss/callmexss.github.io
-  repo: /^ *repo/s~github\.com~${travis_ci}@github.com~
+  repo: git@github.com:callmexss/callmexss.github.io
   branch: master
 

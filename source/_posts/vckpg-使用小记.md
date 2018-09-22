@@ -1,6 +1,7 @@
 ---
 title: vckpg 使用小记
 date: 2017-12-14 16:06:57
+categories: tools
 tags: 
   - vs 
   - package control
