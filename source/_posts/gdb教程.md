@@ -23,7 +23,7 @@ tags:
 
 代码非常简单，包含一个节点和一个链表的定义。这也是测试列表的一个简单开始。为了能够更容易的阐述调试的过程，所有的代码被放在了一个文件中。
 
-**注意:** 由于代码比较久远，其中有一些需要修改的地方，一份[修改后的代码]()放到github仓库中了。Makefile比较短，贴在这里学习一下：
+**注意:** 由于代码比较久远，其中有一些需要修改的地方，一份[修改后的代码](https://raw.githubusercontent.com/callmexss/callmexss.github.io/blog/source/_posts/gdb%E6%95%99%E7%A8%8B/main.cc)放到github仓库中了。Makefile比较短，贴在这里学习一下：
 ```sh
 CXX = g++ # 指定编译器
 FLAGS = -ggdb -Wall # 使用调试模式
