@@ -120,7 +120,7 @@ Node<int>::next (this=0x0) at main.cc:28
 ```sh
 (gdb) backtrace
 #0  Node<int>::next (this=0x0) at main.cc:28
-#1  0x2a16c in LinkedList<int>::remove (this=0x40160, 
+#1  0x2a16c in LinkedList<int>::remove (this=0x40160,
     item_to_remove=@0xffbef014) at main.cc:77
 #2  0x1ad10 in main (argc=1, argv=0xffbef0a4) at main.cc:111
 (gdb)
@@ -162,7 +162,7 @@ Breakpoint 1 at 0x29fa0: file main.cc, line 52.
 继续上面的例子，我们现在已经设置了一个条件断点，然后让程序每次运行一步，看是否能够定位错误的源头。可以通过`step`命令完成这个过程。gdb有一个很棒的特性，不输入命令直接按下回车时，会自动执行上一条命令。也就是说，在第一次输入`step`后我们就可以通过敲击回车让调试器继续执行`step`命令了。这看起来就像：
 
 ```sh
-Breakpoint 1, LinkedList<int>::remove (this=0x40160, 
+Breakpoint 1, LinkedList<int>::remove (this=0x40160,
     item_to_remove=@0xffbef014) at main.cc:52
 52     Node<T> *marker = head_;
 (gdb) step
@@ -198,8 +198,20 @@ Node<int>::next (this=0x0) at main.cc:28
 
 程序的错误很明显了。在第75行`marker`被置为0,但是在第77行`marker`的一个成员被访问，**访问没有初始化的对象是危险的**。因为程序不能方位地址为0的内存，所以段错误发生了。在这个例子中，在本例中，`marker`并不用做什么，可以简单的通过移除main.cc的第75行来避免这个错误。
 
-如果你观察程序的输入，你会发现程序会先正常运行一段时间，但是程序中某处会产生内存泄漏。（提示：它就在`LinkedList<T>::remove()`方法里，某次remove没有正常工作时产生）。这将给读者留作使用调试器定位和修复bug的练习。
+如果你观察程序的输入，你会发现程序会先正常运行一段时间，但是程序中某处会产生内存泄漏。（提示：它就在`LinkedList<T>::remove()`方法里，某次remove没有正常工作时产生）。这将给读者留作使用调试器定位和修复bug的练习。（我总是喜欢这么说.;）
+
+gdb通过输入`quit`退出。
 
 ## 更多信息
 
+本文档只涉及使用gdb的最小知识。可以通过gdb的manpage或者看[这份非常长的关于gdb的介绍](http://sources.redhat.com/gdb/current/onlinedocs/gdb_toc.html)可以通过在运行gdb时输入`help`获取在线命令。此外，一如往常，欢迎在新闻组里提问或者在工作时间来问我。
+
 ## 注意
+
+- 上面链表的代码中还有一个未被提到的错误。这个错误在按照原始代码中的顺序添加和移除元素时不会发生，但是在其它顺序下会产生。例如，插入1，2，3，和 4，然后尝试删除2时会产生。非常感谢Linda Gu 和 Xiaofeng Chen发现这个错误。这个bug的修复非常简单，也一并留作额外练习。
+- 特别鸣谢Ximmbo da Jazz修复了一些错别字和错误的输出。
+- 特别鸣谢Raghuprasad Govindarao发现了损坏的链接。
+  
+---
+请将评论，建议和错误报告发送给[Andrew Gilpin](mailto:gilpin@cs.cmu.edu)。  
+页面最后修改时间：2004年4月7日
