@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'UDVBM0EJD2',
+      apiKey: 'cae8b12acd150c2ce7d02d0c6ac7dddf',
+      indexName: 'blogSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1120hexo 图片加载不正常一个来自简书的解决方法 。 该方法使用的是hexo-asset-img插件，图片的插入方法不再使用markdown的语法，而是： 1&amp;#123;% asset_img example.png plus title %&amp;#125; 1121c++ 基本概念 一个 C++ 程序由含有声明的文本文件序列（通常为头文件与源文件）组成。它们被翻译成一个可执行文件，操作系统通过">
+<meta name="keywords" content="c++,linux,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="term 1: 12th week">
+<meta property="og:url" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/index.html">
+<meta property="og:site_name" content="像素书">
+<meta property="og:description" content="1120hexo 图片加载不正常一个来自简书的解决方法 。 该方法使用的是hexo-asset-img插件，图片的插入方法不再使用markdown的语法，而是： 1&amp;#123;% asset_img example.png plus title %&amp;#125; 1121c++ 基本概念 一个 C++ 程序由含有声明的文本文件序列（通常为头文件与源文件）组成。它们被翻译成一个可执行文件，操作系统通过">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/c++关键字.png">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/std-io-complete-inheritance.svg">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/ioexample.png">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/cout.png">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/c_c++_general.png">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/linker_input.png">
+<meta property="og:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/test_res.png">
+<meta property="og:updated_time" content="2018-09-30T09:19:48.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="term 1: 12th week">
+<meta name="twitter:description" content="1120hexo 图片加载不正常一个来自简书的解决方法 。 该方法使用的是hexo-asset-img插件，图片的插入方法不再使用markdown的语法，而是： 1&amp;#123;% asset_img example.png plus title %&amp;#125; 1121c++ 基本概念 一个 C++ 程序由含有声明的文本文件序列（通常为头文件与源文件）组成。它们被翻译成一个可执行文件，操作系统通过">
+<meta name="twitter:image" content="https://callmexss.github.io/2017/11/20/term-1-12th-week/c++关键字.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="像素书" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://callmexss.github.io/2017/11/20/term-1-12th-week/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>term 1: 12th week | 像素书</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">叙事诗</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.github.io/2017/11/20/term-1-12th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">term 1: 12th week
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-11-20 21:07:12" itemprop="dateCreated datePublished" datetime="2017-11-20T21:07:12+08:00">2017-11-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-30 17:19:48" itemprop="dateModified" datetime="2018-09-30T17:19:48+08:00">2018-09-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/20/term-1-12th-week/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2017/11/20/term-1-12th-week/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/20/term-1-12th-week/" class="leancloud_visitors" data-flag-title="term 1: 12th week">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1120"><a href="#1120" class="headerlink" title="1120"></a>1120</h2><h3 id="hexo-图片加载不正常"><a href="#hexo-图片加载不正常" class="headerlink" title="hexo 图片加载不正常"></a>hexo 图片加载不正常</h3><p>一个来自简书的<a href="http://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">解决方法</a> 。</p>
+<p>该方法使用的是<code>hexo-asset-img</code>插件，图片的插入方法不再使用<em>markdown</em>的语法，而是：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#123;%</span> <span class="string">asset_img</span> <span class="string">example.png</span> <span class="string">plus</span> <span class="string">title</span> <span class="string">%&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="1121"><a href="#1121" class="headerlink" title="1121"></a>1121</h2><h3 id="c-基本概念"><a href="#c-基本概念" class="headerlink" title="c++ 基本概念"></a>c++ 基本概念</h3><blockquote>
+<p>一个 C++ 程序由含有<a href="http://zh.cppreference.com/w/cpp/language/declarations" target="_blank" rel="noopener">声明</a>的文本文件序列（通常为头文件与源文件）组成。它们被<a href="http://zh.cppreference.com/w/cpp/language/translation_phases" target="_blank" rel="noopener">翻译</a>成一个可执行文件，操作系统通过调用其 <a href="http://zh.cppreference.com/w/cpp/language/main_function" target="_blank" rel="noopener">main 函数</a>执行这一程序。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function declaration</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">println</span><span class="params">(<span class="built_in">string</span> s)</span></span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hello.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"hello.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> s = <span class="string">"hellowrold"</span>;</span><br><span class="line">	println(s);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// function implementation</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">println</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>在 C++ 程序中，一些被称为<a href="http://zh.cppreference.com/w/cpp/keyword" target="_blank" rel="noopener">关键词</a>的词语有着特殊的含义。其它词语可以被用作<a href="http://zh.cppreference.com/w/cpp/language/identifiers" target="_blank" rel="noopener">标识符</a>。在翻译的过程中，<a href="http://zh.cppreference.com/w/cpp/comment" target="_blank" rel="noopener">注释</a>会被忽略。程序中的某些字符必须通过<a href="http://zh.cppreference.com/w/cpp/language/escape" target="_blank" rel="noopener">转义序列</a>表示。</p>
+</blockquote>
+ <img src="/2017/11/20/term-1-12th-week/c++关键字.png" title="c++ 关键字">
+<hr>
+<blockquote>
+<p>C++ 程序中的<strong>实体</strong>包括值、<a href="http://zh.cppreference.com/w/cpp/language/object" target="_blank" rel="noopener">对象</a>、<a href="http://zh.cppreference.com/w/cpp/language/reference" target="_blank" rel="noopener">引用</a>、 <a href="http://zh.cppreference.com/w/cpp/language/structured_binding" target="_blank" rel="noopener">结构化绑定</a> (C++17 起)、<a href="http://zh.cppreference.com/w/cpp/language/functions" target="_blank" rel="noopener">函数</a>、<a href="http://zh.cppreference.com/w/cpp/language/enum" target="_blank" rel="noopener">枚举项</a>、<a href="http://zh.cppreference.com/w/cpp/language/type" target="_blank" rel="noopener">类型</a>、类成员、<a href="http://zh.cppreference.com/w/cpp/language/templates" target="_blank" rel="noopener">模板</a>、<a href="http://zh.cppreference.com/w/cpp/language/template_specialization" target="_blank" rel="noopener">模板特化</a>、<a href="http://zh.cppreference.com/w/cpp/language/namespace" target="_blank" rel="noopener">命名空间</a>、<a href="http://zh.cppreference.com/w/cpp/language/parameter_pack" target="_blank" rel="noopener">形参包</a>和 this 指针。预处理器<a href="http://zh.cppreference.com/w/cpp/preprocessor/replace" target="_blank" rel="noopener">宏</a>不是 C++ 实体。</p>
+</blockquote>
+<h3 id="c-输入、输出和文件"><a href="#c-输入、输出和文件" class="headerlink" title="c++ 输入、输出和文件"></a>c++ 输入、输出和文件</h3><h4 id="流和缓冲区"><a href="#流和缓冲区" class="headerlink" title="流和缓冲区"></a>流和缓冲区</h4> <img src="/2017/11/20/term-1-12th-week/std-io-complete-inheritance.svg" title="基于流的 I/O 继承图">
+<p>C++程序将输入和输出视为字节流。输入过程中，程序从输入流中抽取字节；输出过程中，程序将字节插入到输出流中。C++在输入和输出过程只关心字节流而不关心其来源和去向。</p>
+ <img src="/2017/11/20/term-1-12th-week/ioexample.png" title="C++的输入和输出">
+<p>通常情况下，使用缓冲区可以更高效处理输入和输出。<strong>缓冲区</strong>是一个内存块，作为程序和设备的中间件，用来存储在程序和设备之间流转的数据。</p>
+<h4 id="cout"><a href="#cout" class="headerlink" title="cout"></a>cout</h4> <img src="/2017/11/20/term-1-12th-week/cout.png" title="cout的输出过程">
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="comment">// review the iterator</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; &amp; v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ostream_iterator&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt; out(<span class="built_in">cout</span>);</span><br><span class="line">	copy(v.begin(), v.end(), out);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// review the vector</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; charlist = &#123; <span class="string">'a'</span>, <span class="string">'p'</span>, <span class="string">'p'</span>, <span class="string">'l'</span>, <span class="string">'e'</span> &#125;;</span><br><span class="line">	charlist.push_back(<span class="string">'.'</span>);</span><br><span class="line">	</span><br><span class="line">	show(charlist);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ust the put function, which displays a char</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; charlist.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">		<span class="built_in">cout</span>.put(charlist[i]);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> * state1 = <span class="string">"Lfish"</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> * state2 = <span class="string">"theoceanside"</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="built_in">strlen</span>(state1);</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// use the write function, which displays a string by length</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Increase loop index:\n"</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>.write(state1, i);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"Decrease loop index:\n"</span>;</span><br><span class="line">	<span class="keyword">for</span> (i = len; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">		<span class="built_in">cout</span>.write(state1, i) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// exceed the string length</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"exceed the string length: "</span>;</span><br><span class="line">	<span class="built_in">cout</span>.write(state1, len + <span class="number">5</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apple.</span><br><span class="line">0: a</span><br><span class="line">1: p</span><br><span class="line">2: p</span><br><span class="line">3: l</span><br><span class="line">4: e</span><br><span class="line">5: .</span><br><span class="line">W</span><br><span class="line">Increase loop index:</span><br><span class="line">L</span><br><span class="line">Lf</span><br><span class="line">Lfi</span><br><span class="line">Lfis</span><br><span class="line">Lfish</span><br><span class="line">Decrease loop index:</span><br><span class="line">Lfish</span><br><span class="line">Lfis</span><br><span class="line">Lfi</span><br><span class="line">Lf</span><br><span class="line">L</span><br><span class="line">exceed the string length: Lfishaaath</span><br></pre></td></tr></table></figure>
+<p>cout 格式化输出：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// some include, define, usring...</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// flush 操作用于刷新缓冲区。</span></span><br><span class="line">    <span class="comment">// 向屏幕输出时，不必等到缓冲区填满才输出。</span></span><br><span class="line">    <span class="comment">// 向缓冲区输入换行符或者等待输入时都会刷新缓冲区。</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; endl; 操作等同于 cout &lt;&lt; flush &lt;&lt; "\n";</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; flush; 等同于 flush(cout);</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 可以用以下方法输出8进制和16进制数。</span></span><br><span class="line">	<span class="keyword">int</span> n = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 以8进制输出 10</span></span><br><span class="line">	oct(<span class="built_in">cout</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 以16进制输出 a</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; hex &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="comment">// '' -&gt; 字符，（本质是整型，多个字符会计算其乘积作为结果）</span></span><br><span class="line">    <span class="comment">// "" -&gt; 字符串</span></span><br><span class="line">    <span class="comment">// cout &lt;&lt; 'a: '; ---&gt; 613a20</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"a: "</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 设置宽度</span></span><br><span class="line">    <span class="built_in">cout</span>.width(<span class="number">12</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"apple"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; flush &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  </span><br><span class="line">    dec(<span class="built_in">cout</span>);</span><br><span class="line">    <span class="keyword">int</span> w = <span class="built_in">cout</span>.width(<span class="number">30</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"default field width = "</span> &lt;&lt; w &lt;&lt; <span class="string">":\n"</span>;</span><br><span class="line">    <span class="built_in">cout</span>.width(<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"N"</span> &lt;&lt; <span class="string">':'</span>;</span><br><span class="line">    <span class="built_in">cout</span>.width(<span class="number">8</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"N * N"</span> &lt;&lt; <span class="string">":\n"</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i *= <span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>.width(<span class="number">5</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">':'</span>;</span><br><span class="line">        <span class="built_in">cout</span>.width(<span class="number">8</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i * i &lt;&lt; <span class="string">":\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 设置填充字符</span></span><br><span class="line">    <span class="built_in">cout</span>.fill(<span class="string">'*'</span>);</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> * staff[<span class="number">2</span>] = &#123; <span class="string">"Waldo Whipsnade"</span>, <span class="string">"Wilmarie Wooper"</span> &#125;;</span><br><span class="line">    <span class="keyword">long</span> bonus[<span class="number">2</span>] = &#123; <span class="number">900</span>, <span class="number">1350</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; staff[i] &lt;&lt; <span class="string">": $"</span>;</span><br><span class="line">        <span class="built_in">cout</span>.width(<span class="number">7</span>);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; bonus[i] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">// 设置浮点数精度</span></span><br><span class="line">    <span class="comment">// 四舍五入</span></span><br><span class="line">    <span class="keyword">float</span> pi = <span class="number">3.14159</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pi &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pi &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// setf --&gt; set flag</span></span><br><span class="line">    <span class="built_in">cout</span>.setf(ios_base::showpoint);</span><br><span class="line">    <span class="keyword">float</span> ten = <span class="number">10.</span>;</span><br><span class="line">    <span class="keyword">float</span> twenty0four = <span class="number">20.04</span>;</span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ten &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; twenty0four &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">a</span><br><span class="line">a:        apple</span><br><span class="line"></span><br><span class="line">        default field width = 0:</span><br><span class="line">    N:   N * N:</span><br><span class="line">    1:       1:</span><br><span class="line">   10:     100:</span><br><span class="line">  100:   10000:</span><br><span class="line">Waldo Whipsnade: $****900</span><br><span class="line">Wilmarie Wooper: $***1350</span><br><span class="line"></span><br><span class="line">3.14159</span><br><span class="line">3.1416</span><br><span class="line"></span><br><span class="line">10.00</span><br><span class="line">20.04</span><br></pre></td></tr></table></figure>
+<p>格式化常量：</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ios_base::boolalpha</td>
+<td>Input and output bool values as true and false</td>
+</tr>
+<tr>
+<td>ios_base::showbase</td>
+<td>Use C++ base prefixes (0,0x) on output</td>
+</tr>
+<tr>
+<td>ios_base::showpoint</td>
+<td>Show trailing decimal point</td>
+</tr>
+<tr>
+<td>ios_base::uppercase</td>
+<td>Use uppercase letters for hex output, E notation</td>
+</tr>
+<tr>
+<td>ios_base::showpos</td>
+<td>Use + before positive numbers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1122"><a href="#1122" class="headerlink" title="1122"></a>1122</h2><h3 id="tar——压缩、解压缩命令"><a href="#tar——压缩、解压缩命令" class="headerlink" title="tar——压缩、解压缩命令"></a>tar——压缩、解压缩命令</h3><blockquote>
+<p>压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称<br>查　询：tar -jtv -f filename.tar.bz2<br>解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录<br>————tar -zxvf 路径/文件名.tar.gz<br>来自: <a href="http://man.linuxde.net/tar" target="_blank" rel="noopener">http://man.linuxde.net/tar</a></p>
+</blockquote>
+<h2 id="1123"><a href="#1123" class="headerlink" title="1123"></a>1123</h2><h3 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h3><h4 id="if-ifdef-ifndef"><a href="#if-ifdef-ifndef" class="headerlink" title="#if - #ifdef - #ifndef"></a>#if - #ifdef - #ifndef</h4><blockquote>
+<p>预处理器支持有条件地编译部分源文件。这一行为由 <code>#if</code>、<code>#else</code>、<code>#elif</code>、<code>#ifdef</code>、<code>#ifndef</code> 与 <code>#endif</code> 指令所控制。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#if</code> 表达式</td>
+</tr>
+<tr>
+<td><code>#ifdef</code> 表达式</td>
+</tr>
+<tr>
+<td><code>#ifndef</code> 表达式</td>
+</tr>
+<tr>
+<td><code>#elif</code> 表达式</td>
+</tr>
+<tr>
+<td><code>#else</code></td>
+</tr>
+<tr>
+<td><code>#endif</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>解释</strong><br>条件编译预处理块由 <code>#if</code>、<code>#ifdef</code> 或 <code>#ifndef</code> 指令开始，并可选地包含任意多个 <code>#elif</code> 指令，接下来是至多一个可选的 <code>#else</code> 指令，并以 <code>#endif</code> 指令结束。嵌套的条件编译区块会被单独处理。</p>
+<p>各个 <code>#if</code>、<code>#elif</code>、<code>#else</code>、<code>#ifdef</code> 和 <code>#ifndef</code> 指令所控制的代码块在第一个不属于内部嵌套的条件编译区块的 <code>#elif</code>、<code>#else</code> 或 <code>#endif</code> 指令处结束。</p>
+<p><code>#if</code>、<code>#ifdef</code> 和 <code>#ifndef</code> 指令测试其所指定的条件（见下文），如果条件求值为真，则编译其控制的代码块。此时后续的 <code>#else</code> 和 <code>#elif</code> 指令将被忽略。否则，如果所指定的条件求值为假，则将跳过其所控制的代码块，然后处理后续的 <code>#else</code> 或 <code>#elif</code> 指令（如果存在）。前一种情况下，<code>#else</code> 指令所控制的代码块将会被无条件地进行编译。后一种情况下，<code>#elif</code> 指令按照与 <code>#if</code> 指令相同的方式执行：即测试条件是否满足，并根据其结果决定编译或跳过其所控制的代码块，后一种情况下继续处理后续的 <code>#elif</code> 和 <code>#else</code> 指令。条件编译区块以 <code>#endif</code> 指令结束。</p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ABCD 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: no\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no1\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> ABCD == 2</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no2\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(DCBA) &amp;&amp; (ABCD &lt; 2*4-3)</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"3: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="define-include"><a href="#define-include" class="headerlink" title="#define - # - ## - #include"></a>#define - # - ## - #include</h4><p>#define</p>
+<blockquote>
+<p>预处理器支持文本宏替换。亦支持仿函数文本宏替换。<br>| 语法                            |<br>| —————————– |<br>| <code>#define</code> 标识符 替换列表(可选)        |<br>| <code>#define</code> 标识符( 形参 ) 替换列表     |<br>| <code>#define</code> 标识符( 形参, … ) 替换列表 |<br>| <code>#define</code> 标识符( … ) 替换列表     |<br>| <code>#undef</code> 标识符                  |</p>
+</blockquote>
+<hr>
+<p># 和 ##</p>
+<blockquote>
+<p>仿函数宏中， 替换列表 中标识符前的 <code>#</code> 运算符经通过标识符运行形参替换，并将结果以引号环绕，等效地创建字符串字面量。另外，预处理器添加反斜杠以转义环绕内嵌字符串字面量的引号，若它存在，并按需要双写字符串中的反斜杠。移除所有前导和尾随空白符，并将文本中部（但非内嵌字符串字面量中内）的任何空白符序列缩减成单个空格。此操作被称为“字符串化”，若字符串化的结果不是合法的字符串字面量，则行为未定义。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// # 出现于 __VA_ARGS__ 前时，整个展开的 __VA_ARGS__ 被包在引号中：</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> showlist(...) puts(#__VA_ARGS__)</span></span><br><span class="line">showlist();            <span class="comment">// 展开成 puts("")</span></span><br><span class="line">showlist(<span class="number">1</span>, <span class="string">"x"</span>, <span class="keyword">int</span>); <span class="comment">// 展开成 puts("1, \"x\", int")</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>替换列表 中任何二个相继标识符间的 <code>##</code> 运算符在二个标识符（首先未被宏展开）上运行形参替换，然后连接结果。此操作被称为“连接”或“记号粘贴”。只有一同组成合法记号的记号才可以粘贴：组成更长标识符的标识符、组成数字的数位，或组成 <code>+=</code> 的运算符 <code>+</code> 与 <code>=</code>。不能以粘贴 <code>/</code> 与 <code>*</code> 创建注释，因为考虑文本宏替换前，注释就被移除了。若连接的结果不是合法记号，则行为未定义。</p>
+</blockquote>
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 制造函数工厂并使用它</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION(name, a) int fun_##name() &#123; return a;&#125;</span></span><br><span class="line"> </span><br><span class="line">FUNCTION(abcd, <span class="number">12</span>)</span><br><span class="line">FUNCTION(fff, <span class="number">2</span>)</span><br><span class="line">FUNCTION(qqq, <span class="number">23</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> FUNCTION</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION 34</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUTPUT(a) std::cout &lt;&lt; #a &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"abcd: "</span> &lt;&lt; fun_abcd() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"fff: "</span> &lt;&lt; fun_fff() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"qqq: "</span> &lt;&lt; fun_qqq() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; FUNCTION &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    OUTPUT(million);               <span class="comment">// 注意缺少引号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>#include </p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>#include &lt;文件名&gt;</td>
+</tr>
+<tr>
+<td>#include “文件名”</td>
+</tr>
+<tr>
+<td><code>__has_include ( &quot; 文件名 &quot; )</code>                                                                                                                                                                 <code>__has_include ( &lt; 文件名 &gt; )</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>任何预处理记号（宏常量或者表达式）都允许用作 <code>#include</code> 和 <code>__has_include</code> (C++17 起)的实参，只要它们扩展为以 &lt; &gt; 或者 “ “ 所包围的字符序列即可。</p>
+</blockquote>
+<p>最近遇到一种头文件里的写法，一直没有查是什么意思，今天偶然看<a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/headers/#define-guard" target="_blank" rel="noopener">谷歌C++风格指南</a> 看到了答案。</p>
+<blockquote>
+<p>头文件应该能够自给自足（self-contained,也就是可以作为第一个头文件被引入），以 <code>.h</code> 结尾。至于用来插入文本的文件，说到底它们并不是头文件，所以应以 <code>.inc</code> 结尾。不允许分离出 <code>-inl.h</code> 头文件的做法。</p>
+</blockquote>
+<blockquote>
+<p>当包含一个文件时，将进行翻译阶段 1 到 4 的处理，其中将递归地包括对其中嵌套的 #include 指令的扩展。为了避免相同文件被重复包含，和当文件（可能传递性地）包含自身时的无限递归，通常会使用头文件防护，整个头文件被包含到：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为保证唯一性, 头文件的命名应该基于所在项目源代码树的全路径.</span></span><br><span class="line"><span class="comment">// 例如, 项目 foo 中的头文件 foo/src/bar/baz.h 可按如下方式保护:</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> FOO_BAR_BAZ_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO_BAR_BAZ_H_</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// FOO_BAR_BAZ_H_</span></span></span><br></pre></td></tr></table></figure>
+<p>即头文件需要<strong><code>#define</code> 保护</strong>（所有头文件都应该使用 <code>#define</code> 来防止头文件被多重包含, 命名格式当是: <code>&lt;PROJECT&gt;_&lt;PATH&gt;_&lt;FILE&gt;_H_</code> .）。</p>
+<h4 id="error-pragma-line"><a href="#error-pragma-line" class="headerlink" title="#error - #pragma - #line"></a>#error - #pragma - #line</h4><p>参考 <a href="http://zh.cppreference.com/w/cpp/preprocessor" target="_blank" rel="noopener">http://zh.cppreference.com/w/cpp/preprocessor</a></p>
+<h3 id="Kali-Linux-persistence-配置"><a href="#Kali-Linux-persistence-配置" class="headerlink" title="Kali Linux persistence 配置"></a>Kali Linux persistence 配置</h3><ol>
+<li><p>使用UltraISO制作U盘镜像。</p>
+</li>
+<li><p>进入BIOS选择U盘启动。</p>
+</li>
+<li><p>在启动界面选择 Live USB Persistence)。</p>
+
+</li>
+<li><p>进入系统后打开终端输入gparted进行分区。</p>
+<ol>
+<li>在gparted中选择U盘（它会识别系统中可以识别的所有硬盘，所以看仔细别把C盘干掉了…）。</li>
+<li>选择合适的新分区大小，设置为<strong>ext4</strong>格式，创建新分区（U盘可以留一部分空间继续当U盘 :)…在Windows下面新建分区的部分不会再被识别，所以看到U盘容量变小了不要差异…）。</li>
+<li>标签名称设置为persistence（别的俺没有试，不造管用不…）。</li>
+<li>最后前往不要忘了保存所有设置，在菜单栏某一条里面（会进行分区操作之类的…稍等一会儿）。</li>
+<li>挂载新分区并进行配置。</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /mnt/my_kali</span><br><span class="line">mount /dev/sdb2 /mnt/my_kali <span class="comment"># replace 'sdb2' with the name of your partition. </span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"/ union"</span> &gt;&gt; /mnt/my_kali/persistence.conf</span><br><span class="line">umount /mnt/usb</span><br></pre></td></tr></table></figure>
+<p>然后创建一个文件，重启一下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch test.txt</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>然后如果重启以后没有看到这个文件…先别着急，打开gparted看一下配置是否还在，就是标签还是不是persistence之类的，如果还在，那就说明配置成功了，再创建一个文件试试看吧。Any way this works fine for me :) </p>
+<p>之后的一些配置：</p>
+<p>修改一下sources.list可以加快软件的安装和更新速度：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">lsb_release -a <span class="comment"># 下查看一下自己是什么版本</span></span><br><span class="line"></span><br><span class="line">vim /etc/apt/sources.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># sources.list</span></span><br><span class="line"><span class="comment">#阿里云</span></span><br><span class="line">deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#中科大</span></span><br><span class="line"><span class="comment">#deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span></span><br><span class="line"><span class="comment">#deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#清华大学</span></span><br><span class="line"><span class="comment">#deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span></span><br><span class="line"><span class="comment">#deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#浙大</span></span><br><span class="line"><span class="comment">#deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span></span><br><span class="line"><span class="comment">#deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>如果你是IPv6用户，可以改个hosts，然后你就可以用Google了：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/bash</span></span><br><span class="line"></span><br><span class="line">mv /etc/hosts /etc/hosts.bak</span><br><span class="line">wget https://raw.githubusercontent.com/lennylxx/ipv6-hosts/master/hosts</span><br><span class="line">mv hosts /etc/</span><br><span class="line"></span><br><span class="line">/etc/init.d/networking restart</span><br></pre></td></tr></table></figure>
+<p>可以写个脚本执行一下，也可以单步执行。</p>
+<hr>
+<p>如果你是python用户，可以改一下pip的默认仓库主页，加快包安装的速度：</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 ~ 目录下是否有 .pip 文件夹</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="comment"># 没有建一个</span></span><br><span class="line">mkdir .pip &amp;&amp; <span class="built_in">cd</span> .pip</span><br><span class="line"><span class="comment"># 创建配置文件</span></span><br><span class="line">vim pip.config</span><br><span class="line"><span class="comment"># pip.config</span></span><br><span class="line">[global]</span><br><span class="line">timeout = 60</span><br><span class="line">index-url = http://download.zope.org/ppix</span><br></pre></td></tr></table></figure>
+<h2 id="1124"><a href="#1124" class="headerlink" title="1124"></a>1124</h2><h3 id="vs2017-使用-Google-Test"><a href="#vs2017-使用-Google-Test" class="headerlink" title="vs2017 使用 Google Test"></a>vs2017 使用 Google Test</h3><p>想要养成好的编码习惯，边写程序边写单元注释，找到了<a href="https://github.com/google/googletest" target="_blank" rel="noopener"><strong>gtest</strong></a>框架，于是准备试用一下。结果就折腾了一下午，记一下这个大坑。</p>
+<p>首先<strong>What</strong> ：</p>
+<blockquote>
+<p>gtest (Google Test) is a unit testing library for the C++ programming language, based on the xUnit architecture.</p>
+</blockquote>
+<p>简单来说它就是一个和<strong>Junit</strong>类似的单元测试框架。</p>
+<p>然后<strong>How</strong> ：</p>
+<p>从官方仓库的<strong>release</strong>中下载压缩文件，解压后直接使用vs2017打开工程编译即可，编译完成后得到库文件<code>gtestd.lib</code> 。按照下面的方法配置到vs2017中：</p>
+<ol>
+<li><p>右键点击打开方案属性窗口，选择c/c++中的常规选项，在<strong>附加包含目录</strong>下填入解压缩后文件中的<code>include</code>文件夹路径，或者自己更改<code>include</code>文件夹的位置，如果想对路径搞不对，直接用绝对路径：</p>
+<img src="/2017/11/20/term-1-12th-week/c_c++_general.png" title="配置附加包目录">
+</li>
+<li><p>选择连接器中的输入选项，在<strong>附加依赖项</strong>中填写<code>gtestd.lib</code>的路径，相对路径写不对请直接用绝对路径：</p>
+<img src="/2017/11/20/term-1-12th-week/linker_input.png" title="配置附加依赖项">
+<p>如果遇到<code>LNK1104</code>的错误，八成是路径没写对…然后就配置好了，编译一下。</p>
+</li>
+<li><p>运行一下：</p>
+<p><a href="http://www.cnblogs.com/coderzh/archive/2009/03/31/1426758.html" target="_blank" rel="noopener">code</a>:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"gtest/gtest.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Foo</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (a == <span class="number">0</span> || b == <span class="number">0</span>)</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">throw</span> <span class="string">"don't do that"</span>;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">int</span> c = a % b;</span><br><span class="line">   <span class="keyword">if</span> (c == <span class="number">0</span>)</span><br><span class="line">     <span class="keyword">return</span> b;</span><br><span class="line">   <span class="keyword">return</span> Foo(b, c);</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> TEST(FooTest, HandleNoneZeroInput)</span><br><span class="line"> &#123;</span><br><span class="line">   EXPECT_EQ(<span class="number">2</span>, Foo(<span class="number">4</span>, <span class="number">10</span>));</span><br><span class="line">   EXPECT_EQ(<span class="number">6</span>, Foo(<span class="number">30</span>, <span class="number">18</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, _TCHAR* argv[])</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    testing::InitGoogleTest(&amp;argc, argv);</span><br><span class="line">    <span class="keyword">return</span> RUN_ALL_TESTS();</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<img src="/2017/11/20/term-1-12th-week/test_res.png" title="测试结果">
+</li>
+</ol>
+<p><strong>最后…</strong><br>   终于搞定…想哭啊！！！</p>
+<h2 id="1125"><a href="#1125" class="headerlink" title="1125"></a>1125</h2><h3 id="c-互斥"><a href="#c-互斥" class="headerlink" title="c++ 互斥"></a>c++ 互斥</h3><p>c++如何实现互斥？来自<a href="https://stackoverflow.com/questions/34524/what-is-a-mutex" target="_blank" rel="noopener">stackoverflow</a>的一个答案：</p>
+<blockquote>
+<p>When I am having a big heated discussion at work, I use a rubber chicken which I keep in my desk for just such occasions. The person holding the chicken is the only person who is allowed to talk. If you don’t hold the chicken you cannot speak. You can only indicate that you want the chicken and wait until you get it before you speak. Once you have finished speaking, you can hand the chicken back to the moderator who will hand it to the next person to speak. This ensures that people do not speak over each other, and also have their own space to talk.</p>
+<p>Replace Chicken with Mutex and person with thread and you basically have the concept of a mutex.</p>
+<p>Of course, before you use the rubber chicken, you need to ask yourself whether you actually need 5 people in one room and would it not just be easier with one person in the room on their own doing all the work. Actually, this is just extending the analogy, but you get the idea.</p>
+</blockquote>
+<p>翻译之就是：</p>
+<p>当我在工作中有一个很想讨论的话题的时候，这种时候我就会用到我一直放在桌上的橡皮鸡了。只有持有橡皮鸡的人才被允许讨论。如果你没有才由它，你就不能说话。你只能表明你需要这只鸡，在你得到这只鸡以前，你只能保持沉默。一旦你的讨论结束了，你需要把这只鸡还给管理者，然后他再将这只鸡发给下一个想要说话的人。这就保证了人们的讨论不会打扰到彼此（同一时间只有一个人在说话），同时他们也拥有独立的空间进行讨论。<br>把鸡替换成互斥锁，把人替换成线程然后你就得到了互斥的概念。<br>​当然，在你准备使用橡皮鸡的时候，你需要问一下你自己你是否真的需要五个人，一个人能不能来完成这整个工作。事实上，这只是扩展了这个比喻，但是你应该已经搞懂这个概念了。</p>
+<p>然后实现的简单<a href="https://stackoverflow.com/questions/4989451/mutex-example-tutorial" target="_blank" rel="noopener">代码</a>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A thread is : Each person</span></span><br><span class="line"><span class="comment">// The mutex is : The door handle</span></span><br><span class="line"><span class="comment">// The lock is : The person's hand</span></span><br><span class="line"><span class="comment">// The resource is : The phone</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;thread&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;mutex&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">std</span>::mutex m;<span class="comment">//you can use std::lock_guard if you want to be exception safe</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">makeACallFromPhoneBooth</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m.lock();<span class="comment">//man gets a hold of the phone booth door and locks it. The other men wait outside</span></span><br><span class="line">      <span class="comment">//man happily talks to his wife from now....</span></span><br><span class="line">      <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">" Hello Wife"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">      i++;<span class="comment">//no other thread can access variable i until m.unlock() is called</span></span><br><span class="line">      <span class="comment">//...until now, with no interruption from other men</span></span><br><span class="line">    m.unlock();<span class="comment">//man lets go of the door handle and unlocks the door</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//This is the main crowd of people uninterested in making a phone call</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//man1 leaves the crowd to go to the phone booth</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man1</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</span><br><span class="line">    <span class="comment">//Although man2 appears to start second, there's a good chance he might</span></span><br><span class="line">    <span class="comment">//reach the phone booth before man1</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man2</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</span><br><span class="line">    <span class="comment">//And hey, man3 also joined the race to the booth</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="function">thread <span class="title">man3</span><span class="params">(makeACallFromPhoneBooth)</span></span>;</span><br><span class="line"></span><br><span class="line">    man1.join();<span class="comment">//man1 finished his phone call and joins the crowd</span></span><br><span class="line">    man2.join();<span class="comment">//man2 finished his phone call and joins the crowd</span></span><br><span class="line">    man3.join();<span class="comment">//man3 finished his phone call and joins the crowd</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="高质量C-C编程指南附录试题笔记"><a href="#高质量C-C编程指南附录试题笔记" class="headerlink" title="高质量C++/C编程指南附录试题笔记"></a>高质量C++/C编程指南附录试题笔记</h3><p><strong>一、请填写BOOL , float, 指针变量 与“零值”比较的 if 语句。</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// BOOL, give `flag`</span></span><br><span class="line"><span class="keyword">if</span> (flag)</span><br><span class="line"><span class="keyword">if</span> (!flag)</span><br><span class="line"></span><br><span class="line"><span class="comment">// float, give `x`</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">float</span> EPSINON=<span class="number">0.00001</span>;</span><br><span class="line"><span class="keyword">if</span> ((x &gt;= -EPSINON) &amp;&amp; (x &lt;= EPSINON))</span><br><span class="line">  </span><br><span class="line"><span class="comment">// pointer, give `cahr *p`</span></span><br><span class="line"><span class="keyword">if</span> (p == <span class="literal">NULL</span>)</span><br><span class="line"><span class="keyword">if</span> (p != <span class="literal">NULL</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>二、const 有什么用途？（请至少说明两种）</strong></p>
+<p>（1）可以定义 const 常量。</p>
+<p>（2）const可以修饰函数的参数、返回值，甚至函数的定义体。被const修饰的东西都受到强制保护，可以预防意外的变动，能提高程序的健壮性。</p>
+<p><strong>三、在C++ 程序中调用被 C编译器编译后的函数，为什么要加 extern “C”？</strong></p>
+<p>C++语言支持函数重载，C语言不支持函数重载。函数被C++编译后在库中的名字与C语言的不同。假设某个函数的原型为： void foo(int x, int y);<br>该函数被C编译器编译后在库中的名字为_foo，而C++编译器则会产生像_foo_int_int之类的名字。<br>C++提供了C连接交换指定符号extern“C”来解决名字匹配问题。</p>
+<h2 id="1126"><a href="#1126" class="headerlink" title="1126"></a>1126</h2><h3 id="c-编码规范小例"><a href="#c-编码规范小例" class="headerlink" title="c++ 编码规范小例"></a>c++ 编码规范小例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> // 类名大写，分割用的大括号均换行</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"> <span class="comment">// public, private等访问控制符缩进 1 个空格</span></span><br><span class="line"> <span class="comment">// 以行为为中心，即public在前</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">   <span class="comment">// 其余缩进均为 2 个空格</span></span><br><span class="line">   Node(); <span class="comment">// 函数和后面的'('之间不带空格分割</span></span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">Start</span><span class="params">(<span class="built_in">string</span> args)</span></span>; <span class="comment">// 函数名每个单词的首字母大写</span></span><br><span class="line">   <span class="function"><span class="keyword">float</span> <span class="title">GetLoc</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">SetLoc</span><span class="params">(<span class="keyword">float</span> loc)</span></span>; <span class="comment">// 具有相反功能的函数应使用一组反义词来定义 </span></span><br><span class="line">   ...</span><br><span class="line"> <span class="comment">// 以数据为中心，即private在后</span></span><br><span class="line"> <span class="keyword">private</span>:</span><br><span class="line">   <span class="keyword">float</span> loc = <span class="number">0.0</span>; <span class="comment">// 就近原则，最好定义完就初始化</span></span><br><span class="line">   <span class="keyword">bool</span> isStart = <span class="literal">false</span>; <span class="comment">// 变量也是用驼峰命名法，但是开头字母小写</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/14/term-1-11th-week/" rel="next" title="term 1: 11th week">
+                <i class="fa fa-chevron-left"></i> term 1: 11th week
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/27/term-1-13th-week/" rel="prev" title="term 1: 13th week">
+                term 1: 13th week <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="许山山" />
+            
+              <p class="site-author-name" itemprop="name">许山山</p>
+              <p class="site-description motion-element" itemprop="description">繁华尘世，时光如沙，轻歌曼舞有时尽。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/callmexss" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:callmexss@126.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1120"><span class="nav-number">1.</span> <span class="nav-text">1120</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-图片加载不正常"><span class="nav-number">1.1.</span> <span class="nav-text">hexo 图片加载不正常</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1121"><span class="nav-number">2.</span> <span class="nav-text">1121</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">c++ 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-输入、输出和文件"><span class="nav-number">2.2.</span> <span class="nav-text">c++ 输入、输出和文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#流和缓冲区"><span class="nav-number">2.2.1.</span> <span class="nav-text">流和缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cout"><span class="nav-number">2.2.2.</span> <span class="nav-text">cout</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1122"><span class="nav-number">3.</span> <span class="nav-text">1122</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tar——压缩、解压缩命令"><span class="nav-number">3.1.</span> <span class="nav-text">tar——压缩、解压缩命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1123"><span class="nav-number">4.</span> <span class="nav-text">1123</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理器"><span class="nav-number">4.1.</span> <span class="nav-text">预处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-ifdef-ifndef"><span class="nav-number">4.1.1.</span> <span class="nav-text">#if - #ifdef - #ifndef</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#define-include"><span class="nav-number">4.1.2.</span> <span class="nav-text">#define - # - ## - #include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#error-pragma-line"><span class="nav-number">4.1.3.</span> <span class="nav-text">#error - #pragma - #line</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kali-Linux-persistence-配置"><span class="nav-number">4.2.</span> <span class="nav-text">Kali Linux persistence 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1124"><span class="nav-number">5.</span> <span class="nav-text">1124</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vs2017-使用-Google-Test"><span class="nav-number">5.1.</span> <span class="nav-text">vs2017 使用 Google Test</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1125"><span class="nav-number">6.</span> <span class="nav-text">1125</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-互斥"><span class="nav-number">6.1.</span> <span class="nav-text">c++ 互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高质量C-C编程指南附录试题笔记"><span class="nav-number">6.2.</span> <span class="nav-text">高质量C++/C编程指南附录试题笔记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1126"><span class="nav-number">7.</span> <span class="nav-text">1126</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-编码规范小例"><span class="nav-number">7.1.</span> <span class="nav-text">c++ 编码规范小例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许山山</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: 'mvmTM6opb6WjC9b5fNkvJr6d-gzGzoHsz',
+        appKey: 'q6go6BQInvwQpcLVL64QiKC2',
+        placeholder: '说点儿什么吧 ：）',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "IQEs5IP2iJTi9CBkLTnpKNN3-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "IQEs5IP2iJTi9CBkLTnpKNN3-gzGzoHsz",
+                'X-LC-Key': "uRROIGwaWOhMnPAu3IKnGy4K",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
