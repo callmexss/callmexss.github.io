@@ -74,8 +74,8 @@ deploy:
     type: git
     repo: git@github.com:callmexss/callmexss.github.io
     branch: master
-  # other deployer
   - 
+    # other deployer
     type: leancloud_counter_security_sync
 
 # Algolia
@@ -90,5 +90,5 @@ leancloud_counter_security:
   enable_sync: true
   app_id: IQEs5IP2iJTi9CBkLTnpKNN3-gzGzoHsz
   app_key: uRROIGwaWOhMnPAu3IKnGy4K
-  username: callmexss
+  username:
   password:
