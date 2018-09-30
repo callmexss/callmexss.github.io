@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++,qt5," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="像素书" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+<meta name="keywords" content="c++,qt5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="term 1: 10th week">
+<meta property="og:url" content="https://callmexss.github.io/2017/11/06/term-1-10th-week/index.html">
+<meta property="og:site_name" content="像素书">
+<meta property="og:description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-30T09:08:10.264Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="term 1: 10th week">
+<meta name="twitter:description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'UDVBM0EJD2',
+      apiKey: 'cae8b12acd150c2ce7d02d0c6ac7dddf',
+      indexName: 'blogSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://callmexss.github.io/2017/11/06/term-1-10th-week/"/>
+
+
+
+
+
+  <title>term 1: 10th week | 像素书</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">叙事诗</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.github.io/2017/11/06/term-1-10th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">term 1: 10th week</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-06T11:41:28+08:00">
+                2017-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1106"><a href="#1106" class="headerlink" title="1106"></a>1106</h2><h3 id="函数对象（函子）"><a href="#函数对象（函子）" class="headerlink" title="函数对象（函子）"></a>函数对象（函子）</h3><blockquote>
+<p> A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is overloaded—that is, classes for which the peculiar-looking function operator()() is defined. For example, you could define a class like this: </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linear</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">float</span> slope; <span class="comment">// 斜率</span></span><br><span class="line">        <span class="keyword">float</span> y0; <span class="comment">// 函数值</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        Linear(<span class="keyword">float</span> _sp = <span class="number">1</span>, <span class="keyword">float</span> _y = <span class="number">0</span>)</span><br><span class="line">            : slope(_sp), y0(_y) &#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">double</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x * slope + y0; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Linear f1;</span><br><span class="line">    <span class="function">Linear <span class="title">f2</span><span class="params">(<span class="number">2.5</span>, <span class="number">10.0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">double</span> y1 = f1(<span class="number">12.4</span>);</span><br><span class="line">    <span class="keyword">double</span> y2 = f2(<span class="number">0.4</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"y1: "</span> &lt;&lt; y1 &lt;&lt; <span class="string">" y2: "</span> &lt;&lt; y2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      Filename: functor.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *        Author: xss - callmexss@126.com</span></span><br><span class="line"><span class="comment"> *   Description: functor technique</span></span><br><span class="line"><span class="comment"> *        Create: 2017-11-06 14:32:18</span></span><br><span class="line"><span class="comment"> * Last Modified: 2017-11-06 14:47:37</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> ***********************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;   // <span class="title">functor</span> <span class="title">class</span> <span class="title">defines</span> <span class="title">operator</span>()()</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">TooBig</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        T cutoff;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        TooBig(<span class="keyword">const</span> T &amp; t) : cutoff(t) &#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> T &amp; v)</span> </span>&#123; <span class="keyword">return</span> v &gt; cutoff; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; &amp; li)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::ostream_iterator&lt;<span class="keyword">int</span>,<span class="keyword">char</span>&gt; out(<span class="built_in">std</span>::<span class="built_in">cout</span>, <span class="string">" "</span>);</span><br><span class="line">    copy(li.begin(), li.end(), out);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">list</span>;</span><br><span class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line">    <span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    TooBig&lt;<span class="keyword">int</span>&gt; f100(<span class="number">100</span>);</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; yadayada;</span><br><span class="line">    <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; etcetera;</span><br><span class="line">    <span class="keyword">int</span> vals[<span class="number">10</span>] = &#123;<span class="number">50</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">180</span>, <span class="number">60</span>, <span class="number">210</span>, <span class="number">415</span>, <span class="number">88</span>, <span class="number">188</span>, <span class="number">201</span>&#125;;</span><br><span class="line"></span><br><span class="line">    yadayada.insert(yadayada.begin(), vals, vals+<span class="number">10</span>);</span><br><span class="line">    etcetera.insert(etcetera.begin(), vals, vals+<span class="number">10</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Original lists:\n"</span>;</span><br><span class="line">    show(yadayada);</span><br><span class="line">    show(etcetera);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// use a named function object</span></span><br><span class="line">    yadayada.remove_if(f100);</span><br><span class="line">    <span class="comment">// construct a function object</span></span><br><span class="line">    etcetera.remove_if(TooBig&lt;<span class="keyword">int</span>&gt;(<span class="number">200</span>));</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Trimmed lists:\n"</span>;</span><br><span class="line">    show(yadayada);</span><br><span class="line">    show(etcetera);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Original lists:</span><br><span class="line">50 100 90 180 60 210 415 88 188 201</span><br><span class="line">50 100 90 180 60 210 415 88 188 201</span><br><span class="line">Trimmed lists:</span><br><span class="line">50 100 90 60 88</span><br><span class="line">50 100 90 180 60 88 188</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Just as the STL defines concepts for containers and iterators, it defines functor concepts:<br>• A generator is a functor that can be called with no arguments.<br>• A unary function is a functor that can be called with one argument.<br>• A binary function is a functor that can be called with two arguments. </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [sqrt(n) for n in gr8]</span></span><br><span class="line">transform(gr8.begin(), gr8.end(), out, <span class="built_in">sqrt</span>);</span><br><span class="line"><span class="comment">// map(lambda x, y: (x+y)/2, gr8, m8)</span></span><br><span class="line">transform(gr8.begin(), gr8.end(), m8.begin(), out, mean);</span><br></pre></td></tr></table></figure>
+<h3 id="QT5-窗体图标不显示"><a href="#QT5-窗体图标不显示" class="headerlink" title="QT5 窗体图标不显示"></a>QT5 窗体图标不显示</h3><p>在csdn上找到了<a href="http://blog.csdn.net/lucky_vip/article/details/22328215" target="_blank" rel="noopener">答案</a>。</p>
+<p>原因是因为路径不正确，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>-&gt;setWindowIcon(QIcon(<span class="string">":/Image/icon.png"</span>)) <span class="comment">// for linux, if windows, do nothing</span></span><br><span class="line"><span class="keyword">this</span>-&gt;setWindowIcon(QIcon(<span class="string">":\\Image\\icon.png"</span>)); <span class="comment">// show the icon successfully</span></span><br></pre></td></tr></table></figure>
+<h3 id="c-数字转字符串"><a href="#c-数字转字符串" class="headerlink" title="c++ 数字转字符串"></a>c++ 数字转字符串</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">ostringstream</span> ss;</span><br><span class="line">    <span class="keyword">int</span> cheeses;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cin</span> &gt;&gt; cheeses;</span><br><span class="line">    ss &lt;&lt; cheeses;</span><br><span class="line">    <span class="comment">// std::string s;</span></span><br><span class="line">    <span class="comment">// s = std::to_string(cheeses);</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"We have "</span> + ss.str() + <span class="string">" varieties of cheese."</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在so上面看到一个<a href="https://stackoverflow.com/questions/5590381/easiest-way-to-convert-int-to-string-in-c" target="_blank" rel="noopener">简单的方法</a>，但是在<code>ubuntu</code>下编译出现错误【<code>&#39;to_string&#39; is not a member of &#39;std&#39;</code>】，这是g++编译器的一个著名<a href="https://stackoverflow.com/questions/12975341/to-string-is-not-a-member-of-std-says-g-mingw" target="_blank" rel="noopener">bug</a>。</p>
+<p>以及这就是为啥python好用的原因了…</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cheeses = <span class="number">32</span></span><br><span class="line"><span class="comment"># int to string</span></span><br><span class="line">cheeses_s = string(cheeses)</span><br><span class="line"><span class="comment"># string to int</span></span><br><span class="line">cheeses_n = int(cheeses_s)</span><br></pre></td></tr></table></figure>
+<h2 id="1107"><a href="#1107" class="headerlink" title="1107"></a>1107</h2><h3 id="c-primer-plus-5th-第三章复习题笔记"><a href="#c-primer-plus-5th-第三章复习题笔记" class="headerlink" title="c++ primer plus 5th 第三章复习题笔记"></a>c++ primer plus 5th 第三章复习题笔记</h3><p>1.Consider the two C++ statements that follow:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> grade = <span class="number">65</span>;</span><br><span class="line"><span class="keyword">char</span> grade = <span class="string">'A'</span>;</span><br></pre></td></tr></table></figure>
+<p>Are they equivalent? </p>
+<p>我以为它俩不相等，实际上是<strong>相等</strong>的。代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> i1 = <span class="number">65</span>;</span><br><span class="line">    <span class="keyword">char</span> i2 = <span class="string">'A'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i1 &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="keyword">sizeof</span>(i1) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i2 &lt;&lt; <span class="string">" "</span> &lt;&lt; <span class="keyword">sizeof</span>(i2) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (i1 == i2?<span class="string">'y'</span>:<span class="string">'n'</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A 1</span><br><span class="line">A 1</span><br><span class="line">y</span><br></pre></td></tr></table></figure>
+<p>看了书中的答案发现被打脸…</p>
+<blockquote>
+<p>The two statements are not really equivalent, although they have the same effect on some systems. Most importantly, the first statement assigns the letter A to grade only on a system using the ASCII code, while the second statement also works for other codes. Second, 65 is a type int constant, whereas ‘A’ is a type char constant. </p>
+</blockquote>
+<hr>
+<p>2.How could you use C++ to find out which character the code 88 represents? Come up with at least two ways.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// method 1</span></span><br><span class="line"><span class="keyword">char</span> c = <span class="number">88</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">// method 2</span></span><br><span class="line"><span class="built_in">cout</span>.put(<span class="keyword">char</span>(<span class="number">88</span>));</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">// method 3</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">char</span>(<span class="number">88</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="comment">// method 4</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; (<span class="keyword">char</span>) <span class="number">88</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>3.Assigning a long value to a float can result in a rounding error. What about assigning long to double?</p>
+<p>书中的答案：</p>
+<blockquote>
+<p>The answer depends on how large the two types are. If long is 4 bytes, there is no loss.<br>That’s because the largest long value would be about 2 billion, which is 10 digits.<br>Because double provides at least 13 significant figures, no rounding would be needed.</p>
+</blockquote>
+<p>测试代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> i = <span class="number">3141592653</span>;</span><br><span class="line">    <span class="keyword">float</span> f = i;</span><br><span class="line">    <span class="keyword">double</span> d = i;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<em>Ubuntu 16.04 32bit</em>下使用g++编译:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.14159e+09</span><br><span class="line">3.14159e+09</span><br></pre></td></tr></table></figure>
+<p>在<em>win7 64bit</em>下使用vs2017编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-1.15337e+09</span><br><span class="line">-1.15337e+09</span><br><span class="line">// change i to 314159265</span><br><span class="line">3.14159e+08</span><br><span class="line">3.14159e+08</span><br></pre></td></tr></table></figure>
+<p>因此具体是否会出现精度丢失应该视操作系统和编译器而定。</p>
+<h2 id="1109"><a href="#1109" class="headerlink" title="1109"></a>1109</h2><h3 id="cout-格式化输出字符"><a href="#cout-格式化输出字符" class="headerlink" title="cout 格式化输出字符"></a>cout 格式化输出字符</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      Filename: 3_1.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *        Author: xss - callmexss@126.com</span></span><br><span class="line"><span class="comment"> *   Description: inches to feet and inches</span></span><br><span class="line"><span class="comment"> *        Create: 2017-11-07 10:58:49</span></span><br><span class="line"><span class="comment"> * Last Modified: 2017-11-07 16:23:34</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> ***********************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> InchesInFoot = <span class="number">12</span>;</span><br><span class="line">    <span class="built_in">cout</span>.setf(ios_base::fixed, ios_base::floatfield);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Input your height(inches):___"</span> &lt;&lt; <span class="string">"\b\b\b"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; height;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"you're "</span> &lt;&lt; height / InchesInFoot &lt;&lt; <span class="string">" feets, "</span> &lt;&lt; height % InchesInFoot &lt;&lt;<span class="string">" inches"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>题目要求在下划线上进行输入，因此使用了<code>cout.setf()</code>控制输出格式。该方法有两种重载形式：</p>
+<p><strong>std::ios_base::setf</strong></p>
+<table>
+<thead>
+<tr>
+<th>set (1)</th>
+<th><code>fmtflags setf (fmtflags fmtfl);</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mask (2)</strong></td>
+<td><strong><code>fmtflags setf (fmtflags fmtfl, fmtflags mask);</code></strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Set specific format flags</p>
+<p>The first form <em>(1)</em> sets the stream’s <em>format flags</em> whose bits are set in fmtfl, leaving unchanged the rest, as if a call to <code>flags(fmtfl|flags())</code>.<br>The second form <em>(2)</em> sets the stream’s <em>format flags</em> whose bits are set in both fmtfl and mask, and clears the <em>format flags</em> whose bits are set in mask but not in fmtfl, as if a call to <code>flags((fmtfl&amp;mask)|(flags()&amp;~mask))</code>.<br>Both return the value of the stream’s <em>format flags</em> before the call.<br>The format flags of a stream affect the way data is interpreted in certain input functions and how it is written by certain output functions. See <a href="http://www.cplusplus.com/ios_base::fmtflags" target="_blank" rel="noopener">ios_base::fmtflags</a> for the possible values of this function’s arguments.</p>
+</blockquote>
+<h2 id="1110"><a href="#1110" class="headerlink" title="1110"></a>1110</h2><h3 id="c-数组初始化"><a href="#c-数组初始化" class="headerlink" title="c++ 数组初始化"></a>c++ 数组初始化</h3><p>只有在定义数组的时候才能使用形式：<code>tpye typeName[size]; or tpye typeName[size] = {};</code></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cards[<span class="number">4</span>] = &#123;<span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>&#125;; <span class="comment">// okay</span></span><br><span class="line"><span class="keyword">int</span> hand[<span class="number">4</span>]; <span class="comment">// okay</span></span><br><span class="line">hand[<span class="number">4</span>] = &#123;<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>&#125;; <span class="comment">// not allowed</span></span><br><span class="line">hand = cards; <span class="comment">// not allowed</span></span><br></pre></td></tr></table></figure>
+<p>初始化数组时，可以提供比数组元素更少的值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> hotelTips[<span class="number">5</span>] = &#123;<span class="number">5.0</span>, <span class="number">2.5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果部分初始化一个数组，编译器会将剩余的元素设置为零。例如，想要生成一个全0的数组：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> allZero[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="comment">// all zero but the first one to be 1</span></span><br><span class="line"><span class="keyword">int</span> allZeroExceptFirst[<span class="number">10</span>] = &#123;<span class="number">1</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果初始化数组时<code>[]</code>中没有填写数组大小，c++编译器会完成这个工作，它会统计数组中元素的个数。通常是不建议使用这种初始化方法的，但是初始化一个字符数组并将其转化为字符串是安全（后面会讲）。可以用以下代码测试编译器是否进行了这个工作。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">short</span> things[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> num_elements = <span class="keyword">sizeof</span> things / <span class="keyword">sizeof</span>(<span class="keyword">short</span>);</span><br><span class="line">    <span class="built_in">cout</span>.setf(ios_base::boolalpha);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (num_elements == <span class="number">4</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// output is "true"</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/qt5/" rel="tag"># qt5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/31/term-1-9th-week/" rel="next" title="term 1: 9th week">
+                <i class="fa fa-chevron-left"></i> term 1: 9th week
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/14/term-1-11th-week/" rel="prev" title="term 1: 11th week">
+                term 1: 11th week <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">许山山</p>
+              <p class="site-description motion-element" itemprop="description">繁华尘世，时光如沙，轻歌曼舞有时尽。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1106"><span class="nav-number">1.</span> <span class="nav-text">1106</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数对象（函子）"><span class="nav-number">1.1.</span> <span class="nav-text">函数对象（函子）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QT5-窗体图标不显示"><span class="nav-number">1.2.</span> <span class="nav-text">QT5 窗体图标不显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数字转字符串"><span class="nav-number">1.3.</span> <span class="nav-text">c++ 数字转字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1107"><span class="nav-number">2.</span> <span class="nav-text">1107</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-primer-plus-5th-第三章复习题笔记"><span class="nav-number">2.1.</span> <span class="nav-text">c++ primer plus 5th 第三章复习题笔记</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1109"><span class="nav-number">3.</span> <span class="nav-text">1109</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cout-格式化输出字符"><span class="nav-number">3.1.</span> <span class="nav-text">cout 格式化输出字符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1110"><span class="nav-number">4.</span> <span class="nav-text">1110</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-数组初始化"><span class="nav-number">4.1.</span> <span class="nav-text">c++ 数组初始化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许山山</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

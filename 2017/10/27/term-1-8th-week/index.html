@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c++,shell," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="像素书" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1027关于 for 循环的作用域1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include &amp;lt;vector&amp;gt;using namespace std;const int NUM = 5;int mai">
+<meta name="keywords" content="c++,shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="term 1: 8th week">
+<meta property="og:url" content="https://callmexss.github.io/2017/10/27/term-1-8th-week/index.html">
+<meta property="og:site_name" content="像素书">
+<meta property="og:description" content="1027关于 for 循环的作用域1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include &amp;lt;vector&amp;gt;using namespace std;const int NUM = 5;int mai">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://callmexss.github.io/2017/10/27/term-1-8th-week/stl_range.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/a/d/7/ad7b7abd2c36bd89b3ead9cda1ff86e4.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/b/9/3/b9317767ec3f2ff5d712084820486d01.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/9/6/b/96beeeef2825f2f0d031ee30876fdca5.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/5/c/1/5c151486ce3904339687c2bac3cccd8d.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/6/b/2/6b2ec2916fd7e37481326ec8a72df4ac.png">
+<meta property="og:image" content="http://upload.wikimedia.org/math/1/2/d/12d90f1573e5bef05bd4144d8e27f6b2.png">
+<meta property="og:updated_time" content="2018-09-30T09:08:10.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="term 1: 8th week">
+<meta name="twitter:description" content="1027关于 for 循环的作用域1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;iostream&amp;gt;#include &amp;lt;string&amp;gt;#include &amp;lt;vector&amp;gt;using namespace std;const int NUM = 5;int mai">
+<meta name="twitter:image" content="https://callmexss.github.io/2017/10/27/term-1-8th-week/stl_range.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'UDVBM0EJD2',
+      apiKey: 'cae8b12acd150c2ce7d02d0c6ac7dddf',
+      indexName: 'blogSearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://callmexss.github.io/2017/10/27/term-1-8th-week/"/>
+
+
+
+
+
+  <title>term 1: 8th week | 像素书</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">像素书</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">叙事诗</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.github.io/2017/10/27/term-1-8th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">term 1: 8th week</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-27T19:22:36+08:00">
+                2017-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1027"><a href="#1027" class="headerlink" title="1027"></a>1027</h2><h3 id="关于-for-循环的作用域"><a href="#关于-for-循环的作用域" class="headerlink" title="关于 for 循环的作用域"></a>关于 for 循环的作用域</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> NUM = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// define two vector to store titles and ratings</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ratings(NUM);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; titles(NUM);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// hint</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"please input the info(titles,ratings between 0 to 10) of \n"</span></span><br><span class="line">         &lt;&lt; NUM &lt;&lt; <span class="string">" books.\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// assignment</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"The title of the "</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="string">" book: "</span>;</span><br><span class="line">        getline(<span class="built_in">cin</span>, titles[i]);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"The rating(0-10) of the book: "</span>;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; ratings[i];</span><br><span class="line">        <span class="built_in">cin</span>.get();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// print info</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Thank u. You enter the following:\n"</span></span><br><span class="line">         &lt;&lt; <span class="string">"Rating\tBook\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; titles[i] &lt;&lt; <span class="string">"\t"</span> &lt;&lt; ratings[i] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译该c++程序时出现如下错误：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vect1.cpp: In function ‘int main(int, const char**)’:</span><br><span class="line">vect1.cpp:<span class="number">32</span>:<span class="number">10</span>: error: name lookup of ‘i’ changed <span class="keyword">for</span> ISO ‘<span class="keyword">for</span>’ scoping [-fpermissive]</span><br><span class="line">     <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NUM; i++)</span><br><span class="line">          ^</span><br><span class="line">vect1.cpp:<span class="number">32</span>:<span class="number">10</span>: note: (<span class="keyword">if</span> you use ‘-fpermissive’ G++ will accept your code)</span><br></pre></td></tr></table></figure>
+<p>出错原因是当前的g++编译器中 <code>for</code> 循环的作用域是当前 <code>for</code>循环，所以上面定义的<code>int i = 0</code>在下面的<code>for</code>循环中是无法使用的，需要重新定义变量<code>i</code>。也可以按照提示中更改g++编译器参数来忽略该错误。</p>
+<h3 id="c-从控制台读入多个参数"><a href="#c-从控制台读入多个参数" class="headerlink" title="c++从控制台读入多个参数"></a>c++从控制台读入多个参数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; scores;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt;::iterator pd; <span class="comment">// pd is an iterator</span></span><br><span class="line">  <span class="keyword">double</span> temp;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Read multiple parameters from the console</span></span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; temp &amp;&amp; temp &gt;= <span class="number">0</span>)</span><br><span class="line">    <span class="comment">//  this method adds an element to the end of a vector.</span></span><br><span class="line">  	scores.push_back(temp); </span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (pd = socres.begin(); pd &lt; socres.end(); pd++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"the score is "</span> &lt;&lt; *pd &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><blockquote>
+<p>It’s important that you understand how the STL defines ranges using two iterators. The first iterator refers to the beginning of the range, and the second iterator is one beyond the end of the range. For example, </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scores.erase(scores.begin(), scores.begin() + <span class="number">2</span>); <span class="comment">// erase scores.begin(), scores.begin()+1</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Remember<br>A range [it1, it2) is specified by two iterators it1 and it2, and it runs from it1 up to, but not including it2 </p>
+</blockquote>
+<p> vector 中两个迭代器<strong>it1</strong>和<strong>it2</strong>的作用范围和 python 中range方法相同，均为左闭右开区间<strong>[it1, it2)</strong>。</p>
+<p><img src="stl_range.png" alt=""></p>
+<p>下面的代码展示了 vector 模板类提供方法（begin(), end(), size(), erase(), push_back(), swap(), insert()）的使用样例：：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      Filename: vect2.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *        Author: xss - callmexss@126.com</span></span><br><span class="line"><span class="comment"> *   Description: methods and iterators</span></span><br><span class="line"><span class="comment"> *        Create: 2017-10-27 15:54:09</span></span><br><span class="line"><span class="comment"> * Last Modified: 2017-10-27 16:33:47</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> ***********************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Review</span> &#123;</span></span><br><span class="line">    <span class="built_in">string</span> title;</span><br><span class="line">    <span class="keyword">int</span> rating;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">FillReview</span><span class="params">(Review &amp; rr)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowReview</span><span class="params">(<span class="keyword">const</span> Review &amp; rr)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;Review&gt; books;</span><br><span class="line">    Review temp;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// insert info</span></span><br><span class="line">    <span class="keyword">while</span>(FillReview(temp))</span><br><span class="line">        books.push_back(temp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> num = books.size();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (num &gt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Thank u. u enter the following: \n"</span></span><br><span class="line">             &lt;&lt; <span class="string">"Rating\tBook\n"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; books.size(); i++)</span><br><span class="line">            ShowReview(books[i]);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Reprinting: \n"</span></span><br><span class="line">             &lt;&lt; <span class="string">"Rating\tBook\n"</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;Review&gt;::iterator pr;</span><br><span class="line">        <span class="keyword">for</span> (pr = books.begin(); pr != books.end(); pr++)</span><br><span class="line">            ShowReview(*pr);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">vector</span>&lt;Review&gt; oldlist(books); <span class="comment">// copy constructor used</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (num &gt; <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// remove 2 items</span></span><br><span class="line">            books.erase(books.begin()+<span class="number">1</span>, books.begin()+<span class="number">3</span>);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"After erasing:\n"</span>;</span><br><span class="line">            <span class="keyword">for</span> (pr = books.begin(); pr != books.end(); pr++)</span><br><span class="line">                ShowReview(*pr);</span><br><span class="line">            <span class="comment">// insert 1 item</span></span><br><span class="line">            books.insert(books.begin(), oldlist.begin()+<span class="number">1</span>, oldlist.begin()+<span class="number">2</span>);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"After insertion: \n"</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; books.size(); i++)</span><br><span class="line">                ShowReview(books[i]);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        books.swap(oldlist);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Swapping oldlist with books:\n"</span>;</span><br><span class="line">        <span class="keyword">for</span> (pr = books.begin(); pr != books.end(); pr++)</span><br><span class="line">            ShowReview(*pr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"nothing entered, nothing gained.\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">FillReview</span><span class="params">(Review &amp; rr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter book title(quit to quit): "</span>;</span><br><span class="line">    getline(<span class="built_in">cin</span>, rr.title);</span><br><span class="line">    <span class="keyword">if</span> (rr.title == <span class="string">"quit"</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Enter book rating: "</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; rr.rating;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">cin</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowReview</span><span class="params">(<span class="keyword">const</span> Review &amp; rr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; rr.rating &lt;&lt; <span class="string">"\t"</span> &lt;&lt; rr.title &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">Enter book title(quit to quit): python cookbook</span><br><span class="line">Enter book rating: 10</span><br><span class="line">Enter book title(quit to quit): c++ primer</span><br><span class="line">Enter book rating: 10</span><br><span class="line">Enter book title(quit to quit): think in java</span><br><span class="line">Enter book rating: 8</span><br><span class="line">Enter book title(quit to quit): algorithm</span><br><span class="line">Enter book rating: 8</span><br><span class="line">Enter book title(quit to quit): head first in js</span><br><span class="line">Enter book rating: 6</span><br><span class="line">Enter book title(quit to quit): quit</span><br><span class="line">Thank u. u enter the following:</span><br><span class="line">Rating  Book</span><br><span class="line">10      python cookbook</span><br><span class="line">10      c++ primer</span><br><span class="line">8       think in java</span><br><span class="line">8       algorithm</span><br><span class="line">6       head first in js</span><br><span class="line">Reprinting:</span><br><span class="line">Rating  Book</span><br><span class="line">10      python cookbook</span><br><span class="line">10      c++ primer</span><br><span class="line">8       think in java</span><br><span class="line">8       algorithm</span><br><span class="line">6       head first in js</span><br><span class="line">After erasing:</span><br><span class="line">10      python cookbook</span><br><span class="line">8       algorithm</span><br><span class="line">6       head first in js</span><br><span class="line">After insertion:</span><br><span class="line">10      c++ primer</span><br><span class="line">10      python cookbook</span><br><span class="line">8       algorithm</span><br><span class="line">6       head first in js</span><br><span class="line">Swapping oldlist with books:</span><br><span class="line">10      python cookbook</span><br><span class="line">10      c++ primer</span><br><span class="line">8       think in java</span><br><span class="line">8       algorithm</span><br><span class="line">6       head first in js</span><br></pre></td></tr></table></figure>
+<h3 id="错题本"><a href="#错题本" class="headerlink" title="错题本"></a>错题本</h3><p>以下选项中不属于C语言程序运算符的是？</p>
+<p>A. sizeof<br>B. &lt; &gt;<br>C. ( )<br>D. &amp;&amp;</p>
+<p>正确答案: B   我的答案: A (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=4766#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p>C的运算符有以下几类：<br>1.算术运算符：* - + /<br>2.关系运算符： &gt; &lt; == != &gt;= &lt;=<br>3.逻辑运算符：! &amp;&amp; ||<br>4.位运算符：&lt;&lt; &gt;&gt; ~ | ^ &amp;<br>5.赋值运算符：=及扩展赋值运算符<br>6.条件运算符：?:<br>7.逗号运算符：,<br>8.指针运算符：*和&amp;<br>9.求字节数运算符：sizeof<br>10.强制类型转换运算符：(类型)<br>11.分量运算符：. -&gt;<br>12.下标运算符：[ ]<br>13.其他：如函数调用运算符:()<br>注意：条件运算符是C语言中惟一一个三目(三元)运算符</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>重载</strong>：</p>
+<p>   只有在同一类定义中的同名成员函数才存在重载关系 ，主要特点是<strong>函数的参数类型和数目有所不同</strong>，但<strong>不能出现函数参数的个数和类型均相同</strong>，仅仅依靠返回值类型不同来区分的函数，这和普通函数的重载是完全一致的。另外，重载和成员函数是否是虚函数无关</p>
+<p><strong>覆盖</strong>：<br>   在派生类中覆盖基类中的同名函数，要求两个函数的参数个数、参数类型、返回类型都相同，且基类函数必须是虚函数。</p>
+<p><strong>隐藏</strong>：<br>   派生类中的函数屏蔽了基类中的同名函数，2个函数参数相同，但基类函数不是虚函数（和覆盖的区别在于基类函数是否是虚函数）。2个函数参数不同，无论基类函数是否是虚函数，基类函数都会被屏蔽（和重载的区别在于两个函数不在同一类中）。</p>
+</blockquote>
+<hr>
+<p>下面有关malloc和new，说法错误的是？ </p>
+<p>A. new 建立的是一个对象， malloc分配的是一块内存.<br>B. new初始化对象，调用对象的构造函数，对应的delete调用相应的析构函数，malloc仅仅分配内存，free仅仅回收内存.<br>C. new和malloc都是保留字，不需要头文件支持.<br>D. new和malloc都可用于申请动态内存，new是一个操作符，malloc是是一个函数.</p>
+<p>正确答案: C   我的答案: A (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=15408#summary" target="_blank" rel="noopener">解析</a>：</p>
+<blockquote>
+<p>new/delete都是要分两步操作的：new分配内存，并且调用对象的构造函数初始化一个对象；delete调用相应的析构函数，然后释放内存<br>malloc/free只是分配内存/回收内存， 所以A、B对；<br>malloc需要头文件”stdlib.h”或者”malloc.h” C错；<br>new/delete都是内建的操作符，而malloc是一个函数，其函数原型是：<br><code>void *malloc(unsigned int num_bytes);</code></p>
+</blockquote>
+<hr>
+<p>以下选项中不属于C语言标识符的是？</p>
+<p>A. 常量<br>B. 用户标识符<br>C. 关键字<br>D. 预定义标识符</p>
+<p>正确答案: A   我的答案: C (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=4752#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p><strong>C语言中的标识符有：关键字、预定义标识符、用户标识符</strong></p>
+</blockquote>
+<hr>
+<p>下面不是面向对象的基本原则的是？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A. 单一职责原则（Single-Resposibility Principle）</span><br><span class="line">B. 开放封闭原则（Open-Closed principle）</span><br><span class="line">C. 抽象类原则（Abstract-Class principle）</span><br><span class="line">D. 依赖倒置原则（Dependecy-Inversion Principle）</span><br><span class="line">E. 接口隔离原则（Interface-Segregation Principle）</span><br></pre></td></tr></table></figure>
+<p>正确答案: C   我的答案: E (错误)</p>
+<p><a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design" target="_blank" rel="noopener">解析</a>):</p>
+<blockquote>
+<p>s( Single-Resposibility Principle ): 单一职责原则<br>o( Open-Closed principle ): 开放封闭原则<br>l( Liskov-Substituion Principle ): 里氏原则<br>i( Interface-Segregation Principle ): 接口隔离原则<br>d( Dependecy-Inversion Principle ): 依赖倒置原则</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Initial</th>
+<th>Concept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S</td>
+<td>Single responsibility principle: “a class should have only a single responsibility” <em>(i.e. changes to only one part of the software’s specification should be able to affect the specification of the class)</em></td>
+</tr>
+<tr>
+<td>O</td>
+<td>Open/closed principle: “software entities … should be open for extension, but closed for modification.”</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Liskov substitution principle: “objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.”</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Interface segregation principle: “many client-specific interfaces are better than one general-purpose interface.”</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Dependency inversion principle: “one should “depend upon abstractions, [not] concretions.”</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>程序的完整编译过程分为是：预处理，编译，汇编等，如下关于编译阶段的编译优化的说法中不正确的是（）?</p>
+<p>A. 死代码删除指的是编译过程直接抛弃掉被注释的代码<br>B. 函数内联可以避免函数调用中压栈和退栈的开销<br>C. For循环的循环控制变量通常很适合调度到寄存器访问<br>D. 强度削弱是指执行时间较短的指令等价的替代执行时间较长的指令</p>
+<p>正确答案: A   我的答案: C (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=14858#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p>死代码的含义是指永远不会被执行到或者执行了不起实际作用的代码段，而不是直接抛弃被注释的代码<br>比如: <code>while(false){}</code></p>
+</blockquote>
+<hr>
+<p>面哪些调用转换支持可变长度参数</p>
+<p>A. cdecl<br>B. stdcall<br>C. pascal<br>D. fastcal</p>
+<p>正确答案: A   我的答案: B (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12117316&amp;qid=1317#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p><strong>cdecl </strong>fastcall与<strong>stdcall，三者都是调用约定(Calling convention)，它决定以下内容：1)函数参数的压栈顺序，2)由调用者还是被调用者把参数弹出栈，3)以及产生函数修饰名的方法。<br>1、</strong>stdcall调用约定：函数的参数自右向左通过栈传递，被调用的函数在返回前清理传送参数的内存栈。<br>2、_cdecl是C和C++程序的缺省调用方式。每一个调用它的函数都包含清空堆栈的代码，所以产生的可执行文件大小会比调用_stdcall函数的大。函数采用从右到左的压栈方式。注意：对于可变参数的成员函数，始终使用<strong>cdecl的转换方式。<br>3、</strong>fastcall调用约定：它是通过寄存器来传送参数的（实际上，它用ECX和EDX传送前两个双字（DWORD）或更小的参数，剩下的参数仍旧自右向左压栈传送，被调用的函数在返回前清理传送参数的内存栈）。<br>4、thiscall仅仅应用于”C++”成员函数。this指针存放于CX寄存器，参数从右到左压。thiscall不是关键词，因此不能被程序员指定。<br>5、nakedcall采用1-4的调用约定时，如果必要的话，进入函数时编译器会产生代码来保存ESI，EDI，EBX，EBP寄存器，退出函数时则产生代码恢复这些寄存器的内容。naked call不产生这样的代码。naked call不是类型修饰符，故必须和_declspec共同使用。</p>
+</blockquote>
+<h2 id="1028"><a href="#1028" class="headerlink" title="1028"></a>1028</h2><h3 id="Vector-的其他方法"><a href="#Vector-的其他方法" class="headerlink" title="Vector 的其他方法"></a>Vector 的其他方法</h3><p>主要介绍了三种具有代表性的 STL 方法：<code>for_each(), random_shuffle(), sort()</code>。</p>
+<h4 id="for-each"><a href="#for-each" class="headerlink" title="for_each()"></a>for_each()</h4><p><code>for_each()</code>方法可以用于所有的容器类，它接收三个参数，前两个参数为迭代器，确定一个容器的范围，最后一个参数是一个方法，该方法作用于确定范围内每一个实体。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// print info in the old way</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; books.size(); i++)</span><br><span class="line">	ShowReview(books[i]);</span><br><span class="line"><span class="comment">// print info by for_each()</span></span><br><span class="line"><span class="comment">// before use for_each(), including algorithm is needed</span></span><br><span class="line">for_each(books.begin(), books.end(), ShowReview);</span><br></pre></td></tr></table></figure>
+<h4 id="random-shuffle"><a href="#random-shuffle" class="headerlink" title="random_shuffle()"></a>random_shuffle()</h4><p><code>random_shuffle()</code>方法接收两个迭代器作为参数，将该范围内的元素随机排列生产一个新的容器，<strong>该方法要求容器支持随机存取</strong>。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// rerange a container consists of books[0], books[1], books[2] in random display.</span></span><br><span class="line">random_shuffle(books.begin(), books.begin()+<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h4><p><code>sort()</code>方法用于将给定容器按照升序进行排列，使用内建方法 <code>operator&lt;()</code>进行比较。如果想要对自定义对象使用<code>sort()</code>方法，需要用户自己实现<code>operator&lt;()</code>方法。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Review &amp; r1, <span class="keyword">const</span> Review &amp; r2)</span><br><span class="line">&#123;</span><br><span class="line">  	<span class="comment">// the title members sort in lexicographic order </span></span><br><span class="line">  	<span class="keyword">if</span> (r1.title &lt; r2.title)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  	<span class="keyword">else</span> <span class="keyword">if</span> (r1.title == r2.title &amp;&amp; r1.rating &lt; r2.rating)</span><br><span class="line">    	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  	<span class="keyword">else</span></span><br><span class="line">      	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">sort(books.begin(), books.end());</span><br></pre></td></tr></table></figure>
+<p>此外，该方法还有一个重载形式，<code>sort(it1, it2, func)</code>，传入两个迭代器用于确定排序范围，第三个参数代替<code>operator&lt;</code>作为排序规则。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">sort_by_rating</span><span class="params">(<span class="keyword">const</span> Review &amp; r1, <span class="keyword">const</span> Review &amp; r2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (r1.rating &lt; r2.rating)</span><br><span class="line">      	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">sort(books.begin(), books.end(), sort_by_rating);</span><br></pre></td></tr></table></figure>
+<h3 id="Linux-shell脚本中的-cd-命令不起作用"><a href="#Linux-shell脚本中的-cd-命令不起作用" class="headerlink" title="Linux shell脚本中的 cd 命令不起作用"></a>Linux shell脚本中的 cd 命令不起作用</h3><p>脚本的作用是切换到某一目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># name: changedir.sh</span></span><br><span class="line"><span class="built_in">cd</span> /home/username/pycode</span><br></pre></td></tr></table></figure>
+<p>但是在终端执行后没有任何反应。Google后才知道是因为脚本调用了一个子shell，在子shell中执行该命令对当前shell没有影响。解决方法:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># method 1</span></span><br><span class="line"><span class="built_in">source</span> changedir.sh</span><br><span class="line"><span class="comment"># method 2</span></span><br><span class="line">. ./changedir.sh</span><br></pre></td></tr></table></figure>
+<h3 id="错题本-1"><a href="#错题本-1" class="headerlink" title="错题本"></a>错题本</h3><p>“引用”与多态的关系？</p>
+<p>A. 两者没有关系<br>B. 引用可以作为产生多态效果的手段<br>C. 一个基类的引用不可以指向它的派生类实例<br>D. 以上都不正确</p>
+<p>正确答案: B   我的答案: A (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12134872&amp;qid=15048#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p>引用是除指针外另一个可以产生多态效果的手段。这意味着，一个基类的引用可以指向它的派生类实例。 </p>
+</blockquote>
+<hr>
+<p>下面说法正确的是（）</p>
+<p>A. C++已有的任何运算符都可以重载<br>B. const对象只能调用const类型成员函数<br>C. 构造函数和析构函数都可以是虚函数<br>D. 函数重载返回值类型必须相同</p>
+<p>正确答案: B   我的答案: C (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12134872&amp;qid=16013#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p>A，普通的运算符可以重载，特殊的不能重载，比如 . :: 等<br>B，coust是常对象，也就是不改变成员变量的值，而成员函数中只有const函数可以确保不改变成员变量的值<br>C，析构函数一般定义为虚函数，构造函数不能是虚函数<br>D，重载只要求函数名相同，参数类型和个数不同，不要求返回值类型</p>
+</blockquote>
+<hr>
+<p>Which of the following statements are true?</p>
+<p>A. We can create a binary tree from given inorder and preorder traversal sequences.<br>B. We can create a binary tree from given preorder and postorder traversal sequences.<br>C. For an almost sorted array, insertion sort can be more effective than Quicksort.<br>D. Suppose T(n) is the runtime of resolving a problem with n elements, T(n) = Θ(1) if n = 1; T(n) = 2T(n/2) + Θ(n) if &gt; 1; so T(n) is Θ(n log n).<br>E. None of the above.</p>
+<p>正确答案: A C D   我的答案: E (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12134872&amp;qid=1343#summary" target="_blank" rel="noopener">解析</a>:</p>
+<p>常见算法</p>
+<table>
+<thead>
+<tr>
+<th><a href="http://zh.wikipedia.org/wiki/%E6%8A%98%E5%8D%8A%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">折半搜索</a></th>
+<th><img src="http://upload.wikimedia.org/math/a/d/7/ad7b7abd2c36bd89b3ead9cda1ff86e4.png" alt="img"></th>
+<th><img src="http://upload.wikimedia.org/math/b/9/3/b9317767ec3f2ff5d712084820486d01.png" alt="img"></th>
+<th>情形二（<em>k</em> = 0）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://zh.wikipedia.org/wiki/%E4%BA%8C%E5%8F%89%E6%A0%91" target="_blank" rel="noopener">二叉树</a>遍历</td>
+<td><img src="http://upload.wikimedia.org/math/9/6/b/96beeeef2825f2f0d031ee30876fdca5.png" alt="img"></td>
+<td><img src="http://upload.wikimedia.org/math/5/c/1/5c151486ce3904339687c2bac3cccd8d.png" alt="img"></td>
+<td>情形一</td>
+</tr>
+<tr>
+<td><a href="http://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">归并排序</a></td>
+<td><img src="http://upload.wikimedia.org/math/6/b/2/6b2ec2916fd7e37481326ec8a72df4ac.png" alt="img"></td>
+<td><img src="http://upload.wikimedia.org/math/1/2/d/12d90f1573e5bef05bd4144d8e27f6b2.png" alt="img"></td>
+<td>情形二（<em>k</em> = 0）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>以下哪些做法是不正确或者应该极力避免的：【多选】（ ）</p>
+<p>A. 构造函数声明为虚函数<br>B. 派生关系中的基类析构函数声明为虚函数<br>C. 构造函数中调用虚函数<br>D. 析构函数中调用虚函数</p>
+<p>正确答案: A C D   我的答案: D (错误)</p>
+<p><a href="https://www.nowcoder.com/test/question/done?tid=12134872&amp;qid=7127#summary" target="_blank" rel="noopener">解析</a>:</p>
+<blockquote>
+<p>先析构子类再析构父类，如果父类析构函数有虚函数，会导致调用子类的已经析构的内容。</p>
+<p>先构造父亲类再构造子类，如果父类构造函数有虚函数，会导致调用子类还没构造的内容。</p>
+<p>所谓虚函数就是多态情况下只执行一个,而从继承的概念来讲,总是要先构造父类对象,然后才能是子类对象,如果构造函数设为虚函数,那么当你在构造父类的构造函数时就不得不显示的调用构造,还有一个原因就是为了防错,试想如果你在子类中一不小心重写了个跟父类构造函数一样的函数,那么你的父类的构造函数将被覆盖,也即不能完成父类的构造.就会出错.<br>在构造函数不要调用虚函数。在基类构造的时候，虚函数是非虚，不会走到派生类中，既是采用的静态绑定。显然的是：当我们构造一个子类的对象时，先调用基类的构造函数，构造子类中基类部分，子类还没有构造，还没有初始化，如果在基类的构造中调用虚函数，如果可以的话就是调用一个还没有被初始化的对象，那是很危险的，所以C++中是不可以在构造父类对象部分的时候调用子类的虚函数实现。但是不是说你不可以那么写程序，你这么写，编译器也不会报错。只是你如果这么写的话编译器不会给你调用子类的实现，而是还是调用基类的实现。</p>
+<p>在析构函数中也不要调用虚函数。在析构的时候会首先调用子类的析构函数，析构掉对象中的子类部分，然后在调用基类的析构函数析构基类部分，如果在基类的析构函数里面调用虚函数，会导致其调用已经析构了的子类对象里面的函数，这是非常危险的。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c++</a>
+          
+            <a href="/tags/shell/" rel="tag"># shell</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/Coursera-algorithm：配置algs4环境/" rel="next" title="Coursera-algorithm：配置algs4环境">
+                <i class="fa fa-chevron-left"></i> Coursera-algorithm：配置algs4环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/31/term-1-9th-week/" rel="prev" title="term 1: 9th week">
+                term 1: 9th week <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">许山山</p>
+              <p class="site-description motion-element" itemprop="description">繁华尘世，时光如沙，轻歌曼舞有时尽。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1027"><span class="nav-number">1.</span> <span class="nav-text">1027</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于-for-循环的作用域"><span class="nav-number">1.1.</span> <span class="nav-text">关于 for 循环的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-从控制台读入多个参数"><span class="nav-number">1.2.</span> <span class="nav-text">c++从控制台读入多个参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-number">1.3.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错题本"><span class="nav-number">1.4.</span> <span class="nav-text">错题本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1028"><span class="nav-number">2.</span> <span class="nav-text">1028</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vector-的其他方法"><span class="nav-number">2.1.</span> <span class="nav-text">Vector 的其他方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for-each"><span class="nav-number">2.1.1.</span> <span class="nav-text">for_each()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random-shuffle"><span class="nav-number">2.1.2.</span> <span class="nav-text">random_shuffle()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort"><span class="nav-number">2.1.3.</span> <span class="nav-text">sort()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-shell脚本中的-cd-命令不起作用"><span class="nav-number">2.2.</span> <span class="nav-text">Linux shell脚本中的 cd 命令不起作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错题本-1"><span class="nav-number">2.3.</span> <span class="nav-text">错题本</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">许山山</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
