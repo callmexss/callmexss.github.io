@@ -72,3 +72,9 @@ deploy:
   repo: git@github.com:callmexss/callmexss.github.io
   branch: master
 
+# Algolia
+algolia:
+    applicationID: 'UDVBM0EJD2'
+    apiKey: 'cae8b12acd150c2ce7d02d0c6ac7dddf'
+    indexName: 'blogSearch'
+    chunkSize: 5000
