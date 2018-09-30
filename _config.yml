@@ -7,7 +7,8 @@ title: 像素书
 subtitle: 叙事诗
 description: 繁华尘世，时光如沙，轻歌曼舞有时尽。
 author: 许山山 
-language: zh-Hans
+# language: zh-Hans
+language: zh-CN
 timezone: 
 
 # URL
@@ -69,11 +70,12 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+  type:
+    - leancloud_counter_security_sync
+    - git
   repo: git@github.com:callmexss/callmexss.github.io
   branch: master
   # other deployer
-  ntype: leancloud_counter_security_sync
 
 # Algolia
 algolia:
