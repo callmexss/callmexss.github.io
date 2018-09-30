@@ -72,6 +72,8 @@ deploy:
   type: git
   repo: git@github.com:callmexss/callmexss.github.io
   branch: master
+  # other deployer
+  type: leancloud_counter_security_sync
 
 # Algolia
 algolia:
@@ -79,3 +81,11 @@ algolia:
     apiKey: 'cae8b12acd150c2ce7d02d0c6ac7dddf'
     indexName: 'blogSearch'
     chunkSize: 5000
+
+# leancloud counter security
+leancloud_counter_security:
+  enable_sync: true
+  app_id: IQEs5IP2iJTi9CBkLTnpKNN3-gzGzoHsz
+  app_key: uRROIGwaWOhMnPAu3IKnGy4K
+  username: callmexss
+  password:
