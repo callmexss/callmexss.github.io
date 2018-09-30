@@ -73,7 +73,7 @@ deploy:
   repo: git@github.com:callmexss/callmexss.github.io
   branch: master
   # other deployer
-  type: leancloud_counter_security_sync
+  -type: leancloud_counter_security_sync
 
 # Algolia
 algolia:
