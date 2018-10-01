@@ -1,5 +1,6 @@
 ---
 title: Eclipse快捷键
+categories: tools
 tags: java
 date: 2017-07-11 17:01:34
 ---
@@ -16,4 +17,3 @@ ctrl + o  显示大纲
 ctrl + shift + f  格式化代码
 ctrl + shift + o 导入及管理import语句
 ctrl + shift + t  打开Open Type 查找类文件
-
