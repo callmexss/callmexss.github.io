@@ -428,7 +428,7 @@
     <link href="https://callmexss.github.io/2017/07/11/Eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>https://callmexss.github.io/2017/07/11/Eclipse快捷键/</id>
     <published>2017-07-11T09:01:34.000Z</published>
-    <updated>2018-09-30T09:19:53.684Z</updated>
+    <updated>2018-10-01T01:54:36.932Z</updated>
     
     <content type="html"><![CDATA[<p>目前感觉最常用的有：</p><p>alt + /  自动补全<br>ctrl + /  注释（取消注释）当前选定的内容<br>ctrl + d  删除当前行<br>ctrl + m  最大化（还原）当前窗口<br>ctrl + e  打开编辑器（切换窗口）<br>ctrl + o  显示大纲<br>ctrl + shift + f  格式化代码<br>ctrl + shift + o 导入及管理import语句<br>ctrl + shift + t  打开Open Type 查找类文件</p>]]></content>
     
@@ -441,6 +441,8 @@
       
     
     </summary>
+    
+      <category term="tools" scheme="https://callmexss.github.io/categories/tools/"/>
     
     
       <category term="java" scheme="https://callmexss.github.io/tags/java/"/>
