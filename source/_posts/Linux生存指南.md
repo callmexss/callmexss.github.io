@@ -5,6 +5,9 @@ categorises:
 tags:
   - linux
   - git
+  - bash
+  - xonsh
+  - zsh
 ---
 
 使用linux过程中最基本、最常用的命令、工具记录。
@@ -265,7 +268,7 @@ scp -P port -r user@remote:Desktop/sample ~/Desktop/sample
 免密码登录：即客户端访问服务端时，需要密码验证身份登录。
 
 - Step.01. 配置公钥：执行 ssh-keygen 即生成 SSH 密钥。
-- Step.02. 上次共钥到服务器：执行 ssh-copy-id -p port user@remote，让远程服务器记住我们的 公钥。
+- Step.02. 上传公钥到服务器：执行 ssh-copy-id -p port user@remote，让远程服务器记住我们的 公钥。可能需要使用 -i 指定公钥位置：ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote.
 
 > 1) 有关 SSH 配置信息都保存在 /Home/yousr username/.ssh 目录下。
 > 2) 免密登录使用的是非对称加密算法 ( RSA )，即使用公钥加密的数据，需要使用私钥解密；使用私钥加密的数据，需要使用公钥解密。
