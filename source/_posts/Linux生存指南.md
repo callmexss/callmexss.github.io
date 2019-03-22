@@ -406,7 +406,7 @@ origin
 
 > A collection of simplified and community-driven man pages.
 
-{% assrt_img tldr.png %}
+{% asset_img tldr.png %}
 
 `github`主页提供了多种客户端实现，这里介绍`python`和`c++`客户端：
 
