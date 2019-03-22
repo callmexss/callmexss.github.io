@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-17 09:11:28" itemprop="dateModified" datetime="2018-10-17T09:11:28+08:00">2018-10-17</time>
+                <time title="修改时间：2019-03-22 20:12:39" itemprop="dateModified" datetime="2019-03-22T20:12:39+08:00">2019-03-22</time>
               
             
           </span>
@@ -414,9 +414,9 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>1.8k 字</span>
+              <span>2.1k 字</span>
               &nbsp; | &nbsp;
-              <span>7 min</span>
+              <span>8 min</span>
             </span>
           
 
@@ -576,12 +576,38 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host mac</span><br><span class="line">HostName 192.168.10.1</span><br><span class="line">User user</span><br><span class="line">Port 22</span><br></pre></td></tr></table></figure>
 <p>命令输入 ssh mac 即可实现远程登录操作 ( SCP 同样原理 )。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -P 22 -r ~/Desktop/Sample mac:Desktop/Sample</span><br></pre></td></tr></table></figure>
-<h2 id="shell-相关操作"><a href="#shell-相关操作" class="headerlink" title="shell 相关操作"></a>shell 相关操作</h2><h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><h3 id="fish"><a href="#fish" class="headerlink" title="fish"></a>fish</h3><h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><h3 id="xonsh"><a href="#xonsh" class="headerlink" title="xonsh"></a>xonsh</h3><h2 id="git-相关操作"><a href="#git-相关操作" class="headerlink" title="git 相关操作"></a>git 相关操作</h2><h3 id="git-新建仓库并推送到远程分支"><a href="#git-新建仓库并推送到远程分支" class="headerlink" title="git 新建仓库并推送到远程分支"></a>git 新建仓库并推送到远程分支</h3><p>问题描述：在github上新建了仓库，如何将本地仓库推送到远程仓库?</p>
+<h2 id="shell-相关操作"><a href="#shell-相关操作" class="headerlink" title="shell 相关操作"></a>shell 相关操作</h2><h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><h3 id="fish"><a href="#fish" class="headerlink" title="fish"></a><a href="http://fishshell.com/" target="_blank" rel="noopener">fish</a></h3><p><a href="https://github.com/fish-shell/fish-shell" target="_blank" rel="noopener">github-repository</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>ubuntu</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-add-repository ppa:fish-shell/release-3</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install fish</span><br></pre></td></tr></table></figure>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>配置非常方便，先在命令行中输入<code>fish</code>切换shell为<code>fish</code>，然后图形界面下会显示一个http的链接，点击进入该链接进行相应配置即可。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fish_config</span><br></pre></td></tr></table></figure>
+<img src="/2018/10/13/Linux生存指南/fish_config.png">
+<p>基本上<code>fish</code>是一个开箱即用的shell，几乎不进行配置即可使用，但是<code>fish</code>和<code>bash</code>不兼容，所以稍加配置的<code>zsh</code>是更好的选择。</p>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><h3 id="xonsh"><a href="#xonsh" class="headerlink" title="xonsh"></a>xonsh</h3><h2 id="git-相关操作"><a href="#git-相关操作" class="headerlink" title="git 相关操作"></a>git 相关操作</h2><h3 id="git-新建仓库并推送到远程分支"><a href="#git-新建仓库并推送到远程分支" class="headerlink" title="git 新建仓库并推送到远程分支"></a>git 新建仓库并推送到远程分支</h3><p>问题描述：在github上新建了仓库，如何将本地仓库推送到远程仓库?</p>
 <p>解决方法：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"# repository name"</span> &gt;&gt; README.md</span><br><span class="line">git init <span class="comment"># 初始化仓库</span></span><br><span class="line">git add README.md <span class="comment"># add the README.md file</span></span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line">git remote add origin git@github.com:username/repository_name.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 <p>git 远程仓库相关的常用命令：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出每一个指定的远程服务器简写</span></span><br><span class="line">$ git remote</span><br><span class="line">origin <span class="comment"># git 给每个仓库初始的简写</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示读写仓库使用的简写和其对应的&lt;url&gt;</span></span><br><span class="line">$ git remote -v</span><br><span class="line">origin https://github.com/schacon/ticgit (fetch)</span><br><span class="line">origin https://github.com/schacon/ticgit (push)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加一个新的远程 Git 仓库，同时指定仓库&lt;url&gt;为一个你可以轻松引用的简写&lt;shortname&gt;。</span></span><br><span class="line"><span class="comment"># git remote add &lt;shortname&gt; &lt;url&gt;</span></span><br><span class="line">$ git remote</span><br><span class="line">origin</span><br><span class="line">$ git remote add pb https://github.com/paulboone/ticgit</span><br><span class="line">$ git remote -v</span><br><span class="line">origin https://github.com/schacon/ticgit (fetch)</span><br><span class="line">origin https://github.com/schacon/ticgit (push)</span><br><span class="line">pb https://github.com/paulboone/ticgit (fetch)</span><br><span class="line">pb https://github.com/paulboone/ticgit (push)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从远程仓库抓取和拉取</span></span><br><span class="line"><span class="comment"># git fetch [remote-name]</span></span><br><span class="line">$ git fetch origin <span class="comment"># git fetch 不会自动合并或修改当前的工作</span></span><br><span class="line">$ git pull <span class="comment"># 抓取数据并自动尝试合并</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到远程仓库</span></span><br><span class="line">$ git push origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看远程仓库</span></span><br><span class="line">$ git remote show origin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重命名远程仓库</span></span><br><span class="line">$ git remote rename pb paul</span><br><span class="line">$ git remote</span><br><span class="line">origin</span><br><span class="line">paul</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程仓库</span></span><br><span class="line">$ git remote rm paul</span><br><span class="line">$ git remote</span><br><span class="line">origin</span><br></pre></td></tr></table></figure>
-<h2 id="工具部分"><a href="#工具部分" class="headerlink" title="工具部分"></a>工具部分</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/u011774239/article/details/48463393" target="_blank" rel="noopener">1. ubuntu下给用户添加sudo权限，并且如何取消sudo权限</a>  </p>
+<h2 id="工具部分"><a href="#工具部分" class="headerlink" title="工具部分"></a>工具部分</h2><h3 id="命令行辅助"><a href="#命令行辅助" class="headerlink" title="命令行辅助"></a>命令行辅助</h3><h4 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a><a href="http://tldr-pages.github.io/" target="_blank" rel="noopener">tldr</a></h4><p><a href="https://github.com/tldr-pages/tldr" target="_blank" rel="noopener">github-repository</a></p>
+<blockquote>
+<p>A collection of simplified and community-driven man pages.</p>
+</blockquote>
+<img src="/2018/10/13/Linux生存指南/tldr.png">
+<p><code>github</code>主页提供了多种客户端实现，这里介绍<code>python</code>和<code>c++</code>客户端：</p>
+<ul>
+<li>python</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tldr-python-client: pip install tldr</span><br><span class="line">tldr.py: pip install tldr.py</span><br></pre></td></tr></table></figure>
+<p><code>python</code>客户端安装简易，但是性能好像有些问题，查询速度很慢。</p>
+<ul>
+<li>c++</li>
+</ul>
+<p><code>c++</code>客户端通过源码编译的方式进行安装。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/tldr-pages/tldr-cpp-client.git tldr-c-client</span><br><span class="line"><span class="built_in">cd</span> tldr-c-client</span><br><span class="line"></span><br><span class="line">./deps.sh           <span class="comment"># install dependencies</span></span><br><span class="line">make                <span class="comment"># build tldr</span></span><br><span class="line">make install        <span class="comment"># install tldr</span></span><br></pre></td></tr></table></figure>
+<p>性能很棒。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/u011774239/article/details/48463393" target="_blank" rel="noopener">1. ubuntu下给用户添加sudo权限，并且如何取消sudo权限</a>  </p>
 <p><a href="http://blog.sina.com.cn/s/blog_47051c800100oegn.html" target="_blank" rel="noopener">2. linux下创建用户并且限定用户主目录</a></p>
 
           
@@ -3234,7 +3260,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -3258,7 +3284,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共26.1k字</span>
+    <span class="post-count">共26.4k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
