@@ -296,7 +296,31 @@ scp -P 22 -r ~/Desktop/Sample mac:Desktop/Sample
 
 ### bash
 
-### fish
+### [fish](http://fishshell.com/)
+
+[github-repository](https://github.com/fish-shell/fish-shell)
+
+#### 安装
+
+- ubuntu
+
+```sh
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-get update
+sudo apt-get install fish
+```
+
+#### 配置
+
+配置非常方便，先在命令行中输入`fish`切换shell为`fish`，然后图形界面下会显示一个http的链接，点击进入该链接进行相应配置即可。
+
+```sh
+fish_config
+```
+
+{% asset_img fish_config.png %}
+
+基本上`fish`是一个开箱即用的shell，几乎不进行配置即可使用，但是`fish`和`bash`不兼容，所以稍加配置的`zsh`是更好的选择。
 
 ### zsh
 
@@ -373,6 +397,42 @@ origin
 ```
 
 ## 工具部分
+
+### 命令行辅助
+
+#### [tldr](http://tldr-pages.github.io/)
+
+[github-repository](https://github.com/tldr-pages/tldr)
+
+> A collection of simplified and community-driven man pages.
+
+{% assrt_img tldr.png %}
+
+`github`主页提供了多种客户端实现，这里介绍`python`和`c++`客户端：
+
+- python
+
+```sh
+tldr-python-client: pip install tldr
+tldr.py: pip install tldr.py
+```
+
+`python`客户端安装简易，但是性能好像有些问题，查询速度很慢。
+
+- c++
+
+`c++`客户端通过源码编译的方式进行安装。
+
+```sh
+git clone https://github.com/tldr-pages/tldr-cpp-client.git tldr-c-client
+cd tldr-c-client
+
+./deps.sh           # install dependencies
+make                # build tldr
+make install        # install tldr
+```
+
+性能很棒。
 
 ## 参考
 
