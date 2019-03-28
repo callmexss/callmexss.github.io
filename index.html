@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建时间：2019-03-28 21:41:05 / 修改时间：22:02:36" itemprop="dateCreated datePublished" datetime="2019-03-28T21:41:05+08:00">2019-03-28</time>
+              <time title="创建时间：2019-03-28 21:41:05 / 修改时间：23:23:09" itemprop="dateCreated datePublished" datetime="2019-03-28T21:41:05+08:00">2019-03-28</time>
             
 
             
@@ -402,7 +402,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>0 字</span>
+              <span>306 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
             </span>
@@ -459,7 +459,20 @@
       
         
           
-            
+            <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>实验主要来源于Rechard Stevens 的《TCP/IP illustrated》（《TCP/IP 详解》）卷一和刘超老师的极客时间专栏《趣谈网络协议》，实验网络拓扑基于docker搭建，github地址戳<a href="https://github.com/popsuper1982/tcpipillustrated" target="_blank" rel="noopener">这里</a>。</p>
+<p>网络拓扑如下图所示：</p>
+<img src="/2019/03/28/计算机网络实验——链路层、网络层/experiment_environment.jpg">
+<p>具体的搭建过程可以看刘超老师写的一篇博文：<a href="https://blog.csdn.net/popsuper1982/article/details/79422735" target="_blank" rel="noopener">有了Openvswitch和Docker，终于可以做《TCP/IP详解》的实验了！</a>。</p>
+<p>脚本基本上是一键安装运行的，但是有一点要注意，就是下面的命令中，<code>./setupenv.sh</code>后面一定要跟你自己机器的网络接口，例如我的机器是<strong>eth1</strong>，那么就是<code>./setupenv.sh eth1 hub.c.163.com/liuchao110119163/ubuntu:tcpip</code>。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/popsuper1982/tcpipillustrated.git</span><br><span class="line"><span class="built_in">cd</span> tcpipillustrated</span><br><span class="line">docker pull hub.c.163.com/liuchao110119163/ubuntu:tcpip</span><br><span class="line">chmod +x setupenv.sh</span><br><span class="line">./setupenv.sh enp0s3 hub.c.163.com/liuchao110119163/ubuntu:tcpip</span><br></pre></td></tr></table></figure>
+<p>如果还有问题欢迎留言交流。</p>
+<h2 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h2><h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><h3 id="tcpdump"><a href="#tcpdump" class="headerlink" title="tcpdump"></a>tcpdump</h3><h3 id="scapy"><a href="#scapy" class="headerlink" title="scapy"></a>scapy</h3><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="ARP实验"><a href="#ARP实验" class="headerlink" title="ARP实验"></a>ARP实验</h3><p>以太网帧结构如下图所示：</p>
+<img src="/2019/03/28/计算机网络实验——链路层、网络层/5-ethernet_frame_format.jpg">
+<h3 id="IP实验"><a href="#IP实验" class="headerlink" title="IP实验"></a>IP实验</h3><h4 id="bsdi向sun发送数据包"><a href="#bsdi向sun发送数据包" class="headerlink" title="bsdi向sun发送数据包"></a>bsdi向sun发送数据包</h4><p>在主机bsdi使用scapy构建IP数据包，并发送到sun：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">packet = IP(dst=<span class="string">"140.252.13.33"</span>)</span><br><span class="line">send(packet)</span><br></pre></td></tr></table></figure>
+<p>在sun使用tcpdump进行抓包：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -i 用于指定接口</span></span><br><span class="line"><span class="comment"># -n 不进行IP到域名的转换</span></span><br><span class="line"><span class="comment"># ip 指定ip协议</span></span><br><span class="line">tcpdump -i eht1 -n ip</span><br></pre></td></tr></table></figure>
+<h3 id="ICMP实验"><a href="#ICMP实验" class="headerlink" title="ICMP实验"></a>ICMP实验</h3>
           
         
       
@@ -3042,7 +3055,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共26.4k字</span>
+    <span class="post-count">共26.7k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
