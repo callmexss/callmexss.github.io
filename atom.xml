@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://callmexss.github.io/"/>
-  <updated>2019-03-28T13:41:05.034Z</updated>
+  <updated>2019-03-28T14:02:36.927Z</updated>
   <id>https://callmexss.github.io/</id>
   
   <author>
@@ -21,12 +21,22 @@
     <link href="https://callmexss.github.io/2019/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E9%93%BE%E8%B7%AF%E5%B1%82%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
     <id>https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/</id>
     <published>2019-03-28T13:41:05.000Z</published>
-    <updated>2019-03-28T13:41:05.034Z</updated>
+    <updated>2019-03-28T14:02:36.927Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+    
+      <category term="计算机网络" scheme="https://callmexss.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="scapy" scheme="https://callmexss.github.io/tags/scapy/"/>
+    
+      <category term="tcpdump" scheme="https://callmexss.github.io/tags/tcpdump/"/>
+    
+      <category term="docker" scheme="https://callmexss.github.io/tags/docker/"/>
     
   </entry>
   
