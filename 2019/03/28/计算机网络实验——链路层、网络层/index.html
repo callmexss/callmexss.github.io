@@ -126,7 +126,7 @@
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/5-ethernet_frame_format.jpg">
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/5-arp_packet_format.jpg">
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/arpping.jpg">
-<meta property="og:updated_time" content="2019-03-29T12:22:31.044Z">
+<meta property="og:updated_time" content="2019-03-29T12:46:03.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络实验——链路层、网络层">
 <meta name="twitter:description" content="说明实验主要来源于Rechard Stevens 的《TCP/IP illustrated》（《TCP/IP 详解》）卷一和刘超老师的极客时间专栏《趣谈网络协议》，实验网络拓扑基于docker搭建，github地址戳这里。 网络拓扑如下图所示：  具体的搭建过程可以看刘超老师写的一篇博文：有了Openvswitch和Docker，终于可以做《TCP/IP详解》的实验了！。 脚本基本上是一键安装运行">
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-29 20:22:31" itemprop="dateModified" datetime="2019-03-29T20:22:31+08:00">2019-03-29</time>
+                <time title="修改时间：2019-03-29 20:46:03" itemprop="dateModified" datetime="2019-03-29T20:46:03+08:00">2019-03-29</time>
               
             
           </span>
@@ -418,9 +418,9 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>1.6k 字</span>
+              <span>1.9k 字</span>
               &nbsp; | &nbsp;
-              <span>8 min</span>
+              <span>9 min</span>
             </span>
           
 
@@ -524,7 +524,7 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">子网号</th>
+<th style="text-align:center"></th>
 <th style="text-align:center">140.252.13.32/27</th>
 <th style="text-align:center">140.252.13.001 00000</th>
 </tr>
@@ -552,7 +552,34 @@
 </tr>
 </tbody>
 </table>
-<h4 id="使用telnet连接无效服务器"><a href="#使用telnet连接无效服务器" class="headerlink" title="使用telnet连接无效服务器"></a>使用telnet连接无效服务器</h4><h3 id="IP实验"><a href="#IP实验" class="headerlink" title="IP实验"></a>IP实验</h3><h4 id="bsdi向sun发送数据包"><a href="#bsdi向sun发送数据包" class="headerlink" title="bsdi向sun发送数据包"></a>bsdi向sun发送数据包</h4><p>在主机bsdi使用scapy构建IP数据包，并发送到sun：</p>
+<h4 id="使用telnet连接无效服务器"><a href="#使用telnet连接无效服务器" class="headerlink" title="使用telnet连接无效服务器"></a>使用telnet连接无效服务器</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">主机名</th>
+<th style="text-align:center">接口地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">源主机</td>
+<td style="text-align:center">bsdi</td>
+<td style="text-align:center">140.242.13.35</td>
+</tr>
+<tr>
+<td style="text-align:center">目的主机</td>
+<td style="text-align:center">svr4</td>
+<td style="text-align:center">140.252.13.34</td>
+</tr>
+</tbody>
+</table>
+<p>从bsdi向svr4发起telnet连接，再svr4使用tcpdump抓包。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bsdi</span></span><br><span class="line">root@d70675fa03bc:/<span class="comment"># telnet 140.252.13.34 22</span></span><br><span class="line">Trying 140.252.13.34...</span><br><span class="line">Connected to 140.252.13.34.</span><br><span class="line">Escape character is <span class="string">'^]'</span>.</span><br><span class="line">SSH-2.0-OpenSSH_6.6.1p1 Ubuntu-2ubuntu2.6</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># svr4</span></span><br><span class="line">root@6b628ae5483f:/<span class="comment"># tcpdump -i eth1 -n -vv arp</span></span><br><span class="line">tcpdump: listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes</span><br><span class="line">12:38:25.752415 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.34 tell 140.252.13.35, length 28</span><br><span class="line">12:38:25.752433 ARP, Ethernet (len 6), IPv4 (len 4), Reply 140.252.13.34 is-at 22:8a:5c:68:86:ec, length 28</span><br><span class="line">12:38:30.763321 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.35 tell 140.252.13.34, length 28</span><br><span class="line">12:38:30.763927 ARP, Ethernet (len 6), IPv4 (len 4), Reply 140.252.13.35 is-at 02:1c:55:0e:bb:87, length 28</span><br></pre></td></tr></table></figure>
+<p>本实验说明再进行上层通信前需要先获取局域网内主机的MAC地址。</p>
+<p>查看一下bsdi的ARP缓存，可以看到bsdi已经将svr4的MAC地址加入了缓存中。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@d70675fa03bc:/<span class="comment"># arp -n</span></span><br><span class="line">Address                  HWtype  HWaddress           Flags Mask            Iface</span><br><span class="line">140.252.13.34            ether   22:8a:5c:68:86:ec   C                     eth1</span><br><span class="line">140.252.13.65                    (incomplete)                              bsdiside</span><br><span class="line">140.252.13.33                    (incomplete)                              eth1</span><br></pre></td></tr></table></figure>
+<h3 id="IP实验"><a href="#IP实验" class="headerlink" title="IP实验"></a>IP实验</h3><h4 id="bsdi向sun发送数据包"><a href="#bsdi向sun发送数据包" class="headerlink" title="bsdi向sun发送数据包"></a>bsdi向sun发送数据包</h4><p>在主机bsdi使用scapy构建IP数据包，并发送到sun：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">packet = IP(dst=<span class="string">"140.252.13.33"</span>)</span><br><span class="line">send(packet)</span><br></pre></td></tr></table></figure>
 <p>在sun使用tcpdump进行抓包：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -i 用于指定接口</span></span><br><span class="line"><span class="comment"># -n 不进行IP到域名的转换</span></span><br><span class="line"><span class="comment"># ip 指定ip协议</span></span><br><span class="line">tcpdump -i eht1 -n ip</span><br></pre></td></tr></table></figure>
@@ -858,7 +885,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共28k字</span>
+    <span class="post-count">共28.3k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
