@@ -126,7 +126,9 @@
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/5-ethernet_frame_format.jpg">
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/5-arp_packet_format.jpg">
 <meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/arpping.jpg">
-<meta property="og:updated_time" content="2019-03-29T13:06:49.571Z">
+<meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/5-arp_proxy.jpeg">
+<meta property="og:image" content="https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/arp_proxy.png">
+<meta property="og:updated_time" content="2019-03-29T13:55:57.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络实验——链路层、网络层">
 <meta name="twitter:description" content="说明实验主要来源于Rechard Stevens 的《TCP/IP illustrated》（《TCP/IP 详解》）卷一和刘超老师的极客时间专栏《趣谈网络协议》，实验网络拓扑基于docker搭建，github地址戳这里。 网络拓扑如下图所示：  具体的搭建过程可以看刘超老师写的一篇博文：有了Openvswitch和Docker，终于可以做《TCP/IP详解》的实验了！。 脚本基本上是一键安装运行">
@@ -410,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-29 21:06:49" itemprop="dateModified" datetime="2019-03-29T21:06:49+08:00">2019-03-29</time>
+                <time title="修改时间：2019-03-29 21:55:57" itemprop="dateModified" datetime="2019-03-29T21:55:57+08:00">2019-03-29</time>
               
             
           </span>
@@ -418,9 +420,9 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>2.3k 字</span>
+              <span>2.9k 字</span>
               &nbsp; | &nbsp;
-              <span>11 min</span>
+              <span>13 min</span>
             </span>
           
 
@@ -578,7 +580,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># svr4</span></span><br><span class="line">root@6b628ae5483f:$ tcpdump -i eth1 -n -vv arp</span><br><span class="line">tcpdump: listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes</span><br><span class="line">12:38:25.752415 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.34 tell 140.252.13.35, length 28</span><br><span class="line">12:38:25.752433 ARP, Ethernet (len 6), IPv4 (len 4), Reply 140.252.13.34 is-at 22:8a:5c:68:86:ec, length 28</span><br><span class="line">12:38:30.763321 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.35 tell 140.252.13.34, length 28</span><br><span class="line">12:38:30.763927 ARP, Ethernet (len 6), IPv4 (len 4), Reply 140.252.13.35 is-at 02:1c:55:0e:bb:87, length 28</span><br></pre></td></tr></table></figure>
 <p>本实验说明再进行上层通信前需要先获取局域网内主机的MAC地址。</p>
 <p>查看一下bsdi的ARP缓存，可以看到bsdi已经将svr4的MAC地址加入了缓存中。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@d70675fa03bc:/<span class="comment"># arp -n</span></span><br><span class="line">Address                  HWtype  HWaddress           Flags Mask            Iface</span><br><span class="line">140.252.13.34            ether   22:8a:5c:68:86:ec   C                     eth1</span><br><span class="line">140.252.13.65                    (incomplete)                              bsdiside</span><br><span class="line">140.252.13.33                    (incomplete)                              eth1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@d70675fa03bc:$ arp -n</span><br><span class="line">Address                  HWtype  HWaddress           Flags Mask            Iface</span><br><span class="line">140.252.13.34            ether   22:8a:5c:68:86:ec   C                     eth1</span><br><span class="line">140.252.13.65                    (incomplete)                              bsdiside</span><br><span class="line">140.252.13.33                    (incomplete)                              eth1</span><br></pre></td></tr></table></figure>
 <h4 id="使用telnet连接不存在主机"><a href="#使用telnet连接不存在主机" class="headerlink" title="使用telnet连接不存在主机"></a>使用telnet连接不存在主机</h4><table>
 <thead>
 <tr>
@@ -603,12 +605,44 @@
 <p>注意<strong>目的主机不存在</strong>，根据网络号和子网号所对应的网络确实存在，但是并不存在所指定的主机号。从图1可以看出，主机号从36到62的主机并不存在（主机号为63是广播地址）。这里用主机号36来举例。使用一个shell发起telnet连接：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bsdi</span></span><br><span class="line">root@d70675fa03bc:$ date; telnet 140.252.13.36;date</span><br><span class="line">Fri Mar 29 12:51:34 UTC 2019</span><br><span class="line">Trying 140.252.13.36...</span><br><span class="line">telnet: Unable to connect to remote host: No route to host</span><br><span class="line">Fri Mar 29 12:51:37 UTC 2019</span><br></pre></td></tr></table></figure>
 <p>另一个shell使用tcpdump进行抓包：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bsdi</span></span><br><span class="line">root@d70675fa03bc:/<span class="comment"># tcpdump -i eth1 -n -vv</span></span><br><span class="line">tcpdump: listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes</span><br><span class="line">12:51:34.301832 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br><span class="line">12:51:35.299308 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br><span class="line">12:51:36.299308 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bsdi</span></span><br><span class="line">root@d70675fa03bc:$ tcpdump -i eth1 -n -vv</span><br><span class="line">tcpdump: listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes</span><br><span class="line">12:51:34.301832 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br><span class="line">12:51:35.299308 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br><span class="line">12:51:36.299308 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 140.252.13.36 tell 140.252.13.35, length 28</span><br></pre></td></tr></table></figure>
 <p>可以看出这里ARP请求重发了三次，说明ARP请求是有重传机制的，重传的间隔约为1s。</p>
 <blockquote>
 <p>注意，在线路上始终看不到TCP的报文段。我们能看到的是ARP请求。直到ARP回答返回时，TCP报文段才可以被发送，因为硬件地址到这时才可能知道。如果我们用过滤模式运行tcpdump命令，只查看TCP数据，那么将没有任何输出。</p>
 </blockquote>
-<h4 id="ARP代理"><a href="#ARP代理" class="headerlink" title="ARP代理"></a>ARP代理</h4><h3 id="IP实验"><a href="#IP实验" class="headerlink" title="IP实验"></a>IP实验</h3><h4 id="bsdi向sun发送数据包"><a href="#bsdi向sun发送数据包" class="headerlink" title="bsdi向sun发送数据包"></a>bsdi向sun发送数据包</h4><p>在主机bsdi使用scapy构建IP数据包，并发送到sun：</p>
+<h4 id="ARP代理"><a href="#ARP代理" class="headerlink" title="ARP代理"></a>ARP代理</h4><blockquote>
+<p>ARP代理也称作混合ARP（promiscuousARP）或ARP出租(ARP hack)。这些名字来自于ARP代理的其他用途：<strong>通过两个物理网络之间的路由器可以互相隐藏物理网络。</strong>在这种情况下，两个物理网络可以使用相同的网络号，只要把中间的路由器设置成一个ARP代理，以响应一个网络到另一个网络主机的ARP请求。这种技术在过去用来隐藏一组在不同物理电缆上运行旧版TCP/IP的主机。分开这些旧主机有两个共同的理由，其一是它们不能处理子网划分，其二是它们使用旧的广播地址（所有比特值为0的主机号，而不是目前使用的所有比特值为1 的主机号）。<br>如果ARP请求是从一个网络的主机发往另一个网络上的主机，那么连接这两个网络的路由器就可以回答该请求，这个过程称作委托ARP或ARP代理(Proxy ARP)。这样可以欺骗发起ARP请求的发送端，使它误以为路由器就是目的主机，而事实上目的主机是在路由器的“另一边”。路由器的功能相当于目的主机的代理，把分组从其他主机转发给它。</p>
+</blockquote>
+<p>实验拓扑如下图所示：</p>
+<img src="/2019/03/28/计算机网络实验——链路层、网络层/5-arp_proxy.jpeg" title="图7 代理ARP">
+<p>如图1所示，系统sun与两个以太网相连。但是事实上并不是这样，在sun和子网140.252.1之间实际存在一个路由器，就是这个具有ARP代理功能的路由器使得sun就好像在子网140.252.1上一样。具体安置如图7所示，路由器Telebit NetBlazer，取名为netb，在子网和主机sun之间。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">主机名</th>
+<th style="text-align:center">接口地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">源主机</td>
+<td style="text-align:center">sun</td>
+<td style="text-align:center">140.242.13.33</td>
+</tr>
+<tr>
+<td style="text-align:center">目的主机</td>
+<td style="text-align:center">gemini</td>
+<td style="text-align:center">140.252.1.11</td>
+</tr>
+</tbody>
+</table>
+<p>从主机gemini向主机sun发起ssh连接，分别在gemini（右上）、netb（左下）和sun（右下）进行抓包。</p>
+<img src="/2019/03/28/计算机网络实验——链路层、网络层/arp_proxy.png" title="图8 代理ARP实验">
+<p>完成操作后查看gemini的ARP缓存：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">root@07928580bdcd:$ arp -n</span><br><span class="line">Address                  HWtype  HWaddress           Flags Mask            Iface</span><br><span class="line">140.252.1.29             ether   32:3a:6f:<span class="built_in">cd</span>:a7:24   C                     eth1</span><br><span class="line">140.252.1.4              ether   c6:74:e6:3b:dd:e6   C                     eth1</span><br><span class="line">140.252.1.183            ether   32:3a:6f:<span class="built_in">cd</span>:a7:24   C                     eth1</span><br></pre></td></tr></table></figure>
+<p>经过与主机sun通信以后，发现在同一个子网140.252.1上的netb和sun的IP地址映射的硬件地址是相同的。这通常是使用委托ARP的线索。</p>
+<h3 id="IP实验"><a href="#IP实验" class="headerlink" title="IP实验"></a>IP实验</h3><h4 id="bsdi向sun发送数据包"><a href="#bsdi向sun发送数据包" class="headerlink" title="bsdi向sun发送数据包"></a>bsdi向sun发送数据包</h4><p>在主机bsdi使用scapy构建IP数据包，并发送到sun：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">packet = IP(dst=<span class="string">"140.252.13.33"</span>)</span><br><span class="line">send(packet)</span><br></pre></td></tr></table></figure>
 <p>在sun使用tcpdump进行抓包：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -i 用于指定接口</span></span><br><span class="line"><span class="comment"># -n 不进行IP到域名的转换</span></span><br><span class="line"><span class="comment"># ip 指定ip协议</span></span><br><span class="line">tcpdump -i eht1 -n ip</span><br></pre></td></tr></table></figure>
@@ -914,7 +948,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共28.6k字</span>
+    <span class="post-count">共29.3k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
