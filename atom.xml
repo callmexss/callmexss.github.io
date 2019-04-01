@@ -5,9 +5,9 @@
   <subtitle>叙事诗</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://callmexss.github.io/"/>
+  <link href="https://callmexss.top/"/>
   <updated>2019-04-01T14:06:01.836Z</updated>
-  <id>https://callmexss.github.io/</id>
+  <id>https://callmexss.top/</id>
   
   <author>
     <name>许山山</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>计算机网络实验——链路层、网络层</title>
-    <link href="https://callmexss.github.io/2019/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E9%93%BE%E8%B7%AF%E5%B1%82%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
-    <id>https://callmexss.github.io/2019/03/28/计算机网络实验——链路层、网络层/</id>
+    <link href="https://callmexss.top/2019/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C%E2%80%94%E2%80%94%E9%93%BE%E8%B7%AF%E5%B1%82%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82/"/>
+    <id>https://callmexss.top/2019/03/28/计算机网络实验——链路层、网络层/</id>
     <published>2019-03-28T13:41:05.000Z</published>
     <updated>2019-04-01T14:06:01.836Z</updated>
     
@@ -35,22 +35,22 @@
     </summary>
     
     
-      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
-      <category term="计算机网络" scheme="https://callmexss.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://callmexss.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="scapy" scheme="https://callmexss.github.io/tags/scapy/"/>
+      <category term="scapy" scheme="https://callmexss.top/tags/scapy/"/>
     
-      <category term="tcpdump" scheme="https://callmexss.github.io/tags/tcpdump/"/>
+      <category term="tcpdump" scheme="https://callmexss.top/tags/tcpdump/"/>
     
-      <category term="docker" scheme="https://callmexss.github.io/tags/docker/"/>
+      <category term="docker" scheme="https://callmexss.top/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Linux生存指南</title>
-    <link href="https://callmexss.github.io/2018/10/13/Linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/"/>
-    <id>https://callmexss.github.io/2018/10/13/Linux生存指南/</id>
+    <link href="https://callmexss.top/2018/10/13/Linux%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/"/>
+    <id>https://callmexss.top/2018/10/13/Linux生存指南/</id>
     <published>2018-10-13T12:43:41.000Z</published>
     <updated>2019-03-28T13:35:20.955Z</updated>
     
@@ -67,22 +67,22 @@
     </summary>
     
     
-      <category term="linux" scheme="https://callmexss.github.io/tags/linux/"/>
+      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
     
-      <category term="git" scheme="https://callmexss.github.io/tags/git/"/>
+      <category term="git" scheme="https://callmexss.top/tags/git/"/>
     
-      <category term="bash" scheme="https://callmexss.github.io/tags/bash/"/>
+      <category term="bash" scheme="https://callmexss.top/tags/bash/"/>
     
-      <category term="xonsh" scheme="https://callmexss.github.io/tags/xonsh/"/>
+      <category term="xonsh" scheme="https://callmexss.top/tags/xonsh/"/>
     
-      <category term="zsh" scheme="https://callmexss.github.io/tags/zsh/"/>
+      <category term="zsh" scheme="https://callmexss.top/tags/zsh/"/>
     
   </entry>
   
   <entry>
     <title>深入理解计算机系统（一）——计算机系统漫游</title>
-    <link href="https://callmexss.github.io/2018/09/27/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/"/>
-    <id>https://callmexss.github.io/2018/09/27/深入理解计算机系统（一）——计算机系统漫游/</id>
+    <link href="https://callmexss.top/2018/09/27/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/"/>
+    <id>https://callmexss.top/2018/09/27/深入理解计算机系统（一）——计算机系统漫游/</id>
     <published>2018-09-27T13:12:02.000Z</published>
     <updated>2019-03-29T11:17:14.818Z</updated>
     
@@ -104,8 +104,8 @@
   
   <entry>
     <title>gdb教程「翻译」</title>
-    <link href="https://callmexss.github.io/2018/09/22/gdb%E6%95%99%E7%A8%8B/"/>
-    <id>https://callmexss.github.io/2018/09/22/gdb教程/</id>
+    <link href="https://callmexss.top/2018/09/22/gdb%E6%95%99%E7%A8%8B/"/>
+    <id>https://callmexss.top/2018/09/22/gdb教程/</id>
     <published>2018-09-22T02:09:15.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
@@ -121,19 +121,19 @@
     
     </summary>
     
-      <category term="翻译" scheme="https://callmexss.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
+      <category term="翻译" scheme="https://callmexss.top/categories/%E7%BF%BB%E8%AF%91/"/>
     
     
-      <category term="gdb" scheme="https://callmexss.github.io/tags/gdb/"/>
+      <category term="gdb" scheme="https://callmexss.top/tags/gdb/"/>
     
-      <category term="debug" scheme="https://callmexss.github.io/tags/debug/"/>
+      <category term="debug" scheme="https://callmexss.top/tags/debug/"/>
     
   </entry>
   
   <entry>
     <title>vckpg 使用小记</title>
-    <link href="https://callmexss.github.io/2017/12/14/vckpg-%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://callmexss.github.io/2017/12/14/vckpg-使用小记/</id>
+    <link href="https://callmexss.top/2017/12/14/vckpg-%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>https://callmexss.top/2017/12/14/vckpg-使用小记/</id>
     <published>2017-12-14T08:06:57.000Z</published>
     <updated>2019-03-28T13:35:20.971Z</updated>
     
@@ -148,19 +148,19 @@
     
     </summary>
     
-      <category term="tools" scheme="https://callmexss.github.io/categories/tools/"/>
+      <category term="tools" scheme="https://callmexss.top/categories/tools/"/>
     
     
-      <category term="vs" scheme="https://callmexss.github.io/tags/vs/"/>
+      <category term="vs" scheme="https://callmexss.top/tags/vs/"/>
     
-      <category term="package control" scheme="https://callmexss.github.io/tags/package-control/"/>
+      <category term="package control" scheme="https://callmexss.top/tags/package-control/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 14th week</title>
-    <link href="https://callmexss.github.io/2017/12/07/term-1-14th-week/"/>
-    <id>https://callmexss.github.io/2017/12/07/term-1-14th-week/</id>
+    <link href="https://callmexss.top/2017/12/07/term-1-14th-week/"/>
+    <id>https://callmexss.top/2017/12/07/term-1-14th-week/</id>
     <published>2017-12-07T03:31:34.000Z</published>
     <updated>2019-03-28T13:35:20.967Z</updated>
     
@@ -176,16 +176,16 @@
     </summary>
     
     
-      <category term="java" scheme="https://callmexss.github.io/tags/java/"/>
+      <category term="java" scheme="https://callmexss.top/tags/java/"/>
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 13th week</title>
-    <link href="https://callmexss.github.io/2017/11/27/term-1-13th-week/"/>
-    <id>https://callmexss.github.io/2017/11/27/term-1-13th-week/</id>
+    <link href="https://callmexss.top/2017/11/27/term-1-13th-week/"/>
+    <id>https://callmexss.top/2017/11/27/term-1-13th-week/</id>
     <published>2017-11-27T13:52:05.000Z</published>
     <updated>2019-03-28T13:35:20.967Z</updated>
     
@@ -201,14 +201,14 @@
     </summary>
     
     
-      <category term="linux" scheme="https://callmexss.github.io/tags/linux/"/>
+      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 12th week</title>
-    <link href="https://callmexss.github.io/2017/11/20/term-1-12th-week/"/>
-    <id>https://callmexss.github.io/2017/11/20/term-1-12th-week/</id>
+    <link href="https://callmexss.top/2017/11/20/term-1-12th-week/"/>
+    <id>https://callmexss.top/2017/11/20/term-1-12th-week/</id>
     <published>2017-11-20T13:07:12.000Z</published>
     <updated>2019-03-28T13:35:20.963Z</updated>
     
@@ -224,18 +224,18 @@
     </summary>
     
     
-      <category term="linux" scheme="https://callmexss.github.io/tags/linux/"/>
+      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
-      <category term="hexo" scheme="https://callmexss.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://callmexss.top/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 11th week</title>
-    <link href="https://callmexss.github.io/2017/11/14/term-1-11th-week/"/>
-    <id>https://callmexss.github.io/2017/11/14/term-1-11th-week/</id>
+    <link href="https://callmexss.top/2017/11/14/term-1-11th-week/"/>
+    <id>https://callmexss.top/2017/11/14/term-1-11th-week/</id>
     <published>2017-11-14T01:17:49.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
@@ -251,16 +251,16 @@
     </summary>
     
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
-      <category term="vim" scheme="https://callmexss.github.io/tags/vim/"/>
+      <category term="vim" scheme="https://callmexss.top/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 10th week</title>
-    <link href="https://callmexss.github.io/2017/11/06/term-1-10th-week/"/>
-    <id>https://callmexss.github.io/2017/11/06/term-1-10th-week/</id>
+    <link href="https://callmexss.top/2017/11/06/term-1-10th-week/"/>
+    <id>https://callmexss.top/2017/11/06/term-1-10th-week/</id>
     <published>2017-11-06T03:41:28.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
@@ -276,16 +276,16 @@
     </summary>
     
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
-      <category term="qt5" scheme="https://callmexss.github.io/tags/qt5/"/>
+      <category term="qt5" scheme="https://callmexss.top/tags/qt5/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 9th week</title>
-    <link href="https://callmexss.github.io/2017/10/31/term-1-9th-week/"/>
-    <id>https://callmexss.github.io/2017/10/31/term-1-9th-week/</id>
+    <link href="https://callmexss.top/2017/10/31/term-1-9th-week/"/>
+    <id>https://callmexss.top/2017/10/31/term-1-9th-week/</id>
     <published>2017-10-31T11:55:33.000Z</published>
     <updated>2019-03-28T13:35:20.971Z</updated>
     
@@ -301,20 +301,20 @@
     </summary>
     
     
-      <category term="English" scheme="https://callmexss.github.io/tags/English/"/>
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
-      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+      <category term="English" scheme="https://callmexss.top/tags/English/"/>
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
-      <category term="vim" scheme="https://callmexss.github.io/tags/vim/"/>
+      <category term="vim" scheme="https://callmexss.top/tags/vim/"/>
     
   </entry>
   
   <entry>
     <title>term 1: 8th week</title>
-    <link href="https://callmexss.github.io/2017/10/27/term-1-8th-week/"/>
-    <id>https://callmexss.github.io/2017/10/27/term-1-8th-week/</id>
+    <link href="https://callmexss.top/2017/10/27/term-1-8th-week/"/>
+    <id>https://callmexss.top/2017/10/27/term-1-8th-week/</id>
     <published>2017-10-27T11:22:36.000Z</published>
     <updated>2019-03-28T13:35:20.971Z</updated>
     
@@ -330,16 +330,16 @@
     </summary>
     
     
-      <category term="c++" scheme="https://callmexss.github.io/tags/c/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
-      <category term="shell" scheme="https://callmexss.github.io/tags/shell/"/>
+      <category term="shell" scheme="https://callmexss.top/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>Coursera-algorithm：配置algs4环境</title>
-    <link href="https://callmexss.github.io/2017/10/17/Coursera-algorithm%EF%BC%9A%E9%85%8D%E7%BD%AEalgs4%E7%8E%AF%E5%A2%83/"/>
-    <id>https://callmexss.github.io/2017/10/17/Coursera-algorithm：配置algs4环境/</id>
+    <link href="https://callmexss.top/2017/10/17/Coursera-algorithm%EF%BC%9A%E9%85%8D%E7%BD%AEalgs4%E7%8E%AF%E5%A2%83/"/>
+    <id>https://callmexss.top/2017/10/17/Coursera-algorithm：配置algs4环境/</id>
     <published>2017-10-17T13:22:34.000Z</published>
     <updated>2019-03-28T13:35:20.931Z</updated>
     
@@ -357,18 +357,18 @@
     </summary>
     
     
-      <category term="java" scheme="https://callmexss.github.io/tags/java/"/>
+      <category term="java" scheme="https://callmexss.top/tags/java/"/>
     
-      <category term="DSA" scheme="https://callmexss.github.io/tags/DSA/"/>
+      <category term="DSA" scheme="https://callmexss.top/tags/DSA/"/>
     
-      <category term="环境配置" scheme="https://callmexss.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+      <category term="环境配置" scheme="https://callmexss.top/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>python websites collection</title>
-    <link href="https://callmexss.github.io/2017/10/13/python-websites-collection/"/>
-    <id>https://callmexss.github.io/2017/10/13/python-websites-collection/</id>
+    <link href="https://callmexss.top/2017/10/13/python-websites-collection/"/>
+    <id>https://callmexss.top/2017/10/13/python-websites-collection/</id>
     <published>2017-10-13T07:39:15.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
@@ -385,14 +385,14 @@
     </summary>
     
     
-      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>哈密顿行动0x01-获取密码</title>
-    <link href="https://callmexss.github.io/2017/08/29/%E5%93%88%E5%AF%86%E9%A1%BF%E8%A1%8C%E5%8A%A80x01-%E8%8E%B7%E5%8F%96%E5%AF%86%E7%A0%81/"/>
-    <id>https://callmexss.github.io/2017/08/29/哈密顿行动0x01-获取密码/</id>
+    <link href="https://callmexss.top/2017/08/29/%E5%93%88%E5%AF%86%E9%A1%BF%E8%A1%8C%E5%8A%A80x01-%E8%8E%B7%E5%8F%96%E5%AF%86%E7%A0%81/"/>
+    <id>https://callmexss.top/2017/08/29/哈密顿行动0x01-获取密码/</id>
     <published>2017-08-29T15:35:54.000Z</published>
     <updated>2019-03-28T13:35:20.971Z</updated>
     
@@ -409,16 +409,16 @@
     </summary>
     
     
-      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
-      <category term="javascript" scheme="https://callmexss.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://callmexss.top/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>哈密顿行动0x00--图灵测试</title>
-    <link href="https://callmexss.github.io/2017/08/29/%E5%93%88%E5%AF%86%E9%A1%BF%E8%A1%8C%E5%8A%A80x00-%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95/"/>
-    <id>https://callmexss.github.io/2017/08/29/哈密顿行动0x00-图灵测试/</id>
+    <link href="https://callmexss.top/2017/08/29/%E5%93%88%E5%AF%86%E9%A1%BF%E8%A1%8C%E5%8A%A80x00-%E5%9B%BE%E7%81%B5%E6%B5%8B%E8%AF%95/"/>
+    <id>https://callmexss.top/2017/08/29/哈密顿行动0x00-图灵测试/</id>
     <published>2017-08-29T06:39:34.000Z</published>
     <updated>2019-03-28T13:35:20.971Z</updated>
     
@@ -436,14 +436,14 @@
     </summary>
     
     
-      <category term="python" scheme="https://callmexss.github.io/tags/python/"/>
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络学习笔记（零）-概述</title>
-    <link href="https://callmexss.github.io/2017/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E9%9B%B6%EF%BC%89-%E6%A6%82%E8%BF%B0/"/>
-    <id>https://callmexss.github.io/2017/07/14/计算机网络学习笔记（零）-概述/</id>
+    <link href="https://callmexss.top/2017/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E9%9B%B6%EF%BC%89-%E6%A6%82%E8%BF%B0/"/>
+    <id>https://callmexss.top/2017/07/14/计算机网络学习笔记（零）-概述/</id>
     <published>2017-07-14T10:12:42.000Z</published>
     <updated>2019-03-28T14:22:56.487Z</updated>
     
@@ -459,14 +459,14 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://callmexss.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://callmexss.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>my word list</title>
-    <link href="https://callmexss.github.io/2017/07/12/my-word-list/"/>
-    <id>https://callmexss.github.io/2017/07/12/my-word-list/</id>
+    <link href="https://callmexss.top/2017/07/12/my-word-list/"/>
+    <id>https://callmexss.top/2017/07/12/my-word-list/</id>
     <published>2017-07-12T13:38:34.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
@@ -482,14 +482,14 @@
     </summary>
     
     
-      <category term="English" scheme="https://callmexss.github.io/tags/English/"/>
+      <category term="English" scheme="https://callmexss.top/tags/English/"/>
     
   </entry>
   
   <entry>
     <title>Eclipse快捷键</title>
-    <link href="https://callmexss.github.io/2017/07/11/Eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>https://callmexss.github.io/2017/07/11/Eclipse快捷键/</id>
+    <link href="https://callmexss.top/2017/07/11/Eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://callmexss.top/2017/07/11/Eclipse快捷键/</id>
     <published>2017-07-11T09:01:34.000Z</published>
     <updated>2019-03-28T13:35:20.947Z</updated>
     
@@ -505,17 +505,17 @@
     
     </summary>
     
-      <category term="tools" scheme="https://callmexss.github.io/categories/tools/"/>
+      <category term="tools" scheme="https://callmexss.top/categories/tools/"/>
     
     
-      <category term="java" scheme="https://callmexss.github.io/tags/java/"/>
+      <category term="java" scheme="https://callmexss.top/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://callmexss.github.io/2017/07/11/hello-world/"/>
-    <id>https://callmexss.github.io/2017/07/11/hello-world/</id>
+    <link href="https://callmexss.top/2017/07/11/hello-world/"/>
+    <id>https://callmexss.top/2017/07/11/hello-world/</id>
     <published>2017-07-11T07:00:00.000Z</published>
     <updated>2019-03-28T13:35:20.959Z</updated>
     
