@@ -296,6 +296,23 @@ scp -P 22 -r ~/Desktop/Sample mac:Desktop/Sample
 
 ### bash
 
+`bash` 是大多数 linux 系统默认的登录 shell。由于 `zshrc` 是兼容 `bash` 的，因此配置的相关内容统一放到介绍 `zshrc` 的时候。这里主要介绍一下几个常用的 `bash` 配置文件。
+
+```text
+/bin/bash
+       The bash executable
+/etc/profile
+       The systemwide initialization file, executed for login shells
+~/.bash_profile
+       The personal initialization file, executed for login shells
+~/.bashrc
+       The individual per-interactive-shell startup file
+~/.bash_logout
+       The individual login shell cleanup file, executed when a login shell exits
+~/.inputrc
+       Individual readline initialization file
+```
+
 ### [fish](http://fishshell.com/)
 
 [github-repository](https://github.com/fish-shell/fish-shell)
@@ -323,6 +340,8 @@ fish_config
 基本上`fish`是一个开箱即用的shell，几乎不进行配置即可使用，但是`fish`和`bash`不兼容，所以稍加配置的`zsh`是更好的选择。
 
 ### zsh
+
+
 
 ### xonsh
 
@@ -434,8 +453,58 @@ make install        # install tldr
 
 性能很棒。
 
+#### [cheat](https://github.com/cheat/cheat)
+
+作用类似于 tldr，不过更具有定制性，通过使用它可以制作一套属于自己的命令提示工具。
+
+使用 `pip` 安装即可：
+
+```sh
+[sudo] pip install cheat
+```
+
+使用方法：
+
+```sh
+cheat
+
+Create and view cheatsheets on the command line.
+
+Usage:
+  cheat <cheatsheet>
+  cheat -e <cheatsheet>
+  cheat -s <keyword>
+  cheat -l
+  cheat -d
+  cheat -v
+
+Options:
+  -d --directories  List directories on $CHEAT_PATH
+  -e --edit         Edit cheatsheet
+  -l --list         List cheatsheets
+  -s --search       Search cheatsheets for <keyword>
+  -v --version      Print the version number
+
+Examples:
+
+  To view the `tar` cheatsheet:
+    cheat tar
+
+  To edit (or create) the `foo` cheatsheet:
+    cheat -e foo
+
+  To list all available cheatsheets:
+    cheat -l
+
+  To search for "ssh" among all cheatsheets:
+    cheat -s ssh
+
+```
+
 ## 参考
 
-[1. ubuntu下给用户添加sudo权限，并且如何取消sudo权限](https://blog.csdn.net/u011774239/article/details/48463393)  
+[1. ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
 
-[2. linux下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
+[2. linux 下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
+
+[3. 几种 bash 配置文件](https://stackoverflow.com/a/416931)
