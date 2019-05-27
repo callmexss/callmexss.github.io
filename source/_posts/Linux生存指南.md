@@ -501,6 +501,27 @@ Examples:
 
 ```
 
+#### [tig](https://github.com/jonas/tig)
+
+命令行界面的 git 客户端。
+
+通过源码编译安装：
+
+```sh
+$ git clone http://github.com/jonas/tig
+$ cd tig
+$ make prefix=/usr/local
+...
+include/tig/tig.h:93:22: fatal error: curses.h: No such file or directory
+compilation terminated.
+Makefile:334: recipe for target 'src/tig.o' failed
+make: *** [src/tig.o] Error 1
+
+$ sudo apt-get install libncurses5-dev libncursesw5-dev
+$ make prefix=/usr/local
+$ sudo make install prefix=/usr/local() sudo make install prefix=/usr/local
+```
+
 ## 参考
 
 [1. ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
@@ -508,3 +529,5 @@ Examples:
 [2. linux 下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
 
 [3. 几种 bash 配置文件](https://stackoverflow.com/a/416931)
+
+[4. Linux Error: curses.h: No such file or directory Problem Solution](https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/)
