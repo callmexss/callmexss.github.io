@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://callmexss.top/"/>
-  <updated>2019-05-17T15:27:19.427Z</updated>
+  <updated>2019-05-28T14:30:42.201Z</updated>
   <id>https://callmexss.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ansible 学习笔记</title>
+    <link href="https://callmexss.top/2019/05/28/Ansible-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://callmexss.top/2019/05/28/Ansible-学习笔记/</id>
+    <published>2019-05-28T12:35:32.000Z</published>
+    <updated>2019-05-28T14:30:42.201Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Ansible-介绍"><a href="#Ansible-介绍" class="headerlink" title="Ansible 介绍"></a>Ansible 介绍</h2><p>Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。</p><h2 id="Ansible-使用入门"><a href="#Ansible-使用入门" class="headerlink" title="Ansible 使用入门"></a>Ansible 使用入门</h2><h3 id="安装-Ansible"><a href="#安装-Ansible" class="headerlink" title="安装 Ansible"></a>安装 Ansible</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ansible</span><br></pre></td></tr></table></figure><p>Ansible 依赖 Python 和 ssh，服务器端需要安装 ssh 和版本号大于 2.5 的 Python。Ansible 安装完成后，控制端会增加以下几个可执行程序：</p><ul><li>ansible</li><li>ansible-doc</li><li>ansible-playbook</li><li>ansible-vault</li><li>ansible-console</li><li>ansible-galaxy</li><li>ansible-pull</li></ul><h3 id="Ansible-的运行环境"><a href="#Ansible-的运行环境" class="headerlink" title="Ansible 的运行环境"></a>Ansible 的运行环境</h3><p>在 /etc/ansible/hosts 文件中配置远程主机的域名或 ip 地址，Ansible 会默认读取该文件获取远程主机列表。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">test</span>]</span><br><span class="line">127.0.0.1</span><br><span class="line">10.102.18.12</span><br></pre></td></tr></table></figure><p>还可以在该 hosts 文件中配置用户名和端口号：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">test</span>]</span><br><span class="line">127.0.0.1 ansible_user=root ansible_port=2222</span><br><span class="line">10.102.18.12 ansible_user=root ansible_port=2222</span><br></pre></td></tr></table></figure><p>或者在配置文件中对 Ansible 的行为进行配置，配置文件将按照下列顺序进行搜索：</p><ul><li>ANSIBLE_CONFIG (environment variable if set)</li><li>ansible.cfg (in the current directory)</li><li>~/.ansible.cfg (in the home directory)</li><li>/etc/ansible/ansible.cfg</li></ul><p>Ansible 会解析上述列表，并使用它找到的第一个配置文件，其他的将会被忽略。</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[defaults]</span><br><span class="line">remote_port=2222</span><br><span class="line">remote_user=root</span><br></pre></td></tr></table></figure><h3 id="Ansible-的-ad-hoc-模式"><a href="#Ansible-的-ad-hoc-模式" class="headerlink" title="Ansible 的 ad-hoc 模式"></a>Ansible 的 ad-hoc 模式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible <span class="built_in">test</span> -m ping  <span class="comment"># 测试 ssh 连接</span></span><br><span class="line">ansible <span class="built_in">test</span> -m <span class="built_in">command</span> -a <span class="string">"ps"</span>  <span class="comment"># 远程执行 ps 命令</span></span><br></pre></td></tr></table></figure><h3 id="使用-playbook-控制服务器"><a href="#使用-playbook-控制服务器" class="headerlink" title="使用 playbook 控制服务器"></a>使用 playbook 控制服务器</h3><p>使用YAML配置文件编写任务。编写如下 playbook，命名为 test_playbook.yml。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">- host:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">  tasks:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">copy</span> <span class="string">file</span></span><br><span class="line"><span class="attr">    copy:</span> <span class="string">src=/tmp/data.txt</span> <span class="string">dest=/tmp/data.txt</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">change</span> <span class="string">mode</span></span><br><span class="line"><span class="attr">    file:</span> <span class="string">dest=/tmp/data.txt</span> <span class="string">mode=500</span> <span class="string">owner=root</span> <span class="string">group=root</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">ensure</span> <span class="string">packages</span> <span class="string">installed</span></span><br><span class="line"><span class="attr">    apt:</span> <span class="string">pkg=&#123;&#123;</span> <span class="string">item</span> <span class="string">&#125;&#125;</span> <span class="string">state=present</span></span><br><span class="line"><span class="attr">    with_items:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">tmux</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">git</span></span><br></pre></td></tr></table></figure><p>然后使用 <code>ansible-playbook test_playbook.yml</code> 执行即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Ansible-介绍&quot;&gt;&lt;a href=&quot;#Ansible-介绍&quot; class=&quot;headerlink&quot; title=&quot;Ansible 介绍&quot;&gt;&lt;/a&gt;Ansible 介绍&lt;/h2&gt;&lt;p&gt;Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额
+      
+    
+    </summary>
+    
+    
+      <category term="ansible" scheme="https://callmexss.top/tags/ansible/"/>
+    
+      <category term="python" scheme="https://callmexss.top/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python 容器</title>
@@ -324,9 +349,9 @@
     </summary>
     
     
-      <category term="English" scheme="https://callmexss.top/tags/English/"/>
-    
       <category term="python" scheme="https://callmexss.top/tags/python/"/>
+    
+      <category term="English" scheme="https://callmexss.top/tags/English/"/>
     
       <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
@@ -468,7 +493,7 @@
     <link href="https://callmexss.top/2017/07/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E9%9B%B6%EF%BC%89-%E6%A6%82%E8%BF%B0/"/>
     <id>https://callmexss.top/2017/07/14/计算机网络学习笔记（零）-概述/</id>
     <published>2017-07-14T10:12:42.000Z</published>
-    <updated>2019-04-01T14:26:37.612Z</updated>
+    <updated>2019-05-28T12:36:40.436Z</updated>
     
     <content type="html"><![CDATA[<h3 id="从0和1说起"><a href="#从0和1说起" class="headerlink" title="从0和1说起"></a>从0和1说起</h3><p>人与人之间可以通过某种媒介进行交流，例如语言、文字、表情等等。那么计算机之间是如何通信的呢？答案是使用计算机自己的语言——0和1。二进制可以说是计算机科学的基础，其内容也十分丰富，关于二进制的内容以后再详细写文章总结，此处暂不细表。</p><p>Q: 为什么计算机之间的通信使用二进制？</p><p>最主要的原因：二进制只有两种状态。这就意味着它可以很容易的通过物理方式实现，例如开关的打开和关闭，电平的高和低，科幻小说《三体》中人列计算机系统还通过举红白旗来实现二进制。</p><p>Q：什么是Internet？<br><a href="https://www.khanacademy.org/computing/computer-science/internet-intro/internet-works-intro/v/the-internet-wires-cables-and-wifi" target="_blank" rel="noopener">官方</a>（一个很简短有趣的关于网络的科普教程）一点的说法：</p><blockquote><p>A tangible physical system made to move information.<br>一个有形的用于传输信息的系统实体。</p></blockquote><p>通俗说来，Internet更像是一个邮局服务系统，只是其运输的不是包裹和信件，而是二进制的数据。这些数据是由“位(bit)”构成的。“位”，也就是我们常说的“比特”，它可以使用任意一组反义词来描述，例如开关，是否，真假，在计算机科学中，用0和1来表示这两种相反的状态。八个<strong>比特(bit)</strong>组成一个<strong>字节(byte)</strong>，即$1 Byte = 8 Bits$。</p><table><thead><tr><th style="text-align:center">位(bit)</th><th style="text-align:center">字节(byte)</th></tr></thead><tbody><tr><td style="text-align:center">可以理解成“占位”的意思，一个bit就是一个位置，这个位置的值可以是{0, 1}中的一个</td><td style="text-align:center">一个字节由八个位组成，直观来看00000100就是一个字节，字节可用于数据存储，也可以经过特定的编码代表特定含义</td></tr></tbody></table><p>还有一个相关的概念“字(word)”，同一时间处理二进制数的位数叫字长，由于不同的cpu具有不同的处理能力，所以字长的值要视实际情况而定。</p><h3 id="网络协议的分层"><a href="#网络协议的分层" class="headerlink" title="网络协议的分层"></a>网络协议的分层</h3><p>两种分层模型</p><table><thead><tr><th style="text-align:center">osi</th><th style="text-align:center">物数</th><th style="text-align:center">网</th><th style="text-align:center">传</th><th style="text-align:center">会表应</th></tr></thead><tbody><tr><td style="text-align:center">tcp/ip</td><td style="text-align:center">链路层</td><td style="text-align:center">网络层</td><td style="text-align:center">传输层</td><td style="text-align:center">应用层</td></tr><tr><td style="text-align:center">PDU</td><td style="text-align:center">位(bit) 帧(frame)</td><td style="text-align:center">包(packet)</td><td style="text-align:center">段(segment)</td></tr></tbody></table><p>分层的好处</p><p>​   接口、服务</p><p>*nix 系统中/etc/services文件中包含了常用的端口号</p><p>可以使用命令：grep 协议名 /etc/services 查看</p><p>例如：</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; grep http /etc/services </span><br><span class="line">http            80/tcp          www             <span class="comment"># WorldWideWeb HTTP</span></span><br><span class="line">http            80/udp                          <span class="comment"># HyperText Transfer Protocol</span></span><br><span class="line">https           443/tcp                         <span class="comment"># http protocol over TLS/SSL</span></span><br><span class="line">https           443/udp</span><br><span class="line">http-alt        8080/tcp        webcache        <span class="comment"># WWW caching service</span></span><br><span class="line">http-alt        8080/udp</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -506,32 +531,6 @@
     
     
       <category term="English" scheme="https://callmexss.top/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Eclipse快捷键</title>
-    <link href="https://callmexss.top/2017/07/11/Eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    <id>https://callmexss.top/2017/07/11/Eclipse快捷键/</id>
-    <published>2017-07-11T09:01:34.000Z</published>
-    <updated>2019-04-01T14:26:37.604Z</updated>
-    
-    <content type="html"><![CDATA[<p>目前感觉最常用的有：</p><p>alt + /  自动补全<br>ctrl + /  注释（取消注释）当前选定的内容<br>ctrl + d  删除当前行<br>ctrl + m  最大化（还原）当前窗口<br>ctrl + e  打开编辑器（切换窗口）<br>ctrl + o  显示大纲<br>ctrl + shift + f  格式化代码<br>ctrl + shift + o 导入及管理import语句<br>ctrl + shift + t  打开Open Type 查找类文件</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;目前感觉最常用的有：&lt;/p&gt;
-&lt;p&gt;alt + /  自动补全&lt;br&gt;ctrl + /  注释（取消注释）当前选定的内容&lt;br&gt;ctrl + d  删除当前行&lt;br&gt;ctrl + m  最大化（还原）当前窗口&lt;br&gt;ctrl + e  打开编辑器（切换窗口）&lt;br&gt;ctrl
-      
-    
-    </summary>
-    
-      <category term="tools" scheme="https://callmexss.top/categories/tools/"/>
-    
-    
-      <category term="java" scheme="https://callmexss.top/tags/java/"/>
     
   </entry>
   

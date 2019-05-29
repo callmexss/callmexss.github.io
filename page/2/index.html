@@ -341,6 +341,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/11/14/term-1-11th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/14/term-1-11th-week/" itemprop="url">
+                  term 1: 11th week
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-14 09:17:49" itemprop="dateCreated datePublished" datetime="2017-11-14T09:17:49+08:00">2017-11-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-letters-count">
+              &nbsp; | &nbsp;
+              <span>464 字</span>
+              &nbsp; | &nbsp;
+              <span>1 min</span>
+            </span>
+          
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/14/term-1-11th-week/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/11/14/term-1-11th-week/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/11/14/term-1-11th-week/" class="leancloud_visitors" data-flag-title="term 1: 11th week">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1114"><a href="#1114" class="headerlink" title="1114"></a>1114</h2><h3 id="读取文件失败原因总结"><a href="#读取文件失败原因总结" class="headerlink" title="读取文件失败原因总结"></a>读取文件失败原因总结</h3><ol>
+<li><p>文件名称打错，例如中文错别字，英文字母顺序写法、单词拼错。</p>
+</li>
+<li><p>文件路径错误，例如相对路径错误，平台不同路径表示方法不同。</p>
+</li>
+<li><p>IDE中显示在同一目录下并不意味着文件的实际位置也位于同一目录下。</p>
+<img src="/2017/11/14/term-1-11th-week/text.png">
+<img src="/2017/11/14/term-1-11th-week/conf.png">
+<p>​</p>
+</li>
+</ol>
+<h2 id="1115"><a href="#1115" class="headerlink" title="1115"></a>1115</h2><h3 id="LPCTSTR"><a href="#LPCTSTR" class="headerlink" title="LPCTSTR"></a>LPCTSTR</h3><blockquote>
+<p>LPCTSTR用来表示你的字符是否使用UNICODE, 如果你的程序定义了UNICODE或者其他相关的宏，那么这个字符或者字符串将被作为UNICODE字符串，否则就是标准的ANSI字符串。</p>
+<p><strong>类型理解</strong></p>
+<p>LPCTSTR类型：<br>L表示long指针 这是为了兼容Windows 3.1等16位操作系统遗留下来的，在win32中以及其他的32位操作系统中， long指针和near指针及far修饰符都是为了兼容的作用。没有实际意义。<br>P表示这是一个指针<br>C表示是一个常量<br>T表示在Win32环境中， 有一个_T宏<br>STR表示这个变量是一个字符串</p>
+</blockquote>
+<h3 id="宏定义中的"><a href="#宏定义中的" class="headerlink" title="宏定义中的#"></a>宏定义中的<code>#</code></h3><p>在github上看到一段<a href="https://github.com/ryanofsky/cfree/blob/f3cdb4d9d179f3e803d5928ce64838f4fe34f850/test.cpp" target="_blank" rel="noopener">代码</a>，使用了一个宏定义，感觉蛮有意思，研究一下它干了些什么。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span>::<span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EXPR(x)  cout &lt;&lt; #x &lt;&lt; <span class="meta-string">" = "</span> &lt;&lt; (x) &lt;&lt; endl</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span>, <span class="keyword">char</span> *[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  EXPR(<span class="number">2342</span> &gt;&gt; <span class="number">2</span> &amp;&amp; <span class="number">2</span>);</span><br><span class="line">  EXPR((<span class="number">2342</span> &gt;&gt; <span class="number">2</span>) &amp;&amp; <span class="number">2</span>);</span><br><span class="line">  EXPR(<span class="number">2342</span> &gt;&gt; (<span class="number">2</span> &amp;&amp; <span class="number">2</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2342 &gt;&gt; 2 &amp;&amp; 2 = 1</span><br><span class="line">(2342 &gt;&gt; 2) &amp;&amp; 2 = 1</span><br><span class="line">2342 &gt;&gt; (2 &amp;&amp; 2) = 1171</span><br></pre></td></tr></table></figure>
+<p>根据输出结果可以看出来：</p>
+<p><code>#x</code>是将x表示的内容转换成字符串，<code>(x)</code>是x执行后的结果。</p>
+<p><strong>Todo: </strong>宏定义中的<code>#, ##, @#, /</code>符号改天专门整理一下。</p>
+<h2 id="1117"><a href="#1117" class="headerlink" title="1117"></a>1117</h2><h3 id="vim替换反斜杠"><a href="#vim替换反斜杠" class="headerlink" title="vim替换反斜杠"></a>vim替换反斜杠</h3><p>由于C语言需要把路径中的<code>\</code>写成<code>\\</code>，使用替换命令<code>:s/\\/\\\\/g</code>时需要进行转义替换。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+</article>
+  
+  
+  
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/11/06/term-1-10th-week/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2222,7 +2428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+                <time title="修改时间：2019-05-28 20:36:40" itemprop="dateModified" datetime="2019-05-28T20:36:40+08:00">2019-05-28</time>
               
             
           </span>
@@ -2599,208 +2805,6 @@
   
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/07/11/Eclipse快捷键/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="许山山">
-      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="像素书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/11/Eclipse快捷键/" itemprop="url">
-                  Eclipse快捷键
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-07-11 17:01:34" itemprop="dateCreated datePublished" datetime="2017-07-11T17:01:34+08:00">2017-07-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-letters-count">
-              &nbsp; | &nbsp;
-              <span>93 字</span>
-              &nbsp; | &nbsp;
-              <span>1 min</span>
-            </span>
-          
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/11/Eclipse快捷键/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/07/11/Eclipse快捷键/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/07/11/Eclipse快捷键/" class="leancloud_visitors" data-flag-title="Eclipse快捷键">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>目前感觉最常用的有：</p>
-<p>alt + /  自动补全<br>ctrl + /  注释（取消注释）当前选定的内容<br>ctrl + d  删除当前行<br>ctrl + m  最大化（还原）当前窗口<br>ctrl + e  打开编辑器（切换窗口）<br>ctrl + o  显示大纲<br>ctrl + shift + f  格式化代码<br>ctrl + shift + o 导入及管理import语句<br>ctrl + shift + t  打开Open Type 查找类文件</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-</article>
-  
-  
-  
-
-    
   </section>
 
   
@@ -2850,7 +2854,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2928,7 +2932,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">24</span>
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3013,7 +3019,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共33.9k字</span>
+    <span class="post-count">共34.3k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 

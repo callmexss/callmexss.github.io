@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="折腾了一天，总算是把测试的程序运行成功了，问题还是出在了环境变量上。  要把algs4.jar 和 stdlib.jar 都添加到 class_path 才能使用jar包提供的功能。  运行编译好的class文件时不加扩展名，例如Example.class 1java Example 否则会出现以下错误 1错误: 找不到或无法加载主类 Example.class  运行测试程序 数据文件 tiny">
-<meta name="keywords" content="java,DSA,环境配置">
+  <meta name="description" content="Ansible 介绍Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。 Ansible 使用入门安装 Ansible1pip install ansible Ansible 依赖 Python 和 ssh，服务器端需要安装 ssh 和版本号大于 2.5 的 Python。Ansible 安装完成后，控制端会增加以下几个可执行程序：  ansible ans">
+<meta name="keywords" content="ansible,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coursera-algorithm：配置algs4环境">
-<meta property="og:url" content="https://callmexss.top/2017/10/17/Coursera-algorithm：配置algs4环境/index.html">
+<meta property="og:title" content="Ansible 学习笔记">
+<meta property="og:url" content="https://callmexss.top/2019/05/28/Ansible-学习笔记/index.html">
 <meta property="og:site_name" content="像素书">
-<meta property="og:description" content="折腾了一天，总算是把测试的程序运行成功了，问题还是出在了环境变量上。  要把algs4.jar 和 stdlib.jar 都添加到 class_path 才能使用jar包提供的功能。  运行编译好的class文件时不加扩展名，例如Example.class 1java Example 否则会出现以下错误 1错误: 找不到或无法加载主类 Example.class  运行测试程序 数据文件 tiny">
+<meta property="og:description" content="Ansible 介绍Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。 Ansible 使用入门安装 Ansible1pip install ansible Ansible 依赖 Python 和 ssh，服务器端需要安装 ssh 和版本号大于 2.5 的 Python。Ansible 安装完成后，控制端会增加以下几个可执行程序：  ansible ans">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T14:26:37.604Z">
+<meta property="og:updated_time" content="2019-05-28T14:30:42.201Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coursera-algorithm：配置algs4环境">
-<meta name="twitter:description" content="折腾了一天，总算是把测试的程序运行成功了，问题还是出在了环境变量上。  要把algs4.jar 和 stdlib.jar 都添加到 class_path 才能使用jar包提供的功能。  运行编译好的class文件时不加扩展名，例如Example.class 1java Example 否则会出现以下错误 1错误: 找不到或无法加载主类 Example.class  运行测试程序 数据文件 tiny">
+<meta name="twitter:title" content="Ansible 学习笔记">
+<meta name="twitter:description" content="Ansible 介绍Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。 Ansible 使用入门安装 Ansible1pip install ansible Ansible 依赖 Python 和 ssh，服务器端需要安装 ssh 和版本号大于 2.5 的 Python。Ansible 安装完成后，控制端会增加以下几个可执行程序：  ansible ans">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="https://callmexss.top/2017/10/17/Coursera-algorithm：配置algs4环境/">
+  <link rel="canonical" href="https://callmexss.top/2019/05/28/Ansible-学习笔记/">
 
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>Coursera-algorithm：配置algs4环境 | 像素书</title>
+  <title>Ansible 学习笔记 | 像素书</title>
   
 
 
@@ -342,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/10/17/Coursera-algorithm：配置algs4环境/">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2019/05/28/Ansible-学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="许山山">
@@ -359,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Coursera-algorithm：配置algs4环境
+          <h1 class="post-title" itemprop="name headline">Ansible 学习笔记
               
             
           </h1>
@@ -386,24 +386,12 @@
                 
               
 
-              <time title="创建时间：2017-10-17 21:22:34" itemprop="dateCreated datePublished" datetime="2017-10-17T21:22:34+08:00">2017-10-17</time>
+              <time title="创建时间：2019-05-28 20:35:32 / 修改时间：22:30:42" itemprop="dateCreated datePublished" datetime="2019-05-28T20:35:32+08:00">2019-05-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
               
             
           </span>
@@ -411,7 +399,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>340 字</span>
+              <span>395 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
             </span>
@@ -426,8 +414,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/17/Coursera-algorithm：配置algs4环境/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/10/17/Coursera-algorithm：配置algs4环境/" itemprop="commentCount"></span>
+                <a href="/2019/05/28/Ansible-学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/05/28/Ansible-学习笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -435,7 +423,7 @@
 
           
           
-             <span id="/2017/10/17/Coursera-algorithm：配置algs4环境/" class="leancloud_visitors" data-flag-title="Coursera-algorithm：配置algs4环境">
+             <span id="/2019/05/28/Ansible-学习笔记/" class="leancloud_visitors" data-flag-title="Ansible 学习笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -466,26 +454,35 @@
       
 
       
-        <p>折腾了一天，总算是把测试的程序运行成功了，问题还是出在了环境变量上。</p>
-<ol>
-<li><p>要把<code>algs4.jar</code> 和 <code>stdlib.jar</code> 都添加到 <code>class_path</code> 才能使用jar包提供的功能。</p>
-</li>
-<li><p>运行编译好的class文件时不加扩展名，例如Example.class</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Example</span><br></pre></td></tr></table></figure>
-<p>否则会出现以下错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误: 找不到或无法加载主类 Example.class</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行测试程序</p>
-<p>数据文件 <code>tinyUF.txt:</code> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">4 3</span><br><span class="line">3 8</span><br><span class="line">6 5</span><br><span class="line">9 4</span><br><span class="line">2 1</span><br><span class="line">8 9</span><br><span class="line">5 0</span><br><span class="line">7 2</span><br><span class="line">6 1</span><br><span class="line">1 0</span><br><span class="line">6 7</span><br></pre></td></tr></table></figure>
-<p>​</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickFindUF</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] id;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">QuickFindUF</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">		id = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">			id[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id[p] == id[q];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> pid = id[p];</span><br><span class="line">		<span class="keyword">int</span> qid = id[q];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; id.length; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (id[i] == pid) id[i] = qid;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id.length;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = StdIn.readInt();</span><br><span class="line">        QuickFindUF qf = <span class="keyword">new</span> QuickFindUF(n);</span><br><span class="line">        <span class="keyword">while</span> (!StdIn.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = StdIn.readInt();</span><br><span class="line">            <span class="keyword">int</span> q = StdIn.readInt();</span><br><span class="line">            <span class="keyword">if</span> (qf.connected(p, q)) <span class="keyword">continue</span>;</span><br><span class="line">            qf.union(p, q);</span><br><span class="line">            StdOut.println(p + <span class="string">" "</span> + q);</span><br><span class="line">        &#125;</span><br><span class="line">        StdOut.println(qf.count() + <span class="string">" components"</span>);</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">7</span>, <span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译运行：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; javac QuickFindUF.java</span><br><span class="line">&gt;&gt; java QuickFindUF &lt; tinyUF.txt</span><br><span class="line">&gt;&gt; output:</span><br><span class="line">4 3</span><br><span class="line">3 8</span><br><span class="line">6 5</span><br><span class="line">9 4</span><br><span class="line">2 1</span><br><span class="line">5 0</span><br><span class="line">7 2</span><br><span class="line">6 1</span><br><span class="line">10 components</span><br><span class="line">true</span><br><span class="line">true</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关于怎么在IDE中添加参数执行的方法还没有找到，这里留到后续补充。</p>
-</li>
-</ol>
+        <h2 id="Ansible-介绍"><a href="#Ansible-介绍" class="headerlink" title="Ansible 介绍"></a>Ansible 介绍</h2><p>Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。</p>
+<h2 id="Ansible-使用入门"><a href="#Ansible-使用入门" class="headerlink" title="Ansible 使用入门"></a>Ansible 使用入门</h2><h3 id="安装-Ansible"><a href="#安装-Ansible" class="headerlink" title="安装 Ansible"></a>安装 Ansible</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ansible</span><br></pre></td></tr></table></figure>
+<p>Ansible 依赖 Python 和 ssh，服务器端需要安装 ssh 和版本号大于 2.5 的 Python。Ansible 安装完成后，控制端会增加以下几个可执行程序：</p>
+<ul>
+<li>ansible</li>
+<li>ansible-doc</li>
+<li>ansible-playbook</li>
+<li>ansible-vault</li>
+<li>ansible-console</li>
+<li>ansible-galaxy</li>
+<li>ansible-pull</li>
+</ul>
+<h3 id="Ansible-的运行环境"><a href="#Ansible-的运行环境" class="headerlink" title="Ansible 的运行环境"></a>Ansible 的运行环境</h3><p>在 /etc/ansible/hosts 文件中配置远程主机的域名或 ip 地址，Ansible 会默认读取该文件获取远程主机列表。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">test</span>]</span><br><span class="line">127.0.0.1</span><br><span class="line">10.102.18.12</span><br></pre></td></tr></table></figure>
+<p>还可以在该 hosts 文件中配置用户名和端口号：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">test</span>]</span><br><span class="line">127.0.0.1 ansible_user=root ansible_port=2222</span><br><span class="line">10.102.18.12 ansible_user=root ansible_port=2222</span><br></pre></td></tr></table></figure>
+<p>或者在配置文件中对 Ansible 的行为进行配置，配置文件将按照下列顺序进行搜索：</p>
+<ul>
+<li>ANSIBLE_CONFIG (environment variable if set)</li>
+<li>ansible.cfg (in the current directory)</li>
+<li>~/.ansible.cfg (in the home directory)</li>
+<li>/etc/ansible/ansible.cfg</li>
+</ul>
+<p>Ansible 会解析上述列表，并使用它找到的第一个配置文件，其他的将会被忽略。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[defaults]</span><br><span class="line">remote_port=2222</span><br><span class="line">remote_user=root</span><br></pre></td></tr></table></figure>
+<h3 id="Ansible-的-ad-hoc-模式"><a href="#Ansible-的-ad-hoc-模式" class="headerlink" title="Ansible 的 ad-hoc 模式"></a>Ansible 的 ad-hoc 模式</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ansible <span class="built_in">test</span> -m ping  <span class="comment"># 测试 ssh 连接</span></span><br><span class="line">ansible <span class="built_in">test</span> -m <span class="built_in">command</span> -a <span class="string">"ps"</span>  <span class="comment"># 远程执行 ps 命令</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用-playbook-控制服务器"><a href="#使用-playbook-控制服务器" class="headerlink" title="使用 playbook 控制服务器"></a>使用 playbook 控制服务器</h3><p>使用YAML配置文件编写任务。编写如下 playbook，命名为 test_playbook.yml。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">- host:</span> <span class="string">test</span></span><br><span class="line"><span class="attr">  tasks:</span></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">copy</span> <span class="string">file</span></span><br><span class="line"><span class="attr">    copy:</span> <span class="string">src=/tmp/data.txt</span> <span class="string">dest=/tmp/data.txt</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">change</span> <span class="string">mode</span></span><br><span class="line"><span class="attr">    file:</span> <span class="string">dest=/tmp/data.txt</span> <span class="string">mode=500</span> <span class="string">owner=root</span> <span class="string">group=root</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  - name:</span> <span class="string">ensure</span> <span class="string">packages</span> <span class="string">installed</span></span><br><span class="line"><span class="attr">    apt:</span> <span class="string">pkg=&#123;&#123;</span> <span class="string">item</span> <span class="string">&#125;&#125;</span> <span class="string">state=present</span></span><br><span class="line"><span class="attr">    with_items:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">tmux</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">git</span></span><br></pre></td></tr></table></figure>
+<p>然后使用 <code>ansible-playbook test_playbook.yml</code> 执行即可。</p>
 
       
     </div>
@@ -506,11 +503,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/ansible/" rel="tag"># ansible</a>
           
-            <a href="/tags/DSA/" rel="tag"># DSA</a>
-          
-            <a href="/tags/环境配置/" rel="tag"># 环境配置</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -523,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/13/python-websites-collection/" rel="next" title="python websites collection">
-                <i class="fa fa-chevron-left"></i> python websites collection
+              <a href="/2019/05/17/python-容器/" rel="next" title="python 容器">
+                <i class="fa fa-chevron-left"></i> python 容器
               </a>
             
           </div>
@@ -532,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/27/term-1-8th-week/" rel="prev" title="term 1: 8th week">
-                term 1: 8th week <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -582,8 +573,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -727,6 +727,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ansible-介绍"><span class="nav-number">1.</span> <span class="nav-text">Ansible 介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ansible-使用入门"><span class="nav-number">2.</span> <span class="nav-text">Ansible 使用入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Ansible"><span class="nav-number">2.1.</span> <span class="nav-text">安装 Ansible</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible-的运行环境"><span class="nav-number">2.2.</span> <span class="nav-text">Ansible 的运行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ansible-的-ad-hoc-模式"><span class="nav-number">2.3.</span> <span class="nav-text">Ansible 的 ad-hoc 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-playbook-控制服务器"><span class="nav-number">2.4.</span> <span class="nav-text">使用 playbook 控制服务器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
