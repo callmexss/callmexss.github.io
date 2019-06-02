@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建时间：2019-06-02 09:15:58 / 修改时间：13:20:58" itemprop="dateCreated datePublished" datetime="2019-06-02T09:15:58+08:00">2019-06-02</time>
+              <time title="创建时间：2019-06-02 09:15:58 / 修改时间：13:22:05" itemprop="dateCreated datePublished" datetime="2019-06-02T09:15:58+08:00">2019-06-02</time>
             
 
             
@@ -402,7 +402,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>874 字</span>
+              <span>876 字</span>
               &nbsp; | &nbsp;
               <span>3 min</span>
             </span>
@@ -461,7 +461,7 @@
           
             <h1 id="Python-测试框架"><a href="#Python-测试框架" class="headerlink" title="Python 测试框架"></a>Python 测试框架</h1><h2 id="unittest"><a href="#unittest" class="headerlink" title="unittest"></a>unittest</h2><h3 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h3><p>先来看一个最简单的例子：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestAdd</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_add</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(add(<span class="number">1</span>, <span class="number">2</span>), <span class="number">3</span>)</span><br><span class="line">        self.assertEqual(add(<span class="number">-1</span>, <span class="number">2</span>), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
-<p>在上面的例子中通过继承 <code>unittest.TestCase</code> 来编写测试类，在测试类中可以使用 <code>unittest</code> 提供的若干方法编写测试用例，最后使用 <code>unittest.main</code> 运行单元测试。<br>也可以使用 <code>python -m unittest test.py</code> 的方式运行测试用例。</p>
+<p>在上面的例子中通过继承 <code>unittest.TestCase</code> 来编写测试类，在测试类中可以使用 <code>unittest</code> 提供的若干方法编写测试用例，最后使用 <code>unittest.main()</code> 运行单元测试。此外也可以使用 <code>python -m unittest test.py</code> 的方式运行测试用例。</p>
 <h3 id="初始化与清理现场"><a href="#初始化与清理现场" class="headerlink" title="初始化与清理现场"></a>初始化与清理现场</h3><p>在一些测试中，需要提前配置一些信息，例如创建某个特性的被测试对象，这个时候可以使用 <code>unittest</code> 提供的 <code>setUp</code> 函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WidgetTestCase</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.widget = Widget(<span class="string">'The widget'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_default_widget_size</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.assertEqual(self.widget.size(), (<span class="number">50</span>,<span class="number">50</span>),</span><br><span class="line">                         <span class="string">'incorrect default size'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.widget.dispose()</span><br></pre></td></tr></table></figure>
 <p>上面一个来自 <code>Python</code> 官方文档的样例代码，其中 <code>setUp</code> 用于在测试开始前做一些准备工作，<code>tearDown</code> 是测试结束后的清理工作，例如测试失败时程序就会终止运行，这个时候可以通过添加 <code>tearDown</code> 方法释放系统资源。</p>
