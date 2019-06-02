@@ -1,5 +1,5 @@
 ---
-title: python websites collection
+title: Python Websites Collection
 date: 2017-10-13 15:39:15
 tags: python
 

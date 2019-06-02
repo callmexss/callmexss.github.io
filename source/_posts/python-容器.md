@@ -1,12 +1,12 @@
 ---
-title: python 容器
+title: Python 容器
 date: 2019-05-17 20:46:04
 categorises:
 tags:
 - python
 ---
 
-## python 容器
+## Python 容器
 
 python 内建的容器数据结构有列表，元组，集合和字典。这四个容器数据结构可以说是 python 编程过程中必不可少的数据类型，合理的选择使用这些数据结构对提升程序性能有很大的帮助。
 
