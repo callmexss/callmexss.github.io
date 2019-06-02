@@ -329,7 +329,7 @@ sudo apt-get install fish
 
 #### 配置
 
-配置非常方便，先在命令行中输入`fish`切换shell为`fish`，然后图形界面下会显示一个http的链接，点击进入该链接进行相应配置即可。
+配置非常方便，先在命令行中输入 `fish` 切换shell为 `fish` ，然后图形界面下会显示一个http的链接，点击进入该链接进行相应配置即可。
 
 ```sh
 fish_config
@@ -337,10 +337,46 @@ fish_config
 
 {% asset_img fish_config.png %}
 
-基本上`fish`是一个开箱即用的shell，几乎不进行配置即可使用，但是`fish`和`bash`不兼容，所以稍加配置的`zsh`是更好的选择。
+基本上 `fish` 是一个开箱即用的shell，几乎不进行配置即可使用，但是 `fish` 和 `bash` 不兼容，所以稍加配置的 `zsh` 是更好的选择。
 
 ### zsh
 
+ubuntu 下安装：
+
+```sh
+$ sudo apt install zsh
+```
+
+修改默认登录 shell
+
+```sh
+# 查看默认 shell
+$ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/bin/rbash
+/bin/dash
+/usr/bin/tmux
+/usr/bin/fish
+/bin/zsh
+/usr/bin/zsh
+
+# 切换登录 shell 为 zsh
+$ chsh -s /bin/zsh
+
+# 可以通过 echo $SHELL 查看当前默认的 Shell，如果没有改为 /bin/zsh，那么需要重启 Shell。
+```
+
+安装 Oh My Zsh
+
+```sh
+# 安装 Oh My Zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+# 以上命令可能不好使，可使用如下两条命令
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh
+bash ./install.sh
+```
 
 
 ### xonsh
