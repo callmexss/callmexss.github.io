@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://callmexss.top/"/>
-  <updated>2019-06-04T09:46:09.962Z</updated>
+  <updated>2019-06-04T09:50:56.101Z</updated>
   <id>https://callmexss.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://callmexss.top/2019/06/04/networkx-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://callmexss.top/2019/06/04/networkx-学习笔记/</id>
     <published>2019-06-04T06:54:00.000Z</published>
-    <updated>2019-06-04T09:46:09.962Z</updated>
+    <updated>2019-06-04T09:50:56.101Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Networkx-简介"><a href="#Networkx-简介" class="headerlink" title="Networkx 简介"></a>Networkx 简介</h2><h2 id="Cheat-Sheet"><a href="#Cheat-Sheet" class="headerlink" title="Cheat Sheet"></a>Cheat Sheet</h2><h3 id="绘制节点"><a href="#绘制节点" class="headerlink" title="绘制节点"></a>绘制节点</h3><h3 id="绘制边"><a href="#绘制边" class="headerlink" title="绘制边"></a>绘制边</h3><h3 id="绘制边标签"><a href="#绘制边标签" class="headerlink" title="绘制边标签"></a>绘制边标签</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> networkx <span class="keyword">as</span> nx</span><br><span class="line"></span><br><span class="line">edges = [[<span class="string">'A'</span>,<span class="string">'B'</span>],[<span class="string">'B'</span>,<span class="string">'C'</span>],[<span class="string">'B'</span>,<span class="string">'D'</span>]]</span><br><span class="line">labels = [<span class="string">"AB"</span>, <span class="string">"BC"</span>, <span class="string">"BD"</span>]</span><br><span class="line">edges_labels = dict(zip(edges, labels))</span><br><span class="line">G=nx.Graph()</span><br><span class="line">G.add_edges_from(edges)</span><br><span class="line">pos = nx.spring_layout(G)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line">nx.draw(G,pos,edge_color=<span class="string">'black'</span>, width=<span class="number">1</span>, linewidths=<span class="number">1</span>,</span><br><span class="line">        node_size=<span class="number">500</span>, node_color=<span class="string">'pink'</span>, alpha=<span class="number">0.9</span>,</span><br><span class="line">        labels=&#123;node:node <span class="keyword">for</span> node <span class="keyword">in</span> G.nodes()&#125;)</span><br><span class="line">nx.draw_networkx_edge_labels(G, pos, edge_labels=edges_labels,font_color=<span class="string">'red'</span>)</span><br><span class="line">plt.axis(<span class="string">'off'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><img src="/2019/06/04/networkx-学习笔记/edges_labels.png"><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2>]]></content>
     
