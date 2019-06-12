@@ -857,7 +857,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>904 字</span>
+              <span>905 字</span>
               &nbsp; | &nbsp;
               <span>4 min</span>
             </span>
@@ -939,6 +939,7 @@
 <blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; _JAVA_OPTIONS=-Xmx512M</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<p>&gt;</p>
 <blockquote>
 <ol>
 <li>Right click on start-button and open “System”</li>
@@ -1178,6 +1179,7 @@
 <p>output:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">a</span><br><span class="line">a:        apple</span><br><span class="line"></span><br><span class="line">        default field width = 0:</span><br><span class="line">    N:   N * N:</span><br><span class="line">    1:       1:</span><br><span class="line">   10:     100:</span><br><span class="line">  100:   10000:</span><br><span class="line">Waldo Whipsnade: $****900</span><br><span class="line">Wilmarie Wooper: $***1350</span><br><span class="line"></span><br><span class="line">3.14159</span><br><span class="line">3.1416</span><br><span class="line"></span><br><span class="line">10.00</span><br><span class="line">20.04</span><br></pre></td></tr></table></figure>
 <p>格式化常量：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1208,12 +1210,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="1122"><a href="#1122" class="headerlink" title="1122"></a>1122</h2><h3 id="tar——压缩、解压缩命令"><a href="#tar——压缩、解压缩命令" class="headerlink" title="tar——压缩、解压缩命令"></a>tar——压缩、解压缩命令</h3><blockquote>
 <p>压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称<br>查　询：tar -jtv -f filename.tar.bz2<br>解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录<br>————tar -zxvf 路径/文件名.tar.gz<br>来自: <a href="http://man.linuxde.net/tar" target="_blank" rel="noopener">http://man.linuxde.net/tar</a></p>
 </blockquote>
 <h2 id="1123"><a href="#1123" class="headerlink" title="1123"></a>1123</h2><h3 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h3><h4 id="if-ifdef-ifndef"><a href="#if-ifdef-ifndef" class="headerlink" title="#if - #ifdef - #ifndef"></a>#if - #ifdef - #ifndef</h4><blockquote>
 <p>预处理器支持有条件地编译部分源文件。这一行为由 <code>#if</code>、<code>#else</code>、<code>#elif</code>、<code>#ifdef</code>、<code>#ifndef</code> 与 <code>#endif</code> 指令所控制。</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1241,6 +1245,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p><strong>解释</strong><br>条件编译预处理块由 <code>#if</code>、<code>#ifdef</code> 或 <code>#ifndef</code> 指令开始，并可选地包含任意多个 <code>#elif</code> 指令，接下来是至多一个可选的 <code>#else</code> 指令，并以 <code>#endif</code> 指令结束。嵌套的条件编译区块会被单独处理。</p>
 <p>各个 <code>#if</code>、<code>#elif</code>、<code>#else</code>、<code>#ifdef</code> 和 <code>#ifndef</code> 指令所控制的代码块在第一个不属于内部嵌套的条件编译区块的 <code>#elif</code>、<code>#else</code> 或 <code>#endif</code> 指令处结束。</p>
@@ -1250,7 +1255,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ABCD 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: no\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no1\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> ABCD == 2</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no2\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(DCBA) &amp;&amp; (ABCD &lt; 2*4-3)</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"3: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="define-include"><a href="#define-include" class="headerlink" title="#define - # - ## - #include"></a>#define - # - ## - #include</h4><p>#define</p>
 <blockquote>
-<p>预处理器支持文本宏替换。亦支持仿函数文本宏替换。<br>| 语法                            |<br>| —————————– |<br>| <code>#define</code> 标识符 替换列表(可选)        |<br>| <code>#define</code> 标识符( 形参 ) 替换列表     |<br>| <code>#define</code> 标识符( 形参, … ) 替换列表 |<br>| <code>#define</code> 标识符( … ) 替换列表     |<br>| <code>#undef</code> 标识符                  |</p>
+<p>预处理器支持文本宏替换。亦支持仿函数文本宏替换。<br>| 语法                            |<br>| ——————————————- |<br>| <code>#define</code> 标识符 替换列表(可选)        |<br>| <code>#define</code> 标识符( 形参 ) 替换列表     |<br>| <code>#define</code> 标识符( 形参, … ) 替换列表 |<br>| <code>#define</code> 标识符( … ) 替换列表     |<br>| <code>#undef</code> 标识符                  |</p>
 </blockquote>
 <hr>
 <p># 和 ##</p>
@@ -1265,6 +1270,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 制造函数工厂并使用它</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION(name, a) int fun_##name() &#123; return a;&#125;</span></span><br><span class="line"> </span><br><span class="line">FUNCTION(abcd, <span class="number">12</span>)</span><br><span class="line">FUNCTION(fff, <span class="number">2</span>)</span><br><span class="line">FUNCTION(qqq, <span class="number">23</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> FUNCTION</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION 34</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUTPUT(a) std::cout &lt;&lt; #a &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"abcd: "</span> &lt;&lt; fun_abcd() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"fff: "</span> &lt;&lt; fun_fff() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"qqq: "</span> &lt;&lt; fun_qqq() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; FUNCTION &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    OUTPUT(million);               <span class="comment">// 注意缺少引号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>#include </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1283,14 +1289,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p>任何预处理记号（宏常量或者表达式）都允许用作 <code>#include</code> 和 <code>__has_include</code> (C++17 起)的实参，只要它们扩展为以 &lt; &gt; 或者 “ “ 所包围的字符序列即可。</p>
 </blockquote>
 <p>最近遇到一种头文件里的写法，一直没有查是什么意思，今天偶然看<a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/headers/#define-guard" target="_blank" rel="noopener">谷歌C++风格指南</a> 看到了答案。</p>
 <blockquote>
 <p>头文件应该能够自给自足（self-contained,也就是可以作为第一个头文件被引入），以 <code>.h</code> 结尾。至于用来插入文本的文件，说到底它们并不是头文件，所以应以 <code>.inc</code> 结尾。不允许分离出 <code>-inl.h</code> 头文件的做法。</p>
-</blockquote>
-<blockquote>
 <p>当包含一个文件时，将进行翻译阶段 1 到 4 的处理，其中将递归地包括对其中嵌套的 #include 指令的扩展。为了避免相同文件被重复包含，和当文件（可能传递性地）包含自身时的无限递归，通常会使用头文件防护，整个头文件被包含到：</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为保证唯一性, 头文件的命名应该基于所在项目源代码树的全路径.</span></span><br><span class="line"><span class="comment">// 例如, 项目 foo 中的头文件 foo/src/bar/baz.h 可按如下方式保护:</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> FOO_BAR_BAZ_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO_BAR_BAZ_H_</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// FOO_BAR_BAZ_H_</span></span></span><br></pre></td></tr></table></figure>
@@ -1805,6 +1810,7 @@
 <h2 id="1109"><a href="#1109" class="headerlink" title="1109"></a>1109</h2><h3 id="cout-格式化输出字符"><a href="#cout-格式化输出字符" class="headerlink" title="cout 格式化输出字符"></a>cout 格式化输出字符</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***********************************************</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *      Filename: 3_1.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *        Author: xss - callmexss@126.com</span></span><br><span class="line"><span class="comment"> *   Description: inches to feet and inches</span></span><br><span class="line"><span class="comment"> *        Create: 2017-11-07 10:58:49</span></span><br><span class="line"><span class="comment"> * Last Modified: 2017-11-07 16:23:34</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> ***********************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> InchesInFoot = <span class="number">12</span>;</span><br><span class="line">    <span class="built_in">cout</span>.setf(ios_base::fixed, ios_base::floatfield);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Input your height(inches):___"</span> &lt;&lt; <span class="string">"\b\b\b"</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; height;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"you're "</span> &lt;&lt; height / InchesInFoot &lt;&lt; <span class="string">" feets, "</span> &lt;&lt; height % InchesInFoot &lt;&lt;<span class="string">" inches"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>题目要求在下划线上进行输入，因此使用了<code>cout.setf()</code>控制输出格式。该方法有两种重载形式：</p>
 <p><strong>std::ios_base::setf</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1819,6 +1825,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p>Set specific format flags</p>
 <p>The first form <em>(1)</em> sets the stream’s <em>format flags</em> whose bits are set in fmtfl, leaving unchanged the rest, as if a call to <code>flags(fmtfl|flags())</code>.<br>The second form <em>(2)</em> sets the stream’s <em>format flags</em> whose bits are set in both fmtfl and mask, and clears the <em>format flags</em> whose bits are set in mask but not in fmtfl, as if a call to <code>flags((fmtfl&amp;mask)|(flags()&amp;~mask))</code>.<br>Both return the value of the stream’s <em>format flags</em> before the call.<br>The format flags of a stream affect the way data is interpreted in certain input functions and how it is written by certain output functions. See <a href="http://www.cplusplus.com/ios_base::fmtflags" target="_blank" rel="noopener">ios_base::fmtflags</a> for the possible values of this function’s arguments.</p>
@@ -2021,6 +2028,7 @@
 <h3 id="python-使用-pickle-序列化对象"><a href="#python-使用-pickle-序列化对象" class="headerlink" title="python 使用 pickle 序列化对象"></a>python 使用 pickle 序列化对象</h3><p>之前一直想使用 <code>pickle</code> 存取python对象，今天写了个脚本恰好需要使用，就借着这个机会简单记录一下其使用方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个字典</span></span><br><span class="line">words = &#123;<span class="string">"hello"</span>:<span class="number">5</span>, <span class="string">"world"</span>:<span class="number">5</span>, <span class="string">"python"</span>:<span class="number">6</span>, <span class="string">"c++"</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="comment"># 使用pickle序列化words并存储</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"wd.pickle"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">  <span class="comment"># 第一个参数是需要序列化的对象，第二个参数是序列化对象存储的文件</span></span><br><span class="line">  pickle.dump(words, f)</span><br><span class="line">  <span class="comment"># 脚本执行后会在其所在文件夹建立wd.pickle文件，使用cat 命令查看：</span></span><br><span class="line">  <span class="comment"># output:</span></span><br><span class="line">  <span class="string">'''</span></span><br><span class="line"><span class="string">  (dp0</span></span><br><span class="line"><span class="string">  S'python'</span></span><br><span class="line"><span class="string">  p1</span></span><br><span class="line"><span class="string">  I6</span></span><br><span class="line"><span class="string">  sS'world'</span></span><br><span class="line"><span class="string">  p2</span></span><br><span class="line"><span class="string">  I5</span></span><br><span class="line"><span class="string">  sS'hello'</span></span><br><span class="line"><span class="string">  p3</span></span><br><span class="line"><span class="string">  I5</span></span><br><span class="line"><span class="string">  sS'c++'</span></span><br><span class="line"><span class="string">  p4</span></span><br><span class="line"><span class="string">  I3</span></span><br><span class="line"><span class="string">  s.r</span></span><br><span class="line"><span class="string">  '''</span></span><br><span class="line">  <span class="comment"># 还可以使用第三个参数选择加密算法（可选）</span></span><br><span class="line">  <span class="comment"># 例如：</span></span><br><span class="line">  <span class="comment"># pickle.dump(words, f, 1)</span></span><br><span class="line">  <span class="comment"># cat wd.pickle</span></span><br><span class="line">  <span class="comment"># &#125;q(UaqKUbqKu.</span></span><br><span class="line"><span class="comment"># 使用pickle读取文件并将其内容转化为python对象</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'wd.pickle'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">  data = pickle.load(f)</span><br><span class="line"><span class="keyword">print</span> data</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># &#123;'world': 5, 'c++': 3, 'hello': 5, 'python': 6&#125;</span></span><br></pre></td></tr></table></figure>
 <h3 id="迭代器继承"><a href="#迭代器继承" class="headerlink" title="迭代器继承"></a>迭代器继承</h3><p>根据上面介绍的5中迭代器，可以看出来它们之间是有继承关系的。各个迭代器功能如下表所示(i for iterator, n is an integer)：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2066,7 +2074,7 @@
 <td style="text-align:center">Yes</td>
 </tr>
 <tr>
-<td style="text-align:center">i–    –i</td>
+<td style="text-align:center">i—    —i</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">No</td>
 <td style="text-align:center">No</td>
@@ -2115,6 +2123,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="1101"><a href="#1101" class="headerlink" title="1101"></a>1101</h2><h3 id="一个关于-vector-构造函数的坑"><a href="#一个关于-vector-构造函数的坑" class="headerlink" title="一个关于 vector 构造函数的坑"></a>一个关于 vector 构造函数的坑</h3><p>c++ primer 书中介绍<code>copy()</code>函数时举了下面这个例子：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> casts[<span class="number">10</span>] = &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">9</span> ,<span class="number">4</span> , <span class="number">11</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dice[<span class="number">10</span>];</span><br><span class="line">copy(casts, casts + <span class="number">10</span>, dice.begin()); <span class="comment">// copy array to vector</span></span><br></pre></td></tr></table></figure>
 <p>在Ubuntu环境下编译该代码出现如下错误：</p>
@@ -2141,6 +2150,7 @@
 <blockquote>
 <p> In the table, X represents a container type, such as vector, T represents the type of object stored in the container, a and b represent values of type X, and u represents an identifier of type X. </p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2231,6 +2241,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="1103"><a href="#1103" class="headerlink" title="1103"></a>1103</h2><h3 id="vim-常用技巧"><a href="#vim-常用技巧" class="headerlink" title="vim 常用技巧"></a>vim 常用技巧</h3><p><a href="http://54rd.net/html/2015/shell_0104/10.html" target="_blank" rel="noopener">vim替换操作</a></p>
 <h3 id="c-namespace-问题"><a href="#c-namespace-问题" class="headerlink" title="c++ namespace 问题"></a>c++ namespace 问题</h3><p>写了一个函数，用来输出列表元素：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; &amp;li, <span class="built_in">string</span> name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ostream_iterator&lt;<span class="keyword">int</span>, <span class="keyword">char</span>&gt; out(<span class="built_in">cout</span>, <span class="string">" "</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"list "</span> + name + <span class="string">": "</span>;</span><br><span class="line">    copy(li.begin(), li.end(), out);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2485,6 +2496,7 @@
 <blockquote>
 <p>s( Single-Resposibility Principle ): 单一职责原则<br>o( Open-Closed principle ): 开放封闭原则<br>l( Liskov-Substituion Principle ): 里氏原则<br>i( Interface-Segregation Principle ): 接口隔离原则<br>d( Dependecy-Inversion Principle ): 依赖倒置原则</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2515,6 +2527,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p>程序的完整编译过程分为是：预处理，编译，汇编等，如下关于编译阶段的编译优化的说法中不正确的是（）?</p>
 <p>A. 死代码删除指的是编译过程直接抛弃掉被注释的代码<br>B. 函数内联可以避免函数调用中压栈和退栈的开销<br>C. For循环的循环控制变量通常很适合调度到寄存器访问<br>D. 强度削弱是指执行时间较短的指令等价的替代执行时间较长的指令</p>
@@ -2565,6 +2578,7 @@
 <p>正确答案: A C D   我的答案: E (错误)</p>
 <p><a href="https://www.nowcoder.com/test/question/done?tid=12134872&amp;qid=1343#summary" target="_blank" rel="noopener">解析</a>:</p>
 <p>常见算法</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -2589,6 +2603,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <hr>
 <p>以下哪些做法是不正确或者应该极力避免的：【多选】（ ）</p>
 <p>A. 构造函数声明为虚函数<br>B. 派生关系中的基类析构函数声明为虚函数<br>C. 构造函数中调用虚函数<br>D. 析构函数中调用虚函数</p>

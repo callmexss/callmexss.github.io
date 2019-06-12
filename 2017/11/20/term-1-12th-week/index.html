@@ -504,6 +504,7 @@
 <p>output:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">12</span><br><span class="line">a</span><br><span class="line">a:        apple</span><br><span class="line"></span><br><span class="line">        default field width = 0:</span><br><span class="line">    N:   N * N:</span><br><span class="line">    1:       1:</span><br><span class="line">   10:     100:</span><br><span class="line">  100:   10000:</span><br><span class="line">Waldo Whipsnade: $****900</span><br><span class="line">Wilmarie Wooper: $***1350</span><br><span class="line"></span><br><span class="line">3.14159</span><br><span class="line">3.1416</span><br><span class="line"></span><br><span class="line">10.00</span><br><span class="line">20.04</span><br></pre></td></tr></table></figure>
 <p>格式化常量：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -534,12 +535,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="1122"><a href="#1122" class="headerlink" title="1122"></a>1122</h2><h3 id="tar——压缩、解压缩命令"><a href="#tar——压缩、解压缩命令" class="headerlink" title="tar——压缩、解压缩命令"></a>tar——压缩、解压缩命令</h3><blockquote>
 <p>压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称<br>查　询：tar -jtv -f filename.tar.bz2<br>解压缩：tar -jxv -f filename.tar.bz2 -C 欲解压缩的目录<br>————tar -zxvf 路径/文件名.tar.gz<br>来自: <a href="http://man.linuxde.net/tar" target="_blank" rel="noopener">http://man.linuxde.net/tar</a></p>
 </blockquote>
 <h2 id="1123"><a href="#1123" class="headerlink" title="1123"></a>1123</h2><h3 id="预处理器"><a href="#预处理器" class="headerlink" title="预处理器"></a>预处理器</h3><h4 id="if-ifdef-ifndef"><a href="#if-ifdef-ifndef" class="headerlink" title="#if - #ifdef - #ifndef"></a>#if - #ifdef - #ifndef</h4><blockquote>
 <p>预处理器支持有条件地编译部分源文件。这一行为由 <code>#if</code>、<code>#else</code>、<code>#elif</code>、<code>#ifdef</code>、<code>#ifndef</code> 与 <code>#endif</code> 指令所控制。</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -567,6 +570,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p><strong>解释</strong><br>条件编译预处理块由 <code>#if</code>、<code>#ifdef</code> 或 <code>#ifndef</code> 指令开始，并可选地包含任意多个 <code>#elif</code> 指令，接下来是至多一个可选的 <code>#else</code> 指令，并以 <code>#endif</code> 指令结束。嵌套的条件编译区块会被单独处理。</p>
 <p>各个 <code>#if</code>、<code>#elif</code>、<code>#else</code>、<code>#ifdef</code> 和 <code>#ifndef</code> 指令所控制的代码块在第一个不属于内部嵌套的条件编译区块的 <code>#elif</code>、<code>#else</code> 或 <code>#endif</code> 指令处结束。</p>
@@ -576,7 +580,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ABCD 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"1: no\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ABCD</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no1\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> ABCD == 2</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"2: no2\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> !defined(DCBA) &amp;&amp; (ABCD &lt; 2*4-3)</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"3: yes\n"</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="define-include"><a href="#define-include" class="headerlink" title="#define - # - ## - #include"></a>#define - # - ## - #include</h4><p>#define</p>
 <blockquote>
-<p>预处理器支持文本宏替换。亦支持仿函数文本宏替换。<br>| 语法                            |<br>| —————————– |<br>| <code>#define</code> 标识符 替换列表(可选)        |<br>| <code>#define</code> 标识符( 形参 ) 替换列表     |<br>| <code>#define</code> 标识符( 形参, … ) 替换列表 |<br>| <code>#define</code> 标识符( … ) 替换列表     |<br>| <code>#undef</code> 标识符                  |</p>
+<p>预处理器支持文本宏替换。亦支持仿函数文本宏替换。<br>| 语法                            |<br>| ——————————————- |<br>| <code>#define</code> 标识符 替换列表(可选)        |<br>| <code>#define</code> 标识符( 形参 ) 替换列表     |<br>| <code>#define</code> 标识符( 形参, … ) 替换列表 |<br>| <code>#define</code> 标识符( … ) 替换列表     |<br>| <code>#undef</code> 标识符                  |</p>
 </blockquote>
 <hr>
 <p># 和 ##</p>
@@ -591,6 +595,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 制造函数工厂并使用它</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION(name, a) int fun_##name() &#123; return a;&#125;</span></span><br><span class="line"> </span><br><span class="line">FUNCTION(abcd, <span class="number">12</span>)</span><br><span class="line">FUNCTION(fff, <span class="number">2</span>)</span><br><span class="line">FUNCTION(qqq, <span class="number">23</span>)</span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">undef</span> FUNCTION</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FUNCTION 34</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUTPUT(a) std::cout &lt;&lt; #a &lt;&lt; <span class="meta-string">'\n'</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"abcd: "</span> &lt;&lt; fun_abcd() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"fff: "</span> &lt;&lt; fun_fff() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"qqq: "</span> &lt;&lt; fun_qqq() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; FUNCTION &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    OUTPUT(million);               <span class="comment">// 注意缺少引号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <p>#include </p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -609,14 +614,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p>任何预处理记号（宏常量或者表达式）都允许用作 <code>#include</code> 和 <code>__has_include</code> (C++17 起)的实参，只要它们扩展为以 &lt; &gt; 或者 “ “ 所包围的字符序列即可。</p>
 </blockquote>
 <p>最近遇到一种头文件里的写法，一直没有查是什么意思，今天偶然看<a href="http://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/headers/#define-guard" target="_blank" rel="noopener">谷歌C++风格指南</a> 看到了答案。</p>
 <blockquote>
 <p>头文件应该能够自给自足（self-contained,也就是可以作为第一个头文件被引入），以 <code>.h</code> 结尾。至于用来插入文本的文件，说到底它们并不是头文件，所以应以 <code>.inc</code> 结尾。不允许分离出 <code>-inl.h</code> 头文件的做法。</p>
-</blockquote>
-<blockquote>
 <p>当包含一个文件时，将进行翻译阶段 1 到 4 的处理，其中将递归地包括对其中嵌套的 #include 指令的扩展。为了避免相同文件被重复包含，和当文件（可能传递性地）包含自身时的无限递归，通常会使用头文件防护，整个头文件被包含到：</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为保证唯一性, 头文件的命名应该基于所在项目源代码树的全路径.</span></span><br><span class="line"><span class="comment">// 例如, 项目 foo 中的头文件 foo/src/bar/baz.h 可按如下方式保护:</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> FOO_BAR_BAZ_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FOO_BAR_BAZ_H_</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// FOO_BAR_BAZ_H_</span></span></span><br></pre></td></tr></table></figure>
