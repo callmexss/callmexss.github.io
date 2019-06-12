@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建时间：2019-06-12 21:25:55 / 修改时间：22:29:01" itemprop="dateCreated datePublished" datetime="2019-06-12T21:25:55+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 21:25:55 / 修改时间：22:43:39" itemprop="dateCreated datePublished" datetime="2019-06-12T21:25:55+08:00">2019-06-12</time>
             
 
             
@@ -402,7 +402,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>459 字</span>
+              <span>458 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
             </span>
@@ -461,12 +461,12 @@
           
             <h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="有关二叉树的数学知识"><a href="#有关二叉树的数学知识" class="headerlink" title="有关二叉树的数学知识"></a>有关二叉树的数学知识</h3><h4 id="二叉树每层节点数"><a href="#二叉树每层节点数" class="headerlink" title="二叉树每层节点数"></a>二叉树每层节点数</h4><p>二叉树中每层的节点数都是其上一行的两倍:1 2 4 …</p>
 <p>因此每层的节点数为首项为 1 公比为 2 的等比数列的通项公式：</p>
-<p>$$N = 2 ^ {n - 1}$$</p>
+<p>$$n = 2 ^ {n - 1}$$</p>
 <h4 id="满二叉树节点总数"><a href="#满二叉树节点总数" class="headerlink" title="满二叉树节点总数"></a>满二叉树节点总数</h4><p>二叉树中每层的节点数为：1 2 4 …</p>
 <p>是一个公比不等于 1 的等比数列，由等比数列的求和公式</p>
 <p>$$q = \frac {a_1 - a_1q^n} {1 - q}$$</p>
 <p>得满二叉树的节点总数：</p>
-<p>$$N = 2^n - 1$$</p>
+<p>$$n = 2^n - 1$$</p>
 <p>其中 n 为二叉树层数。</p>
 <p><strong>例题</strong>：<a href="https://www.nowcoder.com/questionTerminal/b1bf283efde3430a96849037879fb926" target="_blank" rel="noopener">一个完全二叉树节点数为200，则其叶子结点个数为？</a></p>
 <p>常规解法：$2^n - 1 &lt;= 200$ ，将 1 移到等式右边两边同时取对数得到 $log_2{128} &lt; n = log_2{201} &lt; log_2{256}$，推出 8 &lt; n &lt; 10，所以 n = 9。</p>
@@ -477,7 +477,7 @@
 <p>n_0 + n_1 + n_0 - 1 =200\</p>
 <p>2n_0 = 201-n_1 = 200 $$</p>
 <p>完全二叉树度为1的结点个数要么1，要么0. 叶子结点数为整数，这里也可以推断出度为1的结点个数是1，$n_0 = 100$，所以叶子结点数是100.</p>
-<p><strong>总结：</strong>：完全二叉树，叶子结点数 n/2 向上取整。</p>
+<p><strong>总结：</strong>：完全二叉树，叶子结点数 $n_0 = \lceil{n/2}\rceil$。</p>
 
           
         
