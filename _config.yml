@@ -93,3 +93,11 @@ leancloud_counter_security:
   app_key: uRROIGwaWOhMnPAu3IKnGy4K
   username:
   password:
+
+# math
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config
