@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://callmexss.top/"/>
-  <updated>2019-06-12T13:45:48.916Z</updated>
+  <updated>2019-06-12T13:49:38.139Z</updated>
   <id>https://callmexss.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://callmexss.top/2019/06/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%94%99%E9%A2%98%E6%9C%AC/"/>
     <id>https://callmexss.top/2019/06/12/数据结构错题本/</id>
     <published>2019-06-12T13:25:55.000Z</published>
-    <updated>2019-06-12T13:45:48.916Z</updated>
+    <updated>2019-06-12T13:49:38.139Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="有关二叉树的数学知识"><a href="#有关二叉树的数学知识" class="headerlink" title="有关二叉树的数学知识"></a>有关二叉树的数学知识</h3><h4 id="二叉树每层节点数"><a href="#二叉树每层节点数" class="headerlink" title="二叉树每层节点数"></a>二叉树每层节点数</h4><p>二叉树中每行的节点数都是其上一行的两倍。</p><p>$N = 2 ^ {n - 1}$</p><h4 id="满二叉树节点总数"><a href="#满二叉树节点总数" class="headerlink" title="满二叉树节点总数"></a>满二叉树节点总数</h4><p>二叉树中每层的节点数为：1 2 4 …</p><p>是一个公比不等于 1 的等比数列，由等比数列的求和公式</p><p>$q = {a_1 - a_1q^n} \frac {1 - q}$</p><p>得满二叉树的节点总数：</p><p>$N = 2^n - 1$</p><p>其中 n 为二叉树层数。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="有关二叉树的数学知识"><a href="#有关二叉树的数学知识" class="headerlink" title="有关二叉树的数学知识"></a>有关二叉树的数学知识</h3><h4 id="二叉树每层节点数"><a href="#二叉树每层节点数" class="headerlink" title="二叉树每层节点数"></a>二叉树每层节点数</h4><p>二叉树中每层的节点数都是其上一行的两倍:1 2 4 …</p><p>因此每层的节点数为首项为 1 公比为 2 的等比数列的通项公式：</p><p>$$N = 2 ^ {n - 1}$$</p><h4 id="满二叉树节点总数"><a href="#满二叉树节点总数" class="headerlink" title="满二叉树节点总数"></a>满二叉树节点总数</h4><p>二叉树中每层的节点数为：1 2 4 …</p><p>是一个公比不等于 1 的等比数列，由等比数列的求和公式</p><p>$$q = {a_1 - a_1q^n} \frac {1 - q}$$</p><p>得满二叉树的节点总数：</p><p>$$N = 2^n - 1$$</p><p>其中 n 为二叉树层数。</p>]]></content>
     
     <summary type="html">
     
