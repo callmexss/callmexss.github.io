@@ -411,7 +411,7 @@ cd autojump
 
 # add following line to .zshrc
 [[ -s /home/username/.autojump/etc/profile.d/autojump.sh ]] && source /home/username/.autojump/etc/profile.d/autojump.sh
-
+autoload -U compinit && compinit -u
 ```
 
 遇到的问题
