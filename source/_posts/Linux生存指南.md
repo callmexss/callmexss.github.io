@@ -410,7 +410,7 @@ cd autojump
 ./install.py or ./uninstall.py
 
 # add following line to .zshrc
-[[ -s /home/lfish/.autojump/etc/profile.d/autojump.sh ]] && source /home/lfish/.autojump/etc/profile.d/autojump.sh
+[[ -s /home/username/.autojump/etc/profile.d/autojump.sh ]] && source /home/username/.autojump/etc/profile.d/autojump.sh
 
 ```
 
