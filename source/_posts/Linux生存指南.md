@@ -427,7 +427,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 # on-my-zsh check if the plugin is exit at '$base_dir/plugins/$name/$name.plugin.zsh' or '$base_dir/plugins/$name/_$name' , so the plugin should be at this path .
 ```
 
-
 ### xonsh
 
 ## git 相关操作
@@ -609,10 +608,12 @@ $ sudo make install prefix=/usr/local() sudo make install prefix=/usr/local
 
 ## 参考
 
-[1. ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
+[ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
 
-[2. linux 下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
+[linux 下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
 
-[3. 几种 bash 配置文件](https://stackoverflow.com/a/416931)
+[几种 bash 配置文件](https://stackoverflow.com/a/416931)
 
-[4. Linux Error: curses.h: No such file or directory Problem Solution](https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/)
+[Linux Error: curses.h: No such file or directory Problem Solution](https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/)
+
+[Warning: plugin zsh-syntax-highlighting not found #7688](https://github.com/robbyrussell/oh-my-zsh/issues/7688)
