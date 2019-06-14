@@ -378,6 +378,55 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh
 bash ./install.sh
 ```
 
+安装插件
+
+在 `.zshrc` 中配置要安装的插件：
+
+```sh
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git 
+  git-open
+  vi-mode
+  extract
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  web-search
+  autojump
+)
+```
+
+```sh
+# git open
+npm install --global git-open
+
+# autojump
+git clone git://github.com/wting/autojump.git
+cd autojump
+./install.py or ./uninstall.py
+
+# add following line to .zshrc
+[[ -s /home/lfish/.autojump/etc/profile.d/autojump.sh ]] && source /home/lfish/.autojump/etc/profile.d/autojump.sh
+
+```
+
+遇到的问题
+
+```sh
+Warning: plugin zsh-syntax-highlighting not found
+Warning: plugin zsh-autosuggestions not found
+
+# I solve it by the command :
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+# on-my-zsh check if the plugin is exit at '$base_dir/plugins/$name/$name.plugin.zsh' or '$base_dir/plugins/$name/_$name' , so the plugin should be at this path .
+```
+
 
 ### xonsh
 
