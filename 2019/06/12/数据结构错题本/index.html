@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="像素书">
 <meta property="og:description" content="二叉树有关二叉树的数学知识二叉树每层节点数二叉树中每层的节点数都是其上一行的两倍:1 2 4 … 因此每层的节点数为首项为 1 公比为 2 的等比数列的通项公式： n = 2 ^ {n - 1}满二叉树节点总数二叉树中每层的节点数为：1 2 4 … 是一个公比不等于 1 的等比数列，由等比数列的求和公式 q = \frac {a_1 - a_1q^n} {1 - q}得满二叉树的节点总数： n =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T15:05:23.242Z">
+<meta property="og:updated_time" content="2019-06-13T13:58:38.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构错题本">
 <meta name="twitter:description" content="二叉树有关二叉树的数学知识二叉树每层节点数二叉树中每层的节点数都是其上一行的两倍:1 2 4 … 因此每层的节点数为首项为 1 公比为 2 的等比数列的通项公式： n = 2 ^ {n - 1}满二叉树节点总数二叉树中每层的节点数为：1 2 4 … 是一个公比不等于 1 的等比数列，由等比数列的求和公式 q = \frac {a_1 - a_1q^n} {1 - q}得满二叉树的节点总数： n =">
@@ -386,12 +386,24 @@
                 
               
 
-              <time title="创建时间：2019-06-12 21:25:55 / 修改时间：23:05:23" itemprop="dateCreated datePublished" datetime="2019-06-12T21:25:55+08:00">2019-06-12</time>
+              <time title="创建时间：2019-06-12 21:25:55" itemprop="dateCreated datePublished" datetime="2019-06-12T21:25:55+08:00">2019-06-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-13 21:58:38" itemprop="dateModified" datetime="2019-06-13T21:58:38+08:00">2019-06-13</time>
               
             
           </span>
@@ -399,7 +411,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>457 字</span>
+              <span>465 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
             </span>
@@ -461,9 +473,9 @@
 <script type="math/tex; mode=display">q = \frac {a_1 - a_1q^n} {1 - q}</script><p>得满二叉树的节点总数：</p>
 <script type="math/tex; mode=display">n = 2^n - 1</script><p>其中 n 为二叉树层数。</p>
 <p><strong>例题</strong>：<a href="https://www.nowcoder.com/questionTerminal/b1bf283efde3430a96849037879fb926" target="_blank" rel="noopener">一个完全二叉树节点数为200，则其叶子结点个数为？</a></p>
-<p>常规解法：$2^n - 1 &lt;= 200$ ，将 1 移到等式右边两边同时取对数得到 $log_2{128} &lt; n = log_2{201} &lt; log_2{256}$，推出 8 &lt; n &lt; 10，所以 n = 9。</p>
+<p><strong>常规解法：</strong>$2^n - 1 &lt;= 200$ ，将 1 移到等式右边两边同时取对数得到 $log_2{128} &lt; n = log_2{201} &lt; log_2{256}$，推出 8 &lt; n &lt; 10，所以 n = 9。</p>
 <p>因为是完全二叉树，因此前 8 层一定是满的，于是第九层节点数等于 $200 - (2^8 - 1) = 73$，完全二叉树中叶子节点一定是按顺序排列的，因此第八层中有 33 个节点有叶子节点，$2^{8 - 1} - 37 = 27$，所以总共有$73 + 27 = 100$ 个叶子节点。</p>
-<p>完全二叉树除最后一层，其他层都是满结点的。所以这里总结点200个，是偶数，可以判断度为1的结点是1个。</p>
+<p><strong>根据二叉树的性质：</strong>完全二叉树除最后一层，其他层都是满结点的。所以这里总结点200个，是偶数，可以判断度为1的结点是1个。</p>
 <p>根据二叉树性质 $n_0 = n_2 + 1$;叶子结点数量等于度为2的结点数+1</p>
 <script type="math/tex; mode=display">n_0 + n_1 + n_2 = 200\\
 
@@ -779,7 +791,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共36k字</span>
+    <span class="post-count">共36.2k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
