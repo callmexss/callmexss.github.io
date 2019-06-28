@@ -397,6 +397,7 @@ plugins=(
   zsh-syntax-highlighting
   web-search
   autojump
+  wd
 )
 ```
 
