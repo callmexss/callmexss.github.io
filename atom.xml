@@ -165,6 +165,8 @@
     </summary>
     
     
+      <category term="hexo" scheme="https://callmexss.top/tags/hexo/"/>
+    
       <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
     
       <category term="git" scheme="https://callmexss.top/tags/git/"/>
@@ -180,8 +182,6 @@
       <category term="tldr" scheme="https://callmexss.top/tags/tldr/"/>
     
       <category term="proxychain" scheme="https://callmexss.top/tags/proxychain/"/>
-    
-      <category term="hexo" scheme="https://callmexss.top/tags/hexo/"/>
     
   </entry>
   
@@ -330,11 +330,11 @@
     </summary>
     
     
-      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
+      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
       <category term="hexo" scheme="https://callmexss.top/tags/hexo/"/>
     
-      <category term="c++" scheme="https://callmexss.top/tags/c/"/>
+      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
     
   </entry>
   
@@ -407,9 +407,9 @@
     </summary>
     
     
-      <category term="English" scheme="https://callmexss.top/tags/English/"/>
-    
       <category term="python" scheme="https://callmexss.top/tags/python/"/>
+    
+      <category term="English" scheme="https://callmexss.top/tags/English/"/>
     
       <category term="c++" scheme="https://callmexss.top/tags/c/"/>
     
