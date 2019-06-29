@@ -8,6 +8,10 @@ tags:
   - bash
   - xonsh
   - zsh
+  - fish
+  - tldr
+  - proxychain
+  - hexo
 ---
 
 使用linux过程中最基本、最常用的命令、工具记录。
@@ -656,6 +660,25 @@ $ pc sudo apt install thefuck
 $ pc wget bing.com
 ```
 
+### [syncthing](https://github.com/syncthing/syncthing)
+
+一个跨平台的分布式同步工具。
+
+安装：
+
+```sh
+# for ubuntu
+# Add the release PGP keys:
+$ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the "stable" channel to your APT sources:
+$ echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+$ sudo apt-get update
+$ sudo apt-get install syncthing
+```
+
 ## Blog 相关
 
 ### [nvm](https://github.com/nvm-sh/nvm)
@@ -731,11 +754,7 @@ $ hexo server
 # 参考
 
 [ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
-
 [linux 下创建用户并且限定用户主目录](http://blog.sina.com.cn/s/blog_47051c800100oegn.html)
-
 [几种 bash 配置文件](https://stackoverflow.com/a/416931)
-
 [Linux Error: curses.h: No such file or directory Problem Solution](https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/)
-
 [Warning: plugin zsh-syntax-highlighting not found #7688](https://github.com/robbyrussell/oh-my-zsh/issues/7688)
