@@ -1723,7 +1723,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-29 13:09:06" itemprop="dateModified" datetime="2019-06-29T13:09:06+08:00">2019-06-29</time>
+                <time title="修改时间：2019-06-29 13:27:35" itemprop="dateModified" datetime="2019-06-29T13:27:35+08:00">2019-06-29</time>
               
             
           </span>
@@ -1731,9 +1731,9 @@ n_0 + n_1 + n_0 - 1 =200\\
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>3.2k 字</span>
+              <span>3.3k 字</span>
               &nbsp; | &nbsp;
-              <span>14 min</span>
+              <span>15 min</span>
             </span>
           
 
@@ -1953,6 +1953,9 @@ n_0 + n_1 + n_0 - 1 =200\\
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install-config  <span class="comment"># install proxychains.conf (/etc/proxychains.conf)</span></span><br><span class="line">$ sudo vim /etc/proxychains.conf</span><br><span class="line"></span><br><span class="line">[ProxyList]</span><br><span class="line"><span class="comment"># add proxy here ...</span></span><br><span class="line"><span class="comment"># meanwile</span></span><br><span class="line"><span class="comment"># defaults set to "tor"</span></span><br><span class="line"><span class="comment"># socks4        127.0.0.1 9050</span></span><br><span class="line">socks5  127.0.0.1 1080</span><br><span class="line"></span><br><span class="line">$ vim ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> pc=<span class="string">"proxychains4"</span> </span><br><span class="line"></span><br><span class="line">$ <span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
 <p>使用：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pc sudo apt install thefuck</span><br><span class="line">$ pc wget bing.com</span><br></pre></td></tr></table></figure>
+<h3 id="syncthing"><a href="#syncthing" class="headerlink" title="syncthing"></a><a href="https://github.com/syncthing/syncthing" target="_blank" rel="noopener">syncthing</a></h3><p>一个跨平台的分布式同步工具。</p>
+<p>安装：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for ubuntu</span></span><br><span class="line"><span class="comment"># Add the release PGP keys:</span></span><br><span class="line">$ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the "stable" channel to your APT sources:</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"deb https://apt.syncthing.net/ syncthing stable"</span> | sudo tee /etc/apt/sources.list.d/syncthing.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Update and install syncthing:</span></span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install syncthing</span><br></pre></td></tr></table></figure>
 <h2 id="Blog-相关"><a href="#Blog-相关" class="headerlink" title="Blog 相关"></a>Blog 相关</h2><h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a><a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a></h3><p>Node 版本管理工具——一个简单的 bash 脚本，用于管理多个活动的 Node.js 版本。</p>
 <p>安装和更新：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># or wget</span></span><br><span class="line">$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># or ansible playbook</span></span><br><span class="line">- name: nvm</span><br><span class="line">  shell: &gt;</span><br><span class="line">    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash</span><br><span class="line">  args:</span><br><span class="line">    creates: <span class="string">"&#123;&#123; ansible_env.HOME &#125;&#125;/.nvm/nvm.sh"</span></span><br></pre></td></tr></table></figure>
@@ -1966,11 +1969,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 <h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a></h3><p>一个快速、简洁和高效的博客框架。</p>
 <p>安装和使用：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/u011774239/article/details/48463393" target="_blank" rel="noopener">ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限</a>  </p>
-<p><a href="http://blog.sina.com.cn/s/blog_47051c800100oegn.html" target="_blank" rel="noopener">linux 下创建用户并且限定用户主目录</a></p>
-<p><a href="https://stackoverflow.com/a/416931" target="_blank" rel="noopener">几种 bash 配置文件</a></p>
-<p><a href="https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/" target="_blank" rel="noopener">Linux Error: curses.h: No such file or directory Problem Solution</a></p>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh/issues/7688" target="_blank" rel="noopener">Warning: plugin zsh-syntax-highlighting not found #7688</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/u011774239/article/details/48463393" target="_blank" rel="noopener">ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限</a><br><a href="http://blog.sina.com.cn/s/blog_47051c800100oegn.html" target="_blank" rel="noopener">linux 下创建用户并且限定用户主目录</a><br><a href="https://stackoverflow.com/a/416931" target="_blank" rel="noopener">几种 bash 配置文件</a><br><a href="https://www.cyberciti.biz/faq/linux-error-cursesh-no-such-file-directory/" target="_blank" rel="noopener">Linux Error: curses.h: No such file or directory Problem Solution</a><br><a href="https://github.com/robbyrussell/oh-my-zsh/issues/7688" target="_blank" rel="noopener">Warning: plugin zsh-syntax-highlighting not found #7688</a></p>
 
           
         
@@ -3064,7 +3063,13 @@ n_0 + n_1 + n_0 - 1 =200\\
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3149,7 +3154,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共36.4k字</span>
+    <span class="post-count">共36.5k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
