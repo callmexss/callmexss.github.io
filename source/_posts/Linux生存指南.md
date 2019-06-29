@@ -12,9 +12,9 @@ tags:
 
 使用linux过程中最基本、最常用的命令、工具记录。
 
-## 常用命令
+# 常用命令
 
-### 基础命令
+## 基础命令
 
 - ls - List directory contenets
 
@@ -140,7 +140,7 @@ usermod -G group user
     chmod +x file
 ```
 
-### 高阶命令
+## 高阶命令
 
 - find - Find files or directories under the given directory tree, recursively.
 
@@ -198,11 +198,11 @@ hello
 # [] 可匹配字符在的任意一个
 ```
 
-## 常用操作
+# 常用操作
 
-### 创建用户并添加到sudo用户组
+## 创建用户并添加到sudo用户组
 
-#### 创建用户及其目录
+### 创建用户及其目录
 
 创建一个用户jc 这个用户只能在/home/jc上面增加删除文件， jc不能在其他目录加减文件
 
@@ -214,7 +214,7 @@ chown jc -R /home/jc
 # adduser 也可以
 ```
 
-#### 将用户添加到sudo目录
+### 将用户添加到sudo目录
 
 通过命令： id username
 来查看用户信息
@@ -231,9 +231,9 @@ sudo usermod -aG sudo username
 # 其中a:表示添加，G：指定组名
 ```
 
-### 远程登录和复制文件
+## 远程登录和复制文件
 
-#### 远程登录
+### 远程登录
 
 - 远程登录即通过 SSH 客户端链接运行了 SSH 服务器的远程机器上。
 - SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。
@@ -245,25 +245,25 @@ sudo usermod -aG sudo username
   - remote 是远程机器地址，可为 IP、域名或别名。
   - port 是 SSH 服务器监听的端口，若不指定端口默认为 22。
 
-#### 远程复制文件
+### 远程复制文件
 
 SCP 即 Secure Copy，是一个在 Linux 下用来进行 远程拷贝文件 的命令。
 
-##### 从本地复制文件到远程机器桌面上
+#### 从本地复制文件到远程机器桌面上
 
 ```sh
 scp -P sample.py user@remote:Desktop/sample.py
 ```
 
-##### 从远程机器桌面上复制文件夹到本地上
+#### 从远程机器桌面上复制文件夹到本地上
 
 ```sh
 scp -P port -r user@remote:Desktop/sample ~/Desktop/sample
 ```
 
-### ssh 高级用法
+## ssh 高级用法
 
-#### 免密码登录
+### 免密码登录
 
 免密码登录：即客户端访问服务端时，需要密码验证身份登录。
 
@@ -273,7 +273,7 @@ scp -P port -r user@remote:Desktop/sample ~/Desktop/sample
 > 1) 有关 SSH 配置信息都保存在 /Home/yousr username/.ssh 目录下。
 > 2) 免密登录使用的是非对称加密算法 ( RSA )，即使用公钥加密的数据，需要使用私钥解密；使用私钥加密的数据，需要使用公钥解密。
 
-#### 配置别名
+### 配置别名
 
 配置别名：每次输入 ssh -p port user@remote 是非常繁琐重复的工作，配置别名的方式以替代上述这么一串命令代码。
 
@@ -292,9 +292,9 @@ Port 22
 scp -P 22 -r ~/Desktop/Sample mac:Desktop/Sample
 ```
 
-## shell 相关操作
+# shell 相关操作
 
-### bash
+## bash
 
 `bash` 是大多数 linux 系统默认的登录 shell。由于 `zshrc` 是兼容 `bash` 的，因此配置的相关内容统一放到介绍 `zshrc` 的时候。这里主要介绍一下几个常用的 `bash` 配置文件。
 
@@ -313,11 +313,11 @@ scp -P 22 -r ~/Desktop/Sample mac:Desktop/Sample
        Individual readline initialization file
 ```
 
-### [fish](http://fishshell.com/)
+## [fish](http://fishshell.com/)
 
 [github-repository](https://github.com/fish-shell/fish-shell)
 
-#### 安装
+### 安装
 
 - ubuntu
 
@@ -327,7 +327,7 @@ sudo apt-get update
 sudo apt-get install fish
 ```
 
-#### 配置
+### 配置
 
 配置非常方便，先在命令行中输入 `fish` 切换shell为 `fish` ，然后图形界面下会显示一个http的链接，点击进入该链接进行相应配置即可。
 
@@ -339,7 +339,7 @@ fish_config
 
 基本上 `fish` 是一个开箱即用的shell，几乎不进行配置即可使用，但是 `fish` 和 `bash` 不兼容，所以稍加配置的 `zsh` 是更好的选择。
 
-### zsh
+## zsh
 
 ubuntu 下安装：
 
@@ -428,11 +428,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 # on-my-zsh check if the plugin is exit at '$base_dir/plugins/$name/$name.plugin.zsh' or '$base_dir/plugins/$name/_$name' , so the plugin should be at this path .
 ```
 
-### xonsh
+## xonsh
 
-## git 相关操作
+# git 相关操作
 
-### git 新建仓库并推送到远程分支
+## git 新建仓库并推送到远程分支
 
 问题描述：在github上新建了仓库，如何将本地仓库推送到远程仓库?
 
@@ -500,11 +500,11 @@ $ git remote
 origin
 ```
 
-## 工具部分
+# 工具部分
 
-### 命令行辅助
+## 命令行辅助
 
-#### [tldr](http://tldr-pages.github.io/)
+### [tldr](http://tldr-pages.github.io/)
 
 [github-repository](https://github.com/tldr-pages/tldr)
 
@@ -538,7 +538,7 @@ make install        # install tldr
 
 性能很棒。
 
-#### [cheat](https://github.com/cheat/cheat)
+### [cheat](https://github.com/cheat/cheat)
 
 作用类似于 tldr，不过更具有定制性，通过使用它可以制作一套属于自己的命令提示工具。
 
@@ -586,7 +586,7 @@ Examples:
 
 ```
 
-#### [tig](https://github.com/jonas/tig)
+### [tig](https://github.com/jonas/tig)
 
 命令行界面的 git 客户端。
 
@@ -607,7 +607,128 @@ $ make prefix=/usr/local
 $ sudo make install prefix=/usr/local() sudo make install prefix=/usr/local
 ```
 
-## 参考
+## 网络辅助工具
+
+### [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
+
+这个工具使用 `HOOK` 技术使大多数的命令行工具可以走 socks 或者 http(s) 代理。
+
+安装 proxychains-ng：
+
+```sh
+$ git clone https://github.com/rofl0r/proxychains-ng.git
+$ cd proxychains-ng
+$ ./configure --prefix=/usr --sysconfdir=/etc
+$ sudo make install  # install proxychains4
+$ proxychains4
+
+Usage:  proxychains4 -q -f config_file program_name [arguments]
+        -q makes proxychains quiet - this overrides the config setting
+        -f allows one to manually specify a configfile to use
+        for example : proxychains telnet somehost.com
+More help in README file
+```
+
+配置：
+
+```sh
+$ sudo make install-config  # install proxychains.conf (/etc/proxychains.conf)
+$ sudo vim /etc/proxychains.conf
+
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+# socks4        127.0.0.1 9050
+socks5  127.0.0.1 1080
+
+$ vim ~/.bashrc
+
+alias pc="proxychains4" 
+
+$ source ~/.bashrc
+```
+
+使用：
+
+```sh
+$ pc sudo apt install thefuck
+$ pc wget bing.com
+```
+
+## Blog 相关
+
+### [nvm](https://github.com/nvm-sh/nvm)
+
+Node 版本管理工具——一个简单的 bash 脚本，用于管理多个活动的 Node.js 版本。
+
+安装和更新：
+
+```sh
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+# or wget
+$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+# or ansible playbook
+- name: nvm
+  shell: >
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+```
+
+使用：
+
+```sh
+# install node
+$ nvm install node # "node" is an alias for the latest version
+$ nvm install 6.14.4 # or 10.10.0, 8.9.1, etc
+
+# list available versionss
+$ nvm ls-remote
+
+# use installed version
+$ nvm use node
+```
+
+### [cnpm](https://npm.taobao.org/)
+
+淘宝的 npm 镜像。
+
+安装：
+
+```sh
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+# or alias it in .bashrc or .zshrc
+$ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
+```
+
+使用：
+
+```sh
+$ npm install [name]
+```
+
+### [hexo](https://hexo.io/zh-cn/)
+
+一个快速、简洁和高效的博客框架。
+
+安装和使用：
+
+```sh
+$ npm install hexo-cli -g
+$ hexo init blog
+$ cd blog
+$ npm install
+$ hexo server
+```
+
+# 参考
 
 [ubuntu 下给用户添加 sudo 权限，并且如何取消 sudo 权限](https://blog.csdn.net/u011774239/article/details/48463393)  
 
