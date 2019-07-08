@@ -1723,7 +1723,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-29 13:27:35" itemprop="dateModified" datetime="2019-06-29T13:27:35+08:00">2019-06-29</time>
+                <time title="修改时间：2019-07-08 13:17:45" itemprop="dateModified" datetime="2019-07-08T13:17:45+08:00">2019-07-08</time>
               
             
           </span>
@@ -1731,7 +1731,7 @@ n_0 + n_1 + n_0 - 1 =200\\
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>3.3k 字</span>
+              <span>3.4k 字</span>
               &nbsp; | &nbsp;
               <span>15 min</span>
             </span>
@@ -1946,6 +1946,14 @@ n_0 + n_1 + n_0 - 1 =200\\
 <h3 id="tig"><a href="#tig" class="headerlink" title="tig"></a><a href="https://github.com/jonas/tig" target="_blank" rel="noopener">tig</a></h3><p>命令行界面的 git 客户端。</p>
 <p>通过源码编译安装：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> http://github.com/jonas/tig</span><br><span class="line">$ <span class="built_in">cd</span> tig</span><br><span class="line">$ make prefix=/usr/<span class="built_in">local</span></span><br><span class="line">...</span><br><span class="line">include/tig/tig.h:93:22: fatal error: curses.h: No such file or directory</span><br><span class="line">compilation terminated.</span><br><span class="line">Makefile:334: recipe <span class="keyword">for</span> target <span class="string">'src/tig.o'</span> failed</span><br><span class="line">make: *** [src/tig.o] Error 1</span><br><span class="line"></span><br><span class="line">$ sudo apt-get install libncurses5-dev libncursesw5-dev</span><br><span class="line">$ make prefix=/usr/<span class="built_in">local</span></span><br><span class="line">$ sudo make install prefix=/usr/<span class="built_in">local</span>() sudo make install prefix=/usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+<h3 id="ripgrep"><a href="#ripgrep" class="headerlink" title="ripgrep"></a><a href="https://github.com/BurntSushi/ripgrep" target="_blank" rel="noopener">ripgrep</a></h3><blockquote>
+<p>ripgrep recursively searches directories for a regex pattern</p>
+</blockquote>
+<p>递归的在目录中搜索正则表达式。</p>
+<p>安装（ubuntu 18.04）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb</span><br><span class="line">$ sudo dpkg -i ripgrep_11.0.1_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">➜  cpp git:(master) ✗ rg final </span><br><span class="line">modern_cpp/10_final.cpp</span><br><span class="line">2: * 10. final (<span class="keyword">for</span> virtual <span class="keyword">function</span> and <span class="keyword">for</span> class)</span><br><span class="line">5:class Dog final // no class can be derived from dog</span><br><span class="line">12:    virtual void bark() final; // no class can override bark()</span><br></pre></td></tr></table></figure>
 <h2 id="网络辅助工具"><a href="#网络辅助工具" class="headerlink" title="网络辅助工具"></a>网络辅助工具</h2><h3 id="proxychains-ng"><a href="#proxychains-ng" class="headerlink" title="proxychains-ng"></a><a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a></h3><p>这个工具使用 <code>HOOK</code> 技术使大多数的命令行工具可以走 socks 或者 http(s) 代理。</p>
 <p>安装 proxychains-ng：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/rofl0r/proxychains-ng.git</span><br><span class="line">$ <span class="built_in">cd</span> proxychains-ng</span><br><span class="line">$ ./configure --prefix=/usr --sysconfdir=/etc</span><br><span class="line">$ sudo make install  <span class="comment"># install proxychains4</span></span><br><span class="line">$ proxychains4</span><br><span class="line"></span><br><span class="line">Usage:  proxychains4 -q -f config_file program_name [arguments]</span><br><span class="line">        -q makes proxychains quiet - this overrides the config setting</span><br><span class="line">        -f allows one to manually specify a configfile to use</span><br><span class="line">        <span class="keyword">for</span> example : proxychains telnet somehost.com</span><br><span class="line">More <span class="built_in">help</span> <span class="keyword">in</span> README file</span><br></pre></td></tr></table></figure>
@@ -3154,7 +3162,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共36.5k字</span>
+    <span class="post-count">共36.6k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
