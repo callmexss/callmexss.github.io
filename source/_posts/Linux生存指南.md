@@ -611,6 +611,29 @@ $ make prefix=/usr/local
 $ sudo make install prefix=/usr/local() sudo make install prefix=/usr/local
 ```
 
+### [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+> ripgrep recursively searches directories for a regex pattern
+
+递归的在目录中搜索正则表达式。
+
+安装（ubuntu 18.04）
+
+```sh
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.1/ripgrep_11.0.1_amd64.deb
+$ sudo dpkg -i ripgrep_11.0.1_amd64.deb
+```
+
+使用
+
+```sh
+➜  cpp git:(master) ✗ rg final 
+modern_cpp/10_final.cpp
+2: * 10. final (for virtual function and for class)
+5:class Dog final // no class can be derived from dog
+12:    virtual void bark() final; // no class can override bark()
+```
+
 ## 网络辅助工具
 
 ### [proxychains-ng](https://github.com/rofl0r/proxychains-ng)
