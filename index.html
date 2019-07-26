@@ -545,205 +545,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2019/06/12/数据结构错题本/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="许山山">
-      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="像素书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/12/数据结构错题本/" itemprop="url">
-                  数据结构错题本
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-12 21:25:55" itemprop="dateCreated datePublished" datetime="2019-06-12T21:25:55+08:00">2019-06-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-29 12:25:18" itemprop="dateModified" datetime="2019-06-29T12:25:18+08:00">2019-06-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-letters-count">
-              &nbsp; | &nbsp;
-              <span>465 字</span>
-              &nbsp; | &nbsp;
-              <span>1 min</span>
-            </span>
-          
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/12/数据结构错题本/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/12/数据结构错题本/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/06/12/数据结构错题本/" class="leancloud_visitors" data-flag-title="数据结构错题本">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="有关二叉树的数学知识"><a href="#有关二叉树的数学知识" class="headerlink" title="有关二叉树的数学知识"></a>有关二叉树的数学知识</h3><h4 id="二叉树每层节点数"><a href="#二叉树每层节点数" class="headerlink" title="二叉树每层节点数"></a>二叉树每层节点数</h4><p>二叉树中每层的节点数都是其上一行的两倍:1 2 4 …</p>
-<p>因此每层的节点数为首项为 1 公比为 2 的等比数列的通项公式：</p>
-<script type="math/tex; mode=display">N = 2 ^ {n - 1}</script><h4 id="满二叉树节点总数"><a href="#满二叉树节点总数" class="headerlink" title="满二叉树节点总数"></a>满二叉树节点总数</h4><p>二叉树中每层的节点数为：1 2 4 …</p>
-<p>是一个公比不等于 1 的等比数列，由等比数列的求和公式</p>
-<script type="math/tex; mode=display">q = \frac {a_1 - a_1q^n} {1 - q}</script><p>得满二叉树的节点总数：</p>
-<script type="math/tex; mode=display">N = 2^n - 1</script><p>其中 n 为二叉树层数。</p>
-<p><strong>例题</strong>：<a href="https://www.nowcoder.com/questionTerminal/b1bf283efde3430a96849037879fb926" target="_blank" rel="noopener">一个完全二叉树节点数为200，则其叶子结点个数为？</a></p>
-<p><strong>常规解法：</strong>$2^n - 1 &lt;= 200$ ，将 1 移到等式右边两边同时取对数得到 $log_2{128} &lt; n = log_2{201} &lt; log_2{256}$，推出 8 &lt; n &lt; 10，所以 n = 9。</p>
-<p>因为是完全二叉树，因此前 8 层一定是满的，于是第九层节点数等于 $200 - (2^8 - 1) = 73$，完全二叉树中叶子节点一定是按顺序排列的，因此第八层中有 33 个节点有叶子节点，$2^{8 - 1} - 37 = 27$，所以总共有$73 + 27 = 100$ 个叶子节点。</p>
-<p><strong>根据二叉树的性质：</strong>完全二叉树除最后一层，其他层都是满结点的。所以这里总结点200个，是偶数，可以判断度为1的结点是1个。</p>
-<p>根据二叉树性质 $n_0 = n_2 + 1$;叶子结点数量等于度为2的结点数+1</p>
-<script type="math/tex; mode=display">n_0 + n_1 + n_2 = 200\\
-
-n_0 + n_1 + n_0 - 1 =200\\
-
-2n_0 = 201-n_1 = 200</script><p>完全二叉树度为1的结点个数要么1，要么0. 叶子结点数为整数，这里也可以推断出度为1的结点个数是1，$n_0 = 100$，所以叶子结点数是100.</p>
-<p><strong>总结：</strong>：完全二叉树，叶子结点数 $n_0 = \lceil{n/2}\rceil$。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-</article>
-  
-  
-  
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://callmexss.top/2019/06/02/python-测试与调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2922,6 +2723,218 @@ n_0 + n_1 + n_0 - 1 =200\\
   
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/12/07/term-1-14th-week/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/07/term-1-14th-week/" itemprop="url">
+                  term 1: 14th week
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-07 11:31:34" itemprop="dateCreated datePublished" datetime="2017-12-07T11:31:34+08:00">2017-12-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-letters-count">
+              &nbsp; | &nbsp;
+              <span>813 字</span>
+              &nbsp; | &nbsp;
+              <span>3 min</span>
+            </span>
+          
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/07/term-1-14th-week/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/12/07/term-1-14th-week/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/07/term-1-14th-week/" class="leancloud_visitors" data-flag-title="term 1: 14th week">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1207"><a href="#1207" class="headerlink" title="1207"></a>1207</h2><h3 id="【JAVA基础】HashSet、LinkedHashSet、TreeSet使用区别"><a href="#【JAVA基础】HashSet、LinkedHashSet、TreeSet使用区别" class="headerlink" title="【JAVA基础】HashSet、LinkedHashSet、TreeSet使用区别"></a>【JAVA基础】HashSet、LinkedHashSet、TreeSet使用区别</h3><p><a href="http://www.cnblogs.com/ibook360/archive/2011/11/28/2266062.html" target="_blank" rel="noopener">【JAVA基础】HashSet、LinkedHashSet、TreeSet使用区别</a></p>
+<blockquote>
+<p><strong>HashSet</strong>：哈希表是通过使用称为散列法的机制来存储信息的，元素并没有以某种特定顺序来存放；</p>
+<p><strong>LinkedHashSet</strong>：以元素插入的顺序来维护集合的链接表，允许以插入的顺序在集合中迭代；  </p>
+<p><strong>TreeSet</strong>：提供一个使用树结构存储Set接口的实现，对象以升序顺序存储，访问和遍历的时间很快。</p>
+</blockquote>
+<h3 id="c-模板类问题"><a href="#c-模板类问题" class="headerlink" title="c++ 模板类问题"></a>c++ 模板类问题</h3><p>c++ 模板类不分离，声明和定义均写在同一个头文件中。否者会有编译错误，据说这种编译是可以解决的，具体未查。</p>
+<h2 id="1208"><a href="#1208" class="headerlink" title="1208"></a>1208</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><blockquote>
+<p><strong>抽象类是</strong>不完整的，它只能用作基<strong>类</strong>。 在面向对象方法中，<strong>抽象类</strong>主要用来进行类型隐藏和充当全局变量的角色。</p>
+</blockquote>
+<p><strong>c++接口</strong></p>
+<blockquote>
+<p>接口描述了类的行为和功能，而不需要完成类的特定实现。</p>
+<p>C++ 接口是使用<strong>抽象类</strong>来实现的，抽象类与数据抽象互不混淆，数据抽象是一个把实现细节与相关的数据分离开的概念。</p>
+<p>如果类中至少有一个函数被声明为纯虚函数，则这个类就是抽象类。纯虚函数是通过在声明中使用 “= 0” 来指定的。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="comment">// 纯虚函数</span></span><br><span class="line">      <span class="function"><span class="keyword">virtual</span> <span class="keyword">double</span> <span class="title">getVolume</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">double</span> length;      <span class="comment">// 长度</span></span><br><span class="line">      <span class="keyword">double</span> breadth;     <span class="comment">// 宽度</span></span><br><span class="line">      <span class="keyword">double</span> height;      <span class="comment">// 高度</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设计<strong>抽象类</strong>（通常称为 ABC）的目的，是为了给其他类提供一个可以继承的适当的基类。抽象类不能被用于实例化对象，它只能作为<strong>接口</strong>使用。如果试图实例化一个抽象类的对象，会导致编译错误。</p>
+<p>因此，如果一个 ABC 的子类需要被实例化，则必须实现每个虚函数，这也意味着 C++ 支持使用 ABC 声明接口。如果没有在派生类中重载纯虚函数，就尝试实例化该类的对象，会导致编译错误。</p>
+<p>可用于实例化对象的类被称为<strong>具体类</strong>。</p>
+</blockquote>
+<p>抽象类作为基类时必须实现其包含的所有方法，否则继承该抽象类的类仍旧是抽象类，只能继续作为基类使用。下面的代码只实现抽象类中的一个纯虚函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="comment">// 纯虚函数</span></span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Worker</span>:</span> <span class="keyword">public</span> Person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  Worker() &#123;&#125;;</span><br><span class="line">  ~Worker() &#123;&#125;;</span><br><span class="line">  <span class="comment">// 需要重新声明</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Worker::eat()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"I can eat.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Worker *worker = <span class="keyword">new</span> Worker();</span><br><span class="line">  worker-&gt;eat();</span><br><span class="line">  <span class="keyword">delete</span> worker;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译器中提示出现如下错误：</p>
+<p><code>错误(活动)    E0322    不允许使用抽象类类型 &quot;Worker&quot; 的对象</code></p>
+<p>正确编码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Person.h</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="comment">// 纯虚函数</span></span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Worker</span>:</span> <span class="keyword">public</span> Person</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  Worker() &#123;&#125;;</span><br><span class="line">  ~Worker() &#123;&#125;;</span><br><span class="line">  <span class="comment">// 需要重新声明</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Worker::eat()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"I can eat.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> Worker::move()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"I can move.\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Worker *worker = <span class="keyword">new</span> Worker();</span><br><span class="line">  worker-&gt;eat();</span><br><span class="line">  worker-&gt;move();</span><br><span class="line">  <span class="keyword">delete</span> worker;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">I can eat.</span><br><span class="line">I can move.</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+</article>
+  
+  
+  
+
+    
   </section>
 
   
@@ -2971,7 +2984,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3075,7 +3088,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3160,7 +3173,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共37.4k字</span>
+    <span class="post-count">共37k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
@@ -3415,8 +3428,6 @@ n_0 + n_1 + n_0 - 1 =200\\
       
     
       
-        
-      
     
       
     
@@ -3436,30 +3447,6 @@ n_0 + n_1 + n_0 - 1 =200\\
     
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
