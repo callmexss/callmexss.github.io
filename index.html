@@ -341,187 +341,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2019/08/23/Nginx-负载均衡/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="许山山">
-      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="像素书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/23/Nginx-负载均衡/" itemprop="url">
-                  Nginx 负载均衡
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-23 18:43:32 / 修改时间：18:44:04" itemprop="dateCreated datePublished" datetime="2019-08-23T18:43:32+08:00">2019-08-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-letters-count">
-              &nbsp; | &nbsp;
-              <span>738 字</span>
-              &nbsp; | &nbsp;
-              <span>3 min</span>
-            </span>
-          
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/23/Nginx-负载均衡/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/23/Nginx-负载均衡/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/08/23/Nginx-负载均衡/" class="leancloud_visitors" data-flag-title="Nginx 负载均衡">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Nginx-介绍"><a href="#Nginx-介绍" class="headerlink" title="Nginx 介绍"></a>Nginx 介绍</h1><blockquote>
-<p>Nginx 是异步框架的网页服务器，也可以用作反向代理、负载平衡器和 HTTP 缓存。该软件由伊戈尔·赛索耶夫创建并于 2004 年首次公开发布。 2011 年成立同名公司以提供支持。2019 年 3 月 11 日，Nginx 公司被 F5 Networks 以 6.7 亿美元收购。 Nginx 是免费的开源软件，根据类 BSD 许可证的条款发布。 <a href="https://zh.wikipedia.org/zh-cn/Nginx" target="_blank" rel="noopener">维基百科</a></p>
-</blockquote>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="源码编译"><a href="#源码编译" class="headerlink" title="源码编译"></a>源码编译</h3><p>（坑待填）</p>
-<h3 id="Ubuntu-包管理"><a href="#Ubuntu-包管理" class="headerlink" title="Ubuntu 包管理"></a>Ubuntu 包管理</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install nginx</span><br></pre></td></tr></table></figure>
-<p>安装完成后有几个默认的目录需要了解一下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> ~ tree -L 1 /etc/nginx/</span><br><span class="line">/etc/nginx/</span><br><span class="line">├── conf.d              <span class="comment"># 配置文件存放的目录，可以定以不同的配置</span></span><br><span class="line">├── fastcgi.conf</span><br><span class="line">├── fastcgi_params</span><br><span class="line">├── koi-utf</span><br><span class="line">├── koi-win</span><br><span class="line">├── mime.types</span><br><span class="line">├── modules-available</span><br><span class="line">├── modules-enabled</span><br><span class="line">├── nginx.conf          <span class="comment"># 默认的配置文件</span></span><br><span class="line">├── scgi_params</span><br><span class="line">├── sites-available</span><br><span class="line">├── sites-enabled</span><br><span class="line">├── snippets</span><br><span class="line">├── uwsgi_params</span><br><span class="line">└── win-utf</span><br><span class="line"></span><br><span class="line">~ ls /usr/share/nginx/html/</span><br><span class="line">50x.html    index.html <span class="comment"># 默认显示的主页</span></span><br><span class="line"></span><br><span class="line">~ ls /var/www/html/</span><br><span class="line">index.nginx-debian.html <span class="comment"># 另一个默认显示的主页</span></span><br></pre></td></tr></table></figure>
-<p>具体显示哪一个文件是由 Nginx 的配置文件 nginx.conf 决定的，查看一下默认的配置文件（以下内容取自 docker 容器，镜像：）。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/nginx/nginx.conf</span></span><br><span class="line"></span><br><span class="line">user  nginx;</span><br><span class="line">worker_processes  1;</span><br><span class="line"></span><br><span class="line">error_log  /var/<span class="built_in">log</span>/nginx/error.log warn;  <span class="comment"># error_log 的位置和日志级别</span></span><br><span class="line">pid        /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line">    include       /etc/nginx/mime.types;</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    log_format  main  <span class="string">'$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">                      <span class="string">'$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">                      <span class="string">'"$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br><span class="line"></span><br><span class="line">    access_log  /var/<span class="built_in">log</span>/nginx/access.log  main;  <span class="comment"># access_log 的位置和日志格式（上面 main 定义的）</span></span><br><span class="line"></span><br><span class="line">    sendfile        on;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    keepalive_timeout  65;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip  on;</span></span><br><span class="line"></span><br><span class="line">    include /etc/nginx/conf.d/*.conf;  <span class="comment"># 这里引入了 conf.d 目录下的全部以 conf 结尾的配置文件，可以给不同的功能写不同的配置文件，</span></span><br><span class="line">                                       <span class="comment"># 这样可以避免配置文件内容过多导致难以维护的问题。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>nginx.conf 这个文件中并没有配置具体的 http 服务，查看 conf.d 目录下发现有一个名为 default.conf 的配置文件，内容如下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/nginx/conf.d/default.conf</span></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;  <span class="comment"># 监听 80 端口</span></span><br><span class="line">    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#charset koi8-r;</span></span><br><span class="line">    <span class="comment">#access_log  /var/log/nginx/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">    location / &#123;  <span class="comment"># 定义了一个 URL, 在 root 标识的目录下寻找 index.html 或 index.htm 作为主页</span></span><br><span class="line">        root   /usr/share/nginx/html;  <span class="comment"># web 服务的根目录</span></span><br><span class="line">        index  index.html index.htm;   <span class="comment"># 主页的名称</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    error_page   500 502 503 504  /50x.html;  <span class="comment"># 出现 50x 错误返回的页面</span></span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root   /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ \.php$ &#123;  ~ 表示开启正则匹配，这里的 URL 表示以 .php 结尾的文件</span></span><br><span class="line">    <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">    <span class="comment">#    root           html;</span></span><br><span class="line">    <span class="comment">#    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line">    <span class="comment">#    fastcgi_index  index.php;</span></span><br><span class="line">    <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">    <span class="comment">#    include        fastcgi_params;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># deny access to .htaccess files, if Apache's document root</span></span><br><span class="line">    <span class="comment"># concurs with nginx's one</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#location ~ /\.ht &#123;  # 阻止所有访问以 ht 结尾的文件的请求</span></span><br><span class="line">    <span class="comment">#    deny  all;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h1><h1 id="使用-Nginx-进行负载均衡"><a href="#使用-Nginx-进行负载均衡" class="headerlink" title="使用 Nginx 进行负载均衡"></a>使用 Nginx 进行负载均衡</h1>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-</article>
-  
-  
-  
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://callmexss.top/2019/07/23/字符串的最短唯一前缀/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2883,6 +2702,237 @@ n_0 + n_1 + n_0 - 1 =200\\
   
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/12/14/vckpg-使用小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/vckpg-使用小记/" itemprop="url">
+                  vckpg 使用小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-14 16:06:57" itemprop="dateCreated datePublished" datetime="2017-12-14T16:06:57+08:00">2017-12-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-letters-count">
+              &nbsp; | &nbsp;
+              <span>881 字</span>
+              &nbsp; | &nbsp;
+              <span>4 min</span>
+            </span>
+          
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/14/vckpg-使用小记/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/12/14/vckpg-使用小记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/14/vckpg-使用小记/" class="leancloud_visitors" data-flag-title="vckpg 使用小记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vcpkg介绍"><a href="#vcpkg介绍" class="headerlink" title="vcpkg介绍"></a>vcpkg介绍</h2><p>先把官方仓库的连接撂在<a href="https://github.com/Microsoft/vcpkg" target="_blank" rel="noopener">这里</a> 。</p>
+<h3 id="一个来自官方仓库的概述"><a href="#一个来自官方仓库的概述" class="headerlink" title="一个来自官方仓库的概述"></a>一个来自官方仓库的概述</h3><blockquote>
+<p>Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success.</p>
+<p>For short description of available commands, run <code>vcpkg help</code>.</p>
+</blockquote>
+<p>总而言之，vcpkg可以看做Windows下C和C++的包管理工具，使用它可以方便的安装和使用<strong>常用</strong>的C、C++库。</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>系统要求：</p>
+<ul>
+<li>Windows 10, 8.1, or 7</li>
+<li>Visual Studio 2017 or Visual Studio 2015 Update 3</li>
+<li>Git</li>
+<li><em>Optional: CMake 3.10.0</em>  // 可选</li>
+</ul>
+<p>clone项目到本地，执行以下操作：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Microsoft/vcpkg.git</span><br><span class="line"><span class="built_in">cd</span> vcpkg</span><br><span class="line"><span class="comment"># run bootstrap-vcpkg.bat</span></span><br><span class="line">.\bootstrap-vcpkg.bat</span><br><span class="line"><span class="comment"># Then, to hook up user-wide integration, run (note: requires admin on first use)</span></span><br><span class="line">.\vcpkg integrate install</span><br><span class="line"><span class="comment"># 直接 vcpkg.exe integrate install 也可以，上面应该是在power shell中使用的命令</span></span><br><span class="line"><span class="comment"># 这个命令就是使该工具的作用范围为全局用户范围</span></span><br><span class="line"><span class="comment"># Install any packages with</span></span><br><span class="line">.\vcpkg install package1 package2 ...</span><br><span class="line">.\vcpkg integrate install</span><br></pre></td></tr></table></figure>
+<p>然后打开 Visual Studio 2017 或者 2015，直接使用<code>#include</code>导入头文件，愉快的使用吧~</p>
+<h3 id="配置Tab自动补全"><a href="#配置Tab自动补全" class="headerlink" title="配置Tab自动补全"></a>配置Tab自动补全</h3><p>vcpkg支持自动补全，包括<strong>命令、包名、选项</strong>等 ，通过输入以下命令在power shell中开启自动补全功能：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\vcpkg integrate powershell</span><br></pre></td></tr></table></figure>
+<p>重启power shell即可。</p>
+<h3 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h3><p>查看托管在<em>ReadTheDocs</em>的<a href="https://vcpkg.readthedocs.io/" target="_blank" rel="noopener">文档</a> 。</p>
+<h2 id="vcpkg安装gtest"><a href="#vcpkg安装gtest" class="headerlink" title="vcpkg安装gtest"></a>vcpkg安装gtest</h2><p>先使用<code>search</code>命令搜索一下gtest是否包含在支持安装的列表中：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe search gtest</span><br><span class="line">gtest                1.8-1            GoogleTest and GoogleMock testing framewor</span><br><span class="line">ks.</span><br><span class="line"></span><br><span class="line">If your library is not listed, please open an issue at and/or consider making a</span><br><span class="line">pull request:</span><br><span class="line">    https://github.com/Microsoft/vcpkg/issues</span><br></pre></td></tr></table></figure>
+<p>使用<code>install</code>命令进行安装:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe install gtest</span><br><span class="line">The following packages will be built and installed:</span><br><span class="line">    gtest:x86-windows</span><br><span class="line">Starting package 1/1: gtest:x86-windows</span><br><span class="line">Building package gtest:x86-windows...</span><br><span class="line">-- CURRENT_INSTALLED_DIR=C:/vcpkg/installed/x86-windows</span><br><span class="line">-- DOWNLOADS=C:/vcpkg/downloads</span><br><span class="line">-- CURRENT_PACKAGES_DIR=C:/vcpkg/packages/gtest_x86-windows</span><br><span class="line">-- CURRENT_BUILDTREES_DIR=C:/vcpkg/buildtrees/gtest</span><br><span class="line">-- CURRENT_PORT_DIR=C:/vcpkg/ports/gtest/.</span><br><span class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</span><br><span class="line">...</span><br><span class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</span><br><span class="line">... OK</span><br><span class="line">-- Testing integrity of downloaded file...</span><br><span class="line">-- Testing integrity of downloaded file... OK</span><br><span class="line">-- Extracting <span class="built_in">source</span> C:/vcpkg/downloads/google-googletest-release-1.8.0.tar.gz</span><br><span class="line">-- Extracting <span class="keyword">done</span></span><br><span class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</span><br><span class="line">appveyor-fail.patch</span><br><span class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</span><br><span class="line">appveyor-fail.patch <span class="keyword">done</span></span><br><span class="line">-- Configuring x86-windows-rel</span><br><span class="line">-- Configuring x86-windows-rel <span class="keyword">done</span></span><br><span class="line">-- Configuring x86-windows-dbg</span><br><span class="line">-- Configuring x86-windows-dbg <span class="keyword">done</span></span><br><span class="line">-- Build x86-windows-rel</span><br><span class="line">-- Build x86-windows-rel <span class="keyword">done</span></span><br><span class="line">-- Build x86-windows-dbg</span><br><span class="line">-- Build x86-windows-dbg <span class="keyword">done</span></span><br><span class="line">-- Installing: C:/vcpkg/packages/gtest_x86-windows/share/gtest/copyright</span><br><span class="line">-- Performing post-build validation</span><br><span class="line">-- Performing post-build validation <span class="keyword">done</span></span><br><span class="line">Building package gtest:x86-windows... <span class="keyword">done</span></span><br><span class="line">Installing package gtest:x86-windows...</span><br><span class="line">Installing package gtest:x86-windows... <span class="keyword">done</span></span><br><span class="line">Elapsed time <span class="keyword">for</span> package gtest:x86-windows: 3.147 min</span><br><span class="line"></span><br><span class="line">Total elapsed time: 3.147 min</span><br><span class="line"></span><br><span class="line">The package gtest is compatible with built-in CMake targets:</span><br><span class="line"></span><br><span class="line">    enable_testing()</span><br><span class="line">    find_package(GTest REQUIRED)</span><br><span class="line">    target_link_libraries(main PRIVATE GTest::GTest GTest::Main)</span><br><span class="line">    add_test(AllTestsInMain main)</span><br></pre></td></tr></table></figure>
+<p>使用<code>list</code>命令查看x86 windows桌面版下gtest是否安装成功：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe list</span><br><span class="line">gtest[core]:x86-windows        1.8-1            GoogleTest and GoogleMock testin</span><br><span class="line">g frameworks.</span><br></pre></td></tr></table></figure>
+<p>还可以通过在包名后面指定架构安装特定的包，例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x86-uwp:  Universal Windows Platform</span></span><br><span class="line"><span class="comment"># x64-windows:  x64 Desktop</span></span><br><span class="line">C:\vcpkg&gt;vcpkg.exe install sqlite3:x86-uwp zlib:x64-windows </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有支持的目标</span></span><br><span class="line">C:\vcpkg&gt;vcpkg.exe <span class="built_in">help</span> triplet </span><br><span class="line">Available architecture triplets:</span><br><span class="line">  arm-uwp</span><br><span class="line">  arm64-uwp</span><br><span class="line">  x64-uwp</span><br><span class="line">  x64-windows-static</span><br><span class="line">  x64-windows</span><br><span class="line">  x86-uwp</span><br><span class="line">  x86-windows-static</span><br><span class="line">  x86-windows</span><br></pre></td></tr></table></figure>
+<p>最后，使用<code>integrate</code>命令使得gtest可以被用于所有当前用户的项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe integrate install</span><br><span class="line">Applied user-wide integration <span class="keyword">for</span> this vcpkg root.</span><br><span class="line"></span><br><span class="line">All MSBuild C++ projects can now <span class="comment">#include any installed libraries.</span></span><br><span class="line">Linking will be handled automatically.</span><br><span class="line">Installing new libraries will make them instantly available.</span><br><span class="line"></span><br><span class="line">CMake projects should use: <span class="string">"-DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems</span></span><br><span class="line"><span class="string">/vcpkg.cmake"</span></span><br><span class="line"><span class="comment"># 使用 vcpkg.exe integrate remove 移除整合</span></span><br></pre></td></tr></table></figure>
+<p> 至此，一次<code>vcpkg</code>的使用就结束了，比起之前自己编译配置路径确实方便了不少，关键还几乎不会出错，是很赞了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+</article>
+  
+  
+  
+
+    
   </section>
 
   
@@ -2932,7 +2982,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3048,7 +3098,7 @@ n_0 + n_1 + n_0 - 1 =200\\
                     
                       
                     
-                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3133,7 +3183,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共39k字</span>
+    <span class="post-count">共38.3k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
@@ -3388,9 +3438,9 @@ n_0 + n_1 + n_0 - 1 =200\\
       
     
       
-    
-      
         
+      
+    
       
     
       
