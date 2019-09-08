@@ -1,12 +1,12 @@
 ---
-title: 一些提高工作效率的超级秘密的 VS Code 奇淫巧计
+title: 一些提高工作效率的超级秘密的 VS Code 奇淫巧计「翻译」
 tags:
   - vscode
   - ARTS
 categories:
   - 翻译
   - 器
-date: 2019-09-08 23:12:17
+date: 2019-09-08 23:20:13
 categorises:
 ---
 
@@ -27,7 +27,12 @@ categorises:
 
 接下来的 Visual Studio Code 技巧将会让你能够以如下的姿态走出你所有的编码阶段：
 
-<iframe src="https://giphy.com/embed/26gJyIscAHtBNcc00" width="480" height="266" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ufc-mma-ufc-205-26gJyIscAHtBNcc00">via GIPHY</a></p><video id="video" controls="" preload="none" poster="http://om2bks7xs.bkt.clouddn.com/2017-08-26-Markdown-Advance-Video.jpg"><source id="mp4" src="" type="video/mp4"></video>
+<iframe src="https://giphy.com/embed/26gJyIscAHtBNcc00" width="480" height="266" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ufc-mma-ufc-205-26gJyIscAHtBNcc00">via GIPHY</a></p>
 
 ## 让它变得美丽友好
+
+> If it really looks good and friendly, you’ll love the time spent with it.
+> 如果它真的看起来不错和友好，你会爱上和它相处的时间的。
+
+### 材料主题和图标
 
