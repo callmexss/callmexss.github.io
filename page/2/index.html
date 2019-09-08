@@ -341,6 +341,237 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/12/14/vckpg-使用小记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="许山山">
+      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="像素书">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/vckpg-使用小记/" itemprop="url">
+                  vckpg 使用小记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-14 16:06:57" itemprop="dateCreated datePublished" datetime="2017-12-14T16:06:57+08:00">2017-12-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-letters-count">
+              &nbsp; | &nbsp;
+              <span>881 字</span>
+              &nbsp; | &nbsp;
+              <span>4 min</span>
+            </span>
+          
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/14/vckpg-使用小记/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/12/14/vckpg-使用小记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/14/vckpg-使用小记/" class="leancloud_visitors" data-flag-title="vckpg 使用小记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vcpkg介绍"><a href="#vcpkg介绍" class="headerlink" title="vcpkg介绍"></a>vcpkg介绍</h2><p>先把官方仓库的连接撂在<a href="https://github.com/Microsoft/vcpkg" target="_blank" rel="noopener">这里</a> 。</p>
+<h3 id="一个来自官方仓库的概述"><a href="#一个来自官方仓库的概述" class="headerlink" title="一个来自官方仓库的概述"></a>一个来自官方仓库的概述</h3><blockquote>
+<p>Vcpkg helps you get C and C++ libraries on Windows. This tool and ecosystem are currently in a preview state; your involvement is vital to its success.</p>
+<p>For short description of available commands, run <code>vcpkg help</code>.</p>
+</blockquote>
+<p>总而言之，vcpkg可以看做Windows下C和C++的包管理工具，使用它可以方便的安装和使用<strong>常用</strong>的C、C++库。</p>
+<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>系统要求：</p>
+<ul>
+<li>Windows 10, 8.1, or 7</li>
+<li>Visual Studio 2017 or Visual Studio 2015 Update 3</li>
+<li>Git</li>
+<li><em>Optional: CMake 3.10.0</em>  // 可选</li>
+</ul>
+<p>clone项目到本地，执行以下操作：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Microsoft/vcpkg.git</span><br><span class="line"><span class="built_in">cd</span> vcpkg</span><br><span class="line"><span class="comment"># run bootstrap-vcpkg.bat</span></span><br><span class="line">.\bootstrap-vcpkg.bat</span><br><span class="line"><span class="comment"># Then, to hook up user-wide integration, run (note: requires admin on first use)</span></span><br><span class="line">.\vcpkg integrate install</span><br><span class="line"><span class="comment"># 直接 vcpkg.exe integrate install 也可以，上面应该是在power shell中使用的命令</span></span><br><span class="line"><span class="comment"># 这个命令就是使该工具的作用范围为全局用户范围</span></span><br><span class="line"><span class="comment"># Install any packages with</span></span><br><span class="line">.\vcpkg install package1 package2 ...</span><br><span class="line">.\vcpkg integrate install</span><br></pre></td></tr></table></figure>
+<p>然后打开 Visual Studio 2017 或者 2015，直接使用<code>#include</code>导入头文件，愉快的使用吧~</p>
+<h3 id="配置Tab自动补全"><a href="#配置Tab自动补全" class="headerlink" title="配置Tab自动补全"></a>配置Tab自动补全</h3><p>vcpkg支持自动补全，包括<strong>命令、包名、选项</strong>等 ，通过输入以下命令在power shell中开启自动补全功能：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\vcpkg integrate powershell</span><br></pre></td></tr></table></figure>
+<p>重启power shell即可。</p>
+<h3 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h3><p>查看托管在<em>ReadTheDocs</em>的<a href="https://vcpkg.readthedocs.io/" target="_blank" rel="noopener">文档</a> 。</p>
+<h2 id="vcpkg安装gtest"><a href="#vcpkg安装gtest" class="headerlink" title="vcpkg安装gtest"></a>vcpkg安装gtest</h2><p>先使用<code>search</code>命令搜索一下gtest是否包含在支持安装的列表中：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe search gtest</span><br><span class="line">gtest                1.8-1            GoogleTest and GoogleMock testing framewor</span><br><span class="line">ks.</span><br><span class="line"></span><br><span class="line">If your library is not listed, please open an issue at and/or consider making a</span><br><span class="line">pull request:</span><br><span class="line">    https://github.com/Microsoft/vcpkg/issues</span><br></pre></td></tr></table></figure>
+<p>使用<code>install</code>命令进行安装:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe install gtest</span><br><span class="line">The following packages will be built and installed:</span><br><span class="line">    gtest:x86-windows</span><br><span class="line">Starting package 1/1: gtest:x86-windows</span><br><span class="line">Building package gtest:x86-windows...</span><br><span class="line">-- CURRENT_INSTALLED_DIR=C:/vcpkg/installed/x86-windows</span><br><span class="line">-- DOWNLOADS=C:/vcpkg/downloads</span><br><span class="line">-- CURRENT_PACKAGES_DIR=C:/vcpkg/packages/gtest_x86-windows</span><br><span class="line">-- CURRENT_BUILDTREES_DIR=C:/vcpkg/buildtrees/gtest</span><br><span class="line">-- CURRENT_PORT_DIR=C:/vcpkg/ports/gtest/.</span><br><span class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</span><br><span class="line">...</span><br><span class="line">-- Downloading https://github.com/google/googletest/archive/release-1.8.0.tar.gz</span><br><span class="line">... OK</span><br><span class="line">-- Testing integrity of downloaded file...</span><br><span class="line">-- Testing integrity of downloaded file... OK</span><br><span class="line">-- Extracting <span class="built_in">source</span> C:/vcpkg/downloads/google-googletest-release-1.8.0.tar.gz</span><br><span class="line">-- Extracting <span class="keyword">done</span></span><br><span class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</span><br><span class="line">appveyor-fail.patch</span><br><span class="line">-- Applying patch C:/vcpkg/ports/gtest/0001-Enable-C-11-features-for-VS2015-fix-</span><br><span class="line">appveyor-fail.patch <span class="keyword">done</span></span><br><span class="line">-- Configuring x86-windows-rel</span><br><span class="line">-- Configuring x86-windows-rel <span class="keyword">done</span></span><br><span class="line">-- Configuring x86-windows-dbg</span><br><span class="line">-- Configuring x86-windows-dbg <span class="keyword">done</span></span><br><span class="line">-- Build x86-windows-rel</span><br><span class="line">-- Build x86-windows-rel <span class="keyword">done</span></span><br><span class="line">-- Build x86-windows-dbg</span><br><span class="line">-- Build x86-windows-dbg <span class="keyword">done</span></span><br><span class="line">-- Installing: C:/vcpkg/packages/gtest_x86-windows/share/gtest/copyright</span><br><span class="line">-- Performing post-build validation</span><br><span class="line">-- Performing post-build validation <span class="keyword">done</span></span><br><span class="line">Building package gtest:x86-windows... <span class="keyword">done</span></span><br><span class="line">Installing package gtest:x86-windows...</span><br><span class="line">Installing package gtest:x86-windows... <span class="keyword">done</span></span><br><span class="line">Elapsed time <span class="keyword">for</span> package gtest:x86-windows: 3.147 min</span><br><span class="line"></span><br><span class="line">Total elapsed time: 3.147 min</span><br><span class="line"></span><br><span class="line">The package gtest is compatible with built-in CMake targets:</span><br><span class="line"></span><br><span class="line">    enable_testing()</span><br><span class="line">    find_package(GTest REQUIRED)</span><br><span class="line">    target_link_libraries(main PRIVATE GTest::GTest GTest::Main)</span><br><span class="line">    add_test(AllTestsInMain main)</span><br></pre></td></tr></table></figure>
+<p>使用<code>list</code>命令查看x86 windows桌面版下gtest是否安装成功：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe list</span><br><span class="line">gtest[core]:x86-windows        1.8-1            GoogleTest and GoogleMock testin</span><br><span class="line">g frameworks.</span><br></pre></td></tr></table></figure>
+<p>还可以通过在包名后面指定架构安装特定的包，例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># x86-uwp:  Universal Windows Platform</span></span><br><span class="line"><span class="comment"># x64-windows:  x64 Desktop</span></span><br><span class="line">C:\vcpkg&gt;vcpkg.exe install sqlite3:x86-uwp zlib:x64-windows </span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有支持的目标</span></span><br><span class="line">C:\vcpkg&gt;vcpkg.exe <span class="built_in">help</span> triplet </span><br><span class="line">Available architecture triplets:</span><br><span class="line">  arm-uwp</span><br><span class="line">  arm64-uwp</span><br><span class="line">  x64-uwp</span><br><span class="line">  x64-windows-static</span><br><span class="line">  x64-windows</span><br><span class="line">  x86-uwp</span><br><span class="line">  x86-windows-static</span><br><span class="line">  x86-windows</span><br></pre></td></tr></table></figure>
+<p>最后，使用<code>integrate</code>命令使得gtest可以被用于所有当前用户的项目：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">C:\vcpkg&gt;vcpkg.exe integrate install</span><br><span class="line">Applied user-wide integration <span class="keyword">for</span> this vcpkg root.</span><br><span class="line"></span><br><span class="line">All MSBuild C++ projects can now <span class="comment">#include any installed libraries.</span></span><br><span class="line">Linking will be handled automatically.</span><br><span class="line">Installing new libraries will make them instantly available.</span><br><span class="line"></span><br><span class="line">CMake projects should use: <span class="string">"-DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems</span></span><br><span class="line"><span class="string">/vcpkg.cmake"</span></span><br><span class="line"><span class="comment"># 使用 vcpkg.exe integrate remove 移除整合</span></span><br></pre></td></tr></table></figure>
+<p> 至此，一次<code>vcpkg</code>的使用就结束了，比起之前自己编译配置路径确实方便了不少，关键还几乎不会出错，是很赞了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+</article>
+  
+  
+  
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/12/07/term-1-14th-week/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2806,219 +3037,6 @@
   
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://callmexss.top/2017/08/29/哈密顿行动0x01-获取密码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="许山山">
-      <meta itemprop="description" content="繁华尘世，时光如沙，轻歌曼舞有时尽。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="像素书">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/29/哈密顿行动0x01-获取密码/" itemprop="url">
-                  哈密顿行动0x01-获取密码
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-08-29 23:35:54" itemprop="dateCreated datePublished" datetime="2017-08-29T23:35:54+08:00">2017-08-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-letters-count">
-              &nbsp; | &nbsp;
-              <span>1.1k 字</span>
-              &nbsp; | &nbsp;
-              <span>5 min</span>
-            </span>
-          
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/29/哈密顿行动0x01-获取密码/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/08/29/哈密顿行动0x01-获取密码/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/08/29/哈密顿行动0x01-获取密码/" class="leancloud_visitors" data-flag-title="哈密顿行动0x01-获取密码">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="关卡描述"><a href="#关卡描述" class="headerlink" title="关卡描述"></a>关卡描述</h3><p>进入第一关，是需要得到一个密码。</p>
-<p><img src="/images/hmdxd01-1.png" alt="hmdxd01-1"></p>
-<h3 id="关卡解答"><a href="#关卡解答" class="headerlink" title="关卡解答"></a>关卡解答</h3><p>一般这种游戏第一关都比较套路了，想知道的都在源码里。所以打开源码看一下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;SCRIPT language=JavaScript&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line"><span class="comment">// 由给定的数组生成一个新的数组，其实就是在最前面添了没用的一位</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeArray</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.length = makeArray.arguments.length </span><br><span class="line">        		<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)</span><br><span class="line">        			<span class="keyword">this</span>[i + <span class="number">1</span>] = makeArray.arguments[i]</span><br><span class="line">    	&#125;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">Array</span> = <span class="keyword">new</span> makeArray(<span class="string">'B'</span>,<span class="string">'R'</span>,<span class="string">'E'</span>,<span class="string">'L'</span>,<span class="string">'E'</span>,<span class="string">'F'</span>,<span class="string">'O'</span>,<span class="string">'A'</span>,<span class="string">'T'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成密码的函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">password</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> pass =</span><br><span class="line">(numArray[<span class="number">7</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">1</span>])+(numArray[<span class="number">5</span>])+(numArray[<span class="number">9</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">1</span>])+(numArray[<span class="number">5</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">9</span>])+(numArray[<span class="number">7</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">6</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> pass1 = prompt(<span class="string">'Please Enter Your Password'</span>,<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (num &lt; <span class="number">2</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (pass1 == pass) &#123;</span><br><span class="line">				alert(<span class="string">'WOW! OK, OK, this is begin ...'</span>)</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">		&#125; </span><br><span class="line"></span><br><span class="line">	num+=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">var</span> pass1 =alert(<span class="string">"wrong! idoit you are! i am strong!strong!strong!strong!strong!strong!strong!"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// --&gt;</span></span><br><span class="line">&lt;<span class="regexp">/SCRIPT&gt;</span></span><br></pre></td></tr></table></figure>
-<p>到这里已经可以知道密码是如何生成的了。再接着看看下面的源码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wlkji=<span class="string">"&lt;citlnug=JvSrp\"\r\rfnto aera(&#123;\nhslnt  aera.ruet.egh\no vri=0   hslnt;i+\rti[  ]=mkAryagmnsi\r&#125;\na uAry=nwmkAry'''''''''''''''''';/citsrp agae\"aacit&gt;\n\nucinmkAry)\rti.egh=mkAryagmnslnt\rfr(a   ;i&lt;ti.egh +)\nhsi+1  aera.ruet[]\n\rvrnmra  e aera(2,4,7,6,8,5,1,3,9)&lt;srp&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">eval</span>(<span class="built_in">unescape</span>(<span class="string">"function%20RsRsRsRs%28teaabb%29%20%7Bvar%20tttmmm%3D%22%22%3Bl%3Dteaabb.length%3Bwww%3Dhhhhffff%3DMath.round%28l/2%29%3Bif%28l%3C2*www%29hhhhffff%3Dhhhhffff-1%3Bfor%28i%3D0%3Bi%3Chhhhffff%3Bi++%29tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28i%29+%20teaabb.charAt%28i+hhhhffff%29%3Bif%28l%3C2*www%29%20tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28l-1%29%3Bdocument.write%28tttmmm%29%3B%7DRsRsRsRs%28wlkji%29%3B"</span>));</span><br></pre></td></tr></table></figure>
-<p>首先观察这个变量wlkji可以发现它很像是javascript的代码，事实上它确实是一段javascript代码，通过把一句javascript语句按照奇偶数位的字符分离得到。最开始我是通过在sublime中观察后，利用这一点半自动（几乎手动）拼出了wlkji中字符串表示的js代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeArray</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.length = makeArray.arguments.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)</span><br><span class="line">        <span class="keyword">this</span>[i + <span class="number">1</span>] = makeArray.arguments[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numArray = <span class="keyword">new</span> makeArray(<span class="string">'2'</span>,<span class="string">'4'</span>,<span class="string">'7'</span>,<span class="string">'6'</span>,<span class="string">'8'</span>,<span class="string">'5'</span>,<span class="string">'1'</span>,<span class="string">'3'</span>,<span class="string">'9'</span>);</span><br></pre></td></tr></table></figure>
-<p>然后通过：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pass =</span><br><span class="line">(numArray[<span class="number">7</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">1</span>])+(numArray[<span class="number">5</span>])+(numArray[<span class="number">9</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">1</span>])+(numArray[<span class="number">5</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">6</span>])+(numArray[<span class="number">3</span>])+(numArray[<span class="number">9</span>])+(numArray[<span class="number">7</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">4</span>])+(numArray[<span class="number">2</span>])+(numArray[<span class="number">8</span>])+(numArray[<span class="number">6</span>]);</span><br></pre></td></tr></table></figure>
-<p>计算出密码即可。</p>
-<p>因为对js不熟悉，所以中间的过程都是用python写的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 拼接js</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(s1, s2)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(list(map((<span class="keyword">lambda</span> a, b: a + b), s1, s2)))</span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="comment"># s1 = vrnmra  e aera(2,4,7,6,8,5,1,3,9)</span></span><br><span class="line"><span class="comment"># s2 = a uAry=nwmkAry'''''''''''''''''';</span></span><br><span class="line"><span class="comment"># func(s1, s2) --&gt; var numArray = new makeArray('2','4','7','6','8','5','1','3','9');</span></span><br></pre></td></tr></table></figure>
-<p>最终得到了wlkji中的字符串表示的代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeArray</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.length = makeArray.arguments.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++)</span><br><span class="line">        <span class="keyword">this</span>[i + <span class="number">1</span>] = makeArray.arguments[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numArray = <span class="keyword">new</span> makeArray(<span class="string">'2'</span>,<span class="string">'4'</span>,<span class="string">'7'</span>,<span class="string">'6'</span>,<span class="string">'8'</span>,<span class="string">'5'</span>,<span class="string">'1'</span>,<span class="string">'3'</span>,<span class="string">'9'</span>);</span><br></pre></td></tr></table></figure>
-<p>到这里再用password函数中pass所在的表达式计算一下即可。</p>
-<p>这一关本来的意图其实是javascript中的escape编码和eval加解密：</p>
-<blockquote>
-<p>eval(unescape(“function%20RsRsRsRs%28teaabb%29%20%7Bvar%20tttmmm%3D%22%22%3Bl%3Dteaabb.length%3Bwww%3Dhhhhffff%3DMath.round%28l/2%29%3Bif%28l%3C2<em>www%29hhhhffff%3Dhhhhffff-1%3Bfor%28i%3D0%3Bi%3Chhhhffff%3Bi++%29tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28i%29+%20teaabb.charAt%28i+hhhhffff%29%3Bif%28l%3C2</em>www%29%20tttmmm%20%3D%20tttmmm%20+%20teaabb.charAt%28l-1%29%3Bdocument.write%28tttmmm%29%3B%7DRsRsRsRs%28wlkji%29%3B”));</p>
-</blockquote>
-<p>通过<a href="http://www.bejson.com/enc/eval_package/" target="_blank" rel="noopener">在线解密</a>解密后得到eval执行的字符串内容为</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">RsRsRsRs</span>(<span class="params">teaabb</span>) </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> tttmmm=<span class="string">""</span>;</span><br><span class="line">    l=teaabb.length;</span><br><span class="line">    www=hhhhffff=<span class="built_in">Math</span>.round(l/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span>(l&lt;<span class="number">2</span>*www)</span><br><span class="line">        hhhhffff=hhhhffff<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;hhhhffff;i++)</span><br><span class="line">        tttmmm = tttmmm + teaabb.charAt(i)+ teaabb.charAt(i+hhhhffff);</span><br><span class="line">    <span class="keyword">if</span>(l&lt;<span class="number">2</span>*www)</span><br><span class="line">        tttmmm = tttmmm + teaabb.charAt(l<span class="number">-1</span>);</span><br><span class="line">    <span class="built_in">document</span>.write(tttmmm);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">RsRsRsRs(wlkji);</span><br></pre></td></tr></table></figure>
-<p>只需要将wlkji带入该函数即可得到和上面手工拼接相同的代码，这段解密代码也非常容易改写成python的形式。</p>
-<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><h4 id="JavaScript-eval-函数"><a href="#JavaScript-eval-函数" class="headerlink" title="JavaScript eval() 函数"></a>JavaScript eval() 函数</h4><p>eval() 函数计算 JavaScript 字符串，并把它作为脚本代码来执行。</p>
-<p>如果参数是一个表达式，eval() 函数将执行表达式。如果参数是Javascript语句，eval()将执行 Javascript 语句。</p>
-<p><strong>语法</strong></p>
-<p>eval(<em>string</em>)</p>
-<h4 id="JavaScript-charAt-方法"><a href="#JavaScript-charAt-方法" class="headerlink" title="JavaScript charAt() 方法"></a>JavaScript charAt() 方法</h4><p>返回特定位置的字符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"python"</span>;</span><br><span class="line"><span class="keyword">var</span> n = str.charAt(<span class="number">2</span>)</span><br><span class="line"><span class="comment">// output: 't'</span></span><br></pre></td></tr></table></figure>
-<h4 id="JavaScript-round-方法"><a href="#JavaScript-round-方法" class="headerlink" title="JavaScript round() 方法"></a>JavaScript round() 方法</h4><p>round() 方法可把一个数字舍入为最接近(四舍五入)的整数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.round(<span class="number">0.5</span>);</span><br><span class="line"><span class="comment">// output: 1</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-</article>
-  
-  
-  
-
-    
   </section>
 
   
@@ -3068,7 +3086,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">26</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3085,7 +3103,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3184,7 +3204,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">34</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3269,7 +3293,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共38.3k字</span>
+    <span class="post-count">共38.7k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
