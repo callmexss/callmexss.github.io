@@ -19,7 +19,7 @@ categorises:
 
 # 译文
 
-> 原文[Here are some super secret VS Code hacks to boost your productivity](https://medium.com/free-code-camp/here-are-some-super-secret-vs-code-hacks-to-boost-your-productivity-20d30197ac76)
+> 原文 [Here are some super secret VS Code hacks to boost your productivity](https://medium.com/free-code-camp/here-are-some-super-secret-vs-code-hacks-to-boost-your-productivity-20d30197ac76)
 
 不论是作为一名爱好者、专业者、或者甚至一个月只写代码的开发者，您都必须知道，对于一个在工作时愿意投入最大效率时间的人来说，拥有智能和锋利的开发工具是至关重要的。
 
@@ -51,4 +51,4 @@ Zen Mode: [View > Appearance > Toggle Zen Mode]
 Center Layout: [View > Appearance > Toggle Centered Layout]
 ```
 
-{% asset_img zen-mode-with-centered-layout.jpg material theme %}
+{% asset_img zen-mode-with-centered-layout.gif zen mode with centered layout %}
