@@ -1,5 +1,5 @@
 ---
-title: 一能够in提高工作效率的超级秘密的 VS Code 奇淫巧计「翻译」
+title: 一些能够提高工作效率的绝密 VS Code 奇淫巧计「翻译」
 tags:
   - vscode
   - ARTS
