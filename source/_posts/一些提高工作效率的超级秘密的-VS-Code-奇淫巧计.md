@@ -51,4 +51,4 @@ Zen Mode: [View > Appearance > Toggle Zen Mode]
 Center Layout: [View > Appearance > Toggle Centered Layout]
 ```
 
-{% assets_img zen-mode-with-centered-layout.gif zen mode with centered layout %}
+<!-- {% assets_img zen-mode-with-centered-layout.gif zen mode with centered layout %} -->
