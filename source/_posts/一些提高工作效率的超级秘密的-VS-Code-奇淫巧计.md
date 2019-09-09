@@ -1,5 +1,5 @@
 ---
-title: 一些提高工作效率的超级秘密的 VS Code 奇淫巧计「翻译」
+title: 一能够in提高工作效率的超级秘密的 VS Code 奇淫巧计「翻译」
 tags:
   - vscode
   - ARTS
@@ -38,7 +38,7 @@ categorises:
 
 这是 VS Code 主题的核心。我认为 material theme 是一款编辑器中最接近使用纸笔书写的东西了（尤其是使用 **no contrast variant** 主题后）。从集成工具到文本编辑器，您的编辑器看起来几乎是扁平、无缝的。
 
-想象一下史诗级别的主题配上史诗级别的图标。[Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 是替换默认 VS Code 的令人惊叹的选择。其设计的大型图标目录与主题融为一体，使之更加美观。这将帮助您轻松地在资源管理器中找到您的文件。
+想象一下史诗级别的主题配上史诗级别的图标。[Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 是替换默认 VS Code 图标的令人惊叹的选择。其设计的大型图标目录与主题融为一体，使之更加美观。这将帮助您轻松地在资源管理器中找到您的文件。
 
 {% asset_img vsc-material-theme.jpg material theme %}
 
@@ -51,4 +51,23 @@ Zen Mode: [View > Appearance > Toggle Zen Mode]
 Center Layout: [View > Appearance > Toggle Centered Layout]
 ```
 
-{% asset_img zen-mode-with-centered-layout.gif zen mode with centered layout %}
+译者注：更简单的方法是 `ctrl+shift+p` 然后输入 zen mode 或者 centered 然后选择对应选项敲回车即可。
+
+{% asset_img zen-mode-with-centered-layout.gif 居中布局的禅模式 %}
+
+### 使用具有连写的字体
+
+好的风格使阅读变得容易和舒服。您可以用支持连写的令人惊叹的字体使您的编辑器看起来更好。这里有 [6 款支持连写的最好的字体](https://www.slant.co/topics/5611/~monospace-programming-fonts-with-ligatures)（来源 [www.slant.co](http://www.slant.co/))。
+
+{% asset_img coding-with-ligatures.gif 使用带连写的字体进行编码 %}
+
+你可以试用 [Fira Code](https://github.com/tonsky/FiraCode)，它很棒并且是开源的。在安装这款字体后你应该这样修改 VS Code 的配置。
+
+```json
+"editor.fontFamily": "Fira Code",
+"editor.fontLigatures": true
+```
+
+{% asset_img all-ligatures.png 使用带连写的字体进行编码 %}
+
+着名的字体Operator Mono没有为连字提供原生支持，然而如果你是连字的狂热粉丝，你可以使用[这个库](https://github.com/kiliman/operator-mono-lig)来添加它们。
