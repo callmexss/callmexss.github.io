@@ -71,3 +71,34 @@ Center Layout: [View > Appearance > Toggle Centered Layout]
 {% asset_img all-ligatures.png 使用带连写的字体进行编码 %}
 
 着名的字体Operator Mono没有为连字提供原生支持，然而如果你是连字的狂热粉丝，你可以使用[这个库](https://github.com/kiliman/operator-mono-lig)来添加它们。
+
+### [Rainbow Indent](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+
+缩进风格。这个扩展为文本前面的缩进着色，每一步交替使用四种不同的颜色。
+
+{% asset_img rainbow-indent.png %}
+
+默认的缩进设置按照彩虹的配色为缩进着色。然而我通过定制自己的方案来跟随不同的灰度。如果您希望您的缩进风格和示例中的一致，把下面的片段复制粘贴到您的 `settings.json` 中。
+
+```json
+"indentRainbow.colors": [
+"rgba(16,16,16,0.1)",
+"rgba(16,16,16,0.2)",
+"rgba(16,16,16,0.3)",
+"rgba(16,16,16,0.4)",
+"rgba(16,16,16,0.5)",
+"rgba(16,16,16,0.6)",
+"rgba(16,16,16,0.7)",
+"rgba(16,16,16,0.8)",
+"rgba(16,16,16,0.9)",
+"rgba(16,16,16,1.0)"
+],
+```
+
+### 定制标题栏
+
+这是一个很好的视觉调整。我从 [Wes Bos](https://medium.com/u/86a55cd7983b?source=post_page-----20d30197ac76----------------------) 的一堂 [React & GraphQL](https://advancedreact.com/) 课程中的一节复制了它。基本上，他通过给不同的项目配上不同的标题栏颜色来更容易地识别它们，并帮助观众区分它们。这在具有相同代码或文件名的应用中真的非常有用，例如，一个 react-native 的移动应用和一个 react web 应用。
+
+{% asset_img title-bar-customization.png 定制标题栏 %}
+
+这可以通过为每个你想拥有不同标题栏颜色项目的 Workplace Settings 中编辑 Title Bar 来实现。
