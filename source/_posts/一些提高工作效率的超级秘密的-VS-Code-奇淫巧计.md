@@ -40,7 +40,7 @@ categorises:
 
 想象一下史诗级别的主题配上史诗级别的图标。[Material Theme Icons](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) 是替换默认 VS Code 的令人惊叹的选择。其设计的大型图标目录与主题融为一体，使之更加美观。这将帮助您轻松地在资源管理器中找到您的文件。
 
-{% assets_img vsc-material-theme.jpg material theme %}
+{% asset_img vsc-material-theme.jpg material theme %}
 
 ### 居中布局的禅模式
 
@@ -50,3 +50,5 @@ categorises:
 Zen Mode: [View > Appearance > Toggle Zen Mode]
 Center Layout: [View > Appearance > Toggle Centered Layout]
 ```
+
+{% asset_img zen-mode-with-centered-layout.jpg material theme %}
