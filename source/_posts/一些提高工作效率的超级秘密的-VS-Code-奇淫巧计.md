@@ -101,4 +101,52 @@ Center Layout: [View > Appearance > Toggle Centered Layout]
 
 {% asset_img title-bar-customization.png 定制标题栏 %}
 
-这可以通过为每个你想拥有不同标题栏颜色项目的 Workplace Settings 中编辑 Title Bar 来实现。
+您可以通过在每个您想要不同标题栏颜色的项目的 Workspace Settings 中编辑 Title Bar 来设置不同的标题栏颜色。
+
+## 更快的编码
+
+> The very essence of getting it done in time
+> 及时完成任务的本质
+
+### 标签换行
+
+如果你不知道 [Emmet](https://emmet.io/)，那么你可能是喜欢在写代码时敲下每个字符的人。Emmet 使你能够通过输入缩写来获取相应的标签。这可以由选择一块代码并输入 Wrap with Abbreviation 命令来实现，我为这个操作绑定了一个快捷键 `shift + alt + .`。
+
+参见下面的例子：
+
+{% asset_img wrap-it-up-with-emmet.gif 使用 Emmit 包裹代码 %}
+
+如果您想把所有这些都包裹成单独的行。那么您可以使用 *wrap with individual lines* 命令，然后在缩写后面插入一个 \*，例如 `div*`。
+
+如果你想直接转到 Emmet，这里是一份[Emmet 的速查手册](https://docs.emmet.io/cheat-sheet/)。
+
+### Balance Inwords 和 Balance Outwords
+
+这个技巧来自我强烈推荐的 [https://vscodecandothat.com/](https://vscodecandothat.com/)。
+
+你可以通过使用 Emmet 的 `balance inword` 命令和 `balance outword` 命令在 VS Code 中选择一个代码块。把这些命令绑定到快捷键时非常有用的，比如 `Ctrl + Shift + Up Arrow` 对应 Balance Outwords，`Ctrl + Shift + Down Arrow` 对应 Balance Inwords。
+
+{% asset_img balance-inwords-and-outwords.gif Balance Inwords/Outwords %}
+
+### [Turbo Console.log()](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
+
+没有人喜欢敲像 `console.log()` 这样长的输入。这着实时让人易怒的，大多数情况下你只是想快速的输出一些东西，查看一下它的值然后继续编码。如果我告诉您可以像 Lucky Luke 一样快的使用 `console.log` 会怎么样呢。
+
+译者注：Lucky Luke — the man who shoots faster than his shadow，幸运星卢克，是一部由比利时漫画家莫里斯于1946年创作的西方连环画。
+
+这个工作可以由 [Turbo Console Log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log) 扩展来完成。它能够在当前行的下一行记录任何变量,并遵循代码结构自动生成前缀。您还可以通过使用快捷键 `alt+shift+u/ alt+shift+c` 来注释或者取消注释由该插件添加的 `console.log`。
+
+此外，还可以用 `alt+shift+d` 删除它们:
+
+{% asset_img turbo-console-log.gif conso.log() 自动涡轮机 %}
+
+### [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+这是一个令人惊叹的扩展，它帮助您启动一个支持静态和动态页面实时重新加载的本地开发服务器。它对于大多数特性都有很好的支持：HTTPS，CORS，可定制的 IP 地址和端口。
+
+[点击这里下载](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+{% asset_img live-server.gif Live Server %}
+
+如果搭配 [VS Code LiveShare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) 它甚至允许你分享你的 `localhost`。
+
