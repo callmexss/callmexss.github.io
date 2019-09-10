@@ -21,7 +21,7 @@ categorises:
 
 > 原文 [Here are some super secret VS Code hacks to boost your productivity](https://medium.com/free-code-camp/here-are-some-super-secret-vs-code-hacks-to-boost-your-productivity-20d30197ac76)
 
-不论是作为一名爱好者、专业者、或者甚至一个月只写代码的开发者，您都必须知道，对于一个在工作时愿意投入最大效率时间的人来说，拥有智能和锋利的开发工具是至关重要的。
+不论是作为一名爱好者、专业者、或者甚至一个月只写一次代码的开发者，您都必须知道，对于一个在工作时愿意投入最大效率时间的人来说，拥有智能和锋利的开发工具是至关重要的。
 
 我已经筹措整理了一些技巧、诀窍和扩展，并经过重重筛选，只保留了对现代 web 开发者来说最少和最有用的一部分。正如我们所知道的，Javascript 的生态系统非常庞大，而且还在不断壮大。基于这个原因，我会尽量做到不偏不倚。
 
@@ -97,7 +97,7 @@ Center Layout: [View > Appearance > Toggle Centered Layout]
 
 ### 定制标题栏
 
-这是一个很好的视觉调整。我从 [Wes Bos](https://medium.com/u/86a55cd7983b?source=post_page-----20d30197ac76----------------------) 的一堂 [React & GraphQL](https://advancedreact.com/) 课程中的一节复制了它。基本上，他通过给不同的项目配上不同的标题栏颜色来更容易地识别它们，并帮助观众区分它们。这在具有相同代码或文件名的应用中真的非常有用，例如，一个 react-native 的移动应用和一个 react web 应用。
+这是一个很好的视觉调整。我从 [Wes Bos](https://medium.com/u/86a55cd7983b?source=post_page-----20d30197ac76----------------------) 的一堂 [React & GraphQL](https://advancedreact.com/) 课程中复制了它。基本上，他通过给不同的项目配上不同的标题栏颜色来更容易地识别它们，并帮助观众区分它们。这在具有相同代码或文件名的应用中真的非常有用，例如，一个 react-native 的移动应用和一个 react web 应用。
 
 {% asset_img title-bar-customization.png 定制标题栏 %}
 
