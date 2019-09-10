@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建时间：2019-09-10 14:27:13 / 修改时间：22:08:24" itemprop="dateCreated datePublished" datetime="2019-09-10T14:27:13+08:00">2019-09-10</time>
+              <time title="创建时间：2019-09-10 14:27:13 / 修改时间：22:43:42" itemprop="dateCreated datePublished" datetime="2019-09-10T14:27:13+08:00">2019-09-10</time>
             
 
             
@@ -402,9 +402,9 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>924 字</span>
+              <span>1.2k 字</span>
               &nbsp; | &nbsp;
-              <span>3 min</span>
+              <span>4 min</span>
             </span>
           
 
@@ -471,7 +471,7 @@
 <img src="/2019/09/10/趣谈Linux操作系统期末测试/boot.png" title="启动的过程">
 <img src="/2019/09/10/趣谈Linux操作系统期末测试/init.png" title="初始化的过程">
 <p>然后再回答每一个过程中的细节。</p>
-<h3 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h3><p>在按下电源键以后，主板就加电了。主板上的 <strong>ROM</strong>（Read Only Memory，只读存储器）中固化了一些初始化的程序 —— <strong>BIOS</strong>（Basic Input Output System），与平时说的内存 <strong>RAM</strong>（Random Access Memory，随机存取存储器）不同，ROM 是只读的，而 RAM 是可读可写的。</p>
+<h3 id="BIOS-时期"><a href="#BIOS-时期" class="headerlink" title="BIOS 时期"></a>BIOS 时期</h3><p>在按下电源键以后，主板就加电了。主板上的 <strong>ROM</strong>（Read Only Memory，只读存储器）中固化了一些初始化的程序 —— <strong>BIOS</strong>（Basic Input Output System），与平时说的内存 <strong>RAM</strong>（Random Access Memory，随机存取存储器）不同，ROM 是只读的，而 RAM 是可读可写的。</p>
 <p>在 x86 系统中，将 1M 空间最上面的 0xF0000 到 0xFFFFF 这 64K 映射给 ROM。电脑刚加电的时候会做一些重置工作，将 CS 设置为 0xFFFF，将 IP 设置为 0x0000，所以第一条指令就会指向 0xFFFF0（CS 左移一位或 IP），这个地址正好在 ROM 的范围里。这里有一个 JMP 指令会跳转到 ROM 中做初始化工作的代码，于是 BIOS 开始进行初始化代码工作。</p>
 <img src="/2019/09/10/趣谈Linux操作系统期末测试/x86-1m.jpeg">
 <p>这个过程主要做了三件事：</p>
@@ -481,7 +481,15 @@
 <li>内存空间映射显存空间，在显示器上显示一些字符。</li>
 </ol>
 <img src="/2019/09/10/趣谈Linux操作系统期末测试/bios.jpeg">
-<h3 id="MBR"><a href="#MBR" class="headerlink" title="MBR"></a>MBR</h3><h3 id><a href="#" class="headerlink" title=" "></a> </h3><h1 id="是结束也是开始"><a href="#是结束也是开始" class="headerlink" title="是结束也是开始"></a>是结束也是开始</h1><h1 id="站在巨人的肩膀上"><a href="#站在巨人的肩膀上" class="headerlink" title="站在巨人的肩膀上"></a>站在巨人的肩膀上</h1><ol>
+<h3 id="bootloader-时期"><a href="#bootloader-时期" class="headerlink" title="bootloader 时期"></a>bootloader 时期</h3><p>想要初始化操作系统，首先需要找到操作系统在哪里。在 BIOS 的界面上，可以看到不同的启动项，BIOS 按照这个顺序，把控制权交给排在第一位的存储设备。这时，计算机读取该设备的第一个扇区，也就是读取最前面的 512 个字节。如果这 512 个字节的最后两个字节是 0x55 和 0xAA，表明这个设备可以用于启动；如果不是，表明设备不能用于启动，控制权于是被转交给”启动顺序”中的下一个设备。</p>
+<p>这最前面的 512 个字节，就是 <strong>MBR</strong>（Master boot record，主引导记录）。</p>
+<p>“主引导记录”只有512个字节，放不了太多东西。它的主要作用是，告诉计算机到硬盘的哪一个位置去找操作系统。</p>
+<p>主引导记录由三个部分组成：</p>
+<p>　　（1） 第1-446字节：调用操作系统的机器码。</p>
+<p>　　（2） 第447-510字节：分区表（Partition table）。</p>
+<p>　　（3） 第511-512字节：主引导记录签名（0x55和0xAA）。</p>
+<img src="/2019/09/10/趣谈Linux操作系统期末测试/boot.jpeg">
+<h1 id="是结束也是开始"><a href="#是结束也是开始" class="headerlink" title="是结束也是开始"></a>是结束也是开始</h1><h1 id="站在巨人的肩膀上"><a href="#站在巨人的肩膀上" class="headerlink" title="站在巨人的肩膀上"></a>站在巨人的肩膀上</h1><ol>
 <li><a href="https://time.geekbang.org/column/intro/164" target="_blank" rel="noopener">趣谈Linux操作系统</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html" target="_blank" rel="noopener">计算机是如何启动的？</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2013/08/linux_boot_process.html" target="_blank" rel="noopener">Linux 的启动流程</a></li>
@@ -3167,7 +3175,7 @@ n_0 + n_1 + n_0 - 1 =200\\
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共41k字</span>
+    <span class="post-count">共41.3k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
