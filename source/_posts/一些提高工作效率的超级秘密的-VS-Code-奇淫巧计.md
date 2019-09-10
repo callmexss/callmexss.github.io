@@ -4,8 +4,8 @@ tags:
   - vscode
   - ARTS
 categories:
-  - 翻译
-  - 器
+  - [翻译]
+  - [器]
 date: 2019-09-08 23:20:13
 categorises:
 ---
