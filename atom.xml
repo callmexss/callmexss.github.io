@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://callmexss.top/"/>
-  <updated>2019-09-10T03:54:40.158Z</updated>
+  <updated>2019-09-10T06:42:06.696Z</updated>
   <id>https://callmexss.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>趣谈Linux操作系统期末测试</title>
+    <link href="https://callmexss.top/2019/09/10/%E8%B6%A3%E8%B0%88Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%9C%9F%E6%9C%AB%E6%B5%8B%E8%AF%95/"/>
+    <id>https://callmexss.top/2019/09/10/趣谈Linux操作系统期末测试/</id>
+    <published>2019-09-10T06:27:13.000Z</published>
+    <updated>2019-09-10T06:42:06.696Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="答题规范"><a href="#答题规范" class="headerlink" title="答题规范"></a>答题规范</h1><p>以下摘自<a href="https://time.geekbang.org/column/intro/164" target="_blank" rel="noopener">趣谈 Linux 操作系统</a>：</p><blockquote><p>第一，回答尽量体系化。不仅仅回答这个问题的知识点，还可以简单描述一下这个点背后完整的体系，然后根据面试官接下来的追问，更细地描述其他相关的内容。<br>这样做的好处是：一，防止你因为这个点没有回答好而丢分所有的分；二，可以体现你的知识掌握比较全面，可以加分；三，还可以避免冷场和尬聊。<br>面试官开放式的提问，最不想听到的就是“封闭式“回答。有的面试者“惜字如金“，有的人能聊一个小时，有的人不到半个小时就答完了，让面试官没有办法深入全面的了解你。</p><p>第二，在体系化的阐述过程中，可以加入一些你使用过的相关工具或者技巧的阐述。例如，操作系统干这个事情有十个步骤。第三步会在某个日志文件里面打印这样的日志，如果发现打印出 xxx 说明可能有错误，第七步可以通过某个命令行查看某某状态，等等。诸如此类，可以让面试官感觉到你是实战派而非理论派。</p><p>第三，在体系化的阐述过程中，如果能加入一些项目经验就更好了。例如，在第九个步骤，当时在做某项目的时候，因为客户现场的版本问题，导致了什么结果，最后如何进行解决的等等。<br>我刚才说了，面试官问问题的时候，脑子里都是有实际工作场景的。如果你能把他带到你的工作场景里面，有利于面试官对你当时的情形感同身受，你的分数自然不会很低。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;答题规范&quot;&gt;&lt;a href=&quot;#答题规范&quot; class=&quot;headerlink&quot; title=&quot;答题规范&quot;&gt;&lt;/a&gt;答题规范&lt;/h1&gt;&lt;p&gt;以下摘自&lt;a href=&quot;https://time.geekbang.org/column/intro/164&quot; targe
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://callmexss.top/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>一些能够提高工作效率的绝密 VS Code 奇淫巧计「翻译」</title>
@@ -526,30 +549,6 @@
       <category term="DSA" scheme="https://callmexss.top/tags/DSA/"/>
     
       <category term="环境配置" scheme="https://callmexss.top/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python Websites Collection</title>
-    <link href="https://callmexss.top/2017/10/13/python-websites-collection/"/>
-    <id>https://callmexss.top/2017/10/13/python-websites-collection/</id>
-    <published>2017-10-13T07:39:15.000Z</published>
-    <updated>2019-06-02T01:16:29.586Z</updated>
-    
-    <content type="html"><![CDATA[<p>一个各种python资源的整合</p><h2 id="Python-Cheat-Sheets"><a href="#Python-Cheat-Sheets" class="headerlink" title="Python Cheat Sheets"></a>Python Cheat Sheets</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一个各种python资源的整合&lt;/p&gt;
-&lt;h2 id=&quot;Python-Cheat-Sheets&quot;&gt;&lt;a href=&quot;#Python-Cheat-Sheets&quot; class=&quot;headerlink&quot; title=&quot;Python Cheat Sheets&quot;&gt;&lt;/a&gt;Python
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://callmexss.top/tags/python/"/>
     
   </entry>
   
