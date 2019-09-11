@@ -150,3 +150,43 @@ Center Layout: [View > Appearance > Toggle Centered Layout]
 
 如果搭配 [VS Code LiveShare](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) 它甚至允许你分享你的 `localhost`。
 
+### 多光标复制粘贴
+
+使用 VS Code 的过程中，我的第一次“哇哦”献给了多光标编辑。很久之后，我发现这个特性的一个巧妙应用，您可以复制粘贴光标选中的内容，并且按照它们被复制的顺序粘贴他们。
+
+看看下面的例子：
+
+{% asset_image copy-and-paste-with-different-cursors.gif 多光标复制粘贴 %}
+
+### 面包屑导航和大纲
+
+面包屑导航展示当前的位置，并允许你快速的在文件和符号间跳转。通过 `View > Toggle Breadcrumbs` 命令或者 `breadcrumbs.enabled` 设定来启动它。
+
+大纲视图是文件管理器树底部单独的部分。展开后，将显示当前活动编辑器的符号树。
+
+大纲视图有不同的排序模式，可选光标跟踪。它还有一个输入框来过滤你输入的符号。错误和警告也会展示在大纲视图中，使你能够瞟一眼就找到错误所在。
+
+{% asset_image breadcrumb-and-outline-relation.gif 面包屑导航和大纲的关系  %}
+
+## 杂项
+
+> Those little tweaks that change everything
+> 那些改变一切的小调整
+
+### 命令行里的 code
+
+VS Code有一个强大的命令行界面，允许您控制如何启动编辑器。你可以打开文件，安装扩展，修改显示语言，通过命令行界面输出诊断信息。
+
+{% asset_image code-cli.png code 的命令行接口 %}
+
+想象一下您刚使用 `git clone <repo-url>` 克隆了一个仓库，然后您想替换当前正在使用的 VS Code 实例。`code . -r` 能够使你在不离开命令行的情况下就实现这个功能（[从这里了解更多](https://code.visualstudio.com/docs/editor/command-line)）。
+
+### [polacode](https://github.com/octref/polacode)
+
+> Polaroid for your code
+
+您经常会遇到具有自定义字体和主题的吸引人的代码截图，如下所示。这是在带有 Polacode 扩展的 VS Code 中获得的。
+
+{% asset_image polacode.png VS Code 的 Polacode 扩展 %}
+
+我知道 [Carbon](https://carbon.now.sh/) 是一个好的并且更加可定制化的代替品。然而，Polacode 允许您留在代码编辑器中，并使用您可能购买的任何在 Carbon 中不可用的专有字体。
