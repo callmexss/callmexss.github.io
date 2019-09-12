@@ -190,3 +190,53 @@ VS Code有一个强大的命令行界面，允许您控制如何启动编辑器�
 {% asset_image polacode.png VS Code 的 Polacode 扩展 %}
 
 我知道 [Carbon](https://carbon.now.sh/) 是一个好的并且更加可定制化的代替品。然而，Polacode 允许您留在代码编辑器中，并使用您可能购买的任何在 Carbon 中不可用的专有字体。
+
+### [Quokka (JS/TS ScratchPad)](https://quokkajs.com/)
+
+Quokka是JavaScript和TypeScript的快速原型开发平台。它在您键入代码时立即运行您的代码，并在代码编辑器中显示各种执行结果和控制台日志。
+
+{% asset_image quokka.gif Quokka %}
+
+Quokka的一个很棒的应用是，当您在为技术面试做准备时，您能够输出每个步骤，而不用在调试器中设置断点。
+
+它还可以帮助您在实际使用诸如Lodash或MomentJS之类的库函数之前研究它们。它甚至可以用于异步调用。
+
+### [WakaTime](https://wakatime.com/)
+
+你的朋友认为你花了太多时间敲代码吗？记录并告诉他们每天 10 小时并不算“太多”。WakaTime 是一个有助于记录和存储有关您的编程活动的指标和分析的扩展。
+
+您可以设定目标，查看您常用的编程语言，您甚至可以世界上的其他忍者做一个对比。
+
+{% asset_image wakatime.png WakaTime Dashboard %}
+{% asset_image wakatime-1.png WakaTime Leaderboards %}
+
+### [VSCode Hacker Typer](https://marketplace.visualstudio.com/items?itemName=jevakallio.vscode-hacker-typer)
+
+您是否曾经在人群前写过代码？你经常不顾一切地打字，一边打字一边聊天，这让你有点困惑。想象一下预先键入的代码，只有当您在 geektyper 中模拟类型时才会出现。
+
+<iframe width="663" height="382" src="https://www.youtube.com/embed/ulnC-SDBDKE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Jani Eväkallio](https://medium.com/u/3e0af129613a?source=post_page-----20d30197ac76----------------------) 把这个插件带到了 VS Code。它将帮助您记录和重播宏(在编辑器中编写的代码)，使您在向观众打字时 100% 更加专注。
+
+### Exclude folders
+
+我在[一篇 stackoverflow 的帖子](https://stackoverflow.com/questions/33258543/how-can-i-exclude-a-directory-from-visual-studio-code-explore-tab/33277809#33277809)里学到这个技巧。这是一个快速调整，将 node modules 或其他文件夹从资源管理器树中排除，以帮助您只关注重要的内容。对于我来说，我非常讨厌在编辑器中打开乏味的node module文件夹，所以我决定隐藏它。
+
+例如，要隐藏 node_modules，您可以执行以下操作：
+
+1. **File > Preferences > Settings** (MAC 下 **Code > Preferences > Settings**)
+2. 在设置中搜索 `files.exclude`
+3. 点击 `Add Pattern` 然后输入 `**/node_modules`
+4. 瞧！node_modules 从资源管理器树中消失了
+
+### 你的建议
+
+你可以随时评论一些关于VSCode的最秘密的提示，我很乐意将它们添加到列表中来帮助其他人。:)
+
+我希望这些技巧能够真正提高 VS Code 的效率。如果您喜欢这篇文章，请鼓掌并分享，如果我错过了任何扩展，请评论。
+
+# 尾声
+
+以后学习前端的时候可以试一试里面提到的技巧。磕磕绊绊好几天才翻译完，借助了翻译工具，好吧其实它们呢才是主力。然后下一篇文章要读过再翻译，这一篇的读完的收获感觉不匹配投入的时间啊哭泣QAQ。
+
+最后 VS Code 真好用呀。心痒痒的什么时候入一下 **typescript** 坑也自己动手写插件。
