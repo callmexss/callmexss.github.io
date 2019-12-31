@@ -8,7 +8,11 @@ tags:
 
 ---
 
+一篇经典入门教程的翻译。
+
 > 原文[Debugging Under Unix: gdb Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)
+
+<!-- more -->
 
 **在Unix 下调试： gdb 教程**
 

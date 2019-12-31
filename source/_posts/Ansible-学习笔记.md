@@ -12,6 +12,8 @@ tags:
 
 Ansible 是一款运维工具，它基于 ssh，因此不需要在远程机器上安装额外的客户端软件。
 
+<!-- more -->
+
 ## Ansible 使用入门
 
 ### 安装 Ansible
