@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+                <time title="修改时间：2019-12-31 21:43:01" itemprop="dateModified" datetime="2019-12-31T21:43:01+08:00">2019-12-31</time>
               
             
           </span>
@@ -488,56 +488,17 @@
 
       
         
-          
-            <blockquote>
+          <p>一篇经典入门教程的翻译。</p>
+<blockquote>
 <p>原文<a href="https://www.cs.cmu.edu/~gilpin/tutorial/" target="_blank" rel="noopener">Debugging Under Unix: gdb Tutorial</a></p>
 </blockquote>
-<p><strong>在Unix 下调试： gdb 教程</strong></p>
-<p>因为最近做了一个项目需要在linux环境下编译c++程序，于是把源码迁移到了Ubuntu，然后发现在修改了代码后程序报了Segment Fault的错误。这不通过调试只是静态分析怎么可能找到，于是被逼无奈又只能谷歌大法搜呗…于是就搜到了这篇04年的教程。gdb我之前好奇用了一次，但是完全不知所以，这次跟着这篇教程却算是顺利的入了门。虽然最终bug不是通过gdb找到的，不过为了纪念，还是准备把这篇我认为还不错的教程翻译下来留作纪念。</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>本教程最初是为华盛顿大学 CS 342 而撰写。它现在仍旧由 Andrew Gilpin 进行维护。</p>
-<h3 id="写给谁看？"><a href="#写给谁看？" class="headerlink" title="写给谁看？"></a>写给谁看？</h3><p>本教程旨在帮助新接触UNIX环境的程序员学习使用gdb调试器。本教程假设你已经能够使用C++编写程序并知道如何编译运行。它还假设你了解关于调试的基础知识，并在其它操作系统中使用过调试器。</p>
-<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>为了阐述调试的原理，我将使用一个有bug的程序作为例子。在你读完本教程后，你将能够使用调试器定位和修复代码中的错误。代码在<a href="https://www.cs.cmu.edu/~gilpin/tutorial/main.cc" target="_blank" rel="noopener">这里</a>下载，以及一个简单的<a href="https://www.cs.cmu.edu/~gilpin/tutorial/Makefile" target="_blank" rel="noopener">Makefile</a>。</p>
-<p>代码非常简单，包含一个节点和一个链表的定义。这也是测试列表的一个简单开始。为了能够更容易的阐述调试的过程，所有的代码被放在了一个文件中。</p>
-<p><strong>注意:</strong> 由于代码比较久远，其中有一些需要修改的地方，一份<a href="https://raw.githubusercontent.com/callmexss/callmexss.github.io/blog/source/_posts/gdb%E6%95%99%E7%A8%8B/main.cc" target="_blank" rel="noopener">修改后的代码</a>放到github仓库中了。Makefile比较短，贴在这里学习一下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CXX = g++ <span class="comment"># 指定编译器</span></span><br><span class="line">FLAGS = -ggdb -Wall <span class="comment"># 使用调试模式</span></span><br><span class="line"></span><br><span class="line">main: main.cc <span class="comment"># 函数入口点</span></span><br><span class="line">  <span class="variable">$&#123;CXX&#125;</span> <span class="variable">$&#123;FLAGS&#125;</span> -o main main.cc <span class="comment"># 编译命令</span></span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">  rm -f main <span class="comment"># 删除链接文件</span></span><br></pre></td></tr></table></figure>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h3><p>gdb包含在CEC（没查到是什么…）机器的GNU包中。如果你没有加载这个包，在命令行输入<code>pkgadd gnu</code>。如果你可以运行g++，那么你就可以运行gdb。（没有gdb环境的使用包管理工具安装一下。）</p>
-<h3 id="调试符号"><a href="#调试符号" class="headerlink" title="调试符号"></a>调试符号</h3><p>gdb只能作用于由g++产生的调试符号。对于SUN CC的用户，有一个和gdb很相似的替代品叫做dbx调试器。</p>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><h3 id="什么时候该使用调试器"><a href="#什么时候该使用调试器" class="headerlink" title="什么时候该使用调试器"></a>什么时候该使用调试器</h3><p>调试是编程过程中不可避免的。每一个程序员在他们的编程生涯中都将会有某个时刻需要使用调试器调试一段代码。有许多调试的方法，从在屏幕上打印信息，到使用调试器，或者只是思考程序在干什么，并对问题是什么进行有根据的猜测。修复一个bug前，必须先定位bug的位置。例如，在段错误中，知道在哪一行产生段错误是非常有用的。一旦出问题的代码被找到了，知道那个方法中的数值、谁调用了那个方法、以及为什么这个错误会发生都将是有帮助的。使用调试器会使找到这些信息变得十分简单。</p>
-<p>继续阅读本教程并使用make编译以及运行这个程序。本程序将会打印出一些信息，然后会打印它出现了一个段错误，导致程序崩溃。仅根据屏幕上显示的信息，几乎不可能找到程序崩溃的原因，更不用说修复这个程序了。我们现在将开始调试这个程序。</p>
-<h3 id="加载程序"><a href="#加载程序" class="headerlink" title="加载程序"></a>加载程序</h3><p>现在你有一个了一个可执行文件（本例中是main）然后你想调试它。首先你必须运行调试器，调试器叫做gdb，你必须在命令行中告诉他你想要调试哪一个程序。所以为了调试我们输入 <code>gdb main</code> 。这里是运行后可能出现的样子：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">agg1@sukhoi agg1/.www-docs/tutorial&gt; gdb main</span><br><span class="line">GNU gdb 4.18</span><br><span class="line">Copyright 1998 Free Software Foundation, Inc.</span><br><span class="line">GDB is free software, covered by the GNU General Public License, and you are</span><br><span class="line">welcome to change it and/or distribute copies of it under certain conditions.</span><br><span class="line">Type <span class="string">"show copying"</span> to see the conditions.</span><br><span class="line">There is absolutely no warranty <span class="keyword">for</span> GDB.  Type <span class="string">"show warranty"</span> <span class="keyword">for</span> details.</span><br><span class="line">This GDB was configured as <span class="string">"sparc-sun-solaris2.7"</span>...</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>一段关于emacs的内容就跳过了。</p>
-<p>gdb 现在等着接收用户指令。我们需要运行程序，这样gdb可以帮助我们观察程序崩溃时到底发生了什么。在gdb命令行中输入 <code>run</code>。这里是输入 <code>run</code> 后发生的事情：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(gdb) run</span><br><span class="line">Starting program: /home/cec/s/a/agg1/.www-docs/tutorial/main</span><br><span class="line">Creating Node, 1 are <span class="keyword">in</span> existence right now</span><br><span class="line">Creating Node, 2 are <span class="keyword">in</span> existence right now</span><br><span class="line">Creating Node, 3 are <span class="keyword">in</span> existence right now</span><br><span class="line">Creating Node, 4 are <span class="keyword">in</span> existence right now</span><br><span class="line">The fully created list is:</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">Now removing elements:</span><br><span class="line">Creating Node, 5 are <span class="keyword">in</span> existence right now</span><br><span class="line">Destroying Node, 4 are <span class="keyword">in</span> existence right now</span><br><span class="line">4</span><br><span class="line">3</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">Node&lt;int&gt;::next (this=0x0) at main.cc:28</span><br><span class="line">28  Node&lt;T&gt;* next () const &#123; <span class="built_in">return</span> next_; &#125;</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>程序崩溃了，让我们来看看从输入结果中我们能收集到哪些信息。</p>
-<p><strong>注意：</strong> 调试的程序一定是编译好的二进制文件。</p>
-<h3 id="检查崩溃"><a href="#检查崩溃" class="headerlink" title="检查崩溃"></a>检查崩溃</h3><p>我们现在可以看到程序在main.cc的第28行，<code>this</code>指针指向0，这行代码正在被执行。但我们还想知道是谁调用了这个方法，以及调用方法中的值是什么,所以在gdb命令行中输入<code>backtrace</code>,得到如下输出：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(gdb) backtrace</span><br><span class="line"><span class="comment">#0  Node&lt;int&gt;::next (this=0x0) at main.cc:28</span></span><br><span class="line"><span class="comment">#1  0x2a16c in LinkedList&lt;int&gt;::remove (this=0x40160,</span></span><br><span class="line">    item_to_remove=@0xffbef014) at main.cc:77</span><br><span class="line"><span class="comment">#2  0x1ad10 in main (argc=1, argv=0xffbef0a4) at main.cc:111</span></span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>所以除了当前方法和局部变量外，我们还可以知道哪些方法调用了我们以及它们的参数是什么。例如，我们可以看出当前方法是由<code>LinkedList&lt;int&gt;::remove()</code>调用，参数<code>item_to_remove</code>在内存中的地址为<code>0xffbef014</code>。知道<code>item_to_remove</code>的值或许有助于我们理解bug,所以我们想要看到<code>item_to_remove</code>的地址中的值。可以通过使用<code>x + address</code>输入到命令行中查看该变量的值(x可以被理解为examine的简写)。这是输入后的效果：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) x 0xffbef014</span><br><span class="line">0xffbef014: 0x00000001</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>所以程序实在调用<code>LinkedList&lt;int&gt;::remove</code>方法以及参数为1时崩溃的。我们现在把问题缩小到了一个特定的方法和一个特定的参数。</p>
-<h3 id="条件断点"><a href="#条件断点" class="headerlink" title="条件断点"></a>条件断点</h3><p>既然我们已经知道了段错误何时在何处发生，我们想要知道程序在崩溃以前发生了什么。一种方法是使用逐步运行，一次一步,执行程序的全部语句直到执行到我们想要看到的地方。这是有效的，但有时你希望它恰好运行到特定的位置并在那里停止，这样你就可以检测此时的数据。</p>
-<p>如果你曾经使用过调试器，那么你或许对断点的概念很熟悉。简单来说，断点就是调试器在源码中应该停止执行的那一行。我们的例子中，我们想要查看<code>LinkedList&lt;int&gt;::remove ()</code>中的代码，所以我们想要在main.cc的第52行中设置断点。因为你可能不知道具体的行号，你也可以告诉调试器你想要设置断点的方法。这是在本例中我们的输入：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) <span class="built_in">break</span> LinkedList&lt;int&gt;::remove</span><br><span class="line">Breakpoint 1 at 0x29fa0: file main.cc, line 52.</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>现在断点就如我们所期望的被设置在了main.cc的52行。(断点绑定了一个编号是为了我们之后可以引用它，例如删除这个断点。)每次程序运行时，它会在每次运行到第52行的时候将控制权交还给调试器。当方法会被调用多次但是只会在某个特定的值触发错误时，这样就不优雅了。在本例中，我们知道当参数为1时调用<code>LinkedList&lt;int&gt;::remove()</code>方法会导致程序崩溃。所以我们或许想要告诉调试器在<code>item_to_remove</code>值为1时中断。这可以通过如下命令实现：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(gdb) condition 1 item_to_remove==1</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>这等同于告诉调试器“只有在<code>item_to_remove</code>值为1时中断。”现在我们可以运行程序，然后看到调试器只有会在某个特定条件为真时进入断点。</p>
-<h3 id="单步运行"><a href="#单步运行" class="headerlink" title="单步运行"></a>单步运行</h3><p>继续上面的例子，我们现在已经设置了一个条件断点，然后让程序每次运行一步，看是否能够定位错误的源头。可以通过<code>step</code>命令完成这个过程。gdb有一个很棒的特性，不输入命令直接按下回车时，会自动执行上一条命令。也就是说，在第一次输入<code>step</code>后我们就可以通过敲击回车让调试器继续执行<code>step</code>命令了。这看起来就像：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Breakpoint 1, LinkedList&lt;int&gt;::remove (this=0x40160,</span><br><span class="line">    item_to_remove=@0xffbef014) at main.cc:52</span><br><span class="line">52     Node&lt;T&gt; *marker = head_;</span><br><span class="line">(gdb) step</span><br><span class="line">53      Node&lt;T&gt; *temp = 0;  // temp points to one behind as we iterate</span><br><span class="line">(gdb)</span><br><span class="line">55      <span class="keyword">while</span> (marker != 0) &#123;</span><br><span class="line">(gdb)</span><br><span class="line">56        <span class="keyword">if</span> (marker-&gt;value() == item_to_remove) &#123;</span><br><span class="line">(gdb)</span><br><span class="line">Node&lt;int&gt;::value (this=0x401b0) at main.cc:30</span><br><span class="line">30    const T&amp; value () const &#123; <span class="built_in">return</span> value_; &#125;</span><br><span class="line">(gdb)</span><br><span class="line">LinkedList&lt;int&gt;::remove (this=0x40160, item_to_remove=@0xffbef014)</span><br><span class="line">    at main.cc:75</span><br><span class="line">75        marker = 0;  // reset the marker</span><br><span class="line">(gdb)</span><br><span class="line">76        temp = marker;</span><br><span class="line">(gdb)</span><br><span class="line">77        marker = marker-&gt;next();</span><br><span class="line">(gdb)</span><br><span class="line">Node&lt;int&gt;::next (this=0x0) at main.cc:28</span><br><span class="line">28    Node&lt;T&gt;* next () const &#123; <span class="built_in">return</span> next_; &#125;</span><br><span class="line">(gdb)</span><br><span class="line"></span><br><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">Node&lt;int&gt;::next (this=0x0) at main.cc:28</span><br><span class="line">28    Node&lt;T&gt;* next () const &#123; <span class="built_in">return</span> next_; &#125;</span><br><span class="line">(gdb)</span><br></pre></td></tr></table></figure>
-<p>在键入<code>run</code>后，gdb问我们是否要重新运行程序，我们选择是。然后程序会运行并在我们期望的位置中断。我们输入<code>step</code>和敲击回车使程序单步运行。注意程序会进入到调用的方法中。如果你不希望这样，使用<code>next</code>方法，它会将函数的调用视为一步执行。</p>
-<p>程序的错误很明显了。在第75行<code>marker</code>被置为0,但是在第77行<code>marker</code>的一个成员被访问，<strong>访问没有初始化的对象是危险的</strong>。因为程序不能方位地址为0的内存，所以段错误发生了。在这个例子中，在本例中，<code>marker</code>并不用做什么，可以简单的通过移除main.cc的第75行来避免这个错误。</p>
-<p>如果你观察程序的输入，你会发现程序会先正常运行一段时间，但是程序中某处会产生内存泄漏。（提示：它就在<code>LinkedList&lt;T&gt;::remove()</code>方法里，某次remove没有正常工作时产生）。这将给读者留作使用调试器定位和修复bug的练习。（我总是喜欢这么说.;）</p>
-<p>gdb通过输入<code>quit</code>退出。</p>
-<h2 id="更多信息"><a href="#更多信息" class="headerlink" title="更多信息"></a>更多信息</h2><p>本文档只涉及使用gdb的最小知识。可以通过gdb的manpage或者看<a href="http://sources.redhat.com/gdb/current/onlinedocs/gdb_toc.html" target="_blank" rel="noopener">这份非常长的关于gdb的介绍</a>可以通过在运行gdb时输入<code>help</code>获取在线命令。此外，一如往常，欢迎在新闻组里提问或者在工作时间来问我。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
-<li>上面链表的代码中还有一个未被提到的错误。这个错误在按照原始代码中的顺序添加和移除元素时不会发生，但是在其它顺序下会产生。例如，插入1，2，3，和 4，然后尝试删除2时会产生。非常感谢Linda Gu 和 Xiaofeng Chen发现这个错误。这个bug的修复非常简单，也一并留作额外练习。</li>
-<li>特别鸣谢Ximmbo da Jazz修复了一些错别字和错误的输出。</li>
-<li>特别鸣谢Raghuprasad Govindarao发现了损坏的链接。</li>
-</ul>
-<hr>
-<p>请将评论，建议和错误报告发送给<a href="mailto:gilpin@cs.cmu.edu" target="_blank" rel="noopener">Andrew Gilpin</a>。<br>页面最后修改时间：2004年4月7日</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/22/gdb教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2979,7 +2940,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+                <time title="修改时间：2019-12-31 21:42:22" itemprop="dateModified" datetime="2019-12-31T21:42:22+08:00">2019-12-31</time>
               
             
           </span>
@@ -2987,7 +2948,7 @@
           
             <span class="post-letters-count">
               &nbsp; | &nbsp;
-              <span>340 字</span>
+              <span>354 字</span>
               &nbsp; | &nbsp;
               <span>1 min</span>
             </span>
@@ -3043,29 +3004,14 @@
 
       
         
-          
-            <p>折腾了一天，总算是把测试的程序运行成功了，问题还是出在了环境变量上。</p>
-<ol>
-<li><p>要把<code>algs4.jar</code> 和 <code>stdlib.jar</code> 都添加到 <code>class_path</code> 才能使用jar包提供的功能。</p>
-</li>
-<li><p>运行编译好的class文件时不加扩展名，例如Example.class</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java Example</span><br></pre></td></tr></table></figure>
-<p>否则会出现以下错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误: 找不到或无法加载主类 Example.class</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行测试程序</p>
-<p>数据文件 <code>tinyUF.txt:</code> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">4 3</span><br><span class="line">3 8</span><br><span class="line">6 5</span><br><span class="line">9 4</span><br><span class="line">2 1</span><br><span class="line">8 9</span><br><span class="line">5 0</span><br><span class="line">7 2</span><br><span class="line">6 1</span><br><span class="line">1 0</span><br><span class="line">6 7</span><br></pre></td></tr></table></figure>
-<p>​</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> edu.princeton.cs.algs4.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QuickFindUF</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span>[] id;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">QuickFindUF</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">		id = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">			id[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">connected</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id[p] == id[q];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">union</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> pid = id[p];</span><br><span class="line">		<span class="keyword">int</span> qid = id[q];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; id.length; i++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (id[i] == pid) id[i] = qid;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id.length;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = StdIn.readInt();</span><br><span class="line">        QuickFindUF qf = <span class="keyword">new</span> QuickFindUF(n);</span><br><span class="line">        <span class="keyword">while</span> (!StdIn.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = StdIn.readInt();</span><br><span class="line">            <span class="keyword">int</span> q = StdIn.readInt();</span><br><span class="line">            <span class="keyword">if</span> (qf.connected(p, q)) <span class="keyword">continue</span>;</span><br><span class="line">            qf.union(p, q);</span><br><span class="line">            StdOut.println(p + <span class="string">" "</span> + q);</span><br><span class="line">        &#125;</span><br><span class="line">        StdOut.println(qf.count() + <span class="string">" components"</span>);</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">3</span>, <span class="number">4</span>));</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">2</span>, <span class="number">5</span>));</span><br><span class="line">        StdOut.println(qf.connected(<span class="number">7</span>, <span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>编译运行：    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; javac QuickFindUF.java</span><br><span class="line">&gt;&gt; java QuickFindUF &lt; tinyUF.txt</span><br><span class="line">&gt;&gt; output:</span><br><span class="line">4 3</span><br><span class="line">3 8</span><br><span class="line">6 5</span><br><span class="line">9 4</span><br><span class="line">2 1</span><br><span class="line">5 0</span><br><span class="line">7 2</span><br><span class="line">6 1</span><br><span class="line">10 components</span><br><span class="line">true</span><br><span class="line">true</span><br><span class="line">false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关于怎么在IDE中添加参数执行的方法还没有找到，这里留到后续补充。</p>
-</li>
-</ol>
-
-          
+          <p>算法4 配套的 Java 环境的搭建教程。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/17/Coursera-algorithm：配置algs4环境/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
