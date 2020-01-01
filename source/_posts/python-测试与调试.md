@@ -10,6 +10,10 @@ tags:
 
 # Python 测试框架
 
+介绍 Python 的测试工具 unittest 和 doctest 的基本用法。
+
+<!-- more -->
+
 ## unittest
 
 ### 基础用法

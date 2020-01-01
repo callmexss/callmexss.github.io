@@ -9,6 +9,8 @@ tags:
 
 **The original publish date is `date: 2017-11-20 21:38:34`, I changed it to the day I started this blog. **
 
+<!-- more -->
+
 ### 词根词缀
 
 ---

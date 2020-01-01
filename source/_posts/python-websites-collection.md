@@ -7,4 +7,6 @@ tags: python
 
 一个各种python资源的整合
 
+<!-- more -->
+
 ## Python Cheat Sheets

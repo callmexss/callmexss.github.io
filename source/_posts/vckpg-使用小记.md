@@ -9,7 +9,9 @@ tags:
 
 ## vcpkg介绍
 
-先把官方仓库的连接撂在[这里](https://github.com/Microsoft/vcpkg) 。
+先把官方仓库的连接撂在[这里](https://github.com/Microsoft/vcpkg),这玩意相当于微软给 VS 开发的包管理工具，方便安装第三方库的。
+
+<!-- more -->
 
 ### 一个来自官方仓库的概述
 
