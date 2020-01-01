@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+  <meta name="description" content="第一学期第 10 周学习笔记。">
 <meta name="keywords" content="c++,qt5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="term 1: 10th week">
 <meta property="og:url" content="https://callmexss.top/2017/11/06/term-1-10th-week/index.html">
 <meta property="og:site_name" content="像素书">
-<meta property="og:description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+<meta property="og:description" content="第一学期第 10 周学习笔记。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-01T14:26:37.604Z">
+<meta property="og:updated_time" content="2019-12-31T14:35:52.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="term 1: 10th week">
-<meta name="twitter:description" content="1106函数对象（函子）  A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is o">
+<meta name="twitter:description" content="第一学期第 10 周学习笔记。">
 
 
 
@@ -403,7 +403,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-01 22:26:37" itemprop="dateModified" datetime="2019-04-01T22:26:37+08:00">2019-04-01</time>
+                <time title="修改时间：2019-12-31 22:35:52" itemprop="dateModified" datetime="2019-12-31T22:35:52+08:00">2019-12-31</time>
               
             
           </span>
@@ -466,7 +466,9 @@
       
 
       
-        <h2 id="1106"><a href="#1106" class="headerlink" title="1106"></a>1106</h2><h3 id="函数对象（函子）"><a href="#函数对象（函子）" class="headerlink" title="函数对象（函子）"></a>函数对象（函子）</h3><blockquote>
+        <p>第一学期第 10 周学习笔记。</p>
+<a id="more"></a>
+<h2 id="1106"><a href="#1106" class="headerlink" title="1106"></a>1106</h2><h3 id="函数对象（函子）"><a href="#函数对象（函子）" class="headerlink" title="函数对象（函子）"></a>函数对象（函子）</h3><blockquote>
 <p> A functor is any object that can be used with () in the manner of a function. This includes normal function names, pointers to functions, and class objects for which the () operator is overloaded—that is, classes for which the peculiar-looking function operator()() is defined. For example, you could define a class like this: </p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linear</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">float</span> slope; <span class="comment">// 斜率</span></span><br><span class="line">        <span class="keyword">float</span> y0; <span class="comment">// 函数值</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        Linear(<span class="keyword">float</span> _sp = <span class="number">1</span>, <span class="keyword">float</span> _y = <span class="number">0</span>)</span><br><span class="line">            : slope(_sp), y0(_y) &#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">double</span> <span class="title">operator</span><span class="params">()</span> <span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x * slope + y0; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Linear f1;</span><br><span class="line">    <span class="function">Linear <span class="title">f2</span><span class="params">(<span class="number">2.5</span>, <span class="number">10.0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">double</span> y1 = f1(<span class="number">12.4</span>);</span><br><span class="line">    <span class="keyword">double</span> y2 = f2(<span class="number">0.4</span>);</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"y1: "</span> &lt;&lt; y1 &lt;&lt; <span class="string">" y2: "</span> &lt;&lt; y2 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -862,7 +864,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -886,7 +888,7 @@
 
   <div class="theme-info">
     <div class="powered-by"></div>
-    <span class="post-count">共42.7k字</span>
+    <span class="post-count">共42.8k字</span>
   </div>
   #<div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
 
